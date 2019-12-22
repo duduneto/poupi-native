@@ -1,0 +1,125 @@
+{
+  "content": {
+    "pt": {
+      "cp01": {
+        "aRef": "Cp01 - Navbar",
+        "txt01": "Usuário",
+        "txt02": "Perfil",
+        "txt03": "Contador"
+      },
+      "sc01a": {
+        "aRef": "Sc01a - Login",
+        "txt01": "Entrar",
+        "txt02": "Idiomas:",
+        "txt03": "Português",
+        "txt04": "Inglês"
+      },
+      "sc02a": {
+        "aRef": "Sc02a - Perfil",
+        "txt01": "Nome"
+      },
+      "sc02b": {
+        "aRef": "Sc02b - Contador",
+        "txt01": "Contador",
+        "txt02": "Aumentar",
+        "txt03": "Diminuir",
+        "txt04": "Mudar Nome"
+      }
+    },
+    "en": {}
+  },
+  "users": {
+    "01": {
+      "docId": "01",
+      "name": "Carlos",
+      "email": "carlos@mnmn.com",
+      "image": "https://source.unsplash.com/200x150/?portrait&boy&1"
+    },
+    "02": {
+      "docId": "02",
+      "name": "Leandro",
+      "email": "leandro@mnmn.com",
+      "image": "https://source.unsplash.com/200x150/?portrait&boy&2"
+    },
+    "03": {
+      "docId": "03",
+      "name": "Juan",
+      "email": "juan@mnmn.com",
+      "image": "https://source.unsplash.com/200x150/?portrait&boy&3"
+    }
+  },
+  "products": {
+    "01": {
+      "docId": "01",
+      "userId": "01",
+      "name": "Laranja",
+      "description": "Dá pra fazer suco...",
+      "image": "https://source.unsplash.com/200x150/?orange&1"
+    },
+    "02": {
+      "docId": "02",
+      "userId": "02",
+      "name": "Pêra",
+      "description": "Dá pra fazer suco...",
+      "image": "https://source.unsplash.com/200x150/?pear&1"
+    },
+    "03": {
+      "docId": "03",
+      "userId": "03",
+      "name": "Abacaxi",
+      "description": "Dá pra fazer suco...",
+      "image": "https://source.unsplash.com/200x150/?pineapple&1"
+    },
+    "04": {
+      "docId": "04",
+      "userId": "01",
+      "name": "Uva",
+      "description": "Dá pra fazer suco...",
+      "image": "https://source.unsplash.com/200x150/?grape&1"
+    }
+  },
+  "comments": {
+    "01": {
+      "docId": "01",
+      "userId": "01",
+      "productId": "01",
+      "message": "Olá meu amigo 01."
+    },
+    "02": {
+      "docId": "02",
+      "userId": "02",
+      "productId": "02",
+      "message": "Olá meu amigo 02."
+    },
+    "03": {
+      "docId": "03",
+      "userId": "03",
+      "productId": "03",
+      "message": "Olá meu amigo 03."
+    },
+    "04": {
+      "docId": "04",
+      "userId": "01",
+      "productId": "04",
+      "message": "Olá meu amigo 04."
+    },
+    "05": {
+      "docId": "05",
+      "userId": "02",
+      "productId": "01",
+      "message": "Olá meu amigo 05."
+    },
+    "06": {
+      "docId": "06",
+      "userId": "03",
+      "productId": "02",
+      "message": "Olá meu amigo 06."
+    },
+    "07": {
+      "docId": "07",
+      "userId": "03",
+      "productId": "03",
+      "message": "Olá meu amigo 07."
+    }
+  }
+}

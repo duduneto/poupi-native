@@ -1,0 +1,89 @@
+// ***************************************
+// #region :: IMPORTs
+// ---------------
+
+// import Packages
+import React from 'react';
+
+// import Internals
+import * as AllSc from './';
+import { useHistory, useRd, useChangeRd, useForm } from './useMorfos';
+
+// ---------------
+// #endregion
+// ***************************************
+
+export default function Sc00() {
+  // ***************************************
+  // #region :: HOOKs + VARs
+  // ---------------
+
+  // set Hooks
+  let { rdContent, rdAuthUser, rdIptsSignUp } = useRd();
+  let history = useHistory();
+  let changeRd = useChangeRd();
+  let { inputChange } = useForm('rdIptsSignUp');
+
+  let redirect = rdAuthUser && history.push('/profile');
+
+  // ---------------
+  // #endregion
+  // ***************************************
+
+  // ***************************************
+  // #region :: FUNCTIONs
+  // ---------------
+
+  let signIn = () => {
+    // set Call
+    let infoUser = {
+      userName: 'João',
+      email: 'joao@email.com',
+      age: 32
+    };
+
+    // call Hook
+    changeRd('rdAuthUser', infoUser);
+
+    // redirect
+    history.push('/profile');
+  };
+
+  // let start = () => {}
+
+  // ---------------
+  // #endregion
+  // ***************************************
+
+  // ***************************************
+  // #region :: BUTTONs + OTHERs
+  // ---------------
+
+  // let model = () =>
+
+  let enter = () => signIn();
+  let toTerms = () => history.push('/terms');
+
+  // ---------------
+  // #endregion
+  // ***************************************
+
+  // ***************************************
+  // #region :: RETURNs
+  // ---------------
+
+  let infoReturn = {
+    // values
+    rdContent,
+
+    // btns
+    enter,
+    toTerms
+  };
+
+  return redirect || <AllSc.Sc01a_v info={infoReturn} />;
+
+  // ---------------
+  // #endregion
+  // ***************************************
+}
