@@ -1,6 +1,6 @@
-#Start Morfos
+# Start Morfos
 
-> > FALTA FAZER
+> FALTA FAZER
 
 --- Sc01
 -- fundo primary
