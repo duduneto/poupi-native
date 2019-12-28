@@ -1,6 +1,24 @@
 // import Packages
 import { firestore } from '../fbConfig';
 
+export default async function getList(info) {
+  let db = firestore.collection(info.collection);
+
+  // change just when have some where or orderBy
+  db = filterOrder(info, db);
+
+  const callDb = await db.get();
+  let arr = [];
+  callDb.forEach(doc => arr.push(doc.data()));
+
+  // call only if there's a merge1, 2 or 3
+  // getMerge gets docs from a collection according th field of the arr
+  info.merge1 && (arr = await getMerge(info.merge1, arr));
+  info.merge2 && (arr = await getMerge(info.merge2, arr));
+
+  return arr;
+}
+
 //prettier-ignore
 const filterOrder = (info, db) => {
   info.where1 && (db = db.where(info.where1.field, info.where1.type, info.where1.value));
@@ -28,24 +46,6 @@ const getMerge = async (info, arr) => {
   // await a array of async calls
   await Promise.all(promises);
   // slower option: for (let item of arr) {}
-
-  return arr;
-};
-
-export default async info => {
-  let db = firestore.collection(info.collection);
-
-  // change just when have some where or orderBy
-  db = filterOrder(info, db);
-
-  const callDb = await db.get();
-  let arr = [];
-  callDb.forEach(doc => arr.push(doc.data()));
-
-  // call only if there's a merge1, 2 or 3
-  // getMerge gets docs from a collection according th field of the arr
-  info.merge1 && (arr = await getMerge(info.merge1, arr));
-  info.merge2 && (arr = await getMerge(info.merge2, arr));
 
   return arr;
 };

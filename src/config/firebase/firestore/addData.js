@@ -4,7 +4,7 @@ import { updateData } from './';
 
 /// Firestore adds a new doc with an AUTO GENERATED ID ///
 //
-export default info => {
+export default function addData(info) {
   return firestore
     .collection(info.collection)
     .add(info.dataToAdd)
@@ -23,4 +23,4 @@ export default info => {
 
       return updateData(infoSaveId);
     });
-};
+}

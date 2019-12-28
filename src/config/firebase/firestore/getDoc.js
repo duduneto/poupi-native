@@ -1,7 +1,7 @@
 // import Packages
 import { firestore } from '../fbConfig';
 
-export default info => {
+export default function detDoc(info) {
   let db = firestore.collection(info.collection);
   // console.log('* TCL * * *: db', db)
 
@@ -9,4 +9,4 @@ export default info => {
     .doc(info.docId)
     .get()
     .then(res => res.data());
-};
+}

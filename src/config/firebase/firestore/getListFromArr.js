@@ -1,7 +1,7 @@
 // import Packages
 import { firestore } from '../fbConfig';
 
-export default async info => {
+export default async function getListFromArr(info) {
   let db = firestore.collection(info.collection);
 
   let arr = info.arrShops;
@@ -18,4 +18,4 @@ export default async info => {
   await Promise.all(shopsPromises);
 
   return arr;
-};
+}
