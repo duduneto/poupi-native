@@ -37,8 +37,8 @@ export default function Sc00() {
   let signIn = () => {
     // set Call
     let infoUser = {
-      userName: 'João',
-      email: 'joao@email.com',
+      userName: 'Maria',
+      email: 'ladymary@email.com',
       age: 32
     };
 

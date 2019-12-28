@@ -1,48 +1,62 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 // ***************************************
-// #region :: COLORS
+// #region :: COLORs
 // ---------------
 
-const primaryColor = '#ff0000';
-const secondaryColor = '#000';
-const tertiaryColor = '#ff5300'; //laranja
-const inverseColor = '#eee';
-const lightGray = '#f6f6f6';
-const mediumGray = '#ebebeb';
-const gray = '#888';
+const primaryColor = "#000";
+const secondaryColor = "#292929";
+const tertiaryColor = "#ff5300"; //laranja
+const inverseColor = "#fefefe";
+const lightGray = "#f6f6f6";
+const lineGray = "#ebebeb";
+const mediumGray = "#999";
+const darkGray = "#333";
+const black = "#000";
+
+// Fill Colors ----
+const bgPrimary = { backgroundColor: primaryColor };
+const bgSecondary = { backgroundColor: secondaryColor };
+const bgTertiary = { backgroundColor: tertiaryColor };
+const bgRed = { backgroundColor: "red" };
+
+// Text Colors ----
+const txtPrimaryInverse = { color: inverseColor };
+const txtPrimary = { color: primaryColor };
+const txtColorBase = { color: mediumGray };
+const txtColorTitle = { color: black };
+const txtColorSubTitle = { color: black };
 
 // ---------------
 //  #endregion
 // ***************************************
 
 // ***************************************
-// #region :: SIZES / MARGINS / POSITIONS
+// #region :: REFs
 // ---------------
 
-const posRelative = {
-  position: 'relative'
-};
+const sizeTxtRef = 20;
+const sizeBtnRef = 200;
+const heightBarRef = 50;
+const heightShortBar = { height: heightBarRef };
+const heightLongBar = { height: heightBarRef * 2.4 };
+
+// ---------------
+//  #endregionf
+// ***************************************
 
 // ***************************************
-// #region :: PADDINGS + MARGINS
+// #region :: UTILs
 // ---------------
 
-const pad10 = {
-  padding: 10
-};
-const pad20 = {
-  padding: 20
-};
-const noMg = {
-  margin: 0
-};
-const mgB20 = {
-  marginBottom: 20
-};
-const mgL5 = {
-  marginLeft: 5
-};
+const posRelative = { position: "relative" };
+const pad10 = { padding: 10 };
+const pad20 = { padding: 20 };
+const padH20 = { paddingHorizontal: 20 };
+const noMg = { margin: 0 };
+const mgB20 = { marginBottom: 20 };
+const mgL5 = { marginLeft: 5 };
+const topSlip = { marginTop: 1.4 * -heightBarRef };
 
 // ---------------
 //  #endregion
@@ -52,29 +66,29 @@ const mgL5 = {
 // #region :: TEXT + FONTS
 // ---------------
 
-const txBase = {
-  fontSize: 16
-};
-const txTitleCard = {
-  fontSize: 17,
-  color: gray
-};
-const txSubTitleCard = {
-  fontSize: 14,
-  color: gray
-};
-const txTitleProfile = {
-  fontSize: 16,
-  fontWeight: 'bold',
-  color: primaryColor
-};
-const txTitleScreen = {
-  color: inverseColor,
-  fontSize: 20
+const txtCenter = { textAlign: "center" };
+const txtSmall = { fontSize: sizeTxtRef - 8, ...txtColorBase };
+const txtBase = { fontSize: sizeTxtRef - 6, ...txtColorBase };
+
+const txtSubTitleCard = {
+  fontSize: sizeTxtRef - 6,
+  ...txtColorSubTitle
 };
 
-const txCenter = {
-  textAlign: 'center'
+const txtTitleCard = {
+  fontSize: sizeTxtRef - 3,
+  ...txtColorTitle
+};
+
+const txtTitleProfile = {
+  fontSize: sizeTxtRef - 4,
+  fontWeight: "bold",
+  ...txtPrimaryInverse
+};
+
+const txtTitleScreen = {
+  ...txtPrimaryInverse,
+  fontSize: sizeTxtRef - 2
 };
 
 // ---------------
@@ -85,47 +99,37 @@ const txCenter = {
 // #region :: FLEXBOX
 // ---------------
 
+const flexWrap = { flexWrap: "wrap" };
+const flex1 = { flex: 1 };
+const flex2 = { flex: 2 };
+const flex3 = { flex: 3 };
+const flex4 = { flex: 4 };
+
 const flexRow = {
-  flexDirection: 'row',
-  alignItems: 'center'
+  flexDirection: "row",
+  alignItems: "center"
 };
 
 const flexCenter = {
-  alignItems: 'center',
-  justifyContent: 'center'
+  alignItems: "center",
+  justifyContent: "center"
 };
 
 const flexBetween = {
-  alignItems: 'center',
-  justifyContent: 'space-between'
+  alignItems: "center",
+  justifyContent: "space-between"
 };
 
 const flexStart = {
-  alignItems: 'center',
-  flexDirection: 'row',
-  justifyContent: 'flex-start'
+  alignItems: "center",
+  flexDirection: "row",
+  justifyContent: "flex-start"
 };
+
 const flexEnd = {
-  alignItems: 'center',
-  flexDirection: 'row',
-  justifyContent: 'flex-end'
-};
-
-const flexWrap = {
-  flexWrap: 'wrap'
-};
-
-const flex1 = {
-  flex: 1
-};
-const flex2 = {
-  flex: 2
-};
-const flex3 = {
-  flex: 3
-};
-const flex4 = {
-  flex: 4
+  alignItems: "center",
+  flexDirection: "row",
+  justifyContent: "flex-end"
 };
 
 // ---------------
@@ -133,73 +137,79 @@ const flex4 = {
 // ***************************************
 
 // ***************************************
-// #region :: STYLES + FX ****************
+// #region :: STYLES + FX
 // ---------------
 
 const shadowLess = {
   // web shadow
-  shadowColor: '#000',
+  shadowColor: black,
   shadowOpacity: 0.3,
   shadowRadius: 4,
   shadowOffset: { width: 0, height: 1 },
   // android shadow
   elevation: 4
 };
+
 const shadowMore = {
   // web shadow
-  shadowColor: '#000',
+  shadowColor: black,
   shadowOpacity: 0.4,
   shadowRadius: 14,
   shadowOffset: { width: 3, height: 6 },
   // android shadow
   elevation: 14
 };
+
 const radiusLess = {
   borderRadius: 8
 };
+
 const radiusMore = {
   borderRadius: 14
 };
+
 const radiusTotal = {
   borderRadius: 100
 };
+
 const btn = {
   ...shadowLess,
   borderRadius: 50,
-  alignItems: 'center',
-  justifyContent: 'center'
+  alignItems: "center",
+  justifyContent: "center"
 };
 
 const topLine = {
-  borderTopColor: '#e6e6e6',
+  borderTopColor: lineGray,
   borderTopWidth: 1
 };
+
 const bottomLine = {
-  borderBottomColor: '#e6e6e6',
+  borderBottomColor: lineGray,
   borderBottomWidth: 1
 };
+
 const dot = {
   width: 8,
   height: 8,
   ...radiusTotal,
   marginRight: 5
 };
+
 const active = {
-  color: primaryColor,
-  backgroundColor: primaryColor
-};
-const noact = {
-  color: 'white',
-  backgroundColor: 'white'
-};
-const noactGr = {
-  color: mediumGray,
-  backgroundColor: mediumGray
+  ...txtPrimaryInverse,
+  ...bgPrimary
 };
 
-// ---------------
-//  #endregion
-// ***************************************
+const noact = {
+  color: "white",
+  backgroundColor: "white"
+};
+
+const noactGr = {
+  color: lineGray,
+  backgroundColor: lineGray
+};
 
 // ---------------
 //  #endregion
@@ -222,28 +232,35 @@ const Styles = StyleSheet.create({
   flex4,
   pad10,
   pad20,
+  padH20,
   noMg,
   mgB20,
   mgL5,
-  txBase,
+  txtBase,
+  txtSmall,
   flexRow,
   flexStart,
   flexCenter,
   flexBetween,
   flexEnd,
-  txTitleCard,
-  txSubTitleCard,
+  txtTitleCard,
+  txtSubTitleCard,
   radiusLess,
   radiusMore,
   radiusTotal,
-  txTitleScreen,
-  txTitleProfile,
+  txtTitleScreen,
+  txtTitleProfile,
   flexWrap,
-  txCenter,
+  txtCenter,
   topLine,
   bottomLine,
   shadowLess,
   shadowMore,
+  bgPrimary,
+  bgSecondary,
+  bgTertiary,
+  txtPrimary,
+  txtPrimaryInverse,
 
   // ---------------
   //  #endregion
@@ -255,25 +272,25 @@ const Styles = StyleSheet.create({
 
   flexMaster: {
     flex: 1,
-    overflow: 'hidden'
+    overflow: "hidden"
   },
 
   leftBox: {
-    flex: 1,
     ...flexCenter,
-    height: 50
+    width: heightBarRef,
+    height: heightBarRef
   },
 
   centerBox: {
-    flex: 8,
     ...flexCenter,
-    height: 50
+    flex: 1,
+    height: heightBarRef
   },
 
   rightBox: {
-    flex: 1,
     ...flexCenter,
-    height: 50
+    width: heightBarRef,
+    height: heightBarRef
   },
 
   // ---------------
@@ -285,32 +302,35 @@ const Styles = StyleSheet.create({
   // ---------------
 
   navbarView: {
-    backgroundColor: primaryColor,
     zIndex: 5,
-    height: 60,
+    width: "100%",
+    ...heightShortBar,
     ...flexRow,
-    ...flexBetween,
-    ...shadowMore
+    ...flexBetween
   },
 
   shortBar: {
-    backgroundColor: primaryColor,
-    position: 'absolute',
-    width: '100%',
-    height: 50,
-    left: 0,
-    top: 0
+    ...shadowMore,
+    ...bgPrimary,
+    width: "100%",
+    ...heightShortBar,
+    ...shadowMore
   },
 
   longBar: {
-    backgroundColor: primaryColor,
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    width: '100%',
-    height: 120,
-    ...flexRow,
-    ...flexBetween
+    ...bgPrimary,
+    ...shadowMore,
+    width: "100%",
+    ...heightLongBar
+  },
+
+  scrollShortBar: {
+    ...pad20
+  },
+
+  scrollLongBar: {
+    ...padH20,
+    ...topSlip
   },
 
   searchBar: {
@@ -322,9 +342,9 @@ const Styles = StyleSheet.create({
   },
 
   titlePageLeft: {
-    width: '100%',
-    ...txTitleScreen,
-    textAlign: 'left',
+    width: "100%",
+    ...txtTitleScreen,
+    textAlign: "left",
     marginLeft: 10
   },
 
@@ -337,7 +357,7 @@ const Styles = StyleSheet.create({
   // ---------------
 
   card: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginBottom: 20,
     ...radiusLess,
     ...shadowLess,
@@ -345,15 +365,15 @@ const Styles = StyleSheet.create({
   },
 
   cardMask: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginBottom: 20,
-    overflow: 'hidden',
+    overflow: "hidden",
     ...radiusLess,
     ...shadowLess
   },
 
   cardList: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginBottom: 20,
     ...radiusLess,
     ...shadowLess,
@@ -361,16 +381,16 @@ const Styles = StyleSheet.create({
   },
 
   dialogueBox: {
+    backgroundColor: "white",
     marginBottom: 20,
-    backgroundColor: 'white',
-    overflow: 'hidden',
+    overflow: "hidden",
     ...shadowMore
   },
 
   colView: {
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    justifyContent: "space-between",
+    flexDirection: "row",
+    flexWrap: "wrap",
     ...flex1
   },
 
@@ -382,13 +402,24 @@ const Styles = StyleSheet.create({
   // #region :: IMAGES
   // ---------------
 
+  profileImg: {
+    width: 120,
+    height: 120,
+    marginBottom: 20,
+    marginTop: -50,
+    borderRadius: "100%",
+    borderWidth: 3,
+    borderColor: darkGray
+  },
+
   thumbnail: {
     width: 100,
     height: 65,
     marginRight: 10
   },
+
   imgProfile: {
-    width: '100%',
+    width: "100%",
     height: 220
   },
 
@@ -401,13 +432,13 @@ const Styles = StyleSheet.create({
   // ---------------
 
   btnPrimary: {
-    backgroundColor: primaryColor,
+    ...bgPrimary,
     ...btn
   },
 
-  txInverseColor: {
+  txtInverseColor: {
     color: inverseColor,
-    ...txBase
+    ...txtBase
   },
 
   bgInverseColor: {
@@ -420,8 +451,8 @@ const Styles = StyleSheet.create({
     ...btn
   },
 
-  txBtnSecondary: {
-    ...txBase,
+  txtBtnSecondary: {
+    ...txtBase,
     ...btn
   },
 
@@ -430,14 +461,15 @@ const Styles = StyleSheet.create({
     backgroundColor: tertiaryColor,
     ...btn
   },
-  txBtnTertiary: {
-    ...txBase,
+
+  txtBtnTertiary: {
+    ...txtBase,
     ...btn
   },
 
   // FAB BUTTON
   btnFab: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     width: 60,
     height: 60,
     ...flexCenter,
@@ -446,7 +478,7 @@ const Styles = StyleSheet.create({
   },
 
   btnFabSmall: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     width: 30,
     height: 30,
     ...flexCenter,
@@ -456,32 +488,31 @@ const Styles = StyleSheet.create({
 
   // BTN SIZES
   btnXSmall: {
-    // paddingHorizontal: 8,
-    // paddingVertical: 2
-    width: 60,
-    height: 20
+    width: sizeBtnRef / 4,
+    height: sizeBtnRef / 9
   },
 
   btnSmall: {
-    // paddingHorizontal: 10,
-    // paddingVertical: 6
-    width: 100,
-    height: 30
+    width: sizeBtnRef / 3,
+    height: sizeBtnRef / 7
   },
 
   btnMedium: {
-    // paddingHorizontal: 20,
-    // paddingVertical: 10
-    width: 150,
-    height: 40
+    width: sizeBtnRef / 2,
+    height: sizeBtnRef / 6
   },
 
   btnLarge: {
-    // paddingHorizontal: 70,
-    // paddingVertical: 14
-    width: 200,
-    height: 50
+    width: sizeBtnRef / 1.4,
+    height: sizeBtnRef / 4.4
   },
+
+  btnXLarge: {
+    width: sizeBtnRef / 1.2,
+    height: sizeBtnRef / 4
+  },
+
+  txtBtnSmall: { fontSize: sizeTxtRef - 9 },
 
   // ---------------
   //  #endregion
@@ -494,13 +525,13 @@ const Styles = StyleSheet.create({
   input: {
     borderWidth: 2,
     ...radiusLess,
-    borderColor: mediumGray,
+    borderColor: lineGray,
     paddingHorizontal: 14,
     paddingVertical: 8
   },
 
   textArea: {
-    textAlignVertical: 'top'
+    textAlignVertical: "top"
   },
 
   picker: {
@@ -508,11 +539,11 @@ const Styles = StyleSheet.create({
     margin: 0,
     padding: 0,
     ...radiusLess,
-    borderColor: mediumGray
+    borderColor: lineGray
   },
 
   line: {
-    backgroundColor: mediumGray,
+    backgroundColor: lineGray,
     marginLeft: 5,
     height: 1,
     flex: 1
@@ -523,21 +554,21 @@ const Styles = StyleSheet.create({
     ...flexBetween,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    borderBottomColor: '#e6e6e6',
+    borderBottomColor: lineGray,
     borderBottomWidth: 1
   },
 
   itemAccordion: {
     paddingVertical: 10,
-    backgroundColor: 'white',
-    borderBottomColor: '#e6e6e6',
+    backgroundColor: "white",
+    borderBottomColor: lineGray,
     borderBottomWidth: 1
   },
 
   badge: {
     borderWidth: 1,
     ...radiusLess,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     backgroundColor: lightGray
   },
 
@@ -563,15 +594,15 @@ const Styles = StyleSheet.create({
   },
 
   dotNotice: {
-    backgroundColor: primaryColor,
+    ...bgPrimary,
     borderColor: lightGray,
-    position: 'absolute',
+    position: "absolute",
     borderRadius: 60,
     borderWidth: 2,
     ...flexCenter,
-    color: '#fff',
+    color: "#fff",
     fontSize: 11,
-    ...txCenter,
+    ...txtCenter,
     height: 19,
     zIndex: 10,
     right: -5,

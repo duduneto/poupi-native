@@ -13,7 +13,7 @@ import { useHistory, useRd, useChangeRd, useStl } from "./useMorfos";
 // #endregion
 // ***************************************
 
-export default function Sc00() {
+export default function Sc00(props) {
   // ***************************************
   // #region :: HOOKs + VARs
   // ---------------
@@ -34,6 +34,7 @@ export default function Sc00() {
   // #region :: FUNCTIONs
   // ---------------
 
+  let title = props.title;
   // let start = () => {}
 
   // ---------------
@@ -44,13 +45,9 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
+  let condStl = props.type === "long" ? useStl.longBar : useStl.shortBar;
+  let toSignIn = () => history.push("/sign-in");
   // let model = () =>
-
-  let condActiveSc = false;
-
-  let dotState = condActiveSc
-    ? [useStl.dot, useStl.active]
-    : [useStl.dot, useStl.noactGr];
 
   // let toSignIn = () => history.push("/sign-in");
 
@@ -64,11 +61,12 @@ export default function Sc00() {
 
   let infoReturn = {
     rdContent,
-    dotState
-    // toSignIn
+    condStl,
+    toSignIn,
+    title
   };
 
-  return redirect || <AllSc.Sc01c_v info={infoReturn} />;
+  return redirect || <AllSc.Cp01_v info={infoReturn} />;
 
   // ---------------
   // #endregion

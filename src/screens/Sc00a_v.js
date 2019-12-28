@@ -3,11 +3,12 @@
 // ---------------
 
 // import Packages
-import React from 'react';
-import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { useStl } from './useMorfos';
+import { Cp01 } from "./";
+import { useStl } from "./useMorfos";
 
 // ---------------
 // #endregion
@@ -18,11 +19,14 @@ export default ({ info }) => {
   // #region :: STYLEs
   // ---------------
 
-  let stl01 = [];
-  let stl02 = [];
-  let stl03 = [];
-  // let stl04 = []
-  // let stl05 = []
+  let stlBG1 = [useStl.flexMaster];
+
+  let stlBODY1 = [useStl.scrollShortBar, useStl.flex1];
+  let stlBODY1a = [useStl.card, useStl.flex1];
+  let stlBODY2 = [useStl.txtTitleCard];
+  // let stlBODY2b = [useStl.mgB20, useStl.txtBase];
+  // let stlBODY2c = [useStl.txtPrimaryInverse];
+  // let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
 
   // ---------------
   // #endregion
@@ -33,25 +37,33 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
 
-    <View style={stl01}>
-      <ScrollView style={stl02}>
+    <View style={stlBG1}>
+      {/* NAV */}
+      {/* ------------------------------ */}
+
+      <Cp01 title="Pagina01" type="short" />
+
+      {/* BODY */}
+      {/* ------------------------------ */}
+
+      <ScrollView style={stlBODY1}>
         {/* PART 1 */}
         {/* ------------------------------ */}
 
-        <Text style={stl03}>Part 1</Text>
+        <Text style={stlBODY2}>Part 1</Text>
 
         {/* PART 2 */}
         {/* ------------------------------ */}
 
-        <Text>Part 2</Text>
+        <Text style={stlBODY2}>Part 2</Text>
 
         {/* PART 3 */}
         {/* ------------------------------ */}
 
-        <Text>Part 3</Text>
+        <Text style={stlBODY2}>Part 3</Text>
 
         <TouchableOpacity onPress={info.event}>
-          <Text>CLICK HERE!</Text>
+          <Text style={stlBODY2}>CLICK HERE!</Text>
         </TouchableOpacity>
 
         {/* END */}

@@ -7,7 +7,7 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd, useStl } from "./useMorfos";
+import { useHistory, useRd, useChangeRd } from "./useMorfos";
 
 // ---------------
 // #endregion
@@ -23,8 +23,10 @@ export default function Sc00() {
   let history = useHistory();
   let changeRd = useChangeRd();
 
-  // let redirect = rdAuthUser && history.push("/sign-in");
-  let redirect = false;
+  let redirect = !rdAuthUser && history.push("/sign-in");
+
+  let userName = rdAuthUser.userName;
+  let userEmail = rdAuthUser.email;
 
   // ---------------
   // #endregion
@@ -36,6 +38,12 @@ export default function Sc00() {
 
   // let start = () => {}
 
+  let setSignOut = () => {
+    // call Hook
+    changeRd("rdAuthUser", null);
+    history.push("/sign-in");
+  };
+
   // ---------------
   // #endregion
   // ***************************************
@@ -46,13 +54,7 @@ export default function Sc00() {
 
   // let model = () =>
 
-  let condActiveSc = false;
-
-  let dotState = condActiveSc
-    ? [useStl.dot, useStl.active]
-    : [useStl.dot, useStl.noactGr];
-
-  // let toSignIn = () => history.push("/sign-in");
+  let signOut = () => setSignOut();
 
   // ---------------
   // #endregion
@@ -63,12 +65,15 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
+    // BTNs
     rdContent,
-    dotState
-    // toSignIn
+    signOut,
+    // USERDATA
+    userName,
+    userEmail
   };
 
-  return redirect || <AllSc.Sc01c_v info={infoReturn} />;
+  return redirect || <AllSc.Sc03a_v info={infoReturn} />;
 
   // ---------------
   // #endregion

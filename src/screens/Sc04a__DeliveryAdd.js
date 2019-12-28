@@ -7,7 +7,7 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd, useStl } from "./useMorfos";
+import { useHistory, useRd, useChangeRd } from "./useMorfos";
 
 // ---------------
 // #endregion
@@ -46,12 +46,6 @@ export default function Sc00() {
 
   // let model = () =>
 
-  let condActiveSc = false;
-
-  let dotState = condActiveSc
-    ? [useStl.dot, useStl.active]
-    : [useStl.dot, useStl.noactGr];
-
   // let toSignIn = () => history.push("/sign-in");
 
   // ---------------
@@ -63,12 +57,11 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    rdContent,
-    dotState
+    rdContent
     // toSignIn
   };
 
-  return redirect || <AllSc.Sc01c_v info={infoReturn} />;
+  return redirect || <AllSc.Sc04a_v info={infoReturn} />;
 
   // ---------------
   // #endregion

@@ -44,13 +44,28 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
+  let active = "";
+  let activeFilter = active
+    ? [
+        useStl.flex1,
+        useStl.txtCenter,
+        {
+          borderBottomColor: "#333",
+          borderBottomWidth: 2,
+          marginHorizontal: 10
+        }
+      ]
+    : [
+        useStl.flex1,
+        useStl.txtCenter,
+        {
+          borderBottomColor: "#eee",
+          borderBottomWidth: 2,
+          marginHorizontal: 10
+        }
+      ];
+
   // let model = () =>
-
-  let condActiveSc = false;
-
-  let dotState = condActiveSc
-    ? [useStl.dot, useStl.active]
-    : [useStl.dot, useStl.noactGr];
 
   // let toSignIn = () => history.push("/sign-in");
 
@@ -63,12 +78,12 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    rdContent,
-    dotState
+    activeFilter,
+    rdContent
     // toSignIn
   };
 
-  return redirect || <AllSc.Sc01c_v info={infoReturn} />;
+  return redirect || <AllSc.Sc02a_v info={infoReturn} />;
 
   // ---------------
   // #endregion
