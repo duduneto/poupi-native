@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "./src/index.web.js",
   "dependencies": {
+    "@react-native-community/google-signin": "3.0.3",
     "@react-native-firebase/app": "6.2.0",
     "@react-native-firebase/auth": "6.2.0",
     "@react-native-firebase/firestore": "6.2.0",
@@ -13,9 +14,12 @@
     "lodash": "4.17.15",
     "react": "16.8.6",
     "react-dom": "16.8.6",
+    "react-native-fbsdk": "1.1.1",
+    "react-native-vector-icons": "6.6.0",
     "react-native-web": "0.11.7",
     "react-redux": "7.1.1",
     "react-router-dom": "5.1.2",
+    "react-router-native": "5.1.2",
     "react-scripts": "3.0.1",
     "redux": "4.0.4",
     "redux-saga": "1.1.3"
