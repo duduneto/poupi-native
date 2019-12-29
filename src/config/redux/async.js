@@ -1,7 +1,7 @@
 // import Packages
 import { takeEvery, call, put } from 'redux-saga/effects';
 
-export function asyncCall(info) {
+export function async(info) {
   // console.log('data', data);
 
   return {
@@ -12,17 +12,17 @@ export function asyncCall(info) {
   };
 }
 
-export function dismissAsyncCallError() {
+export function dismissAsyncError() {
   return {
     type: 'ASYNC_DISMISS_ERROR'
   };
 }
 
-export function* doAsyncCall(infoCall) {
+export function* doAsync(infoCall) {
   // console.log(infoCall)
 
   let res;
-  let firebaseCall = require('../firebase');
+  let firebaseCall = require('../firebase/firestore');
   let fbCallName = infoCall.info.callName;
   let fbCall = firebaseCall[fbCallName];
   let par = infoCall.info.par;
@@ -51,7 +51,7 @@ export function* doAsyncCall(infoCall) {
 */
 
 export default function* rootSaga() {
-  yield takeEvery('ASYNC_BEGIN', doAsyncCall);
+  yield takeEvery('ASYNC_BEGIN', doAsync);
 }
 
 // Redux reducer
@@ -59,15 +59,15 @@ export function reducer(state, action) {
   // console.log(action)
   let name = action.reducerName;
   let data = action.data;
-  let asyncCallPending = action.callName + 'Pending';
-  let asyncCallError = action.callName + 'Error';
+  let asyncPending = action.callName + 'Pending';
+  let asyncError = action.callName + 'Error';
 
   switch (action.type) {
     case 'ASYNC_BEGIN':
       return {
         ...state,
-        [asyncCallPending]: true,
-        [asyncCallError]: null
+        [asyncPending]: true,
+        [asyncError]: null
       };
 
     case 'ASYNC_SUCCESS':
@@ -76,21 +76,21 @@ export function reducer(state, action) {
 
         [name]: data,
 
-        [asyncCallPending]: false,
-        [asyncCallError]: null
+        [asyncPending]: false,
+        [asyncError]: null
       };
 
     case 'ASYNC_FAILURE':
       return {
         ...state,
-        [asyncCallPending]: false,
-        [asyncCallError]: action.data.error
+        [asyncPending]: false,
+        [asyncError]: action.data.error
       };
 
     case 'ASYNC_DISMISS_ERROR':
       return {
         ...state,
-        [asyncCallError]: null
+        [asyncError]: null
       };
 
     default:

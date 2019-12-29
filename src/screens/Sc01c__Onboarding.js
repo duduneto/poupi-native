@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from "react";
+import React from 'react';
 
 // import Internals
-import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd, useStl } from "./useMorfos";
+import * as AllSc from './';
+import { useHistory, useRd, useChangeRd, useStl } from '../useMorfos';
 
 // ---------------
 // #endregion

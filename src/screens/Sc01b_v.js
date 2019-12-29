@@ -3,12 +3,12 @@
 // ---------------
 
 // import Packages
-import React from "react";
-import { ScrollView, View, Text } from "react-native";
+import React from 'react';
+import { ScrollView, View, Text } from 'react-native';
 
 // import Internals
-import { Cp01 } from "./";
-import { useStl } from "./useMorfos";
+import { Cp01 } from './';
+import { useStl } from '../useMorfos';
 
 // ---------------
 // #endregion

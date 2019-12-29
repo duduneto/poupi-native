@@ -7,7 +7,7 @@ import React from 'react';
 
 // import Internals
 import * as AllSc from './';
-import { useHistory, useRd, useChangeRd, useForm } from './useMorfos';
+import { useHistory, useRd, useChangeRd, useForm } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -22,7 +22,7 @@ export default function Sc00() {
   let { rdContent, rdAuthUser, rdIptsSignUp } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
-  let { inputChange } = useForm('rdIptsSignUp');
+  // let { inputChange } = useForm('rdIptsSignUp');
 
   let redirect = rdAuthUser && history.push('/profile');
 
@@ -63,6 +63,7 @@ export default function Sc00() {
 
   let enter = () => signIn();
   let toTerms = () => history.push('/terms');
+  let toTempUsers = () => history.push('/temp-users');
 
   // ---------------
   // #endregion
@@ -78,7 +79,8 @@ export default function Sc00() {
 
     // btns
     enter,
-    toTerms
+    toTerms,
+    toTempUsers
   };
 
   return redirect || <AllSc.Sc01a_v info={infoReturn} />;

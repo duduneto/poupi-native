@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from "react";
+import React from 'react';
 
 // import Internals
-import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd } from "./useMorfos";
+import * as AllSc from './';
+import { useHistory, useRd, useChangeRd } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -23,7 +23,7 @@ export default function Sc00() {
   let history = useHistory();
   let changeRd = useChangeRd();
 
-  let redirect = !rdAuthUser && history.push("/sign-in");
+  let redirect = !rdAuthUser && history.push('/sign-in');
 
   let userName = rdAuthUser.userName;
   let userEmail = rdAuthUser.email;
@@ -40,8 +40,8 @@ export default function Sc00() {
 
   let setSignOut = () => {
     // call Hook
-    changeRd("rdAuthUser", null);
-    history.push("/sign-in");
+    changeRd('rdAuthUser', null);
+    history.push('/sign-in');
   };
 
   // ---------------

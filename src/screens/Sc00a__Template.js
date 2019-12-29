@@ -7,7 +7,7 @@ import React from 'react';
 
 // import Internals
 import * as AllSc from './';
-import { useHistory, useRd, useChangeRd } from './useMorfos';
+import { useHistory, useRd, useChangeRd } from '../useMorfos';
 
 // ---------------
 // #endregion

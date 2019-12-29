@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 // import Internals
-import { useStl } from "./useMorfos";
+import { useStl } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -41,7 +41,7 @@ export default ({ info }) => {
 
       <View style={stlNAV1a}>
         <TouchableOpacity style={stlNAV1b} onPress={info.toSignIn}>
-          <Text style={{ color: "white" }}>{"<"}</Text>
+          <Text style={{ color: 'white' }}>{'<'}</Text>
         </TouchableOpacity>
 
         {/* CENTER */}

@@ -8,7 +8,7 @@ import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
 
 // import Internals
 import { Cp01 } from './';
-import { useStl } from './useMorfos';
+import { useStl } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -50,7 +50,7 @@ export default ({ info }) => {
       {/* ------------------------------ */}
 
       <ScrollView style={stlBODY1}>
-        {/* TITLE */}
+        {/* CARD */}
         {/* ------------------------------ */}
         <View style={stlBODY1a}>
           <View style={stlBODY1b}>
@@ -65,10 +65,10 @@ export default ({ info }) => {
             </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>
 
-      {/* END */}
-      {/* ------------------------------ */}
+        {/* END */}
+        {/* ------------------------------ */}
+      </ScrollView>
     </View>
     // ---------------
     // #endregion

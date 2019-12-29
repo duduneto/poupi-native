@@ -3,12 +3,12 @@
 // ---------------
 
 // import Packages
-import React from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
 
 // import Internals
-import { Cp01 } from "./";
-import { useStl } from "./useMorfos";
+import { Cp01 } from './';
+import { useStl } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -24,7 +24,7 @@ export default ({ info }) => {
   let stlBODY1a = [useStl.card, useStl.flex1, useStl.flexCenter];
   let stlBODY1b = [useStl.flexCenter];
   let stlBODY1c = [useStl.mgB20, useStl.flexRow];
-  let stlBODY1d = [{ maxHeight: 160, textAlign: "center" }];
+  let stlBODY1d = [{ maxHeight: 160, textAlign: 'center' }];
   let stlBODY2 = [useStl.mgB20, useStl.txtTitleCard];
   let stlBODY2b = [useStl.mgB20, useStl.txtBase];
   let stlBODY2c = [useStl.txtPrimaryInverse];
