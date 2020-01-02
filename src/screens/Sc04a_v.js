@@ -3,18 +3,18 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 import {
   ScrollView,
   View,
   Text,
   TextInput,
   TouchableOpacity
-} from 'react-native';
+} from "react-native";
 
 // import Internals
-import { Cp01 } from './';
-import { useStl } from '../useMorfos';
+import { Cp01 } from "./";
+import { useStl } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -53,7 +53,7 @@ export default ({ info }) => {
       {/* NAV */}
       {/* ------------------------------ */}
 
-      <Cp01 title="Formulário" type="short" />
+      <Cp01 title="Formulário" type="short" icon="left" />
 
       {/* BODY */}
       {/* ------------------------------ */}

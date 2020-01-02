@@ -3,10 +3,10 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 
 // import Internals
-import { UseLoader, useFbListRd, useRd, useToggle } from '.';
+import { UseLoader, useFbListRd, useRd, useToggle } from ".";
 
 // ---------------
 // #endregion
@@ -37,7 +37,7 @@ export default function UseFbListItems(info) {
     }, [rdItemsList]);
 
     return rdItemsList == null ? (
-      <UseLoader />
+      <UseLoader size="large" />
     ) : rdItemsLength === 0 ? (
       <></>
     ) : (

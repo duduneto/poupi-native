@@ -1,24 +1,24 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 // ***************************************
 // #region :: COLORs
 // ---------------
 
-const primaryColor = '#000';
-const secondaryColor = '#292929';
-const tertiaryColor = '#ff5300'; //laranja
-const inverseColor = '#fefefe';
-const lightGray = '#f6f6f6';
-const lineGray = '#ebebeb';
-const mediumGray = '#999';
-const darkGray = '#333';
-const black = '#000';
+export const primaryColor = "#000";
+const secondaryColor = "#292929";
+const tertiaryColor = "#ff5300"; //laranja
+const inverseColor = "#fefefe";
+const lightGray = "#f6f6f6";
+const lineGray = "#ebebeb";
+const mediumGray = "#999";
+const darkGray = "#333";
+const black = "#000";
 
 // Fill Colors ----
 const bgPrimary = { backgroundColor: primaryColor };
 const bgSecondary = { backgroundColor: secondaryColor };
 const bgTertiary = { backgroundColor: tertiaryColor };
-const bgRed = { backgroundColor: 'red' };
+const bgRed = { backgroundColor: "red" };
 
 // Text Colors ----
 const txtPrimaryInverse = { color: inverseColor };
@@ -49,7 +49,7 @@ const heightLongBar = { height: heightBarRef * 2.4 };
 // #region :: UTILs
 // ---------------
 
-const posRelative = { position: 'relative' };
+const posRelative = { position: "relative" };
 const pad10 = { padding: 10 };
 const pad20 = { padding: 20 };
 const padH20 = { paddingHorizontal: 20 };
@@ -66,7 +66,7 @@ const topSlip = { marginTop: 1.4 * -heightBarRef };
 // #region :: TEXT + FONTS
 // ---------------
 
-const txtCenter = { textAlign: 'center' };
+const txtCenter = { textAlign: "center" };
 const txtSmall = { fontSize: sizeTxtRef - 8, ...txtColorBase };
 const txtBase = { fontSize: sizeTxtRef - 6, ...txtColorBase };
 
@@ -82,7 +82,7 @@ const txtTitleCard = {
 
 const txtTitleProfile = {
   fontSize: sizeTxtRef - 4,
-  fontWeight: 'bold',
+  fontWeight: "bold",
   ...txtPrimaryInverse
 };
 
@@ -99,37 +99,37 @@ const txtTitleScreen = {
 // #region :: FLEXBOX
 // ---------------
 
-const flexWrap = { flexWrap: 'wrap' };
+const flexWrap = { flexWrap: "wrap" };
 const flex1 = { flex: 1 };
 const flex2 = { flex: 2 };
 const flex3 = { flex: 3 };
 const flex4 = { flex: 4 };
 
 const flexRow = {
-  flexDirection: 'row',
-  alignItems: 'center'
+  flexDirection: "row",
+  alignItems: "center"
 };
 
 const flexCenter = {
-  alignItems: 'center',
-  justifyContent: 'center'
+  alignItems: "center",
+  justifyContent: "center"
 };
 
 const flexBetween = {
-  alignItems: 'center',
-  justifyContent: 'space-between'
+  alignItems: "center",
+  justifyContent: "space-between"
 };
 
 const flexStart = {
-  alignItems: 'center',
-  flexDirection: 'row',
-  justifyContent: 'flex-start'
+  alignItems: "center",
+  flexDirection: "row",
+  justifyContent: "flex-start"
 };
 
 const flexEnd = {
-  alignItems: 'center',
-  flexDirection: 'row',
-  justifyContent: 'flex-end'
+  alignItems: "center",
+  flexDirection: "row",
+  justifyContent: "flex-end"
 };
 
 // ---------------
@@ -175,8 +175,8 @@ const radiusTotal = {
 const btn = {
   ...shadowLess,
   borderRadius: 50,
-  alignItems: 'center',
-  justifyContent: 'center'
+  alignItems: "center",
+  justifyContent: "center"
 };
 
 const topLine = {
@@ -202,8 +202,8 @@ const active = {
 };
 
 const noact = {
-  color: 'white',
-  backgroundColor: 'white'
+  color: "white",
+  backgroundColor: "white"
 };
 
 const noactGr = {
@@ -272,7 +272,7 @@ const Styles = StyleSheet.create({
 
   flexMaster: {
     flex: 1,
-    overflow: 'hidden'
+    overflow: "hidden"
   },
 
   leftBox: {
@@ -303,7 +303,7 @@ const Styles = StyleSheet.create({
 
   navbarView: {
     zIndex: 5,
-    width: '100%',
+    width: "100%",
     ...heightShortBar,
     ...flexRow,
     ...flexBetween
@@ -312,7 +312,7 @@ const Styles = StyleSheet.create({
   shortBar: {
     ...shadowMore,
     ...bgPrimary,
-    width: '100%',
+    width: "100%",
     ...heightShortBar,
     ...shadowMore
   },
@@ -320,7 +320,7 @@ const Styles = StyleSheet.create({
   longBar: {
     ...bgPrimary,
     ...shadowMore,
-    width: '100%',
+    width: "100%",
     ...heightLongBar
   },
 
@@ -342,9 +342,9 @@ const Styles = StyleSheet.create({
   },
 
   titlePageLeft: {
-    width: '100%',
+    width: "100%",
     ...txtTitleScreen,
-    textAlign: 'left',
+    textAlign: "left",
     marginLeft: 10
   },
 
@@ -357,7 +357,7 @@ const Styles = StyleSheet.create({
   // ---------------
 
   card: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginBottom: 20,
     ...radiusLess,
     ...shadowLess,
@@ -365,15 +365,15 @@ const Styles = StyleSheet.create({
   },
 
   cardMask: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginBottom: 20,
-    overflow: 'hidden',
+    overflow: "hidden",
     ...radiusLess,
     ...shadowLess
   },
 
   cardList: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginBottom: 20,
     ...radiusLess,
     ...shadowLess,
@@ -381,16 +381,16 @@ const Styles = StyleSheet.create({
   },
 
   dialogueBox: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     marginBottom: 20,
-    overflow: 'hidden',
+    overflow: "hidden",
     ...shadowMore
   },
 
   colView: {
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    justifyContent: "space-between",
+    flexDirection: "row",
+    flexWrap: "wrap",
     ...flex1
   },
 
@@ -407,7 +407,7 @@ const Styles = StyleSheet.create({
     height: 120,
     marginBottom: 20,
     marginTop: -50,
-    borderRadius: '100%',
+    borderRadius: "100%",
     borderWidth: 3,
     borderColor: darkGray
   },
@@ -419,7 +419,7 @@ const Styles = StyleSheet.create({
   },
 
   imgProfile: {
-    width: '100%',
+    width: "100%",
     height: 220
   },
 
@@ -469,7 +469,7 @@ const Styles = StyleSheet.create({
 
   // FAB BUTTON
   btnFab: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     width: 60,
     height: 60,
     ...flexCenter,
@@ -478,7 +478,7 @@ const Styles = StyleSheet.create({
   },
 
   btnFabSmall: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     width: 30,
     height: 30,
     ...flexCenter,
@@ -531,7 +531,7 @@ const Styles = StyleSheet.create({
   },
 
   textArea: {
-    textAlignVertical: 'top'
+    textAlignVertical: "top"
   },
 
   picker: {
@@ -560,7 +560,7 @@ const Styles = StyleSheet.create({
 
   itemAccordion: {
     paddingVertical: 10,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderBottomColor: lineGray,
     borderBottomWidth: 1
   },
@@ -568,7 +568,7 @@ const Styles = StyleSheet.create({
   badge: {
     borderWidth: 1,
     ...radiusLess,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     backgroundColor: lightGray
   },
 
@@ -596,11 +596,11 @@ const Styles = StyleSheet.create({
   dotNotice: {
     ...bgPrimary,
     borderColor: lightGray,
-    position: 'absolute',
+    position: "absolute",
     borderRadius: 60,
     borderWidth: 2,
     ...flexCenter,
-    color: '#fff',
+    color: "#fff",
     fontSize: 11,
     ...txtCenter,
     height: 19,

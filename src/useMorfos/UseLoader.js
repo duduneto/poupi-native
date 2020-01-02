@@ -3,33 +3,24 @@
 // ---------------
 
 // import Packages
-import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import React from "react";
+import { View, ActivityIndicator, ShadowPropTypesIOS } from "react-native";
 // import Internal Components
-import { useStyle } from './';
+import { useStl } from "./";
+import { primaryColor } from "../config/styles";
 
 // ---------------
 // #endregion
 // ***************************************
-
+// let color = useStl.bgPrimary.backgroundColor;
+// let color = useStl;
+// console.log(useStl)
 // ***************************************
 // #region :: FUNCTION
 // ---------------
 
-export default function UseLoader() {
-  return (
-    <View
-      style={{
-        backgroundColor: 'rgba(0,0,55,.4)',
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        borderRadius: 2,
-        opacity: 0.9
-      }}
-    >
-      <ActivityIndicator size="large" color="purple" />
-    </View>
-  );
+export default function UseLoader(props) {
+  return <ActivityIndicator size={props.size} color={primaryColor} />;
 }
 
 // ---------------

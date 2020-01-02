@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { async } from '../config/redux/async';
 
 // import Internals
-import { useReducer } from '.';
+import { useRd } from '.';
 
 // ---------------
 // #endregion
@@ -27,7 +27,7 @@ export default function useFbUpdateData() {
   const callAsync = res => dispatch(async(res));
 
   // set reducer
-  const dynamicRd = useReducer();
+  const dynamicRd = useRd();
 
   // set Action
   const callUpdateNameData = info => {

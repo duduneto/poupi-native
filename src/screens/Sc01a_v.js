@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { useStl } from '../useMorfos';
+import { useStl, UseIcoMoon } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -24,11 +24,11 @@ export default ({ info }) => {
   let stl01c = [useStl.flexCenter];
   let stl02 = [useStl.btn, useStl.btnLarge, useStl.bgSecondary];
   let stl02a = [useStl.txtPrimaryInverse];
-  let stl03 = [{ marginBottom: 50, textAlign: 'center' }];
-  let stl04 = [{ fontSize: 14, color: '#999', marginBottom: 10 }];
+  let stl03 = [useStl.flexCenter, { marginBottom: 50 }];
+  let stl04 = [{ fontSize: 14, color: "#999", marginTop: 20 }];
   let stl04b = [
     useStl.txtBase,
-    { color: '#999', marginBottom: 10, textAlign: 'center' }
+    { color: "#999", marginBottom: 10, textAlign: "center" }
   ];
   // let stl05 = []
 
@@ -47,9 +47,9 @@ export default ({ info }) => {
 
       <View style={stl01a}>
         <View style={stl03}>
-          <Text style={stl04}>IMG LOGO</Text>
+          <UseIcoMoon name="image" size={62} color={"#ccc"} />
 
-          <Text style={stl04}>TEXTO LOGO</Text>
+          <Text style={stl04}>TEXTO SLOGAN</Text>
         </View>
       </View>
 

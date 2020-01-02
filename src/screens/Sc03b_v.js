@@ -3,12 +3,12 @@
 // ---------------
 
 // import Packages
-import React from 'react';
-import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp01 } from './';
-import { useStl } from '../useMorfos';
+import { Cp01 } from "./";
+import { useStl } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -42,7 +42,7 @@ export default ({ info }) => {
       {/* NAV */}
       {/* ------------------------------ */}
 
-      <Cp01 title="Perfil Delivery" type="long" />
+      <Cp01 title="Perfil Delivery" type="long" icon="left" />
 
       {/* BODY */}
       {/* ------------------------------ */}

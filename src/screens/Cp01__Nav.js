@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 
 // import Internals
-import * as AllSc from './';
-import { useHistory, useRd, useChangeRd, useStl } from '../useMorfos';
+import * as AllSc from "./";
+import { useHistory, useRd, useChangeRd, useStl } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -45,8 +45,9 @@ export default function Sc00(props) {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  let condStl = props.type === 'long' ? useStl.longBar : useStl.shortBar;
-  let toSignIn = () => history.push('/sign-in');
+  let condStl = props.type === "long" ? useStl.longBar : useStl.shortBar;
+  let toSignIn = () => history.push("/sign-in");
+  let icon = props.icon ? props.icon : "menu";
   // let model = () =>
 
   // let toSignIn = () => history.push("/sign-in");
@@ -63,7 +64,8 @@ export default function Sc00(props) {
     rdContent,
     condStl,
     toSignIn,
-    title
+    title,
+    icon
   };
 
   return redirect || <AllSc.Cp01_v info={infoReturn} />;

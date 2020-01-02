@@ -3,12 +3,12 @@
 // ---------------
 
 // import Packages
-import React from 'react';
-import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp01 } from './';
-import { useStl } from '../useMorfos';
+import { Cp01 } from "./";
+import { useStl } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -31,7 +31,7 @@ let stlBODY2 = [useStl.txtTitleCard];
 // #endregion
 // ***************************************
 
-export const NoItem = () => <Text>Sem Itens</Text>;
+export const NoItems = () => <Text>Sem Itens</Text>;
 
 export const ListItem = info => (
   <>
@@ -52,7 +52,7 @@ export default ({ info }) => {
       {/* NAV */}
       {/* ------------------------------ */}
 
-      <Cp01 title="Temp Users" type="short" />
+      <Cp01 title="Temp Users" type="short" icon="left" />
 
       {/* BODY */}
       {/* ------------------------------ */}
