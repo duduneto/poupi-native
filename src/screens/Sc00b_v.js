@@ -3,12 +3,12 @@
 // ---------------
 
 // import Packages
-import React from 'react';
-import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp01 } from './';
-import { useStl } from '../useMorfos';
+import { Cp01 } from "./components";
+import { useStl } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -31,8 +31,13 @@ let stlBODY2 = [useStl.txtTitleCard];
 // #endregion
 // ***************************************
 
+// ***************************************
+// #region :: EXPORTs
+// ---------------
+
 export const NoItems = () => <Text>Sem Itens</Text>;
 
+// list Item
 export const ListItem = info => (
   <>
     <br />
@@ -42,36 +47,31 @@ export const ListItem = info => (
   </>
 );
 
-export default ({ info }) => {
-  return (
-    // ***************************************
-    // #region :: RENDER
-    // ---------------
+// ---------------
+// #endregion
+// ***************************************
 
+export default ({ info }) => (
+  // ***************************************
+  // #region :: RENDER
+  // ---------------
+
+  <Cp01 title="Temp Users" type="short">
+    {/* BODY */}
+    {/* ------------------------------ */}
     <View style={stlBG1}>
-      {/* NAV */}
+      {/* PART 1 */}
       {/* ------------------------------ */}
 
-      <Cp01 title="Temp Users" type="short" />
+      <Text style={stlBODY2}>User List in Firestore</Text>
 
-      {/* BODY */}
+      {info.callList}
+
+      {/* END */}
       {/* ------------------------------ */}
-
-      <ScrollView style={stlBODY1}>
-        {/* PART 1 */}
-        {/* ------------------------------ */}
-
-        <Text style={stlBODY2}>User List in Firestore</Text>
-
-        {info.callList}
-
-        {/* END */}
-        {/* ------------------------------ */}
-      </ScrollView>
     </View>
-
-    // ---------------
-    // #endregion
-    // ***************************************
-  );
-};
+  </Cp01>
+  // ---------------
+  // #endregion
+  // ***************************************
+);

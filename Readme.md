@@ -9,4 +9,5 @@
 
 ### POSTERIORMENTE
 
+- Ver longbar na nav para os perfis
 - Shadow navbar + card

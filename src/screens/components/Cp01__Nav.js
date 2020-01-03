@@ -43,7 +43,6 @@ export default function Sc00(props) {
 
   // let model = () =>
 
-  let condStl = props.type === "long" ? useStl.longBar : useStl.shortBar;
   let icon = props.goTo === "menu" ? props.goTo : "left";
 
   let goTo = () =>
@@ -65,8 +64,10 @@ export default function Sc00(props) {
   // ---------------
 
   let infoReturn = {
+    children: props.children,
+    longBar: props.longBar,
+
     rdContent,
-    condStl,
     goTo,
     title,
     icon,

@@ -25,11 +25,9 @@ export default ({ info }) => {
   // #region :: STYLEs
   // ---------------
 
-  let stlBG1 = [useStl.flexMaster];
-
-  let stlBODY1 = [useStl.scrollShortBar, useStl.flex1];
-  let stlBODY1a = [useStl.card, useStl.flex1];
+  let stlBODY1a = [useStl.card, useStl.cardLongBar];
   let stlBODY1b = [useStl.flexCenter];
+  let stlBODY1c = [useStl.longBar];
   let stlBODY2 = [useStl.input, useStl.mgB20];
   let stlBODY2c = [useStl.txtPrimaryInverse];
   let stlBODY3 = [
@@ -49,16 +47,16 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
 
-    <View style={stlBG1}>
-      {/* NAV */}
+    <Cp01 title="Formulário" longBar>
+      {/* LONG BAR */}
       {/* ------------------------------ */}
 
-      <Cp01 title="Formulário" type="short" icon="left" />
+      <View style={stlBODY1c} />
 
-      {/* BODY */}
-      {/* ------------------------------ */}
+      <View style={useStl.pad20}>
+        {/* BODY */}
+        {/* ------------------------------ */}
 
-      <ScrollView style={stlBODY1}>
         <View style={stlBODY1a}>
           {/* FIELDs */}
           {/* ------------------------------ */}
@@ -88,9 +86,8 @@ export default ({ info }) => {
 
         {/* END */}
         {/* ------------------------------ */}
-      </ScrollView>
-    </View>
-
+      </View>
+    </Cp01>
     // ---------------
     // #endregion
     // ***************************************

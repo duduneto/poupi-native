@@ -19,10 +19,9 @@ export default ({ info }) => {
   // #region :: STYLEs
   // ---------------
 
-  let stlBG1 = [useStl.flex1];
-  let stlBODY1 = [useStl.scrollLongBar, useStl.flex1];
-  let stlBODY1a = [useStl.cardMask, useStl.flex1];
+  let stlBODY1a = [useStl.cardMask, useStl.flex1, useStl.cardLongBar];
   let stlBODY1b = [useStl.pad20, useStl.flexCenter];
+  let stlBODY1c = [useStl.longBar];
   let stlBODY1d = [useStl.pad20, useStl.flexCenter, useStl.topLine];
   let stlBODY2 = [useStl.txtTitleCard];
   let stlBODY2b = [useStl.txtBase, { marginTop: 20 }];
@@ -38,18 +37,19 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
 
-    <View style={stlBG1}>
-      {/* NAV */}
+    <Cp01 title="Perfil Delivery" longBar>
+      {/* LONG BAR */}
       {/* ------------------------------ */}
 
-      <Cp01 title="Perfil Delivery" type="long" icon="left" />
+      <View style={stlBODY1c} />
 
       {/* BODY */}
       {/* ------------------------------ */}
 
-      <ScrollView style={stlBODY1}>
-        {/* TITLE */}
+      <View style={useStl.pad20}>
+        {/* CARD */}
         {/* ------------------------------ */}
+
         <View style={stlBODY1a}>
           <View style={stlBODY1b}>
             <Text style={stlBODY2}>Nome do Usuário</Text>
@@ -75,11 +75,12 @@ export default ({ info }) => {
               <Text style={stlBODY2c}>SAIR</Text>
             </TouchableOpacity>
           </View>
+
+          {/* END */}
+          {/* ------------------------------ */}
         </View>
-      </ScrollView>
-      {/* END */}
-      {/* ------------------------------ */}
-    </View>
+      </View>
+    </Cp01>
 
     // ---------------
     // #endregion

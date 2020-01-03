@@ -36,7 +36,9 @@ export default function Sc00(props) {
   let arrMenu = [
     { icon: "image", label: "Meu Perfil", goTo: "/profile" },
     { icon: "image", label: "Entregas", goTo: "/all-deliveries" },
-    { icon: "image", label: "Minhas Entregas", goTo: "/my-delivery" }
+    { icon: "image", label: "Minhas Entregas", goTo: "/my-delivery" },
+    { icon: "image", label: "Perfil da Entrega", goTo: "/delivery-profile" },
+    { icon: "image", label: "Adicionar Entrega", goTo: "/delivery-add" }
   ];
 
   let ItemsList = arrMenu.map((item, idx) => {

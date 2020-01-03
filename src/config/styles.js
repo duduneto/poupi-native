@@ -303,7 +303,7 @@ const Styles = StyleSheet.create({
   navbarView: {
     zIndex: 5,
     width: "100%",
-    ...heightShortBar,
+    // ...heightShortBar,
     ...flexRow,
     ...flexBetween
   },
@@ -311,8 +311,8 @@ const Styles = StyleSheet.create({
   shortBar: {
     ...shadowMore,
     ...bgPrimary,
-    width: "100%",
-    ...heightShortBar
+    width: "100%"
+    // ...heightShortBar
   },
 
   longBar: {
@@ -354,6 +354,10 @@ const Styles = StyleSheet.create({
   cardProfile: {
     paddingVertical: 0,
     marginTop: -heightBarRef
+  },
+
+  cardLongBar: {
+    marginTop: -heightBarRef * 1.5
   },
 
   cardMask: {
