@@ -6,3 +6,7 @@
 
 - fundo primary
 - outro
+
+### POSTERIORMENTE
+
+- Shadow navbar + card

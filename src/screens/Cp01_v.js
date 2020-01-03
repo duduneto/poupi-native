@@ -3,12 +3,12 @@
 // ---------------
 
 // import Packages
-import React from 'react';
-import { View, Text, TouchableOpacity, Modal } from 'react-native';
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp02 } from './';
-import { useStl, UseIcoMoon } from '../useMorfos';
+import { Cp02 } from "./";
+import { useStl, UseIcoMoon } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -37,14 +37,14 @@ export default ({ info }) => {
     // ---------------
     <>
       {info.condMenu && <Cp02 toggleMenu={info.toggleMenu} />}
+
       <View style={stlNAV1}>
         {/* LEFT */}
         {/* ------------------------------ */}
 
         <View style={stlNAV1a}>
-          {/* <Modal></Modal> */}
           <TouchableOpacity style={stlNAV1b} onPress={info.goTo}>
-            <UseIcoMoon name={info.icon} size={22} color={'#fff'} />
+            <UseIcoMoon name={info.icon} size={22} color={"#fff"} />
           </TouchableOpacity>
 
           {/* CENTER */}

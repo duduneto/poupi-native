@@ -39,7 +39,7 @@ const sizeTxtRef = 20;
 const sizeBtnRef = 200;
 const heightBarRef = 50;
 const heightShortBar = { height: heightBarRef };
-const heightLongBar = { height: heightBarRef * 2.4 };
+const heightLongBar = { height: heightBarRef * 1.5 };
 
 // ---------------
 //  #endregion
@@ -56,7 +56,6 @@ const padH20 = { paddingHorizontal: 20 };
 const noMg = { margin: 0 };
 const mgB20 = { marginBottom: 20 };
 const mgL5 = { marginLeft: 5 };
-const topSlip = { marginTop: 1.4 * -heightBarRef };
 
 // ---------------
 //  #endregion
@@ -313,24 +312,12 @@ const Styles = StyleSheet.create({
     ...shadowMore,
     ...bgPrimary,
     width: "100%",
-    ...heightShortBar,
-    ...shadowMore
+    ...heightShortBar
   },
 
   longBar: {
     ...bgPrimary,
-    ...shadowMore,
-    width: "100%",
     ...heightLongBar
-  },
-
-  scrollShortBar: {
-    ...pad20
-  },
-
-  scrollLongBar: {
-    ...padH20,
-    ...topSlip
   },
 
   searchBar: {
@@ -362,6 +349,11 @@ const Styles = StyleSheet.create({
     ...radiusLess,
     ...shadowLess,
     ...pad20
+  },
+
+  cardProfile: {
+    paddingVertical: 0,
+    marginTop: -heightBarRef
   },
 
   cardMask: {
@@ -406,7 +398,7 @@ const Styles = StyleSheet.create({
     width: 120,
     height: 120,
     marginBottom: 20,
-    marginTop: -50,
+    marginTop: -40,
     borderRadius: "100%",
     borderWidth: 3,
     borderColor: darkGray
