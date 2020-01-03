@@ -22,7 +22,7 @@ export default ({ info }) => {
 
   let stlBG1 = [useStl.flex1];
   let stlBODY1 = [useStl.flex1];
-  let stlBODY1a = [useStl.card, useStl.cardProfile, { height: 1000 }];
+  let stlBODY1a = [useStl.card, useStl.cardProfile];
   let stlBODY1b = [useStl.flexCenter];
   let stlBODY1c = [useStl.profileImg];
   let stlBODY1d = [useStl.pad20, useStl.flexCenter, useStl.topLine];
