@@ -2,10 +2,8 @@
 
 ### FALTA FAZER
 
-#### Sc01
-
-- fundo primary
-- outro
+- ajustar padrão padding screens
+- incluir listas
 
 ### POSTERIORMENTE
 

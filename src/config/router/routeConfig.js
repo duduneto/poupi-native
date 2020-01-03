@@ -4,7 +4,7 @@ import _ from "lodash";
 import { Switch } from "react-router";
 
 // import Internals
-import App from "../../screens/App";
+import AllApp from "../../screens/layouts/AllApp";
 import Page404 from "../Page404";
 // import * as Sc from "../../screens";
 import allRoutes from "./routes";
@@ -13,7 +13,7 @@ import { Route } from "./packs";
 const routesArr = [
   {
     path: "/",
-    component: App,
+    component: AllApp,
     childRoutes: [allRoutes, { path: "*", component: Page404 }].filter(
       r => r.component || (r.childRoutes && r.childRoutes.length > 0)
     )
