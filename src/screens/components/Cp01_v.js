@@ -7,8 +7,8 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp02 } from "./";
-import { useStl, UseIcoMoon } from "../useMorfos";
+import { Cp02 } from "../";
+import { useStl, UseIcoMoon } from "../../useMorfos";
 
 // ---------------
 // #endregion

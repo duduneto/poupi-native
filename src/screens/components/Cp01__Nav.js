@@ -7,8 +7,7 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd } from "../useMorfos";
-import { ItemMenu } from "./Cp02_v";
+import { useHistory, useRd, useChangeRd, useStl } from "../../useMorfos";
 
 // ---------------
 // #endregion
@@ -22,6 +21,7 @@ export default function Sc00(props) {
   // set Hooks
   let { rdContent } = useRd();
   let history = useHistory();
+  let [sttMenu, setMenu] = React.useState(false);
 
   // ---------------
   // #endregion
@@ -33,24 +33,6 @@ export default function Sc00(props) {
 
   // let start = () => {}
 
-  let arrMenu = [
-    { icon: "image", label: "Meu Perfil", goTo: "/profile" },
-    { icon: "image", label: "Entregas", goTo: "/all-deliveries" },
-    { icon: "image", label: "Minhas Entregas", goTo: "/my-delivery" }
-  ];
-
-  let ItemsList = arrMenu.map((item, idx) => {
-    let goTo = () => history.push(item.goTo);
-
-    let infoReturn = {
-      icon: item.icon,
-      label: item.label,
-      goTo
-    };
-
-    return <ItemMenu key={idx} info={infoReturn} />;
-  });
-
   // ---------------
   // #endregion
   // ***************************************
@@ -60,6 +42,19 @@ export default function Sc00(props) {
   // ---------------
 
   // let model = () =>
+
+  let condStl = props.type === "long" ? useStl.longBar : useStl.shortBar;
+  let icon = props.goTo === "menu" ? props.goTo : "left";
+
+  let goTo = () =>
+    props.goTo
+      ? (props.goTo = "menu" ? toggleMenu() : history.push(props.goTo))
+      : history.push("/sign-in");
+
+  let toggleMenu = () => setMenu(!sttMenu);
+  let condMenu = sttMenu;
+
+  let title = props.title;
 
   // ---------------
   // #endregion
@@ -71,11 +66,15 @@ export default function Sc00(props) {
 
   let infoReturn = {
     rdContent,
-    toggleMenu: props.toggleMenu,
-    ItemsList
+    condStl,
+    goTo,
+    title,
+    icon,
+    toggleMenu,
+    condMenu
   };
 
-  return <AllSc.Cp02_v info={infoReturn} />;
+  return <AllSc.Cp01_v info={infoReturn} />;
 
   // ---------------
   // #endregion

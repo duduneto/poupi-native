@@ -13,7 +13,7 @@ import {
 } from "react-native";
 
 // import Internals
-import { Cp01 } from "./";
+import { Cp01 } from "./components";
 import { useStl } from "../useMorfos";
 
 // ---------------
