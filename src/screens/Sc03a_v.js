@@ -3,12 +3,12 @@
 // ---------------
 
 // import Packages
-import React from "react";
-import { ScrollView, View, Text, TouchableOpacity, Image } from "react-native";
+import React from 'react';
+import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
 
 // import Internals
-import { Cp01 } from "./";
-import { useStl } from "../useMorfos";
+import { Cp01 } from './';
+import { useStl } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -18,7 +18,7 @@ export default ({ info }) => {
   // ***************************************
   // #region :: STYLEs
   // ---------------
-  let src01 = require("../images/portrait.jpg");
+  let src01 = require('../images/portrait.jpg');
 
   let stlBG1 = [useStl.flex1];
   let stlBODY1 = [useStl.scrollShortBar, useStl.flex1, { paddingTop: 50 }];
@@ -40,8 +40,8 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
     <>
-      <Cp01 title="Meu Perfil" type="short" />
-      <Text>asas</Text>
+      <Cp01 title="Meu Perfil" type="short" goTo="menu" />
+
       <View style={stlBG1}>
         {/* NAV */}
         {/* ------------------------------ */}

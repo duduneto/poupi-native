@@ -7,49 +7,77 @@ import React from 'react';
 import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
 
 // import Internals
-import { useStl } from '../useMorfos';
+import { useStl, UseIcoMoon } from '../useMorfos';
+
+// ---------------
+// #endregion
+// ***************************************
+
+// ***************************************
+// #region :: STYLEs
+// ---------------
+
+let stlBG0 = [
+  {
+    position: 'absolute',
+    zIndex: 10,
+    width: '100%',
+    height: '100%'
+  }
+];
+
+let stlBG1 = [
+  {
+    backgroundColor: 'rgba(00,00,00,.3)',
+    position: 'absolute',
+    zIndex: 0,
+    width: '100%',
+    height: '100%'
+  }
+];
+
+let stlBG2 = [{ backgroundColor: 'red', width: 380, height: 30 }];
+
+let stlBODY1 = [
+  { width: 280, height: '100%', backgroundColor: '#000', padding: 20 }
+];
+let stlBODY1a = [{ flexDirection: 'row', marginBottom: 25 }];
+let stlBODY2 = [useStl.txtTitleCard, { color: '#fff', marginLeft: 10 }];
+let stlBODY2b = [
+  useStl.txtBase,
+  { margin: 15, color: '#fff', flexDirection: 'row' }
+];
+// let stlBODY2c = [useStl.txtPrimaryInverse];
+// let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
+
+// ---------------
+// #endregion
+// ***************************************
+
+// ***************************************
+// #region :: EXPORTs
+// ---------------
+
+export const ItemMenu = ({ info }) => (
+  <TouchableOpacity onPress={info.goTo} style={stlBODY2b}>
+    <UseIcoMoon name={info.icon} size={22} color={'#fff'} />
+    <Text style={stlBODY2}>{info.label}</Text>
+  </TouchableOpacity>
+);
 
 // ---------------
 // #endregion
 // ***************************************
 
 export default ({ info }) => {
-  // ***************************************
-  // #region :: STYLEs
-  // ---------------
-
-  let stlBG1 = [
-    useStl.flexMaster,
-    {
-      backgroundColor: 'rgba(00,00,00,.3)',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      zIndex: 10,
-      width: '100%',
-      height: '100%'
-    }
-  ];
-
-  let stlBODY1 = [
-    { width: 280, height: '100%', backgroundColor: '#000', padding: 20 }
-  ];
-  // let stlBODY1a = [useStl.card, useStl.flex1];
-  let stlBODY2 = [useStl.txtTitleCard, { color: '#fff' }];
-  let stlBODY2b = [useStl.mgB20, useStl.txtBase, { color: '#fff' }];
-  // let stlBODY2c = [useStl.txtPrimaryInverse];
-  // let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
-
-  // ---------------
-  // #endregion
-  // ***************************************
-
   return (
     // ***************************************
     // #region :: RENDER
     // ---------------
 
-    <View style={stlBG1}>
+    <View style={stlBG0}>
+      <TouchableOpacity style={stlBG1} onPress={info.toggleMenu} />
+
       {/* BODY */}
       {/* ------------------------------ */}
 
@@ -57,25 +85,12 @@ export default ({ info }) => {
         {/* ITEMs MENU */}
         {/* ------------------------------ */}
 
-        <TouchableOpacity>
-          <Text style={stlBODY2}>{'< Voltar'}</Text>
+        <TouchableOpacity style={stlBODY1a} onPress={info.toggleMenu}>
+          <UseIcoMoon name={'left'} size={22} color={'#fff'} />
+          <Text style={stlBODY2}>Voltar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={stlBODY2b}>
-          <Text style={stlBODY2}>{'Item 1'}</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={stlBODY2b}>
-          <Text style={stlBODY2}>{'Item 2'}</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={stlBODY2b}>
-          <Text style={stlBODY2}>{'Item 3'}</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={stlBODY2b}>
-          <Text style={stlBODY2}>{'Item 4'}</Text>
-        </TouchableOpacity>
+        {info.ItemsList}
 
         {/* END */}
         {/* ------------------------------ */}

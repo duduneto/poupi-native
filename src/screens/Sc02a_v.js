@@ -51,7 +51,7 @@ export default ({ info }) => {
       {/* NAV */}
       {/* ------------------------------ */}
 
-      <Cp01 title="All Deliveries" type="short" />
+      <Cp01 title="All Deliveries" type="short" goTo="menu" />
 
       {/* BODY */}
       {/* ------------------------------ */}

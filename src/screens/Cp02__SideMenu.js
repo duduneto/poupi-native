@@ -8,23 +8,20 @@ import React from 'react';
 // import Internals
 import * as AllSc from './';
 import { useHistory, useRd, useChangeRd } from '../useMorfos';
+import { ItemMenu } from './Cp02_v';
 
 // ---------------
 // #endregion
 // ***************************************
 
-export default function Sc00() {
+export default function Sc00(props) {
   // ***************************************
   // #region :: HOOKs + VARs
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser } = useRd();
+  let { rdContent } = useRd();
   let history = useHistory();
-  let changeRd = useChangeRd();
-
-  // let redirect = rdAuthUser && history.push("/sign-in");
-  let redirect = false;
 
   // ---------------
   // #endregion
@@ -36,6 +33,24 @@ export default function Sc00() {
 
   // let start = () => {}
 
+  let arrMenu = [
+    { icon: 'image', label: 'Meu Perfil', goTo: '/profile' },
+    { icon: 'image', label: 'Entregas', goTo: '/all-deliveries' },
+    { icon: 'image', label: 'Minhas Entregas', goTo: '/my-delivery' }
+  ];
+
+  let ItemsList = arrMenu.map((item, idx) => {
+    let goTo = () => history.push(item.goTo);
+
+    let infoReturn = {
+      icon: item.icon,
+      label: item.label,
+      goTo
+    };
+
+    return <ItemMenu key={idx} info={infoReturn} />;
+  });
+
   // ---------------
   // #endregion
   // ***************************************
@@ -46,8 +61,6 @@ export default function Sc00() {
 
   // let model = () =>
 
-  // let toSignIn = () => history.push("/sign-in");
-
   // ---------------
   // #endregion
   // ***************************************
@@ -57,11 +70,12 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    rdContent
-    // toSignIn
+    rdContent,
+    toggleMenu: props.toggleMenu,
+    ItemsList
   };
 
-  return redirect || <AllSc.Cp02_v info={infoReturn} />;
+  return <AllSc.Cp02_v info={infoReturn} />;
 
   // ---------------
   // #endregion
