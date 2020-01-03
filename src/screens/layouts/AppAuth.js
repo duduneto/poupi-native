@@ -1,7 +1,7 @@
 // import Packages
 import React from "react";
 
-import * as Sc from "./";
+import * as Sc from "../";
 
 export default function(props) {
   return (
