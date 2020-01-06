@@ -1,5 +1,5 @@
 import * as Sc from "../../screens";
-import AppAuth from "../../screens/layouts/AppAuth";
+import AppAuth from "../../screens/groups/AppAuth";
 
 export default {
   path: "/",

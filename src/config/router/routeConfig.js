@@ -4,7 +4,7 @@ import _ from "lodash";
 import { Switch } from "react-router";
 
 // import Internals
-import AllApp from "../../screens/layouts/AllApp";
+import AllApp from "../../screens/groups/AllApp";
 import Page404 from "../Page404";
 // import * as Sc from "../../screens";
 import allRoutes from "./routes";
