@@ -56,7 +56,7 @@ export default ({ info }) => (
   // #region :: RENDER
   // ---------------
 
-  <Cp01 title="Temp Users" type="short">
+  <Cp01 title="Temp Users">
     {/* BODY */}
     {/* ------------------------------ */}
     <View style={stlBG1}>

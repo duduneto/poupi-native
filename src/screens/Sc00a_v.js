@@ -7,8 +7,8 @@ import React from "react";
 import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp01 } from "./components";
-import { useStl } from "../useMorfos";
+import { Cp01 } from "../components";
+import { useStl } from "../../useMorfos";
 
 // ---------------
 // #endregion
@@ -18,10 +18,8 @@ import { useStl } from "../useMorfos";
 // #region :: STYLEs
 // ---------------
 
-let stlBG1 = [useStl.flexMaster];
 
-let stlBODY1 = [useStl.scrollShortBar, useStl.flex1];
-let stlBODY1a = [useStl.card, useStl.flex1];
+let stlBODY1 = [useStl.flex1];
 let stlBODY2 = [useStl.txtTitleCard];
 // let stlBODY2b = [useStl.mgB20, useStl.txtBase];
 // let stlBODY2c = [useStl.txtPrimaryInverse];
@@ -47,16 +45,8 @@ export default ({ info }) => (
   // #region :: RENDER
   // ---------------
 
-  <View style={stlBG1}>
-    {/* NAV */}
-    {/* ------------------------------ */}
+  <Cp01 title="Page Name">
 
-    <Cp01 title="Pagina01" type="short" />
-
-    {/* BODY */}
-    {/* ------------------------------ */}
-
-    <ScrollView style={stlBODY1}>
       {/* PART 1 */}
       {/* ------------------------------ */}
 
@@ -78,8 +68,7 @@ export default ({ info }) => (
 
       {/* END */}
       {/* ------------------------------ */}
-    </ScrollView>
-  </View>
+  </Cp01>
 
   // ---------------
   // #endregion

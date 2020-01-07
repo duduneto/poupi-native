@@ -17,6 +17,7 @@
 
 #### #1 - INTRO
 
+- CodeSandbox
 - Código como Blocos de construção ( lego + minecraft )
 - Estrutura Morfos (web + celular / configuração + arquitetura)
   -- Muita coisa React + React-Native + JavaScript (NÃO entrar em detalhes)
@@ -26,6 +27,8 @@
   -- Pedir link + Fork
 
 #### #2 - NAVEGAÇÃO 1
+
+Familiarização
 
 - Intro - renderizar (Ver na tela) usando nossa arquitetura
 - Pasta learn/ (inglês)
