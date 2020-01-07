@@ -42,14 +42,14 @@ export default ({ info }) => {
     // ---------------
 
     <View style={stl01}>
-      {/* LOGO */}
+      {/* LOGO + SLOGAN */}
       {/* ------------------------------ */}
 
       <View style={stl01a}>
         <View style={stl03}>
           <UseIcoMoon name="image" size={62} color={"#ccc"} />
 
-          <Text style={stl04}>TEXTO SLOGAN</Text>
+          <Text style={stl04}>{info.scContent.slogan}</Text>
         </View>
       </View>
 
@@ -57,21 +57,21 @@ export default ({ info }) => {
       {/* ------------------------------ */}
       <View style={stl01b}>
         <View style={stl01c}>
-          <Text style={stl04b}>Entre usando a conta do</Text>
+          <Text style={stl04b}>{info.scContent.using}</Text>
 
           <TouchableOpacity style={stl02} onPress={info.enter}>
-            <Text style={stl02a}>Google</Text>
+            <Text style={stl02a}>{info.scContent.google}</Text>
           </TouchableOpacity>
 
           <br />
 
           <TouchableOpacity onPress={info.toTempUsers}>
-            <Text style={stl04b}>TEMP USERs</Text>
+            <Text style={stl04b}>TEMP USERS</Text>
           </TouchableOpacity>
         </View>
 
         <TouchableOpacity onPress={info.toTerms}>
-          <Text style={stl04b}>Termos de Uso</Text>
+          <Text style={stl04b}>{info.scContent.terms}</Text>
         </TouchableOpacity>
       </View>
       {/* END */}

@@ -22,6 +22,7 @@ export default function Sc00() {
   let { rdContent, rdAuthUser, rdIptsSignUp } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
+  let scContent = rdContent.sc01a 
   // let { inputChange } = useForm('rdIptsSignUp');
 
   let redirect = rdAuthUser && history.push('/profile');
@@ -75,7 +76,7 @@ export default function Sc00() {
 
   let infoReturn = {
     // values
-    rdContent,
+    scContent,
 
     // btns
     enter,

@@ -10,9 +10,9 @@ export default ({ children }) => {
   let changeRd = useChangeRd();
   let { rdContent } = useRd();
 
-  // React.useEffect(() => {
-  //   changeRd("rdContent", dbRef.content.pt);
-  // }, []);
+  React.useEffect(() => {
+    changeRd("rdContent", dbRef.content.pt);
+  }, []);
 
   return children;
 };

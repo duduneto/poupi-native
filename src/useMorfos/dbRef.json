@@ -9,10 +9,10 @@
       },
       "sc01a": {
         "aRef": "Sc01a - Login",
-        "txt01": "Entrar",
-        "txt02": "Idiomas:",
-        "txt03": "Português",
-        "txt04": "Inglês"
+        "slogan": "TEXTO DO SLOGAN",
+        "using": "Entre usando a conta do",
+        "google": "Google",
+        "terms": "Termos de Uso"
       },
       "sc02a": {
         "aRef": "Sc02a - Perfil",
