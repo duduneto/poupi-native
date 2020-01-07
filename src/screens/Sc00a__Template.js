@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 
 // import Internals
-import * as AllSc from './';
-import { useHistory, useRd, useChangeRd } from '../useMorfos';
+import * as AllSc from "./";
+import { useHistory, useRd, useChangeRd } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -25,6 +25,7 @@ export default function Sc00() {
 
   // let redirect = rdAuthUser && history.push("/sign-in");
   let redirect = false;
+  let scContent = rdContent.sc00;
 
   // ---------------
   // #endregion
@@ -57,7 +58,7 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    rdContent
+    scContent
     // toSignIn
   };
 
