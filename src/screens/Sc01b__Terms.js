@@ -3,11 +3,12 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 
 // import Internals
-import * as AllSc from './';
-import { useHistory, useRd, useChangeRd } from '../useMorfos';
+import * as AllSc from "./";
+import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import { itemList } from "./Sc01b_v";
 
 // ---------------
 // #endregion
@@ -25,6 +26,7 @@ export default function Sc00() {
 
   // let redirect = rdAuthUser && history.push("/sign-in");
   let redirect = false;
+  let scContent = rdContent.sc01b;
 
   // ---------------
   // #endregion
@@ -35,6 +37,7 @@ export default function Sc00() {
   // ---------------
 
   // let start = () => {}
+  let listParagraphs = scContent.parArr.map(itemList);
 
   // ---------------
   // #endregion
@@ -46,7 +49,7 @@ export default function Sc00() {
 
   // let model = () =>
 
-  let toSignIn = () => history.push('/sign-in');
+  let toSignIn = () => history.push("/sign-in");
 
   // ---------------
   // #endregion
@@ -57,8 +60,9 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    rdContent,
-    toSignIn
+    scContent,
+    toSignIn,
+    listParagraphs
   };
 
   return redirect || <AllSc.Sc01b_v info={infoReturn} />;

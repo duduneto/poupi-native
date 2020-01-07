@@ -34,7 +34,7 @@ let stlBODY2 = [useStl.txtTitleCard];
 // ---------------
 
 // list Item
-// export const itemList = () => (<View></View>)
+// export const itemList = (item) => (<View>{item}</View>)
 
 // ---------------
 // #endregion

@@ -14,103 +14,68 @@ import { useStl } from "../useMorfos";
 // #endregion
 // ***************************************
 
-export default ({ info }) => {
+// ***************************************
+// #region :: STYLEs
+// ---------------
+
+let stlBG1 = [useStl.flex1];
+
+let stlBODY1 = [useStl.scrollLongBar];
+let stlBODY1a = [useStl.card, useStl.cardLongBar];
+let stlBODY1b = [useStl.longBar];
+let stlBODY2 = [useStl.mgB20, useStl.txtBase];
+let stlBODY2b = [useStl.mgB20];
+// let stlBODY3 = []
+
+// ---------------
+// #endregion
+// ***************************************
+
+// ***************************************
+// #region :: EXPORTs
+// ---------------
+
+// list Item
+export const itemList = item => <Text style={stlBODY2b}>{item}</Text>;
+
+// ---------------
+// #endregion
+// ***************************************
+
+export default ({ info }) => (
   // ***************************************
-  // #region :: STYLEs
+  // #region :: RENDER
   // ---------------
 
-  let stlBG1 = [useStl.flex1];
+  <Cp01 title={info.scContent.titleBar} longBar>
+    {/* LONG BAR */}
+    {/* ------------------------------ */}
 
-  let stlBODY1 = [useStl.scrollLongBar];
-  let stlBODY1a = [useStl.card, useStl.cardLongBar];
-  let stlBODY1b = [useStl.longBar];
-  let stlBODY2 = [useStl.mgB20, useStl.txtBase];
-  let stlBODY2b = [useStl.mgB20];
-  // let stlBODY3 = []
+    <View style={stlBODY1b} />
+
+    {/* BODY */}
+    {/* ------------------------------ */}
+
+    <View style={useStl.pad20}>
+      {/* CARD */}
+      {/* ------------------------------ */}
+
+      <View style={stlBG1}>
+        <View style={stlBODY1a}>
+          <Text style={stlBODY2}>{info.scContent.titleTerms}</Text>
+
+          {/* PARAGRAPHS FUNCTION */}
+          {/* ------------------------------ */}
+          {info.listParagraphs}
+        </View>
+
+        {/* END */}
+        {/* ------------------------------ */}
+      </View>
+    </View>
+  </Cp01>
 
   // ---------------
   // #endregion
   // ***************************************
-
-  return (
-    // ***************************************
-    // #region :: RENDER
-    // ---------------
-
-    <Cp01 title="Termos" longBar>
-      {/* LONG BAR */}
-      {/* ------------------------------ */}
-
-      <View style={stlBODY1b} />
-
-      {/* BODY */}
-      {/* ------------------------------ */}
-
-      <View style={useStl.pad20}>
-        {/* CARD */}
-        {/* ------------------------------ */}
-
-        <View style={stlBG1}>
-          <View style={stlBODY1a}>
-            <Text style={stlBODY2}>CONTEÚDO DOS TERMOS</Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text style={stlBODY2b}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-          </View>
-
-          {/* END */}
-          {/* ------------------------------ */}
-        </View>
-      </View>
-    </Cp01>
-
-    // ---------------
-    // #endregion
-    // ***************************************
-  );
-};
+);
