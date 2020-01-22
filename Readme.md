@@ -2,6 +2,7 @@
 
 ### FALTA FAZER
 
+- AllApp - Conectar Firestore + condição rdContent
 - verificação de autenticação + redirect pelo grupo
 - conexão com DB Ref + msgs DB
 - ajustar padrão padding screens
@@ -12,6 +13,8 @@
 
 - Ver longbar na nav para os perfis
 - Shadow navbar + card
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ### Vídeos LEARN
 

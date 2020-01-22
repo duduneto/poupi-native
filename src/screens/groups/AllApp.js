@@ -11,6 +11,7 @@ export default ({ children }) => {
   let { rdContent } = useRd();
 
   React.useEffect(() => {
+    // FALTA: Conectar Firestore + condição rdContent
     changeRd("rdContent", dbRef.content.pt);
   }, []);
 

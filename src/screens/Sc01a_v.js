@@ -74,6 +74,7 @@ export default ({ info }) => {
           <Text style={stl04b}>{info.scContent.terms}</Text>
         </TouchableOpacity>
       </View>
+
       {/* END */}
       {/* ------------------------------ */}
     </View>
