@@ -2,13 +2,13 @@
   "name": "startMorfos",
 
   "fbWebConfig": {
-    "apiKey": "AIzaSyBtdWWPi8a4zRAEkIr6qEvQKOU3Hkfp-NY",
-    "authDomain": "start-morfos.firebaseapp.com",
-    "databaseURL": "https://start-morfos.firebaseio.com",
-    "projectId": "start-morfos",
-    "storageBucket": "start-morfos.appspot.com",
-    "messagingSenderId": "147367265071",
-    "appId": "1:147367265071:web:4aa0fe7bdfa0093e",
+    "apiKey": "",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": "",
+    "appId": "",
 
     "persistence": true
   }

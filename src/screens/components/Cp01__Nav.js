@@ -47,7 +47,9 @@ export default function Sc00(props) {
 
   let goTo = () =>
     props.goTo
-      ? (props.goTo = "menu" ? toggleMenu() : history.push(props.goTo))
+      ? props.goTo === "menu"
+        ? toggleMenu()
+        : history.push(props.goTo)
       : history.push("/sign-in");
 
   let toggleMenu = () => setMenu(!sttMenu);

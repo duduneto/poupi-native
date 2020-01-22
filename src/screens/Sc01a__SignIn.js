@@ -25,7 +25,6 @@ export default function Sc00() {
   // let { inputChange } = useForm('rdIptsSignUp');
 
   let redirect = rdAuthUser && history.push("/profile");
-  // let scContent = rdContent.sc01a;
   let scContent = rdContent.sc01a;
 
   // ---------------

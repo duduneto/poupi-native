@@ -2,12 +2,25 @@
 
 ### FALTA FAZER
 
-- AllApp - Conectar Firestore + condição rdContent
+- Mudar todas as nomenclaturas para produtos e lojas
+
+- Cp01 - Indicar item de menu selecionado (Realçar) e fechar quando clicar nele
+- Sc02a, b - Tirar do menu o item Perfil do produto e entrar nele quando clicar num item da lista
+- Sc02a, b - Tirar filtro (a) e adicionar cond de imagem padrão na lista quando não tiver imagem cadastrada (link). Trazer imagem cadastrada no dbRef.json
+- Sc03b - Adicionar cond de imagem padrão quando não tiver imagem cadastrada (link). Trazer imagem cadastrada no dbRef.json
+- Sc04a - Enviar dados dos inputs para um objeto que posteriormente irá salvar no banco de dados.
+
+-- ORDENAR PRIORIDADES
+
 - verificação de autenticação + redirect pelo grupo
+- AllApp - Conectar Firestore + condição rdContent
+- Sc01 - Ver rdIptState
+- Sc00b - Fazer TempUsers via dbRef.json
+- Config - Incluir persistência do authUser (mesmo quando recarregar a página) incluir redux-persist
+
 - conexão com DB Ref + msgs DB
 - ajustar padrão padding screens
 - incluir listas
-- incluir redux-persist
 
 ### POSTERIORMENTE
 
