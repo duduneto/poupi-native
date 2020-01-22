@@ -35,7 +35,7 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
 
-    <Cp01 title="My Deliveries" type="short" goTo="menu">
+    <Cp01 title="Produtos" type="short" goTo="menu">
       {/* LIST */}
       {/* ------------------------------ */}
 

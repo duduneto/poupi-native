@@ -37,7 +37,7 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
 
-    <Cp01 title="Perfil Delivery" longBar>
+    <Cp01 title="Perfil do Produto" longBar>
       {/* LONG BAR */}
       {/* ------------------------------ */}
 

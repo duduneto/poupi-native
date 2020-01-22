@@ -42,7 +42,7 @@ export default ({ info }) => {
     // {/* NAV */}
     // {/* ------------------------------ */}
 
-    <Cp01 title="All Deliveries" goTo="menu">
+    <Cp01 title="Lojas" goTo="menu">
       {/* FILTER */}
       {/* ------------------------------ */}
 

@@ -2,7 +2,7 @@
 
 ### FALTA FAZER
 
-- Mudar todas as nomenclaturas para produtos e lojas
+Carlos ok - Mudar todas as nomenclaturas para produtos e lojas
 
 - Cp01 - Indicar item de menu selecionado (Realçar) e fechar quando clicar nele
 - Sc02a, b - Tirar do menu o item Perfil do produto e entrar nele quando clicar num item da lista

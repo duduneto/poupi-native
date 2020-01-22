@@ -47,7 +47,7 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
 
-    <Cp01 title="Formulário" longBar>
+    <Cp01 title="Adicionar Produto" longBar>
       {/* LONG BAR */}
       {/* ------------------------------ */}
 
