@@ -2,7 +2,7 @@
 import React from "react";
 
 // import internals
-import { useChangeRd, useRd } from "../../useMorfos";
+import { useChangeRd, useRd, UseLoader } from "../../useMorfos";
 import dbRef from "../../useMorfos/dbRef.json";
 
 export default ({ children }) => {
@@ -15,5 +15,5 @@ export default ({ children }) => {
     changeRd("rdContent", dbRef.content.pt);
   }, []);
 
-  return children;
+  return Object.keys(rdContent).length === 0 ? <UseLoader /> : children;
 };

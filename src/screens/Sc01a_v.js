@@ -49,7 +49,7 @@ export default ({ info }) => {
         <View style={stl03}>
           <UseIcoMoon name="image" size={62} color={"#ccc"} />
 
-          <Text style={stl04}>info.scContent.slogan</Text>
+          <Text style={stl04}>{info.scContent.slogan}</Text>
         </View>
       </View>
 
@@ -57,10 +57,10 @@ export default ({ info }) => {
       {/* ------------------------------ */}
       <View style={stl01b}>
         <View style={stl01c}>
-          <Text style={stl04b}>info.scContent.using</Text>
+          <Text style={stl04b}>{info.scContent.using}</Text>
 
           <TouchableOpacity style={stl02} onPress={info.enter}>
-            <Text style={stl02a}>info.scContent.google</Text>
+            <Text style={stl02a}>{info.scContent.google}</Text>
           </TouchableOpacity>
 
           <br />
@@ -71,7 +71,7 @@ export default ({ info }) => {
         </View>
 
         <TouchableOpacity onPress={info.toTerms}>
-          <Text style={stl04b}>info.scContent.terms</Text>
+          <Text style={stl04b}>{info.scContent.terms}</Text>
         </TouchableOpacity>
       </View>
 
