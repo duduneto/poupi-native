@@ -29,6 +29,26 @@ let stlBODY3 = [useStl.thumbnail];
 // #endregion
 // ***************************************
 
+// ***************************************
+// #region :: EXPORTs
+// ---------------
+
+export const ItemStore = ({ info }) => (
+  <TouchableOpacity style={stlBODY1a} onPress={info.goToProfileStore}>
+    <View style={stlBODY1b}>
+      <Image source={info.condThumbnail} style={stlBODY3} />
+      <View style={stlBODY1c}>
+        <Text style={stlBODY2}>{info.name}</Text>
+        <Text style={stlBODY2b}>{info.description}</Text>
+      </View>
+    </View>
+  </TouchableOpacity>
+);
+
+// ---------------
+// #endregion
+// ***************************************
+
 export default ({ info }) => {
   return (
     // ***************************************
@@ -39,15 +59,7 @@ export default ({ info }) => {
       {/* LIST */}
       {/* ------------------------------ */}
 
-      <TouchableOpacity style={stlBODY1a} onPress={info.goToProfileStore}>
-        <View style={stlBODY1b}>
-          <Image source={info.thumbnail} style={stlBODY3} />
-          <View style={stlBODY1c}>
-            <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-            <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-          </View>
-        </View>
-      </TouchableOpacity>
+      {info.listStores}
 
       {/* END */}
       {/* ------------------------------ */}

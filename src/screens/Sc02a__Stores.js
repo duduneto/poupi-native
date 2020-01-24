@@ -9,6 +9,7 @@ import React from "react";
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
 import defaultImg from "../images/default.jpg";
+import { ItemStore } from "./Sc02a_v";
 
 // ---------------
 // #endregion
@@ -20,12 +21,9 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser } = useRd();
+  let { rdContent, rdStores, rdAuthUser } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
-
-  // let redirect = rdAuthUser && history.push("/sign-in");
-  let redirect = false;
 
   // ---------------
   // #endregion
@@ -45,15 +43,24 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  let source =
-    "http://www.mensstyle.com.au/wp-content/uploads/2017/01/0c4df075fa795a4593a10aaada43f01e.jpg";
-  // let source = "";
-  let thumbnail = source === "" ? defaultImg : source;
-
-  // let model = () =>
   let goToProfileStore = () => history.push("/profile-store");
-
   // let toSignIn = () => history.push("/sign-in");
+
+  let listStores = Object.keys(rdStores).map((item, idx) => {
+    // let goTo = () => {
+    //   history.push(item.goTo);
+    //   props.toggleMenu();
+    // };
+    let source = rdStores[item].image;
+    let condThumbnail = !source ? defaultImg : source;
+    let infoReturn = {
+      name: rdStores[item].name,
+      description: rdStores[item].description,
+      condThumbnail
+    };
+
+    return <ItemStore key={idx} info={infoReturn} />;
+  });
 
   // ---------------
   // #endregion
@@ -65,12 +72,12 @@ export default function Sc00() {
 
   let infoReturn = {
     goToProfileStore,
-    thumbnail,
-    rdContent
+    rdContent,
+    listStores
     // toSignIn
   };
 
-  return redirect || <AllSc.Sc02a_v info={infoReturn} />;
+  return <AllSc.Sc02a_v info={infoReturn} />;
 
   // ---------------
   // #endregion
