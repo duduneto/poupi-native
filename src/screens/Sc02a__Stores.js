@@ -7,7 +7,8 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd, useStl } from "../useMorfos";
+import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import defaultImg from "../images/default.jpg";
 
 // ---------------
 // #endregion
@@ -44,26 +45,10 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  let active = "";
-  let activeFilter = active
-    ? [
-        useStl.flex1,
-        useStl.txtCenter,
-        {
-          borderBottomColor: "#333",
-          borderBottomWidth: 2,
-          marginHorizontal: 10
-        }
-      ]
-    : [
-        useStl.flex1,
-        useStl.txtCenter,
-        {
-          borderBottomColor: "#eee",
-          borderBottomWidth: 2,
-          marginHorizontal: 10
-        }
-      ];
+  let source =
+    "http://www.mensstyle.com.au/wp-content/uploads/2017/01/0c4df075fa795a4593a10aaada43f01e.jpg";
+  // let source = "";
+  let thumbnail = source === "" ? defaultImg : source;
 
   // let model = () =>
   let goToProfileStore = () => history.push("/profile-store");
@@ -80,7 +65,7 @@ export default function Sc00() {
 
   let infoReturn = {
     goToProfileStore,
-    activeFilter,
+    thumbnail,
     rdContent
     // toSignIn
   };
