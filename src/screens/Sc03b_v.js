@@ -67,10 +67,10 @@ export default ({ info }) => {
             <Text style={stlBODY2c}>SAIR</Text>
           </TouchableOpacity>
         </View>
-
-        {/* END */}
-        {/* ------------------------------ */}
       </View>
+
+      {/* END */}
+      {/* ------------------------------ */}
     </View>
 
     // ---------------

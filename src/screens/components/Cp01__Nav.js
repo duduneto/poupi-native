@@ -76,7 +76,7 @@ export default function Sc00(props) {
     "/profile-store": {
       title: "Perfil da Loja",
       menu: false,
-      longBar: false
+      longBar: true
     },
     "/add-products": {
       title: "Adicionar Produtos",
