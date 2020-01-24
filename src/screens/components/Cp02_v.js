@@ -60,8 +60,8 @@ let stlBODY2b = [
 
 export const ItemMenu = ({ info }) => (
   <TouchableOpacity onPress={info.goTo} style={stlBODY2b}>
-    <UseIcoMoon name={info.icon} size={22} color={"#fff"} />
-    <Text style={stlBODY2}>{info.label}</Text>
+    <UseIcoMoon name={info.icon} size={22} color={info.condColor} />
+    <Text style={[stlBODY2, { color: info.condColor }]}>{info.label}</Text>
   </TouchableOpacity>
 );
 

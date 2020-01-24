@@ -7,7 +7,7 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd } from "../../useMorfos";
+import { useHistory, useRd } from "../../useMorfos";
 import { ItemMenu } from "./Cp02_v";
 
 // ---------------
@@ -42,11 +42,18 @@ export default function Sc00(props) {
   ];
 
   let ItemsList = arrMenu.map((item, idx) => {
-    let goTo = () => history.push(item.goTo);
+    let goTo = () => {
+      history.push(item.goTo);
+      props.toggleMenu();
+    };
 
+    let condActiveMenu = item.goTo === props.path;
+    let condColor = condActiveMenu ? "#00ff66" : "#fff";
     let infoReturn = {
       icon: item.icon,
       label: item.label,
+      condActiveMenu,
+      condColor,
       goTo
     };
 
@@ -73,8 +80,8 @@ export default function Sc00(props) {
 
   let infoReturn = {
     rdContent,
-    toggleMenu: props.toggleMenu,
-    ItemsList
+    ItemsList,
+    toggleMenu: props.toggleMenu
   };
 
   return <AllSc.Cp02_v info={infoReturn} />;

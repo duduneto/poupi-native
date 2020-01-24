@@ -38,12 +38,11 @@ export default ({ info }) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
-
-  <Cp01 title="Meu Perfil" goTo="menu" longBar>
+  <>
     {/* LONG BAR */}
     {/* ------------------------------ */}
 
-    <View style={stlBODY1e} />
+    {/* <View style={stlBODY1e} /> */}
 
     {/* BODY */}
     {/* ------------------------------ */}
@@ -69,7 +68,7 @@ export default ({ info }) => (
       {/* END */}
       {/* ------------------------------ */}
     </View>
-  </Cp01>
+  </>
 
   /**/
   /*/

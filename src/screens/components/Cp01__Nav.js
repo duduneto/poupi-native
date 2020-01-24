@@ -7,7 +7,7 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd, useStl } from "../../useMorfos";
+import { useHistory, useRd } from "../../useMorfos";
 
 // ---------------
 // #endregion
@@ -42,20 +42,59 @@ export default function Sc00(props) {
   // ---------------
 
   // let model = () =>
+  let Nav = {
+    "/temp-users": {
+      title: "TemUsers",
+      menu: false,
+      longBar: false
+    },
+    "/terms": {
+      title: "Termos de Uso",
+      menu: false,
+      longBar: true
+    },
+    "/profile": {
+      title: "Meu Perfil",
+      menu: true,
+      longBar: true
+    },
+    "/stores": {
+      title: "Lojas",
+      menu: true,
+      longBar: false
+    },
+    "/products": {
+      title: "Produtos",
+      menu: true,
+      longBar: false
+    },
+    "/profile-product": {
+      title: "Perfil do Produto",
+      menu: false,
+      longBar: true
+    },
+    "/add-products": {
+      title: "Adicionar Produtos",
+      menu: false,
+      longBar: true
+    }
+  };
 
-  let icon = props.goTo === "menu" ? props.goTo : "left";
+  let CompNav = Nav[props.path];
 
-  let goTo = () =>
-    props.goTo
-      ? props.goTo === "menu"
+  let icon = CompNav.menu ? "menu" : "left";
+
+  let condGoTo = () =>
+    CompNav.menu
+      ? CompNav.menu
         ? toggleMenu()
-        : history.push(props.goTo)
+        : history.push(CompNav.menu)
       : history.push("/sign-in");
 
   let toggleMenu = () => setMenu(!sttMenu);
   let condMenu = sttMenu;
 
-  let title = props.title;
+  let title = CompNav.title;
 
   // ---------------
   // #endregion
@@ -67,10 +106,11 @@ export default function Sc00(props) {
 
   let infoReturn = {
     children: props.children,
-    longBar: props.longBar,
+    longBar: CompNav.longBar,
+    path: props.path,
 
     rdContent,
-    goTo,
+    condGoTo,
     title,
     icon,
     toggleMenu,

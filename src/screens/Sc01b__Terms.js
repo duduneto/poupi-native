@@ -22,7 +22,7 @@ export default function Sc00() {
   // set Hooks
   let { rdContent, rdAuthUser } = useRd();
   let history = useHistory();
-  let changeRd = useChangeRd();
+  // let changeRd = useChangeRd();
 
   // let redirect = rdAuthUser && history.push("/sign-in");
   let redirect = false;

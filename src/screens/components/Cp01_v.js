@@ -3,7 +3,7 @@
 // ---------------
 
 // import Packages
-import React, { Children } from "react";
+import React from "react";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 
 // import Internals
@@ -27,6 +27,7 @@ let stlNAV1b = [useStl.leftBox];
 let stlNAV1c = [useStl.centerBox];
 let stlNAV1d = [useStl.rightBox];
 let stlNAV2 = [useStl.titlePageLeft];
+let stlBODY1e = [useStl.longBar];
 // let stlBODY3 = []
 
 // ---------------
@@ -38,14 +39,14 @@ export default ({ info }) => (
   // #region :: RENDER
   // ---------------
   <>
-    {info.condMenu && <Cp02 toggleMenu={info.toggleMenu} />}
+    {info.condMenu && <Cp02 path={info.path} toggleMenu={info.toggleMenu} />}
 
     <View style={stlNAV1}>
       {/* LEFT */}
       {/* ------------------------------ */}
 
       <View style={stlNAV1a}>
-        <TouchableOpacity style={stlNAV1b} onPress={info.goTo}>
+        <TouchableOpacity style={stlNAV1b} onPress={info.condGoTo}>
           <UseIcoMoon name={info.icon} size={22} color={"#fff"} />
         </TouchableOpacity>
 
@@ -60,16 +61,16 @@ export default ({ info }) => (
         {/* ------------------------------ */}
         <View style={stlNAV1d} />
       </View>
-
-      {/* LONG BAR */}
-      {/* ------------------------------ */}
-
-      {/* {info.longBar && <View style={stlBODY1b} />} */}
     </View>
 
     <ScrollView
       style={[!info.longBar && stlBODY1, { backgroundColor: "#f0f0f0" }]}
     >
+      {/* LONG BAR */}
+      {/* ------------------------------ */}
+
+      {info.longBar && <View style={stlBODY1e} />}
+
       {info.children}
 
       {/* END */}

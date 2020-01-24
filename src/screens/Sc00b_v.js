@@ -4,7 +4,7 @@
 
 // import Packages
 import React from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
 import { Cp01 } from "./components";
@@ -20,8 +20,6 @@ import { useStl } from "../useMorfos";
 
 let stlBG1 = [useStl.flexMaster];
 
-let stlBODY1 = [useStl.scrollShortBar, useStl.flex1];
-let stlBODY1a = [useStl.card, useStl.flex1];
 let stlBODY2 = [useStl.txtTitleCard];
 // let stlBODY2b = [useStl.mgB20, useStl.txtBase];
 // let stlBODY2c = [useStl.txtPrimaryInverse];
@@ -56,7 +54,7 @@ export default ({ info }) => (
   // #region :: RENDER
   // ---------------
 
-  <Cp01 title="Temp Users">
+  <Cp01 path="/temp-users">
     {/* BODY */}
     {/* ------------------------------ */}
     <View style={stlBG1}>

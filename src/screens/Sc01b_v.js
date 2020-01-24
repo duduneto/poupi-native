@@ -4,7 +4,7 @@
 
 // import Packages
 import React from "react";
-import { ScrollView, View, Text } from "react-native";
+import { View, Text } from "react-native";
 
 // import Internals
 import { Cp01 } from "./components";
@@ -20,9 +20,7 @@ import { useStl } from "../useMorfos";
 
 let stlBG1 = [useStl.flex1];
 
-let stlBODY1 = [useStl.scrollLongBar];
 let stlBODY1a = [useStl.card, useStl.cardLongBar];
-let stlBODY1b = [useStl.longBar];
 let stlBODY2 = [useStl.mgB20, useStl.txtBase];
 let stlBODY2b = [useStl.mgB20];
 // let stlBODY3 = []
@@ -47,12 +45,7 @@ export default ({ info }) => (
   // #region :: RENDER
   // ---------------
 
-  <Cp01 title={info.scContent.titleBar} longBar>
-    {/* LONG BAR */}
-    {/* ------------------------------ */}
-
-    <View style={stlBODY1b} />
-
+  <Cp01 path="/terms">
     {/* BODY */}
     {/* ------------------------------ */}
 

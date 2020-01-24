@@ -4,10 +4,9 @@
 
 // import Packages
 import React from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp01, Cp02 } from "./components";
 import { useStl } from "../useMorfos";
 
 // ---------------
@@ -35,49 +34,16 @@ export default ({ info }) => {
     // #region :: RENDER
     // ---------------
 
-    <Cp01 title="Produtos" type="short" goTo="menu">
-      {/* LIST */}
-      {/* ------------------------------ */}
+    // {/* LIST */}
+    // {/* ------------------------------ */}
 
-      <View style={stlBODY1a}>
-        <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-        <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-      </View>
+    <View style={stlBODY1a}>
+      <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
+      <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
+    </View>
 
-      {/* List Temp. Apagar Abaixo */}
-      <View style={stlBODY1a}>
-        <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-        <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-      </View>
-
-      <View style={stlBODY1a}>
-        <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-        <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-      </View>
-
-      <View style={stlBODY1a}>
-        <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-        <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-      </View>
-
-      <View style={stlBODY1a}>
-        <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-        <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-      </View>
-
-      <View style={stlBODY1a}>
-        <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-        <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-      </View>
-
-      <View style={stlBODY1a}>
-        <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
-        <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-      </View>
-
-      {/* END */}
-      {/* ------------------------------ */}
-    </Cp01>
+    // {/* END */}
+    // {/* ------------------------------ */}
 
     // ---------------
     // #endregion
