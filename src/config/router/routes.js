@@ -17,6 +17,7 @@ export default {
         { path: "/products", component: Sc.Sc02b },
         { path: "/profile", component: Sc.Sc03a },
         { path: "/profile-product", component: Sc.Sc03b },
+        { path: "/profile-store", component: Sc.Sc03c },
         { path: "/add-products", component: Sc.Sc04a }
       ]
     }

@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 
 // import Internals
-import * as AllSc from './';
-import { useHistory, useRd, useChangeRd } from '../useMorfos';
+import * as AllSc from "./";
+import { useHistory, useRd, useChangeRd } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -47,6 +47,7 @@ export default function Sc00() {
   // let model = () =>
 
   // let toSignIn = () => history.push("/sign-in");
+  let goToProfileProd = () => history.push("/profile-product");
 
   // ---------------
   // #endregion
@@ -57,6 +58,7 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
+    goToProfileProd,
     rdContent
     // toSignIn
   };

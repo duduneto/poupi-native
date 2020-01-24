@@ -7,8 +7,10 @@ Carlos ok - Sc01 - Fazer o loader aparecer no signin enquanto o rdContent não e
 Carlos ok - Cp01 - Indicar item de menu selecionado (Realçar) e fechar quando clicar nele
 Carlos ok - routes - verificação de autenticação + redirect pelo grupo
 
-- Sc02a, b - Tirar do menu o item Perfil do produto e entrar nele quando clicar num item da lista
+Carlos ok - Sc02a, b - Tirar do menu o item Perfil do produto e entrar nele quando clicar num item da lista
+
 - Sc02a, b - Tirar filtro (a) e adicionar cond de imagem padrão na lista quando não tiver imagem cadastrada (link). Trazer imagem cadastrada no dbRef.json
+- Sc02a, b - Listar produtos de acordo com o dbRef.json
 - Sc03b - Adicionar cond de imagem padrão quando não tiver imagem cadastrada (link). Trazer imagem cadastrada no dbRef.json
 - Sc04a - Enviar dados dos inputs para um objeto que posteriormente irá salvar no banco de dados.
 

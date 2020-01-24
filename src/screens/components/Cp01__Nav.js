@@ -53,11 +53,6 @@ export default function Sc00(props) {
       menu: false,
       longBar: true
     },
-    "/profile": {
-      title: "Meu Perfil",
-      menu: true,
-      longBar: true
-    },
     "/stores": {
       title: "Lojas",
       menu: true,
@@ -68,10 +63,20 @@ export default function Sc00(props) {
       menu: true,
       longBar: false
     },
+    "/profile": {
+      title: "Meu Perfil",
+      menu: true,
+      longBar: true
+    },
     "/profile-product": {
       title: "Perfil do Produto",
       menu: false,
       longBar: true
+    },
+    "/profile-store": {
+      title: "Perfil da Loja",
+      menu: false,
+      longBar: false
     },
     "/add-products": {
       title: "Adicionar Produtos",

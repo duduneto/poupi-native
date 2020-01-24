@@ -28,5 +28,8 @@ export { default as Sc03a_v } from "./Sc03a_v";
 export { default as Sc03b } from "./Sc03b__ProfileProduct";
 export { default as Sc03b_v } from "./Sc03b_v";
 
+export { default as Sc03c } from "./Sc03c__ProfileStore";
+export { default as Sc03c_v } from "./Sc03c_v";
+
 export { default as Sc04a } from "./Sc04a__AddProducts";
 export { default as Sc04a_v } from "./Sc04a_v";

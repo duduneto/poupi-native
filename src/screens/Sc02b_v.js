@@ -37,10 +37,10 @@ export default ({ info }) => {
     // {/* LIST */}
     // {/* ------------------------------ */}
 
-    <View style={stlBODY1a}>
+    <TouchableOpacity style={stlBODY1a} onPress={info.goToProfileProd}>
       <Text style={stlBODY2}>Celular Samsung J7 Prime</Text>
       <Text style={stlBODY2b}>Descrição curta do item bla bla a...</Text>
-    </View>
+    </TouchableOpacity>
 
     // {/* END */}
     // {/* ------------------------------ */}

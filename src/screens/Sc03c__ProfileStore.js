@@ -7,21 +7,25 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd } from "../../useMorfos";
-import { ItemMenu } from "./Cp02_v";
+import { useHistory, useRd, useChangeRd } from "../useMorfos";
 
 // ---------------
 // #endregion
 // ***************************************
 
-export default function Sc00(props) {
+export default function Sc00() {
   // ***************************************
   // #region :: HOOKs + VARs
   // ---------------
 
   // set Hooks
-  let { rdContent } = useRd();
+  let { rdContent, rdAuthUser } = useRd();
   let history = useHistory();
+  let changeRd = useChangeRd();
+
+  // let redirect = rdAuthUser && history.push("/sign-in");
+  let redirect = false;
+  let scContent = rdContent.sc00;
 
   // ---------------
   // #endregion
@@ -33,32 +37,6 @@ export default function Sc00(props) {
 
   // let start = () => {}
 
-  let arrMenu = [
-    { icon: "image", label: "Meu Perfil", goTo: "/profile" },
-    { icon: "image", label: "Lojas", goTo: "/stores" },
-    { icon: "image", label: "Produtos", goTo: "/products" },
-    { icon: "image", label: "Adicionar Produto", goTo: "/add-products" }
-  ];
-
-  let ItemsList = arrMenu.map((item, idx) => {
-    let goTo = () => {
-      history.push(item.goTo);
-      props.toggleMenu();
-    };
-
-    let condActiveMenu = item.goTo === props.path;
-    let condColor = condActiveMenu ? "#00ff66" : "#fff";
-    let infoReturn = {
-      icon: item.icon,
-      label: item.label,
-      condActiveMenu,
-      condColor,
-      goTo
-    };
-
-    return <ItemMenu key={idx} info={infoReturn} />;
-  });
-
   // ---------------
   // #endregion
   // ***************************************
@@ -69,6 +47,8 @@ export default function Sc00(props) {
 
   // let model = () =>
 
+  // let toSignIn = () => history.push("/sign-in");
+
   // ---------------
   // #endregion
   // ***************************************
@@ -78,12 +58,11 @@ export default function Sc00(props) {
   // ---------------
 
   let infoReturn = {
-    rdContent,
-    ItemsList,
-    toggleMenu: props.toggleMenu
+    scContent
+    // toSignIn
   };
 
-  return <AllSc.Cp02_v info={infoReturn} />;
+  return redirect || <AllSc.Sc03c_v info={infoReturn} />;
 
   // ---------------
   // #endregion
