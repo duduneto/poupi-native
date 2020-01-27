@@ -21,13 +21,9 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser, rdProducts } = useRd();
+  let { rdContent, rdProducts } = useRd();
   let history = useHistory();
-  // let { rdProdSelect } = useRd();
   let changeRd = useChangeRd();
-
-  // let redirect = rdAuthUser && history.push("/sign-in");
-  let redirect = false;
 
   // ---------------
   // #endregion
@@ -49,12 +45,9 @@ export default function Sc00() {
 
   // let model = () =>
 
-  // let toSignIn = () => history.push("/sign-in");
-  // let goToProfileProduct = () => history.push("/profile-store");
-
   let listProducts = Object.keys(rdProducts).map((item, idx) => {
     let goTo = () => {
-      changeRd("rdProdSelect", rdProducts[item]);
+      changeRd("rdProdSelected", rdProducts[item]);
       history.push("/profile-product");
     };
     let source = rdProducts[item].image;
@@ -83,7 +76,7 @@ export default function Sc00() {
     // toSignIn
   };
 
-  return redirect || <AllSc.Sc02b_v info={infoReturn} />;
+  return <AllSc.Sc02b_v info={infoReturn} />;
 
   // ---------------
   // #endregion

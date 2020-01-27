@@ -3,9 +3,9 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 // import Internals
-import { useChangeRd, useRd } from '.';
+import { useChangeRd, useRd } from ".";
 
 // ---------------
 // #endregion
@@ -30,7 +30,6 @@ export default info => {
     // console.log('sttValues', sttValues);
   };
 
-  // return { inputChange, sttValues };
   return { inputChange };
 };
 

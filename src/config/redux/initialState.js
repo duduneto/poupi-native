@@ -3,8 +3,8 @@ export default {
   rdContent: {},
   rdStores: {},
   rdProducts: {},
-  rdStoreSelect: {},
-  rdProdSelect: {},
+  rdStoreSelected: {},
+  rdProdSelected: {},
   rdIptsSignUp: {},
   rdIptState: ""
 };

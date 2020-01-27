@@ -48,7 +48,7 @@ export default function Sc00() {
 
   let listStores = Object.keys(rdStores).map((item, idx) => {
     let goTo = () => {
-      changeRd("rdStoreSelect", rdStores[item]);
+      changeRd("rdStoreSelected", rdStores[item]);
       history.push("/profile-store");
     };
     let source = rdStores[item].image;

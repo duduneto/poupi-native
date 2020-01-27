@@ -4,10 +4,9 @@
 
 // import Packages
 import React from "react";
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 // import Internals
-import { Cp01 } from "../components";
 import { useStl } from "../../useMorfos";
 
 // ---------------
@@ -17,7 +16,6 @@ import { useStl } from "../../useMorfos";
 // ***************************************
 // #region :: STYLEs
 // ---------------
-
 
 let stlBODY1 = [useStl.flex1];
 let stlBODY2 = [useStl.txtTitleCard];
@@ -45,30 +43,29 @@ export default ({ info }) => (
   // #region :: RENDER
   // ---------------
 
-  <Cp01 title="Page Name">
+  <>
+    {/* PART 1 */}
+    {/* ------------------------------ */}
 
-      {/* PART 1 */}
-      {/* ------------------------------ */}
+    <Text style={stlBODY2}>Part 1</Text>
 
-      <Text style={stlBODY2}>Part 1</Text>
+    {/* PART 2 */}
+    {/* ------------------------------ */}
 
-      {/* PART 2 */}
-      {/* ------------------------------ */}
+    <Text style={stlBODY2}>Part 2</Text>
 
-      <Text style={stlBODY2}>Part 2</Text>
+    {/* PART 3 */}
+    {/* ------------------------------ */}
 
-      {/* PART 3 */}
-      {/* ------------------------------ */}
+    <Text style={stlBODY2}>Part 3</Text>
 
-      <Text style={stlBODY2}>Part 3</Text>
+    <TouchableOpacity onPress={info.event}>
+      <Text style={stlBODY2}>CLICK HERE!</Text>
+    </TouchableOpacity>
 
-      <TouchableOpacity onPress={info.event}>
-        <Text style={stlBODY2}>CLICK HERE!</Text>
-      </TouchableOpacity>
-
-      {/* END */}
-      {/* ------------------------------ */}
-  </Cp01>
+    {/* END */}
+    {/* ------------------------------ */}
+  </>
 
   // ---------------
   // #endregion

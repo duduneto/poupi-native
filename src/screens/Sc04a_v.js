@@ -47,20 +47,42 @@ export default ({ info }) => {
         {/* FIELDs */}
         {/* ------------------------------ */}
 
-        <TextInput style={stlBODY2} placeholder="input1" />
-        <TextInput style={stlBODY2} placeholder="input2" />
-        <TextInput style={stlBODY2} placeholder="input3" />
+        <TextInput
+          style={stlBODY2}
+          placeholder="input1"
+          // name="nome"
+          onChange={info.getTxt}
+          // onChange={info.inputChange}
+          // value={info.sttValues}
+        />
+        <TextInput
+          style={stlBODY2}
+          placeholder="input2"
+          // name="email"
+          // onChange={}
+          // value={}
+        />
+        <TextInput
+          style={stlBODY2}
+          placeholder="input3"
+          // name="telefone"
+          // onChange={}
+          // value={}
+        />
         <TextInput
           style={stlBODY2}
           placeholder="input1"
           multiline={true}
           numberOfLines={4}
+          // name="mensagem"
+          // onChange={}
+          // value={}
         />
 
         {/* BUTTONs */}
         {/* ------------------------------ */}
         <View style={stlBODY1b}>
-          <TouchableOpacity style={stlBODY3} onPress={info.event}>
+          <TouchableOpacity style={stlBODY3}>
             <Text style={stlBODY2c}>SALVAR</Text>
           </TouchableOpacity>
 

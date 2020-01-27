@@ -20,12 +20,11 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser, rdStoreSelect } = useRd();
-  let history = useHistory();
-  let changeRd = useChangeRd();
+  let { rdContent, rdStoreSelected } = useRd();
+  // let history = useHistory();
+  // let changeRd = useChangeRd();
 
   // let redirect = rdAuthUser && history.push("/sign-in");
-  let redirect = false;
   let scContent = rdContent.sc00;
 
   // ---------------
@@ -48,7 +47,7 @@ export default function Sc00() {
 
   // let model = () =>
 
-  let store = rdStoreSelect;
+  let store = rdStoreSelected;
   let source = store.image;
   let condThumbnail = !source ? defaultImg : source;
   // let toSignIn = () => history.push("/sign-in");
@@ -68,7 +67,7 @@ export default function Sc00() {
     // toSignIn
   };
 
-  return redirect || <AllSc.Sc03c_v info={infoReturn} />;
+  return <AllSc.Sc03c_v info={infoReturn} />;
 
   // ---------------
   // #endregion

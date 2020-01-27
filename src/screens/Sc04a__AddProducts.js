@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 
 // import Internals
-import * as AllSc from './';
-import { useHistory, useRd, useChangeRd } from '../useMorfos';
+import * as AllSc from "./";
+import { useHistory, useRd, useChangeRd, useForm } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -20,8 +20,9 @@ export default function Sc00() {
 
   // set Hooks
   let { rdContent, rdAuthUser } = useRd();
-  let history = useHistory();
-  let changeRd = useChangeRd();
+  let { inputChange, sttValues } = useForm();
+  // let history = useHistory();
+  // let changeRd = useChangeRd();
 
   // let redirect = rdAuthUser && history.push("/sign-in");
   let redirect = false;
@@ -35,6 +36,10 @@ export default function Sc00() {
   // ---------------
 
   // let start = () => {}
+  let getTxt = txt => {
+    // info.inputChange(txt, "nameIpt");
+    console.log(txt.target.value);
+  };
 
   // ---------------
   // #endregion
@@ -57,7 +62,10 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    rdContent
+    rdContent,
+    inputChange,
+    sttValues,
+    getTxt
     // toSignIn
   };
 

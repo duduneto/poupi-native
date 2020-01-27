@@ -51,7 +51,7 @@ export default ({ info }) => (
 
       <View style={stlBODY1d}>
         <TouchableOpacity style={stlBODY3} onPress={info.signOut}>
-          <Text style={stlBODY2c}>SAIR</Text>
+          <Text style={stlBODY2c}>ACTION</Text>
         </TouchableOpacity>
       </View>
     </View>

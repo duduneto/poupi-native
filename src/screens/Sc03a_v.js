@@ -4,10 +4,9 @@
 
 // import Packages
 import React from "react";
-import { ScrollView, View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 
 // import Internals
-import { Cp01 } from "./components";
 import { useStl } from "../useMorfos";
 
 // ---------------
@@ -23,7 +22,6 @@ let stlBODY1a = [useStl.card, useStl.cardProfile];
 let stlBODY1b = [useStl.flexCenter];
 let stlBODY1c = [useStl.profileImg];
 let stlBODY1d = [useStl.pad20, useStl.flexCenter, useStl.topLine];
-let stlBODY1e = [useStl.longBar];
 let stlBODY1f = [useStl.pad20];
 let stlBODY2 = [useStl.txtTitleCard];
 let stlBODY2b = [useStl.mgB20, useStl.txtBase];
