@@ -30,9 +30,21 @@ export default info => {
     // console.log('sttValues', sttValues);
   };
 
-  return { inputChange };
+  return { inputChange, sttValues };
 };
 
 // ---------------
 // #endregion
 // ***************************************
+
+/*** HOW TO USE IT ****
+
+  // set Hook
+  const { inputChange, sttValues } = useForm(); // State
+  const { inputChange } = useForm("rdIptsProd"); // Reducer
+
+  // function Form
+  let iptName = (txt) => inputChange("iptName",txt)
+  let iptDesc = (txt) => inputChange("iptDesc",txt)
+
+*/

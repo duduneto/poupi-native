@@ -19,13 +19,10 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser } = useRd();
+  let { rdContent, rdProducts } = useRd();
   let { inputChange, sttValues } = useForm();
-  // let history = useHistory();
-  // let changeRd = useChangeRd();
-
-  // let redirect = rdAuthUser && history.push("/sign-in");
-  let redirect = false;
+  let history = useHistory();
+  let changeRd = useChangeRd();
 
   // ---------------
   // #endregion
@@ -36,10 +33,14 @@ export default function Sc00() {
   // ---------------
 
   // let start = () => {}
-  let getTxt = txt => {
-    // info.inputChange(txt, "nameIpt");
-    console.log(txt.target.value);
+  let getTxt = {
+    iptName: txt => inputChange("Name", txt),
+    iptEmail: txt => inputChange("Email", txt),
+    iptPhone: txt => inputChange("Phone", txt),
+    iptDesc: txt => inputChange("Desc", txt)
   };
+  console.log("sttValues", sttValues);
+  console.log("rdProducts", rdProducts);
 
   // ---------------
   // #endregion
@@ -50,6 +51,21 @@ export default function Sc00() {
   // ---------------
 
   // let model = () =>
+  let btnSave = () => {
+    let infoProduct = {
+      ...rdProducts,
+      xxx05: {
+        docId: "xxx05",
+        userId: "xxx05",
+        name: sttValues.Name,
+        description: sttValues.Desc,
+        image: "https://source.unsplash.com/200x150/?avocado&1"
+      }
+    };
+    changeRd("rdProducts", infoProduct);
+    // console.log("reducer", rdProducts);
+    history.push("/products");
+  };
 
   // let toSignIn = () => history.push("/sign-in");
 
@@ -63,13 +79,12 @@ export default function Sc00() {
 
   let infoReturn = {
     rdContent,
-    inputChange,
-    sttValues,
+    btnSave,
     getTxt
     // toSignIn
   };
 
-  return redirect || <AllSc.Sc04a_v info={infoReturn} />;
+  return <AllSc.Sc04a_v info={infoReturn} />;
 
   // ---------------
   // #endregion

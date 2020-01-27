@@ -4,6 +4,7 @@ Fazendo... - Sc04a - Enviar dados dos inputs para um objeto que posteriormente i
 
 - Cp01 - Fazer botão voltar funcionar.
 - Sc03a, b, c - Renomear MyPf, ProductPf, StorePf.
+- Sc - Implementar scContent.Pt.
 
 -- ORDENAR PRIORIDADES
 

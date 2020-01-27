@@ -79,7 +79,7 @@ export default function Sc00(props) {
       longBar: true
     },
     "/add-products": {
-      title: "Adicionar Produtos",
+      title: "Adicionar Produto",
       menu: false,
       longBar: true
     }

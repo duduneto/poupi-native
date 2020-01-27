@@ -49,40 +49,31 @@ export default ({ info }) => {
 
         <TextInput
           style={stlBODY2}
-          placeholder="input1"
-          // name="nome"
-          onChange={info.getTxt}
-          // onChange={info.inputChange}
-          // value={info.sttValues}
+          placeholder="Nome"
+          onChangeText={info.getTxt.iptName}
         />
         <TextInput
           style={stlBODY2}
-          placeholder="input2"
-          // name="email"
-          // onChange={}
-          // value={}
+          placeholder="Email"
+          onChangeText={info.getTxt.iptEmail}
         />
         <TextInput
           style={stlBODY2}
-          placeholder="input3"
-          // name="telefone"
-          // onChange={}
-          // value={}
+          placeholder="Phone"
+          onChangeText={info.getTxt.iptPhone}
         />
         <TextInput
           style={stlBODY2}
-          placeholder="input1"
+          placeholder="Mensagem"
           multiline={true}
           numberOfLines={4}
-          // name="mensagem"
-          // onChange={}
-          // value={}
+          onChangeText={info.getTxt.iptDesc}
         />
 
         {/* BUTTONs */}
         {/* ------------------------------ */}
         <View style={stlBODY1b}>
-          <TouchableOpacity style={stlBODY3}>
+          <TouchableOpacity style={stlBODY3} onPress={info.btnSave}>
             <Text style={stlBODY2c}>SALVAR</Text>
           </TouchableOpacity>
 
