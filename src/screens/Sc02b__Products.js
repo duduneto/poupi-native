@@ -8,6 +8,8 @@ import React from "react";
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import defaultImg from "../images/default.jpg";
+import { ItemProduct } from "./Sc02b_v";
 
 // ---------------
 // #endregion
@@ -19,8 +21,9 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser } = useRd();
+  let { rdContent, rdAuthUser, rdProducts } = useRd();
   let history = useHistory();
+  // let { rdProdSelect } = useRd();
   let changeRd = useChangeRd();
 
   // let redirect = rdAuthUser && history.push("/sign-in");
@@ -47,7 +50,24 @@ export default function Sc00() {
   // let model = () =>
 
   // let toSignIn = () => history.push("/sign-in");
-  let goToProfileProd = () => history.push("/profile-product");
+  // let goToProfileProduct = () => history.push("/profile-store");
+
+  let listProducts = Object.keys(rdProducts).map((item, idx) => {
+    let goTo = () => {
+      changeRd("rdProdSelect", rdProducts[item]);
+      history.push("/profile-product");
+    };
+    let source = rdProducts[item].image;
+    let condThumbnail = !source ? defaultImg : source;
+    let infoReturn = {
+      name: rdProducts[item].name,
+      description: rdProducts[item].description,
+      condThumbnail,
+      goTo
+    };
+
+    return <ItemProduct key={idx} info={infoReturn} />;
+  });
 
   // ---------------
   // #endregion
@@ -58,7 +78,7 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    goToProfileProd,
+    listProducts,
     rdContent
     // toSignIn
   };

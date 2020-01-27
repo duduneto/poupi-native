@@ -3,11 +3,12 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
 
 // import Internals
-import * as AllSc from './';
-import { useHistory, useRd, useChangeRd } from '../useMorfos';
+import * as AllSc from "./";
+import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import defaultImg from "../images/default.jpg";
 
 // ---------------
 // #endregion
@@ -19,9 +20,9 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser } = useRd();
-  let history = useHistory();
-  let changeRd = useChangeRd();
+  let { rdContent, rdAuthUser, rdProdSelect } = useRd();
+  // let history = useHistory();
+  // let changeRd = useChangeRd();
 
   // let redirect = rdAuthUser && history.push("/sign-in");
   let redirect = false;
@@ -45,7 +46,9 @@ export default function Sc00() {
   // ---------------
 
   // let model = () =>
-
+  let produto = rdProdSelect;
+  let source = produto.image;
+  let condThumbnail = !source ? defaultImg : source;
   // let toSignIn = () => history.push("/sign-in");
 
   // ---------------
@@ -57,7 +60,9 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    rdContent
+    condThumbnail,
+    rdContent,
+    produto
     // toSignIn
   };
 

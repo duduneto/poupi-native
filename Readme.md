@@ -10,9 +10,11 @@ Carlos ok - Sc02a, b - Tirar do menu o item Perfil do produto e entrar nele quan
 Carlos ok - Sc03c - Estilizar tela Perfil do Produto
 Carlos ok - Sc02a, b - Tirar filtro (a) e adicionar cond de imagem padrão na lista quando não tiver imagem cadastrada (link). Trazer imagem cadastrada no dbRef.json
 Carlos ok - Sc02a, b - Listar produtos de acordo com o dbRef.json
-Fazendo... - Sc03b - Adicionar cond de imagem padrão quando não tiver imagem cadastrada (link). Trazer imagem cadastrada no dbRef.json
+Carlos ok- Sc03b, c - Adicionar cond de imagem padrão quando não tiver imagem cadastrada (link). Trazer imagem cadastrada, nome do produto e descrição no dbRef.json
 
-- Sc04a - Enviar dados dos inputs para um objeto que posteriormente irá salvar no banco de dados.
+Fazendo... - Sc04a - Enviar dados dos inputs para um objeto que posteriormente irá salvar no banco de dados.
+
+- Cp01 - Fazer botão voltar funcionar.
 
 -- ORDENAR PRIORIDADES
 

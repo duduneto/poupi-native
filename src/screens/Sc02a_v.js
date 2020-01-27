@@ -34,7 +34,7 @@ let stlBODY3 = [useStl.thumbnail];
 // ---------------
 
 export const ItemStore = ({ info }) => (
-  <TouchableOpacity style={stlBODY1a} onPress={info.goToProfileStore}>
+  <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
     <View style={stlBODY1b}>
       <Image source={info.condThumbnail} style={stlBODY3} />
       <View style={stlBODY1c}>
@@ -64,6 +64,7 @@ export default ({ info }) => {
       {/* END */}
       {/* ------------------------------ */}
     </>
+
     // ---------------
     // #endregion
     // ***************************************

@@ -8,6 +8,7 @@ import React from "react";
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import defaultImg from "../images/default.jpg";
 
 // ---------------
 // #endregion
@@ -19,7 +20,7 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser } = useRd();
+  let { rdContent, rdAuthUser, rdStoreSelect } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
 
@@ -47,6 +48,9 @@ export default function Sc00() {
 
   // let model = () =>
 
+  let store = rdStoreSelect;
+  let source = store.image;
+  let condThumbnail = !source ? defaultImg : source;
   // let toSignIn = () => history.push("/sign-in");
 
   // ---------------
@@ -58,7 +62,9 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    scContent
+    condThumbnail,
+    scContent,
+    store
     // toSignIn
   };
 

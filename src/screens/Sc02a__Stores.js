@@ -43,20 +43,21 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  let goToProfileStore = () => history.push("/profile-store");
+  // let goToProfileStore = () => history.push("/profile-store");
   // let toSignIn = () => history.push("/sign-in");
 
   let listStores = Object.keys(rdStores).map((item, idx) => {
-    // let goTo = () => {
-    //   history.push(item.goTo);
-    //   props.toggleMenu();
-    // };
+    let goTo = () => {
+      changeRd("rdStoreSelect", rdStores[item]);
+      history.push("/profile-store");
+    };
     let source = rdStores[item].image;
     let condThumbnail = !source ? defaultImg : source;
     let infoReturn = {
       name: rdStores[item].name,
       description: rdStores[item].description,
-      condThumbnail
+      condThumbnail,
+      goTo
     };
 
     return <ItemStore key={idx} info={infoReturn} />;
@@ -71,7 +72,6 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    goToProfileStore,
     rdContent,
     listStores
     // toSignIn
