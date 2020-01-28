@@ -1,16 +1,16 @@
 ### FALTA FAZER
 
-Fazendo... - Sc04a - Enviar dados dos inputs para um objeto que posteriormente irá salvar no banco de dados.
+Carlos ok - Sc04a - Enviar dados dos inputs para um objeto que posteriormente irá salvar no banco de dados.
+Carlos ok - Sc03a, b, c - Renomear MyPf, ProductPf, StorePf.
+Carlos ok - Sc - Implementar scContent.Pt.
 
-- Cp01 - Fazer botão voltar funcionar.
-- Sc03a, b, c - Renomear MyPf, ProductPf, StorePf.
-- Sc - Implementar scContent.Pt.
+Fazendo... - Cp01 - Fazer botão voltar funcionar.
 
 -- ORDENAR PRIORIDADES
 
+- Sc00b - Fazer TempUsers via dbRef.json
 - AllApp - Conectar Firestore + condição rdContent
 - Sc01 - Ver rdIptState
-- Sc00b - Fazer TempUsers via dbRef.json
 - Config - Incluir persistência do authUser (mesmo quando recarregar a página) incluir redux-persist
 
 - conexão com DB Ref + msgs DB

@@ -5,7 +5,22 @@
         "aRef": "Cp01 - Navbar",
         "txt01": "Usuário",
         "txt02": "Perfil",
-        "txt03": "Contador"
+        "txt03": "Contador",
+        "sc00b": "Temp Users",
+        "sc01b": "Termos de Uso",
+        "sc02a": "Lojas",
+        "sc02b": "Produtos",
+        "sc03a": "Meu Perfil",
+        "sc03b": "Perfil do Produto",
+        "sc03c": "Perfil da Loja",
+        "sc04a": "Adicionar Produto"
+      },
+      "cp02": {
+        "aRef": "Cp01 - SideMenu",
+        "item01": "Meu Perfil",
+        "item02": "Lojas",
+        "item03": "Produtos",
+        "item04": "Adicionar Produtos"
       },
       "sc01a": {
         "aRef": "Sc01a - Login",
@@ -39,6 +54,27 @@
         "txt02": "Aumentar",
         "txt03": "Diminuir",
         "txt04": "Mudar Nome"
+      },
+      "sc03a": {
+        "aRef": "Sc02b - Meu Perfil",
+        "logout": "Sair"
+      },
+      "sc03b": {
+        "aRef": "Sc03c - Perfil Produto",
+        "bt01": "Action"
+      },
+      "sc03c": {
+        "aRef": "Sc03c - Perfil Loja",
+        "bt01": "Action"
+      },
+      "sc04a": {
+        "aRef": "Sc04a - AddProd",
+        "name": "Nome",
+        "amount": "Quantidade",
+        "price": "Preço",
+        "desc": "Descrição",
+        "save": "Salvar",
+        "cancel": "Cancelar"
       }
     },
     "en": {}

@@ -22,13 +22,13 @@ export { default as Sc02b_v } from "./Sc02b_v";
 
 // ---------------
 
-export { default as Sc03a } from "./Sc03a__Profile";
+export { default as Sc03a } from "./Sc03a__MyPf";
 export { default as Sc03a_v } from "./Sc03a_v";
 
-export { default as Sc03b } from "./Sc03b__ProfileProduct";
+export { default as Sc03b } from "./Sc03b__ProductPf";
 export { default as Sc03b_v } from "./Sc03b_v";
 
-export { default as Sc03c } from "./Sc03c__ProfileStore";
+export { default as Sc03c } from "./Sc03c__StorePf";
 export { default as Sc03c_v } from "./Sc03c_v";
 
 export { default as Sc04a } from "./Sc04a__AddProducts";

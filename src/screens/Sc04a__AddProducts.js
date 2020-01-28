@@ -23,7 +23,7 @@ export default function Sc00() {
   let { inputChange, sttValues } = useForm();
   let history = useHistory();
   let changeRd = useChangeRd();
-
+  let scContent = rdContent.sc04a;
   // ---------------
   // #endregion
   // ***************************************
@@ -78,6 +78,7 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
+    scContent,
     rdContent,
     btnSave,
     getTxt

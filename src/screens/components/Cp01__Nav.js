@@ -20,6 +20,7 @@ export default function Sc00(props) {
 
   // set Hooks
   let { rdContent } = useRd();
+  let scContent = rdContent.cp01;
   let history = useHistory();
   let [sttMenu, setMenu] = React.useState(false);
 
@@ -44,42 +45,42 @@ export default function Sc00(props) {
   // let model = () =>
   let Nav = {
     "/temp-users": {
-      title: "TemUsers",
+      title: scContent.sc00b,
       menu: false,
       longBar: false
     },
     "/terms": {
-      title: "Termos de Uso",
+      title: scContent.sc01b,
       menu: false,
       longBar: true
     },
     "/stores": {
-      title: "Lojas",
+      title: scContent.sc02a,
       menu: true,
       longBar: false
     },
     "/products": {
-      title: "Produtos",
+      title: scContent.sc02b,
       menu: true,
       longBar: false
     },
     "/profile": {
-      title: "Meu Perfil",
+      title: scContent.sc03a,
       menu: true,
       longBar: true
     },
     "/profile-product": {
-      title: "Perfil do Produto",
+      title: scContent.sc03b,
       menu: false,
       longBar: true
     },
     "/profile-store": {
-      title: "Perfil da Loja",
+      title: scContent.sc03c,
       menu: false,
       longBar: true
     },
     "/add-products": {
-      title: "Adicionar Produto",
+      title: scContent.sc04a,
       menu: false,
       longBar: true
     }

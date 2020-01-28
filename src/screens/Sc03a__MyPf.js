@@ -20,6 +20,7 @@ export default function Sc00() {
 
   // set Hooks
   let { rdContent, rdAuthUser } = useRd();
+  let scContent = rdContent.sc03a;
   let history = useHistory();
   let changeRd = useChangeRd();
 
@@ -69,6 +70,7 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
+    scContent,
     // BTNs
     rdContent,
     signOut,

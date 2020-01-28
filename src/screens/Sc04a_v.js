@@ -49,22 +49,22 @@ export default ({ info }) => {
 
         <TextInput
           style={stlBODY2}
-          placeholder="Nome"
+          placeholder={info.scContent.name}
           onChangeText={info.getTxt.iptName}
         />
         <TextInput
           style={stlBODY2}
-          placeholder="Email"
+          placeholder={info.scContent.amount}
           onChangeText={info.getTxt.iptEmail}
         />
         <TextInput
           style={stlBODY2}
-          placeholder="Phone"
+          placeholder={info.scContent.price}
           onChangeText={info.getTxt.iptPhone}
         />
         <TextInput
           style={stlBODY2}
-          placeholder="Mensagem"
+          placeholder={info.scContent.desc}
           multiline={true}
           numberOfLines={4}
           onChangeText={info.getTxt.iptDesc}
@@ -74,11 +74,11 @@ export default ({ info }) => {
         {/* ------------------------------ */}
         <View style={stlBODY1b}>
           <TouchableOpacity style={stlBODY3} onPress={info.btnSave}>
-            <Text style={stlBODY2c}>SALVAR</Text>
+            <Text style={stlBODY2c}>{info.scContent.save}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={stlBODY3a}>
-            <Text>CANCELAR</Text>
+            <Text>{info.scContent.cancel}</Text>
           </TouchableOpacity>
         </View>
       </View>
