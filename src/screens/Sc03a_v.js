@@ -16,7 +16,6 @@ import { useStl } from "../useMorfos";
 // ***************************************
 // #region :: STYLEs
 // ---------------
-let src01 = require("../images/portrait.jpg");
 
 let stlBODY1a = [useStl.card, useStl.cardProfile];
 let stlBODY1b = [useStl.flexCenter];
@@ -51,7 +50,7 @@ export default ({ info }) => (
 
       <View style={stlBODY1a}>
         <View style={stlBODY1b}>
-          <Image source={src01} style={stlBODY1c} />
+          <Image source={info.condThumbnail} style={stlBODY1c} />
           <Text style={stlBODY2}>{info.userName}</Text>
           <Text style={stlBODY2b}>{info.userEmail}</Text>
         </View>

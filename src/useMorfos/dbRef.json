@@ -83,19 +83,19 @@
   "users": {
     "xxx01": {
       "docId": "xxx01",
-      "name": "Carlos",
+      "userName": "Carlos",
       "email": "carlos@mnmn.com",
       "image": "https://source.unsplash.com/200x150/?portrait&boy&1"
     },
     "xxx02": {
       "docId": "xxx02",
-      "name": "Leandro",
+      "userName": "Leandro",
       "email": "leandro@mnmn.com",
       "image": "https://source.unsplash.com/200x150/?portrait&boy&2"
     },
     "xxx03": {
       "docId": "xxx03",
-      "name": "Juan",
+      "userName": "Juan",
       "email": "juan@mnmn.com",
       "image": "https://source.unsplash.com/200x150/?portrait&boy&3"
     }

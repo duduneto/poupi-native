@@ -3,12 +3,13 @@
 Carlos ok - Sc04a - Enviar dados dos inputs para um objeto que posteriormente irá salvar no banco de dados.
 Carlos ok - Sc03a, b, c - Renomear MyPf, ProductPf, StorePf.
 Carlos ok - Sc - Implementar scContent.Pt.
-
-Fazendo... - Cp01 - Fazer botão voltar funcionar.
+Carlos ok - Cp01 - Fazer botão voltar funcionar.
 
 -- ORDENAR PRIORIDADES
 
-- Sc00b - Fazer TempUsers via dbRef.json
+Carlos ok - Sc00b - Fazer TempUsers via dbRef.json
+Fazendo... - Sc04a - Incluir categorias de produtos
+
 - AllApp - Conectar Firestore + condição rdContent
 - Sc01 - Ver rdIptState
 - Config - Incluir persistência do authUser (mesmo quando recarregar a página) incluir redux-persist

@@ -95,7 +95,7 @@ export default function Sc00(props) {
       ? CompNav.menu
         ? toggleMenu()
         : history.push(CompNav.menu)
-      : history.push("/sign-in");
+      : history.goBack();
 
   let toggleMenu = () => setMenu(!sttMenu);
   let condMenu = sttMenu;

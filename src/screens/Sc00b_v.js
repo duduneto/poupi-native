@@ -18,12 +18,16 @@ import { useStl } from "../useMorfos";
 // #region :: STYLEs
 // ---------------
 
-let stlBG1 = [useStl.flexMaster];
+let stlBG1 = [useStl.flexMaster, useStl.pad20];
 
-let stlBODY2 = [useStl.txtTitleCard];
-// let stlBODY2b = [useStl.mgB20, useStl.txtBase];
-// let stlBODY2c = [useStl.txtPrimaryInverse];
-// let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
+let stlBODY2 = [useStl.txtTitleCard, { color: "white" }];
+let stlBODY2a = [useStl.txtTitleCard, { marginBottom: 20 }];
+let stlBODY3 = [
+  useStl.btn,
+  useStl.btnMedium,
+  useStl.btnPrimary,
+  { width: "100%", marginBottom: 10 }
+];
 
 // ---------------
 // #endregion
@@ -33,14 +37,13 @@ let stlBODY2 = [useStl.txtTitleCard];
 // #region :: EXPORTs
 // ---------------
 
-export const NoItems = () => <Text>Sem Itens</Text>;
+// export const NoItems = () => <Text>Sem Itens</Text>;
 
 // list Item
-export const ListItem = info => (
+export const ListItem = ({ info }) => (
   <>
-    <br />
-    <TouchableOpacity>
-      <Text style={stlBODY2}>{info.item.userName}</Text>
+    <TouchableOpacity style={stlBODY3} onPress={info.goTo}>
+      <Text style={stlBODY2}>{info.name}</Text>
     </TouchableOpacity>
   </>
 );
@@ -53,15 +56,12 @@ export default ({ info }) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
-
   <Cp01 path="/temp-users">
-    {/* BODY */}
-    {/* ------------------------------ */}
     <View style={stlBG1}>
-      {/* PART 1 */}
+      {/* BODY */}
       {/* ------------------------------ */}
 
-      <Text style={stlBODY2}>User List in Firestore</Text>
+      <Text style={stlBODY2a}>User List in dbRef.json</Text>
 
       {info.callList}
 
@@ -69,6 +69,7 @@ export default ({ info }) => (
       {/* ------------------------------ */}
     </View>
   </Cp01>
+
   // ---------------
   // #endregion
   // ***************************************

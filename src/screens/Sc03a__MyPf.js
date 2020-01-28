@@ -8,6 +8,7 @@ import React from "react";
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import defaultImg from "../images/default.jpg";
 
 // ---------------
 // #endregion
@@ -23,15 +24,12 @@ export default function Sc00() {
   let scContent = rdContent.sc03a;
   let history = useHistory();
   let changeRd = useChangeRd();
-
   let redirect = !rdAuthUser && history.push("/sign-in");
 
+  let source = rdAuthUser.image;
   let userName = rdAuthUser.userName;
   let userEmail = rdAuthUser.email;
-
-  React.useEffect(() => {
-    changeRd("rdScActive", "Meu Perfil");
-  }, []);
+  let condThumbnail = !source ? defaultImg : source;
 
   // ---------------
   // #endregion
@@ -75,6 +73,7 @@ export default function Sc00() {
     rdContent,
     signOut,
     // USERDATA
+    condThumbnail,
     userName,
     userEmail
   };

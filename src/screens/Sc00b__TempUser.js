@@ -3,12 +3,15 @@
 // ---------------
 
 // import Packages
-import React from 'react';
+import React from "react";
+import { Text } from "react-native";
 
 // import Internals
-import * as AllSc from './';
-import { useHistory, useRd, useChangeRd, UseFbListItems } from '../useMorfos';
-import { NoItems, ListItem } from './Sc00b_v';
+import * as AllSc from "./";
+import { useHistory, useRd, useChangeRd, UseFbListItems } from "../useMorfos";
+// import { NoItems, ListItem } from "./Sc00b_v";
+import dbRef from "../useMorfos/dbRef.json";
+import { ListItem } from "./Sc00b_v";
 
 // ---------------
 // #endregion
@@ -20,34 +23,25 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdAuthUser } = useRd();
+  let { rdContent } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
 
-  // let redirect = rdAuthUser && history.push("/sign-in");
-  let redirect = false;
-
-  // set List Call
-  let infoUsers = {
-    collection: 'users',
-    reducerName: 'rdAllUsers',
-    noItem: NoItems
-  };
-
   // set Hook
-  const [UsersList] = UseFbListItems(infoUsers);
+  const usersList = dbRef.users;
 
-  let callList = (
-    <UsersList
-      renderProps={({ item, idx }) => {
-        console.log('item', item);
+  let callList = Object.keys(usersList).map((item, idx) => {
+    let goTo = () => {
+      changeRd("rdAuthUser", usersList[item]); // call Hook
+      history.push("/profile"); // redirect
+    };
+    let infoReturn = {
+      name: usersList[item].userName,
+      goTo
+    };
 
-        let btnTempAuth = () => handleTempAuth(item);
-
-        return ListItem({ idx, btnTempAuth, item });
-      }}
-    />
-  );
+    return <ListItem key={idx} info={infoReturn} />;
+  });
 
   // ---------------
   // #endregion
@@ -60,9 +54,9 @@ export default function Sc00() {
   // let start = () => {}
 
   let handleTempAuth = item => {
-    changeRd('rdAuthUser', item);
+    changeRd("rdAuthUser", item);
 
-    history.push('list-shop');
+    history.push("list-shop");
   };
 
   // ---------------
@@ -91,7 +85,7 @@ export default function Sc00() {
     // toSignIn
   };
 
-  return redirect || <AllSc.Sc00b_v info={infoReturn} />;
+  return <AllSc.Sc00b_v info={infoReturn} />;
 
   // ---------------
   // #endregion
