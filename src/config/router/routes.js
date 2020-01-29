@@ -13,8 +13,9 @@ export default {
       component: AppAuth,
       childRoutes: [
         { path: "/onboarding", component: Sc.Sc01c },
-        { path: "/stores", component: Sc.Sc02a },
+        { path: "/category-products", component: Sc.Sc02a },
         { path: "/products", component: Sc.Sc02b },
+        { path: "/stores", component: Sc.Sc02c },
         { path: "/profile", component: Sc.Sc03a },
         { path: "/profile-product", component: Sc.Sc03b },
         { path: "/profile-store", component: Sc.Sc03c },

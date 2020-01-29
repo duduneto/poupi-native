@@ -8,7 +8,11 @@ Carlos ok - Cp01 - Fazer botão voltar funcionar.
 -- ORDENAR PRIORIDADES
 
 Carlos ok - Sc00b - Fazer TempUsers via dbRef.json
-Fazendo... - Sc04a - Incluir categorias de produtos
+Fazendo... - Sc04a - Incluir categorias de produtos e userId do rdAuthUser
+
+- Sc04a - Puxar categorias do dbRef.json e selecionar opção no picker pelo index ao inves do texto
+- Sc02a - Renomear Category para Cat
+- Sc - Trazer .maps como arrays
 
 - AllApp - Conectar Firestore + condição rdContent
 - Sc01 - Ver rdIptState

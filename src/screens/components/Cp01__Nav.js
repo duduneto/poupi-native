@@ -54,13 +54,18 @@ export default function Sc00(props) {
       menu: false,
       longBar: true
     },
-    "/stores": {
+    "/category-products": {
       title: scContent.sc02a,
       menu: true,
       longBar: false
     },
     "/products": {
       title: scContent.sc02b,
+      menu: false,
+      longBar: false
+    },
+    "/stores": {
+      title: scContent.sc02c,
       menu: true,
       longBar: false
     },

@@ -8,8 +8,9 @@
         "txt03": "Contador",
         "sc00b": "Temp Users",
         "sc01b": "Termos de Uso",
-        "sc02a": "Lojas",
+        "sc02a": "Produtos",
         "sc02b": "Produtos",
+        "sc02c": "Lojas",
         "sc03a": "Meu Perfil",
         "sc03b": "Perfil do Produto",
         "sc03c": "Perfil da Loja",
@@ -45,15 +46,19 @@
         ]
       },
       "sc02a": {
-        "aRef": "Sc02a - Perfil",
+        "aRef": "Sc02a - Category Products",
         "txt01": "Nome"
       },
       "sc02b": {
-        "aRef": "Sc02b - Contador",
+        "aRef": "Sc02b - Products",
         "txt01": "Contador",
         "txt02": "Aumentar",
         "txt03": "Diminuir",
         "txt04": "Mudar Nome"
+      },
+      "sc02c": {
+        "aRef": "Sc02a - Stores",
+        "txt01": "Nome"
       },
       "sc03a": {
         "aRef": "Sc02b - Meu Perfil",
@@ -136,6 +141,7 @@
       "docId": "xxx01",
       "userId": "xxx01",
       "name": "Laranja",
+      "category": "Frutas",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?orange&1"
     },
@@ -143,12 +149,14 @@
       "docId": "xxx02",
       "userId": "xxx02",
       "name": "Pêra",
+      "category": "Frutas",
       "description": "Dá pra fazer suco..."
     },
     "xxx03": {
       "docId": "xxx03",
       "userId": "xxx03",
       "name": "Abacaxi",
+      "category": "Frutas",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?pineapple&1"
     },
@@ -156,8 +164,25 @@
       "docId": "xxx04",
       "userId": "xxx01",
       "name": "Uva",
+      "category": "Frutas",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?grape&1"
+    },
+    "xxx05": {
+      "docId": "xxx05",
+      "userId": "xxx01",
+      "name": "Abobrinha",
+      "category": "Legumes",
+      "description": "Dá pra fazer suco...",
+      "image": "https://source.unsplash.com/200x150/?zucchini&1"
+    },
+    "xxx06": {
+      "docId": "xxx06",
+      "userId": "xxx01",
+      "name": "Alface",
+      "category": "Verduras",
+      "description": "Dá pra fazer suco...",
+      "image": "https://source.unsplash.com/200x150/?lettuce&1"
     }
   },
 

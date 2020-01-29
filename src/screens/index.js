@@ -14,12 +14,14 @@ export { default as Sc01c_v } from "./Sc01c_v";
 
 // ---------------
 
-export { default as Sc02a } from "./Sc02a__Stores";
+export { default as Sc02a } from "./Sc02a__CategoryProd";
 export { default as Sc02a_v } from "./Sc02a_v";
 
 export { default as Sc02b } from "./Sc02b__Products";
 export { default as Sc02b_v } from "./Sc02b_v";
 
+export { default as Sc02c } from "./Sc02c__Stores";
+export { default as Sc02c_v } from "./Sc02c_v";
 // ---------------
 
 export { default as Sc03a } from "./Sc03a__MyPf";

@@ -37,10 +37,10 @@ export default function Sc00(props) {
   let arrMenu = [
     { icon: "image", label: scContent.item01, goTo: "/profile" },
     { icon: "image", label: scContent.item02, goTo: "/stores" },
-    { icon: "image", label: scContent.item03, goTo: "/products" },
+    { icon: "image", label: scContent.item03, goTo: "/category-products" },
     { icon: "image", label: scContent.item04, goTo: "/add-products" }
   ];
-
+  console.log("arrMenu", arrMenu);
   let ItemsList = arrMenu.map((item, idx) => {
     let goTo = () => {
       history.push(item.goTo);

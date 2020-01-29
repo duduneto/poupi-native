@@ -46,22 +46,43 @@ export default function Sc00() {
   // let model = () =>
 
   let listProducts = Object.keys(rdProducts).map((item, idx) => {
-    let goTo = () => {
-      changeRd("rdProdSelected", rdProducts[item]);
-      history.push("/profile-product");
-    };
-    let source = rdProducts[item].image;
-    let condThumbnail = !source ? defaultImg : source;
-    let infoReturn = {
-      name: rdProducts[item].name,
-      description: rdProducts[item].description,
-      condThumbnail,
-      goTo
-    };
+    const searchCateg = rdProducts[item].category === "Verduras";
+    console.log(searchCateg);
 
-    return <ItemProduct key={idx} info={infoReturn} />;
+    if (searchCateg) {
+      let goTo = () => {
+        changeRd("rdProdSelected", rdProducts[item]);
+        history.push("/profile-product");
+      };
+      let source = rdProducts[item].image;
+      let condThumbnail = !source ? defaultImg : source;
+      let infoReturn = {
+        name: rdProducts[item].name,
+        description: rdProducts[item].description,
+        condThumbnail,
+        goTo
+      };
+
+      return searchCateg && <ItemProduct key={idx} info={infoReturn} />;
+    } else {
+      return false;
+    }
   });
 
+  // let listProducts = Object.keys(rdProducts).filter((categ) => {
+  //   // const searchCateg = rdProducts[item].category === "Verduras";
+  //   // console.log(searchCateg)
+
+  //   // let source = rdProducts[item].image;
+  //   // let condThumbnail = !source ? defaultImg : source;
+  //   // let infoReturn = {
+
+  //   // };
+
+  //   return categ.category === 'Verduras';
+
+  // });
+  // console.log(listProducts)
   // ---------------
   // #endregion
   // ***************************************

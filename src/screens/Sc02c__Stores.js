@@ -9,7 +9,7 @@ import React from "react";
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
 import defaultImg from "../images/default.jpg";
-import { ItemStore } from "./Sc02a_v";
+import { ItemStore } from "./Sc02c_v";
 
 // ---------------
 // #endregion
@@ -77,7 +77,7 @@ export default function Sc00() {
     // toSignIn
   };
 
-  return <AllSc.Sc02a_v info={infoReturn} />;
+  return <AllSc.Sc02c_v info={infoReturn} />;
 
   // ---------------
   // #endregion
