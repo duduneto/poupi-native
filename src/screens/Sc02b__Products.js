@@ -8,7 +8,6 @@ import React from "react";
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
-import dbRef from "../useMorfos/dbRef";
 import defaultImg from "../images/default.jpg";
 import { ItemProduct } from "./Sc02b_v";
 
@@ -22,8 +21,7 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdProducts } = useRd();
-  let options = dbRef.category;
+  let { rdContent, rdProducts, rdCatSelected } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
 
@@ -48,7 +46,7 @@ export default function Sc00() {
   // let model = () =>
 
   let listProducts = Object.keys(rdProducts).map((item, idx) => {
-    const searchCateg = rdProducts[item].category === "Verduras";
+    const searchCateg = rdProducts[item].category === rdCatSelected;
     console.log(searchCateg);
 
     if (searchCateg) {
@@ -71,20 +69,6 @@ export default function Sc00() {
     }
   });
 
-  // let listProducts = Object.keys(rdProducts).filter((categ) => {
-  //   // const searchCateg = rdProducts[item].category === "Verduras";
-  //   // console.log(searchCateg)
-
-  //   // let source = rdProducts[item].image;
-  //   // let condThumbnail = !source ? defaultImg : source;
-  //   // let infoReturn = {
-
-  //   // };
-
-  //   return categ.category === 'Verduras';
-
-  // });
-  // console.log(listProducts)
   // ---------------
   // #endregion
   // ***************************************

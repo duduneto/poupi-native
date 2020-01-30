@@ -22,10 +22,10 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdProducts, rdAuthUser } = useRd();
+  let { rdContent } = useRd();
   let options = dbRef.category;
   let history = useHistory();
-  // let changeRd = useChangeRd();
+  let changeRd = useChangeRd();
 
   // ---------------
   // #endregion
@@ -48,8 +48,7 @@ export default function Sc00() {
   // console.log(rdProducts.category)
   let listCateg = Object.keys(options).map((item, idx) => {
     let goTo = () => {
-      //   changeRd("rdStoreSelected", options[item]);
-      console.log(options[item].label);
+      changeRd("rdCatSelected", options[item].label);
       history.push("/products");
     };
     let source = options[item].image;

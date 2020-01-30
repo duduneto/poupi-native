@@ -20,12 +20,14 @@ let stlBODY1 = [useStl.colView];
 let stlBODY1a = [
   useStl.cardMask,
   useStl.mgB20,
-  { minWidth: 120, flex: 1, marginHorizontal: 5 }
+  { minWidth: 120, flex: 1, marginHorizontal: 8 }
 ];
 let stlBODY1b = [{ margin: 8 }];
 let stlBODY1c = [useStl.flex1];
 
-let stlBODY2 = [{ fontSize: 12, textAlign: "center", marginVertical: 8 }];
+let stlBODY2 = [
+  { fontSize: 12, textAlign: "center", marginTop: 8, marginBottom: 3 }
+];
 let stlBODY3 = [{ width: "100%", height: 65 }];
 
 // ---------------
