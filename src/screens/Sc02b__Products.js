@@ -8,6 +8,7 @@ import React from "react";
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import dbRef from "../useMorfos/dbRef";
 import defaultImg from "../images/default.jpg";
 import { ItemProduct } from "./Sc02b_v";
 
@@ -22,6 +23,7 @@ export default function Sc00() {
 
   // set Hooks
   let { rdContent, rdProducts } = useRd();
+  let options = dbRef.category;
   let history = useHistory();
   let changeRd = useChangeRd();
 

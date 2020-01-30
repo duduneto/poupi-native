@@ -8,9 +8,12 @@ Carlos ok - Cp01 - Fazer botão voltar funcionar.
 -- ORDENAR PRIORIDADES
 
 Carlos ok - Sc00b - Fazer TempUsers via dbRef.json
-Fazendo... - Sc04a - Incluir categorias de produtos e userId do rdAuthUser
+Carlos ok - Sc04a - Incluir categorias de produtos e userId do rdAuthUser
 
-- Sc04a - Puxar categorias do dbRef.json e selecionar opção no picker pelo index ao inves do texto
+Carlos ok - Sc04a - Puxar categorias do dbRef.json e selecionar opção no picker pelo index ao inves do texto
+
+Fazendo... - Cp01, 02 - Contem dois objetos para os nomes das telas. Unificar num unico objeto.
+
 - Sc02a - Renomear Category para Cat
 - Sc - Trazer .maps como arrays
 

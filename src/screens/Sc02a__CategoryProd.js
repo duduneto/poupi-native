@@ -8,6 +8,7 @@ import React from "react";
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
+import dbRef from "../useMorfos/dbRef";
 import defaultImg from "../images/default.jpg";
 import { ItemCateg } from "./Sc02a_v";
 
@@ -22,8 +23,9 @@ export default function Sc00() {
 
   // set Hooks
   let { rdContent, rdProducts, rdAuthUser } = useRd();
+  let options = dbRef.category;
   let history = useHistory();
-  let changeRd = useChangeRd();
+  // let changeRd = useChangeRd();
 
   // ---------------
   // #endregion
@@ -42,26 +44,6 @@ export default function Sc00() {
   // ***************************************
   // #region :: BUTTONs + OTHERs
   // ---------------
-
-  let options = {
-    opt1: {
-      label: "Frutas",
-      value: "frutas",
-      image: "https://cdn.domtotal.com/img/noticias/2015-01/1253236_357228.jpg"
-    },
-    opt2: {
-      label: "Legumes",
-      value: "legumes",
-      image:
-        "https://3eaf214443cb92a1.cdn.gocache.net/wp-content/uploads/2019/11/shopping-bag-full-of-fresh-vegetables-and-fruits-picture-id1128687123-760x450.jpg"
-    },
-    opt3: {
-      label: "Verduras",
-      value: "verduras",
-      image:
-        "http://www.nutrindoideais.com.br/wp/wp-content/uploads/2014/12/folhas-verdes-e-escuras.jpg"
-    }
-  };
 
   // console.log(rdProducts.category)
   let listCateg = Object.keys(options).map((item, idx) => {
