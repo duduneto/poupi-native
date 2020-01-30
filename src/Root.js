@@ -1,18 +1,21 @@
 // import packages
-import React from 'react';
-import { Provider } from 'react-redux';
+import React from "react";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 // import internals
-import { Router } from './config/router/packs';
+import { Router } from "./config/router/packs";
 
 // import internals
-import store from './config/redux';
-import children from './config/router/routeConfig';
+import { store, persistor } from "./config/redux";
+import children from "./config/router/routeConfig";
 
 export default () => {
   return (
     <Provider store={store}>
-      <Router>{children}</Router>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router>{children}</Router>
+      </PersistGate>
     </Provider>
   );
 };
