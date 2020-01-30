@@ -12,12 +12,14 @@ Carlos ok - Sc04a - Incluir categorias de produtos e userId do rdAuthUser
 Carlos ok - Sc04a - Puxar categorias do dbRef.json e selecionar opção no picker pelo index ao inves do texto
 Carlos ok - Cp01, 02 - Contem dois objetos para os nomes das telas. Unificar num unico objeto.
 Carlos ok - Sc02a - Renomear Category para Cat
+Carlos ok - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reducer e alterar valor dele conforme selecionado em Sc02a
+Carlos ok - Sc - Trazer .maps como arrays
 
-Fazendo... - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reducer e alterar valor dele conforme selecionado em Sc02a
+Fazendo... - AllApp - Conectar Firestore + condição rdContent
 
-- Sc - Trazer .maps como arrays
+- Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
 
-- AllApp - Conectar Firestore + condição rdContent
+- Sc02a_v - Trazer estilos padrão para msg noItem
 - Sc01 - Ver rdIptState
 - Config - Incluir persistência do authUser (mesmo quando recarregar a página) incluir redux-persist
 

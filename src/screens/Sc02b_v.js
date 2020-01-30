@@ -60,7 +60,7 @@ export default ({ info }) => {
       {/* LIST */}
       {/* ------------------------------ */}
 
-      {info.listProducts}
+      {info.condListProd}
 
       {/* END */}
       {/* ------------------------------ */}

@@ -30,13 +30,13 @@ export default function Sc00() {
   // set Hook
   const usersList = dbRef.users;
 
-  let callList = Object.keys(usersList).map((item, idx) => {
+  let callList = Object.values(usersList).map((item, idx) => {
     let goTo = () => {
-      changeRd("rdAuthUser", usersList[item]); // call Hook
+      changeRd("rdAuthUser", item); // call Hook
       history.push("/profile"); // redirect
     };
     let infoReturn = {
-      name: usersList[item].userName,
+      name: item.userName,
       goTo
     };
 

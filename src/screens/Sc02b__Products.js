@@ -4,6 +4,7 @@
 
 // import Packages
 import React from "react";
+import { Text } from "react-native";
 
 // import Internals
 import * as AllSc from "./";
@@ -45,20 +46,20 @@ export default function Sc00() {
 
   // let model = () =>
 
-  let listProducts = Object.keys(rdProducts).map((item, idx) => {
-    const searchCateg = rdProducts[item].category === rdCatSelected;
+  let listProducts = Object.values(rdProducts).map((item, idx) => {
+    const searchCateg = item.category === rdCatSelected;
     console.log(searchCateg);
 
     if (searchCateg) {
       let goTo = () => {
-        changeRd("rdProdSelected", rdProducts[item]);
+        changeRd("rdProdSelected", item);
         history.push("/profile-product");
       };
-      let source = rdProducts[item].image;
+      let source = item.image;
       let condThumbnail = !source ? defaultImg : source;
       let infoReturn = {
-        name: rdProducts[item].name,
-        description: rdProducts[item].description,
+        name: item.name,
+        description: item.description,
         condThumbnail,
         goTo
       };
@@ -69,6 +70,15 @@ export default function Sc00() {
     }
   });
 
+  console.log("listProducts", listProducts);
+
+  let condListProd =
+    listProducts[0] === false ? (
+      <Text>Nenhum item encontrado</Text>
+    ) : (
+      listProducts
+    );
+
   // ---------------
   // #endregion
   // ***************************************
@@ -78,6 +88,7 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
+    condListProd,
     listProducts,
     rdContent
     // toSignIn

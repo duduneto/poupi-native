@@ -19,7 +19,6 @@ import { UseLoader, useFbListRd, useRd, useToggle } from ".";
 export default function UseFbListItems(info) {
   // set hook
   const callRdListName = useFbListRd();
-  const [sttNoItem, toggleNoItem] = useToggle(false);
 
   // it is called when component did mount
   React.useEffect(() => {
@@ -32,14 +31,10 @@ export default function UseFbListItems(info) {
 
   // set map itens
   const ITEMSLIST = props => {
-    React.useEffect(() => {
-      rdItemsList != null && rdItemsLength === 0 && toggleNoItem(true);
-    }, [rdItemsList]);
-
-    return rdItemsList == null ? (
+    return rdItemsList === null ? (
       <UseLoader size="large" />
     ) : rdItemsLength === 0 ? (
-      <></>
+      info.noItem
     ) : (
       rdItemsList.map((item, id) => {
         return props.renderProps({ item, id });
@@ -48,7 +43,7 @@ export default function UseFbListItems(info) {
   };
 
   // send Result
-  return [ITEMSLIST, sttNoItem, rdItemsLength];
+  return [ITEMSLIST, rdItemsLength];
 }
 
 // ---------------
@@ -65,6 +60,7 @@ export default function UseFbListItems(info) {
   let infoPosts = {
     collection: 'posts',
     reducerName: 'rdMyPosts',
+    noItem: <Text>Sem Item</Text>
     // filter
     where1: { field: 'userId', type: '==', value: rdAuthUser.docId },
     // order
@@ -75,10 +71,7 @@ export default function UseFbListItems(info) {
   };
 
   // set Hook
-  const [POSTS, sttNoItem] = UseFbListItems(infoPosts);
-
-  // call Items
-  {sttNoItems && <Text>Sem Item</Text> }
+  const [POSTS] = UseFbListItems(infoPosts);
 
   <POSTS
     renderProps={({item, id}) => {

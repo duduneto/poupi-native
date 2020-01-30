@@ -37,6 +37,7 @@ let stlBODY3 = [{ width: "100%", height: 65 }];
 // ***************************************
 // #region :: EXPORTs
 // ---------------
+export const noItemComp = <Text>Sem item 2</Text>;
 
 export const ItemCateg = ({ info }) => (
   <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>

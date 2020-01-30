@@ -17,5 +17,7 @@ export default ({ children }) => {
     changeRd("rdProducts", dbRef.products);
   }, []);
 
-  return Object.keys(rdContent).length === 0 ? <UseLoader /> : children;
+  let size = rdContent.length === 0;
+
+  return size ? <UseLoader /> : children;
 };

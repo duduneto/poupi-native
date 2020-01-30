@@ -1,11 +1,11 @@
 export default {
   rdAuthUser: null,
-  rdContent: {},
+  rdContent: [],
   rdStores: {},
-  rdProducts: {},
+  rdProducts: null,
   rdStoreSelected: {},
   rdProdSelected: {},
-  rdCatSelected: {},
+  rdCatSelected: null,
   rdIptsSignUp: {},
   rdIptState: ""
 };

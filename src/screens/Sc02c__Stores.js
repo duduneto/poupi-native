@@ -46,16 +46,16 @@ export default function Sc00() {
   // let goToProfileStore = () => history.push("/profile-store");
   // let toSignIn = () => history.push("/sign-in");
 
-  let listStores = Object.keys(rdStores).map((item, idx) => {
+  let listStores = Object.values(rdStores).map((item, idx) => {
     let goTo = () => {
-      changeRd("rdStoreSelected", rdStores[item]);
+      changeRd("rdStoreSelected", item);
       history.push("/profile-store");
     };
-    let source = rdStores[item].image;
+    let source = item.image;
     let condThumbnail = !source ? defaultImg : source;
     let infoReturn = {
-      name: rdStores[item].name,
-      description: rdStores[item].description,
+      name: item.name,
+      description: item.description,
       condThumbnail,
       goTo
     };
