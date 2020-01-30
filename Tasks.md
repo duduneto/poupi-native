@@ -9,12 +9,12 @@ Carlos ok - Cp01 - Fazer botão voltar funcionar.
 
 Carlos ok - Sc00b - Fazer TempUsers via dbRef.json
 Carlos ok - Sc04a - Incluir categorias de produtos e userId do rdAuthUser
-
 Carlos ok - Sc04a - Puxar categorias do dbRef.json e selecionar opção no picker pelo index ao inves do texto
+Carlos ok - Cp01, 02 - Contem dois objetos para os nomes das telas. Unificar num unico objeto.
+Carlos ok - Sc02a - Renomear Category para Cat
 
-Fazendo... - Cp01, 02 - Contem dois objetos para os nomes das telas. Unificar num unico objeto.
+Fazendo... - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reducer e alterar valor dele conforme selecionado em Sc02a
 
-- Sc02a - Renomear Category para Cat
 - Sc - Trazer .maps como arrays
 
 - AllApp - Conectar Firestore + condição rdContent

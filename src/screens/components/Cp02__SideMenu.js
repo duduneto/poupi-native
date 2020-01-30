@@ -21,7 +21,7 @@ export default function Sc00(props) {
 
   // set Hooks
   let { rdContent } = useRd();
-  let scContent = rdContent.cp02;
+  let scContent = rdContent.cp01;
   let history = useHistory();
 
   // ---------------
@@ -35,10 +35,10 @@ export default function Sc00(props) {
   // let start = () => {}
 
   let arrMenu = [
-    { icon: "image", label: scContent.item01, goTo: "/profile" },
-    { icon: "image", label: scContent.item02, goTo: "/stores" },
-    { icon: "image", label: scContent.item03, goTo: "/category-products" },
-    { icon: "image", label: scContent.item04, goTo: "/add-products" }
+    { icon: "image", label: scContent.sc03a, goTo: "/profile" },
+    { icon: "image", label: scContent.sc02c, goTo: "/stores" },
+    { icon: "image", label: scContent.sc02a, goTo: "/category-products" },
+    { icon: "image", label: scContent.sc04a, goTo: "/add-products" }
   ];
   console.log("arrMenu", arrMenu);
   let ItemsList = arrMenu.map((item, idx) => {
@@ -79,7 +79,7 @@ export default function Sc00(props) {
   // ---------------
 
   let infoReturn = {
-    rdContent,
+    scContent,
     ItemsList,
     toggleMenu: props.toggleMenu
   };

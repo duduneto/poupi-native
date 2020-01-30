@@ -14,7 +14,7 @@ export { default as Sc01c_v } from "./Sc01c_v";
 
 // ---------------
 
-export { default as Sc02a } from "./Sc02a__CategoryProd";
+export { default as Sc02a } from "./Sc02a__CatProd";
 export { default as Sc02a_v } from "./Sc02a_v";
 
 export { default as Sc02b } from "./Sc02b__Products";

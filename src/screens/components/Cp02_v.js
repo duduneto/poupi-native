@@ -36,8 +36,6 @@ let stlBG1 = [
   }
 ];
 
-let stlBG2 = [{ backgroundColor: "red", width: 380, height: 30 }];
-
 let stlBODY1 = [
   { width: 280, height: "100%", backgroundColor: "#000", padding: 20 }
 ];
@@ -87,7 +85,7 @@ export default ({ info }) => {
 
         <TouchableOpacity style={stlBODY1a} onPress={info.toggleMenu}>
           <UseIcoMoon name={"left"} size={22} color={"#fff"} />
-          <Text style={stlBODY2}>Voltar</Text>
+          <Text style={stlBODY2}>{info.scContent.back}</Text>
         </TouchableOpacity>
 
         {info.ItemsList}

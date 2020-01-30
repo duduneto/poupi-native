@@ -6,6 +6,7 @@
         "txt01": "Usuário",
         "txt02": "Perfil",
         "txt03": "Contador",
+        "back": "Voltar",
         "sc00b": "Temp Users",
         "sc01b": "Termos de Uso",
         "sc02a": "Produtos",
@@ -15,13 +16,6 @@
         "sc03b": "Perfil do Produto",
         "sc03c": "Perfil da Loja",
         "sc04a": "Adicionar Produto"
-      },
-      "cp02": {
-        "aRef": "Cp01 - SideMenu",
-        "item01": "Meu Perfil",
-        "item02": "Lojas",
-        "item03": "Produtos",
-        "item04": "Adicionar Produtos"
       },
       "sc01a": {
         "aRef": "Sc01a - Login",
