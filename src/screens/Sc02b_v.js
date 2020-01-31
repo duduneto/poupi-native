@@ -33,6 +33,7 @@ let stlBODY3 = [useStl.thumbnail];
 // ***************************************
 // #region :: EXPORTs
 // ---------------
+export const noItemComp = <Text>Sem item 2</Text>;
 
 export const ItemProduct = ({ info }) => (
   <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
@@ -60,7 +61,7 @@ export default ({ info }) => {
       {/* LIST */}
       {/* ------------------------------ */}
 
-      {info.condListProd}
+      {info.listProd}
 
       {/* END */}
       {/* ------------------------------ */}

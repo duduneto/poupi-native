@@ -22,21 +22,16 @@ Fazendo... -- prodList mock + Fb
 -- addProducts mock + Fb
 -- rdContent mock + Fb
 
-Fazendo... - AllApp - Conectar Firestore + condição rdContent
--- Add Products
--- Stores List
--- Products List
--- rdContent
-
 - Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
+- Img - Colocar background cinza clarinho
 
-- Sc02a_v - Trazer estilos padrão para msg noItem
-- Sc01 - Ver rdIptState
-- Config - Incluir persistência do authUser (mesmo quando recarregar a página) incluir redux-persist
+* Sc02a_v - Trazer estilos padrão para msg noItem
+* Sc01 - Ver rdIptState
+* Config - Incluir persistência do authUser (mesmo quando recarregar a página) incluir redux-persist
 
-- conexão com DB Ref + msgs DB
-- ajustar padrão padding screens
-- incluir listas
+* conexão com DB Ref + msgs DB
+* ajustar padrão padding screens
+* incluir listas
 
 ### POSTERIORMENTE
 

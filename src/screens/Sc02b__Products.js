@@ -4,13 +4,13 @@
 
 // import Packages
 import React from "react";
-import { Text } from "react-native";
 
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
 import defaultImg from "../images/default.jpg";
-import { ItemProduct } from "./Sc02b_v";
+import { ItemProduct, noItemComp } from "./Sc02b_v";
+import { prodList } from "./services";
 
 // ---------------
 // #endregion
@@ -22,9 +22,9 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdProducts, rdCategSelected } = useRd();
-  let history = useHistory();
-  let changeRd = useChangeRd();
+  let { rdContent } = useRd();
+  // let history = useHistory();
+  // let changeRd = useChangeRd();
 
   // ---------------
   // #endregion
@@ -35,6 +35,11 @@ export default function Sc00() {
   // ---------------
 
   // let start = () => {}
+  let listProd = prodList({
+    noItemComp,
+    CompReturn: ItemProduct,
+    defaultImg
+  });
 
   // ---------------
   // #endregion
@@ -46,37 +51,6 @@ export default function Sc00() {
 
   // let model = () =>
 
-  let listProducts = Object.values(rdProducts).map((item, idx) => {
-    const searchCateg = item.category === rdCategSelected;
-    console.log(searchCateg);
-
-    if (searchCateg) {
-      let goTo = () => {
-        changeRd("rdProdSelected", item);
-        history.push("/profile-product");
-      };
-      let source = item.image;
-      let condThumbnail = !source ? defaultImg : source;
-      let infoReturn = {
-        name: item.name,
-        description: item.description,
-        condThumbnail,
-        goTo
-      };
-
-      return searchCateg && <ItemProduct key={idx} info={infoReturn} />;
-    } else {
-      return false;
-    }
-  });
-
-  let condListProd =
-    listProducts[0] === false ? (
-      <Text>Nenhum item encontrado</Text>
-    ) : (
-      listProducts
-    );
-
   // ---------------
   // #endregion
   // ***************************************
@@ -86,10 +60,8 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    condListProd,
-    listProducts,
+    listProd,
     rdContent
-    // toSignIn
   };
 
   return <AllSc.Sc02b_v info={infoReturn} />;

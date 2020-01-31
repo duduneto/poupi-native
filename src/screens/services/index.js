@@ -1,5 +1,6 @@
 // import Packages
 import React from "react";
+import { Text } from "react-native";
 
 // import Internals
 import mockDb from "./mockDb.json";
@@ -56,7 +57,7 @@ let SetCategProdListMockDb = Info => {
 
   let mapItems = Object.values(mockDb.category).map((item, idx) => {
     let goTo = () => {
-      changeRd("rdCatSelected", item.label);
+      changeRd("rdCategSelected", item.label);
       history.push("/products");
     };
     let source = item.image;
@@ -71,36 +72,44 @@ let SetCategProdListMockDb = Info => {
     return <Info.CompReturn key={idx} info={infoReturn} />;
   });
 
-  let condListItems = mapItems.length === 5 ? Info.noItemComp : mapItems;
+  let condListItems = mapItems.length === 0 ? Info.noItemComp : mapItems;
   return condListItems;
 };
+
+// ... .... ... ... ...
 
 let SetProdListFb = Info => {};
 
 let SetProdListMockDb = Info => {
-  return Object.values(mockDb.products).map((item, idx) => {
-    const searchCateg = item.category === rdCategSelected;
-    console.log(searchCateg);
+  // set Hooks
+  let { rdCategSelected } = useRd();
+  let history = useHistory();
+  let changeRd = useChangeRd();
 
-    if (searchCateg) {
-      let goTo = () => {
-        changeRd("rdProdSelected", item);
-        history.push("/profile-product");
-      };
-      let source = item.image;
-      let condThumbnail = !source ? defaultImg : source;
-      let infoReturn = {
-        name: item.name,
-        description: item.description,
-        condThumbnail,
-        goTo
-      };
+  let arrProducts = Object.values(mockDb.products);
+  let filteredItems = arrProducts.filter(
+    item => item.category === rdCategSelected
+  );
 
-      return searchCateg && <ItemProduct key={idx} info={infoReturn} />;
-    } else {
-      return false;
-    }
+  let mapItems = filteredItems.map((item, idx) => {
+    let goTo = () => {
+      changeRd("rdProdSelected", item);
+      history.push("/profile-product");
+    };
+    let source = item.image;
+    let condThumbnail = !source ? Info.defaultImg : source;
+    let infoReturn = {
+      name: item.name,
+      description: item.description,
+      condThumbnail,
+      goTo
+    };
+
+    return <Info.CompReturn key={idx} info={infoReturn} />;
   });
+
+  let condListItems = mapItems.length === 0 ? Info.noItemComp : mapItems;
+  return condListItems;
 };
 
 // let SetProdListMockDb = Info => {}
@@ -108,3 +117,6 @@ let SetProdListMockDb = Info => {
 
 export let catProdList = info =>
   dbFirestore ? SetCategProdListFb(info) : SetCategProdListMockDb(info);
+
+export let prodList = info =>
+  dbFirestore ? SetProdListFb(info) : SetProdListMockDb(info);
