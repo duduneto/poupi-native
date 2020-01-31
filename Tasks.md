@@ -15,6 +15,11 @@ Carlos ok - Sc02a - Renomear Category para Cat
 Carlos ok - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reducer e alterar valor dele conforme selecionado em Sc02a
 Carlos ok - Sc - Trazer .maps como arrays
 
+Carlos e Juan Fazendo... - Separação de services
+ok -- categListFb
+-- categList mock
+-- prodList mock + Fb
+
 Fazendo... - AllApp - Conectar Firestore + condição rdContent
 -- Add Products
 -- Stores List
