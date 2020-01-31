@@ -1,6 +1,5 @@
 // import Packages
 import React from "react";
-import { Text } from "react-native";
 
 // import Internals
 import mockDb from "./mockDb.json";
@@ -78,7 +77,48 @@ let SetCategProdListMockDb = Info => {
 
 // ... .... ... ... ...
 
-let SetProdListFb = Info => {};
+let SetProdListFb = Info => {
+  // set Hooks
+  let { rdCategSelected } = useRd();
+  let history = useHistory();
+  let changeRd = useChangeRd();
+
+  // SetCall
+  let infoListCat = {
+    collection: "products",
+    reducerName: "rdProducts",
+    where1: {
+      field: "category",
+      type: "==",
+      value: rdCategSelected
+    },
+    noItem: Info.noItemComp
+  };
+
+  const [PRODS] = UseFbListItems(infoListCat);
+
+  // console.log("aqwe", infoListCat);
+  return (
+    <PRODS
+      renderProps={({ item, idx }) => {
+        let goTo = () => {
+          changeRd("rdProdSelected", item);
+          history.push("/profile-product");
+        };
+        let source = item.image;
+        let condThumbnail = !source ? Info.defaultImg : source;
+        let infoReturn = {
+          name: item.name,
+          description: item.description,
+          image: item.image,
+          condThumbnail,
+          goTo
+        };
+        return <Info.CompReturn key={idx} info={infoReturn} />;
+      }}
+    />
+  );
+};
 
 let SetProdListMockDb = Info => {
   // set Hooks

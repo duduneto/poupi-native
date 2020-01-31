@@ -13,8 +13,6 @@ export default ({ children }) => {
   React.useEffect(() => {
     // FALTA: Conectar Firestore + condição rdContent
     changeRd("rdContent", dbRef.content.pt);
-    changeRd("rdStores", dbRef.stores);
-    changeRd("rdProducts", dbRef.products);
   }, []);
 
   let size = rdContent.length === 0;

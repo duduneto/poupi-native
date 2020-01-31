@@ -1,19 +1,22 @@
 // import Packages
 import { createStore, applyMiddleware, compose } from "redux";
+import { Platform } from "react-native";
 import createSagaMiddleware from "redux-saga";
-import storage from "redux-persist/lib/storage";
+import webStorage from "redux-persist/lib/storage";
+// import AsyncStorage from "@react-native-community/async-storage";
 import { persistStore, persistReducer } from "redux-persist";
-import { createWhitelistFilter } from "redux-persist-transform-filter";
 
 // import Internals
 import reducers from "./rootReducer";
 import async from "./async";
 
+let AsyncStorage;
+
+let condStorage = Platform.OS === "web" ? webStorage : AsyncStorage;
 const persistConfig = {
-  storage,
+  storage: condStorage,
   key: "root",
-  // whitelist: ['allContent']
-  transforms: [createWhitelistFilter(["rdAuthUser", "rdContent"])]
+  whitelist: ["rdAuthUser"]
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
