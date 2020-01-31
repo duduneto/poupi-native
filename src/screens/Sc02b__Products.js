@@ -70,8 +70,6 @@ export default function Sc00() {
     }
   });
 
-  console.log("listProducts", listProducts);
-
   let condListProd =
     listProducts[0] === false ? (
       <Text>Nenhum item encontrado</Text>

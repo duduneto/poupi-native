@@ -16,9 +16,11 @@ Carlos ok - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reduce
 Carlos ok - Sc - Trazer .maps como arrays
 
 Carlos e Juan Fazendo... - Separação de services
-ok -- categListFb
--- categList mock
--- prodList mock + Fb
+ok -- categList Fb + mock
+Fazendo... -- prodList mock + Fb
+-- storeList mock + Fb
+-- addProducts mock + Fb
+-- rdContent mock + Fb
 
 Fazendo... - AllApp - Conectar Firestore + condição rdContent
 -- Add Products
