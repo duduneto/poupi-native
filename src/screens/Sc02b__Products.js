@@ -22,7 +22,7 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent, rdProducts, rdCatSelected } = useRd();
+  let { rdContent, rdProducts, rdCategSelected } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
 
@@ -47,7 +47,7 @@ export default function Sc00() {
   // let model = () =>
 
   let listProducts = Object.values(rdProducts).map((item, idx) => {
-    const searchCateg = item.category === rdCatSelected;
+    const searchCateg = item.category === rdCategSelected;
     console.log(searchCateg);
 
     if (searchCateg) {

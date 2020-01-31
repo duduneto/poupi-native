@@ -31,7 +31,7 @@ export default function Sc00() {
   // SetCall
   let infoListCat = {
     collection: "category",
-    reducerName: "rdCatSelected",
+    reducerName: "rdCategList",
     noItem: noItemComp
   };
 
@@ -50,7 +50,7 @@ export default function Sc00() {
     <CATEGS
       renderProps={({ item, idx }) => {
         let goTo = () => {
-          changeRd("rdCatSelected", item.label);
+          changeRd("rdCategSelected", item.label);
           history.push("/products");
         };
         let source = item.image;

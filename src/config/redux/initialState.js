@@ -5,7 +5,8 @@ export default {
   rdProducts: null,
   rdStoreSelected: {},
   rdProdSelected: {},
-  rdCatSelected: null,
+  rdCategSelected: null,
+  rdCategList: null,
   rdIptsSignUp: {},
   rdIptState: ""
 };

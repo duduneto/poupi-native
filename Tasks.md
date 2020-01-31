@@ -16,6 +16,10 @@ Carlos ok - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reduce
 Carlos ok - Sc - Trazer .maps como arrays
 
 Fazendo... - AllApp - Conectar Firestore + condição rdContent
+-- Add Products
+-- Stores List
+-- Products List
+-- rdContent
 
 - Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
 
