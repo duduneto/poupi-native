@@ -18,7 +18,7 @@ export default ({ info }) => {
   // #region :: STYLEs
   // ---------------
 
-  let stlBODY1a = [useStl.cardMask, useStl.flex1, useStl.cardLongBar];
+  let stlBODY1a = [useStl.cardMaskPf, useStl.flex1, useStl.cardLongBar];
   let stlBODY1b = [useStl.pad20, useStl.flexCenter];
   let stlBODY1c = [useStl.imgProfile];
   let stlBODY1d = [useStl.pad20, useStl.flexCenter, useStl.topLine];

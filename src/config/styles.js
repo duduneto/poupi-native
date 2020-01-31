@@ -4,8 +4,8 @@ import { StyleSheet } from "react-native";
 // #region :: COLORs
 // ---------------
 
-export const primaryColor = "#000";
-const secondaryColor = "#292929";
+export const primaryColor = "#00339e";
+const secondaryColor = "#002288";
 const tertiaryColor = "#ff5300"; //laranja
 const inverseColor = "#fefefe";
 const lightGray = "#f6f6f6";
@@ -39,7 +39,7 @@ const sizeTxtRef = 20;
 const sizeBtnRef = 200;
 const heightBarRef = 50;
 const heightShortBar = { height: heightBarRef };
-const heightLongBar = { height: heightBarRef * 1.5 };
+const heightLongBar = { height: heightBarRef * 2 };
 
 // ---------------
 //  #endregion
@@ -160,11 +160,11 @@ const shadowMore = {
 };
 
 const radiusLess = {
-  borderRadius: 8
+  borderRadius: 10
 };
 
 const radiusMore = {
-  borderRadius: 14
+  borderRadius: 20
 };
 
 const radiusTotal = {
@@ -346,18 +346,18 @@ const Styles = StyleSheet.create({
   card: {
     backgroundColor: "white",
     marginBottom: 20,
-    ...radiusLess,
+    ...radiusMore,
     ...shadowLess,
     ...pad20
   },
 
   cardProfile: {
     paddingVertical: 0,
-    marginTop: -heightBarRef
+    marginTop: -heightBarRef * 1.5
   },
 
   cardLongBar: {
-    marginTop: -heightBarRef * 1.5
+    marginTop: -heightBarRef * 2
   },
 
   cardMask: {
@@ -365,6 +365,14 @@ const Styles = StyleSheet.create({
     marginBottom: 20,
     overflow: "hidden",
     ...radiusLess,
+    ...shadowLess
+  },
+
+  cardMaskPf: {
+    backgroundColor: "white",
+    marginBottom: 20,
+    overflow: "hidden",
+    ...radiusMore,
     ...shadowLess
   },
 
@@ -399,19 +407,27 @@ const Styles = StyleSheet.create({
   // ---------------
 
   profileImg: {
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
     marginBottom: 20,
     marginTop: -40,
     borderRadius: "100%",
-    borderWidth: 3,
-    borderColor: darkGray
+    borderWidth: 5,
+    // borderColor: primaryColor,
+    borderColor: "rgba(00,00,00,.5)"
   },
 
   thumbnail: {
     width: 100,
     height: 65,
-    marginRight: 10
+    marginRight: 10,
+    ...radiusLess
+  },
+
+  thumbnailCateg: {
+    width: "100%",
+    height: 65,
+    ...radiusLess
   },
 
   imgProfile: {

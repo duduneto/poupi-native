@@ -37,7 +37,8 @@ let stlBG1 = [
 ];
 
 let stlBODY1 = [
-  { width: 280, height: "100%", backgroundColor: "#000", padding: 20 }
+  useStl.bgSecondary,
+  { width: 280, height: "100%", padding: 20 }
 ];
 let stlBODY1a = [{ flexDirection: "row", marginBottom: 25 }];
 let stlBODY2 = [useStl.txtTitleCard, { color: "#fff", marginLeft: 10 }];

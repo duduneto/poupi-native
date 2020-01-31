@@ -35,37 +35,31 @@ export default ({ info }) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
-  <>
-    {/* LONG BAR */}
-    {/* ------------------------------ */}
 
-    {/* <View style={stlBODY1e} /> */}
-
+  <View style={stlBODY1f}>
     {/* BODY */}
     {/* ------------------------------ */}
 
-    <View style={stlBODY1f}>
-      {/* CARD */}
-      {/* ------------------------------ */}
+    {/* CARD */}
+    {/* ------------------------------ */}
 
-      <View style={stlBODY1a}>
-        <View style={stlBODY1b}>
-          <Image source={info.condThumbnail} style={stlBODY1c} />
-          <Text style={stlBODY2}>{info.userName}</Text>
-          <Text style={stlBODY2b}>{info.userEmail}</Text>
-        </View>
-
-        <View style={stlBODY1d}>
-          <TouchableOpacity style={stlBODY3} onPress={info.signOut}>
-            <Text style={stlBODY2c}>{info.scContent.logout}</Text>
-          </TouchableOpacity>
-        </View>
+    <View style={stlBODY1a}>
+      <View style={stlBODY1b}>
+        <Image source={info.condThumbnail} style={stlBODY1c} />
+        <Text style={stlBODY2}>{info.userName}</Text>
+        <Text style={stlBODY2b}>{info.userEmail}</Text>
       </View>
 
-      {/* END */}
-      {/* ------------------------------ */}
+      <View style={stlBODY1d}>
+        <TouchableOpacity style={stlBODY3} onPress={info.signOut}>
+          <Text style={stlBODY2c}>{info.scContent.logout}</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  </>
+
+    {/* END */}
+    {/* ------------------------------ */}
+  </View>
 
   /**/
   /*/

@@ -48,7 +48,7 @@ export default function Sc00(props) {
     };
 
     let condActiveMenu = item.goTo === props.path;
-    let condColor = condActiveMenu ? "#00ff66" : "#fff";
+    let condColor = condActiveMenu ? "#3388ff" : "#fff";
     let infoReturn = {
       icon: item.icon,
       label: item.label,

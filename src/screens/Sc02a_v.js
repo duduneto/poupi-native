@@ -28,7 +28,7 @@ let stlBODY1c = [useStl.flex1];
 let stlBODY2 = [
   { fontSize: 12, textAlign: "center", marginTop: 8, marginBottom: 3 }
 ];
-let stlBODY3 = [{ width: "100%", height: 65 }];
+let stlBODY3 = [useStl.thumbnailCateg];
 
 // ---------------
 // #endregion
