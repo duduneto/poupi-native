@@ -17,9 +17,9 @@ Carlos ok - Sc - Trazer .maps como arrays
 
 Carlos e Juan Fazendo... - Separação de services
 ok -- categList Fb + mock
-Fazendo... -- prodList mock + Fb
--- storeList mock + Fb
--- addProducts mock + Fb
+ok -- prodList mock + Fb
+ok -- storeList mock + Fb
+Fazendo... -- addProducts mock + Fb
 -- rdContent mock + Fb
 
 - Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)

@@ -49,26 +49,6 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  // let goToProfileStore = () => history.push("/profile-store");
-  // let toSignIn = () => history.push("/sign-in");
-
-  // let listStores = Object.values(rdStores).map((item, idx) => {
-  //   let goTo = () => {
-  //     changeRd("rdStoreSelected", item);
-  //     history.push("/profile-store");
-  //   };
-  //   let source = item.image;
-  //   let condThumbnail = !source ? defaultImg : source;
-  //   let infoReturn = {
-  //     name: item.name,
-  //     description: item.description,
-  //     condThumbnail,
-  //     goTo
-  //   };
-
-  //   return <ItemStore key={idx} info={infoReturn} />;
-  // });
-
   // ---------------
   // #endregion
   // ***************************************
