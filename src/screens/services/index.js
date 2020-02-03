@@ -10,7 +10,7 @@ import {
   UseFbListItems
 } from "../../useMorfos";
 
-let dbFirestore = false;
+let dbFirestore = true;
 
 let SetCategProdListFb = Info => {
   // set Hooks
@@ -218,6 +218,43 @@ let SetStoreListMockDb = Info => {
 };
 
 // ... .... ... ... ...
+
+let SetCatAddProdFb = Info => {
+  // set Hooks
+  // let { rdContent } = useRd();
+
+  // SetCall
+  let infoListCat = {
+    collection: "category",
+    rdName: "rdCategList"
+  };
+
+  const [CATEGSX] = UseFbListItems(infoListCat);
+
+  return (
+    <CATEGSX
+      renderProps={({ item, idx }) => {
+        let infoReturn = {
+          label: item.label,
+          value: idx
+        };
+        return <Info.CompReturn key={idx} info={infoReturn} />;
+      }}
+    />
+  );
+};
+let SetCatAddProdMockDb = Info => {
+  let listOptions = Object.values(mockDb.category).map((item, idx) => {
+    let infoReturn = {
+      label: item.label,
+      value: idx
+    };
+    return <Info.CompReturn key={idx} info={infoReturn} />;
+  });
+  return listOptions;
+};
+
+// ... .... ... ... ...
 // let SetProdListFb = Info => {}
 // let SetProdListMockDb = Info => {}
 
@@ -229,3 +266,6 @@ export let prodList = info =>
 
 export let servStoreList = info =>
   dbFirestore ? SetStoreListFb(info) : SetStoreListMockDb(info);
+
+export let catListAddProd = info =>
+  dbFirestore ? SetCatAddProdFb(info) : SetCatAddProdMockDb(info);

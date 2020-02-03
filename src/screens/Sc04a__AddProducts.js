@@ -8,8 +8,8 @@ import React from "react";
 // import Internals
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd, useForm } from "../useMorfos";
-import dbRef from "../useMorfos/dbRef";
 import { PickerItem } from "./Sc04a_v";
+import { catListAddProd } from "./services";
 
 // ---------------
 // #endregion
@@ -22,7 +22,7 @@ export default function Sc00() {
 
   // set Hooks
   let { rdAuthUser, rdContent, rdProducts } = useRd();
-  let options = dbRef.category;
+  // let options = dbRef.category;
   let { inputChange, sttValues } = useForm();
   let history = useHistory();
   let changeRd = useChangeRd();
@@ -35,13 +35,12 @@ export default function Sc00() {
   // #region :: FUNCTIONs
   // ---------------
 
-  let listOptions = Object.keys(options).map((item, idx) => {
-    let infoReturn = {
-      label: options[item].label,
-      value: idx
-    };
-    return <PickerItem key={idx} info={infoReturn} />;
+  let listOptions = catListAddProd({
+    CompReturn: PickerItem,
+    sttValues
   });
+
+  let condOpt = !sttValues.Category ? 0 : sttValues.Category;
 
   // let start = () => {}
   let getTxt = {
@@ -51,8 +50,6 @@ export default function Sc00() {
     iptPhone: txt => inputChange("Phone", txt),
     iptDesc: txt => inputChange("Desc", txt)
   };
-
-  let condOpt = !sttValues.Category ? options.opt1.value : sttValues.Category;
 
   // ---------------
   // #endregion
