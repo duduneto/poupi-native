@@ -236,7 +236,7 @@ let SetCatAddProdFb = Info => {
       renderProps={({ item, idx }) => {
         let infoReturn = {
           label: item.label,
-          value: idx
+          value: item.id
         };
         return <Info.CompReturn key={idx} info={infoReturn} />;
       }}

@@ -36,8 +36,8 @@ export default function UseFbListItems(info) {
     ) : rdItemsLength === 0 ? (
       info.noItem
     ) : (
-      rdItemsList.map((item, id) => {
-        return props.renderProps({ item, id });
+      rdItemsList.map((item, idx) => {
+        return props.renderProps({ item, idx });
       })
     );
   };

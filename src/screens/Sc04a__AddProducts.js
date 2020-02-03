@@ -41,12 +41,12 @@ export default function Sc00() {
   });
 
   let condOpt = !sttValues.Category ? 0 : sttValues.Category;
-
+  console.log("sttValues", sttValues);
   // let start = () => {}
   let getTxt = {
     iptName: txt => inputChange("Name", txt),
     iptEmail: txt => inputChange("Email", txt),
-    iptCateg: (txt, idx) => inputChange("Category", idx),
+    iptCateg: value => inputChange("Category", value),
     iptPhone: txt => inputChange("Phone", txt),
     iptDesc: txt => inputChange("Desc", txt)
   };

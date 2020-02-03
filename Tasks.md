@@ -15,12 +15,13 @@ Carlos ok - Sc02a - Renomear Category para Cat
 Carlos ok - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reducer e alterar valor dele conforme selecionado em Sc02a
 Carlos ok - Sc - Trazer .maps como arrays
 
-Carlos e Juan Fazendo... - Separação de services
-ok -- categList Fb + mock
-ok -- prodList mock + Fb
-ok -- storeList mock + Fb
-Fazendo... -- addProducts mock + Fb
--- rdContent mock + Fb
+- Carlos e Juan Fazendo... - Separação de services
+  -- ok - categList Fb + mock
+  -- ok - prodList mock + Fb
+  -- ok - storeList mock + Fb
+  -- Fazendo... - addProducts mock + Fb
+  -- rdContent mock + Fb
+  -- Sc04a - Puxar categorias do rdContent e basear ela em numeros
 
 - Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
 - Img - Colocar background cinza clarinho
