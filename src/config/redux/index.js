@@ -28,10 +28,14 @@ let middlewares = [sagaMiddleware];
 
 if (process.env.NODE_ENV === "development") {
   let logger = store => next => action => {
-    console.groupCollapsed("SYNC =>", action.rdName);
-    console.info("dispathing", action);
+    let groupName = action.callName ? `${action.type} =>` : "SYNC =>";
+    let dispatchingName = `${groupName} dispatching`;
+    let nextStateName = `${groupName} next state`;
+
+    console.groupCollapsed(groupName, action.rdName);
+    console.info(dispatchingName, action);
     let result = next(action);
-    console.log("next state", store.getState());
+    console.log(nextStateName, store.getState());
     console.groupEnd();
     return result;
   };

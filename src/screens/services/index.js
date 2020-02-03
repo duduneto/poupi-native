@@ -10,7 +10,7 @@ import {
   UseFbListItems
 } from "../../useMorfos";
 
-let dbFirestore = false;
+let dbFirestore = true;
 
 let SetCategProdListFb = Info => {
   // set Hooks
@@ -21,7 +21,7 @@ let SetCategProdListFb = Info => {
   // SetCall
   let infoListCat = {
     collection: "category",
-    reducerName: "rdCategList",
+    rdName: "rdCategList",
     noItem: Info.noItemComp
   };
 
@@ -86,7 +86,7 @@ let SetProdListFb = Info => {
   // SetCall
   let infoListCat = {
     collection: "products",
-    reducerName: "rdProducts",
+    rdName: "rdProducts",
     where1: {
       field: "category",
       type: "==",
@@ -152,11 +152,20 @@ let SetProdListMockDb = Info => {
   return condListItems;
 };
 
-// let SetProdListMockDb = Info => {}
+// ... .... ... ... ...
+
+let SetStoreListFb = Info => {};
+let SetStoreListMockDb = Info => {};
+
+// ... .... ... ... ...
 // let SetProdListFb = Info => {}
+// let SetProdListMockDb = Info => {}
 
 export let catProdList = info =>
   dbFirestore ? SetCategProdListFb(info) : SetCategProdListMockDb(info);
 
 export let prodList = info =>
   dbFirestore ? SetProdListFb(info) : SetProdListMockDb(info);
+
+export let servStoreList = info =>
+  dbFirestore ? SetStoreListFb(info) : SetStoreListMockDb(info);

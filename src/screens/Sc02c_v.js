@@ -33,6 +33,8 @@ let stlBODY3 = [useStl.thumbnail];
 // #region :: EXPORTs
 // ---------------
 
+export const noItemComp = <Text>Sem item 2</Text>;
+
 export const ItemStore = ({ info }) => (
   <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
     <View style={stlBODY1b}>

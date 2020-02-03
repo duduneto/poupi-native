@@ -9,7 +9,8 @@ import React from "react";
 import * as AllSc from "./";
 import { useHistory, useRd, useChangeRd } from "../useMorfos";
 import defaultImg from "../images/default.jpg";
-import { ItemStore } from "./Sc02c_v";
+import { ItemStore, noItemComp } from "./Sc02c_v";
+import { servStoreList } from "./services";
 
 // ---------------
 // #endregion
@@ -34,6 +35,11 @@ export default function Sc00() {
   // ---------------
 
   // let start = () => {}
+  let listStores = servStoreList({
+    noItemComp,
+    CompReturn: ItemStore,
+    defaultImg
+  });
 
   // ---------------
   // #endregion
@@ -46,22 +52,22 @@ export default function Sc00() {
   // let goToProfileStore = () => history.push("/profile-store");
   // let toSignIn = () => history.push("/sign-in");
 
-  let listStores = Object.values(rdStores).map((item, idx) => {
-    let goTo = () => {
-      changeRd("rdStoreSelected", item);
-      history.push("/profile-store");
-    };
-    let source = item.image;
-    let condThumbnail = !source ? defaultImg : source;
-    let infoReturn = {
-      name: item.name,
-      description: item.description,
-      condThumbnail,
-      goTo
-    };
+  // let listStores = Object.values(rdStores).map((item, idx) => {
+  //   let goTo = () => {
+  //     changeRd("rdStoreSelected", item);
+  //     history.push("/profile-store");
+  //   };
+  //   let source = item.image;
+  //   let condThumbnail = !source ? defaultImg : source;
+  //   let infoReturn = {
+  //     name: item.name,
+  //     description: item.description,
+  //     condThumbnail,
+  //     goTo
+  //   };
 
-    return <ItemStore key={idx} info={infoReturn} />;
-  });
+  //   return <ItemStore key={idx} info={infoReturn} />;
+  // });
 
   // ---------------
   // #endregion

@@ -26,7 +26,7 @@ export default function UseFbListItems(info) {
   }, []);
 
   // set lets
-  let rdItemsList = useRd()[info.reducerName];
+  let rdItemsList = useRd()[info.rdName];
   let rdItemsLength = rdItemsList && rdItemsList.length;
 
   // set map itens
@@ -59,7 +59,7 @@ export default function UseFbListItems(info) {
   // set List Call
   let infoPosts = {
     collection: 'posts',
-    reducerName: 'rdMyPosts',
+    rdName: 'rdMyPosts',
     noItem: <Text>Sem Item</Text>
     // filter
     where1: { field: 'userId', type: '==', value: rdAuthUser.docId },

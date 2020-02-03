@@ -6,11 +6,11 @@
 // import React from 'react';
 
 // import Redux
-import { useDispatch } from 'react-redux';
-import { async } from '../config/redux/async';
+import { useDispatch } from "react-redux";
+import { async } from "../config/redux/async";
 
 // import Internals
-import { useRd } from '.';
+import { useRd } from ".";
 
 // ---------------
 // #endregion
@@ -33,13 +33,13 @@ export default function useFbUpdateData() {
   const callUpdateNameData = info => {
     // set Call
     let infoCall = {
-      callName: 'updateData',
-      reducerName: info.reducerName,
+      callName: "updateData",
+      rdName: info.rdName,
       par: {
         collection: info.collection,
         docId: info.docId,
         dataToUpdate: info.dataToUpdate,
-        dataToReducer: { ...dynamicRd[info.reducerName], ...info.dataToUpdate }
+        dataToReducer: { ...dynamicRd[info.rdName], ...info.dataToUpdate }
       }
     };
 
@@ -66,7 +66,7 @@ export default function useFbUpdateData() {
   // set Call
   let infoImgUser = {
     collection: 'users',
-    reducerName: 'rdAuthUser',
+    rdName: 'rdAuthUser',
     docId: rdAuthUser.docId,
     dataToUpdate: { userImg: info, }
   };

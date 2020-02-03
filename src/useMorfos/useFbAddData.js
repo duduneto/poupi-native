@@ -6,8 +6,8 @@
 // import React from 'react';
 
 // import Redux
-import { useDispatch } from 'react-redux';
-import { async } from '../config/redux/async';
+import { useDispatch } from "react-redux";
+import { async } from "../config/redux/async";
 
 // ---------------
 // #endregion
@@ -26,8 +26,8 @@ export default function useFbAddData() {
   const callAddName = info => {
     // set Call
     let infoCall = {
-      callName: 'addData',
-      reducerName: info.reducerName,
+      callName: "addData",
+      rdName: info.rdName,
       par: {
         collection: info.collection,
         dataToAdd: info.dataToAdd
@@ -56,7 +56,7 @@ export default function useFbAddData() {
   // set Call
   let infoAddPost = {
     collection: 'posts',
-    reducerName: 'rdPostDocId',
+    rdName: 'rdPostDocId',
     dataToAdd: {
         createdAt: new Date(),
         userId: rdAuthUser.docId,

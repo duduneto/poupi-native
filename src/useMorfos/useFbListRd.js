@@ -6,8 +6,8 @@
 // import React from 'react';
 
 // import Redux
-import { useDispatch } from 'react-redux';
-import { async } from '../config/redux/async';
+import { useDispatch } from "react-redux";
+import { async } from "../config/redux/async";
 
 // ---------------
 // #endregion
@@ -35,8 +35,8 @@ export default function useFbListRd() {
       merge2: info.merge2
     };
     let infoCall = {
-      callName: 'getList',
-      reducerName: info.reducerName,
+      callName: "getList",
+      rdName: info.rdName,
       par: setFirestoreList
     };
 
@@ -63,7 +63,7 @@ export default function useFbListRd() {
   // set Call
   let infoRates = {
     collection: 'rates',
-    reducerName: 'rdListUserRates',
+    rdName: 'rdListUserRates',
     // filter
     where1: { field: 'rattingUserId', type: '==', value: rdAuthUser.docId },
     // order

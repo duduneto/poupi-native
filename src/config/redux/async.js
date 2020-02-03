@@ -1,20 +1,20 @@
 // import Packages
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeEvery, call, put } from "redux-saga/effects";
 
 export function async(info) {
   // console.log('data', data);
 
   return {
-    type: 'ASYNC_BEGIN',
+    type: "ASYNC_BEGIN",
     info,
-    reducerName: info.reducerName,
+    rdName: info.rdName,
     callName: info.callName
   };
 }
 
 export function dismissAsyncError() {
   return {
-    type: 'ASYNC_DISMISS_ERROR'
+    type: "ASYNC_DISMISS_ERROR"
   };
 }
 
@@ -22,7 +22,7 @@ export function* doAsync(infoCall) {
   // console.log(infoCall)
 
   let res;
-  let firebaseCall = require('../firebase/firestore');
+  let firebaseCall = require("../firebase/firestore");
   let fbCallName = infoCall.info.callName;
   let fbCall = firebaseCall[fbCallName];
   let par = infoCall.info.par;
@@ -31,7 +31,7 @@ export function* doAsync(infoCall) {
     res = yield call(fbCall, par);
   } catch (err) {
     yield put({
-      type: 'ASYNC_FAILURE',
+      type: "ASYNC_FAILURE",
       data: { error: err }
     });
 
@@ -39,9 +39,9 @@ export function* doAsync(infoCall) {
   }
 
   yield put({
-    type: 'ASYNC_SUCCESS',
+    type: "ASYNC_SUCCESS",
     data: res,
-    reducerName: infoCall.info.reducerName,
+    rdName: infoCall.info.rdName,
     callName: fbCallName
   });
 }
@@ -51,26 +51,26 @@ export function* doAsync(infoCall) {
 */
 
 export default function* rootSaga() {
-  yield takeEvery('ASYNC_BEGIN', doAsync);
+  yield takeEvery("ASYNC_BEGIN", doAsync);
 }
 
 // Redux reducer
 export function reducer(state, action) {
   // console.log(action)
-  let name = action.reducerName;
+  let name = action.rdName;
   let data = action.data;
-  let asyncPending = action.callName + 'Pending';
-  let asyncError = action.callName + 'Error';
+  let asyncPending = action.callName + "Pending";
+  let asyncError = action.callName + "Error";
 
   switch (action.type) {
-    case 'ASYNC_BEGIN':
+    case "ASYNC_BEGIN":
       return {
         ...state,
         [asyncPending]: true,
         [asyncError]: null
       };
 
-    case 'ASYNC_SUCCESS':
+    case "ASYNC_SUCCESS":
       return {
         ...state,
 
@@ -80,14 +80,14 @@ export function reducer(state, action) {
         [asyncError]: null
       };
 
-    case 'ASYNC_FAILURE':
+    case "ASYNC_FAILURE":
       return {
         ...state,
         [asyncPending]: false,
         [asyncError]: action.data.error
       };
 
-    case 'ASYNC_DISMISS_ERROR':
+    case "ASYNC_DISMISS_ERROR":
       return {
         ...state,
         [asyncError]: null
