@@ -421,10 +421,12 @@ const Styles = StyleSheet.create({
     width: 100,
     height: 65,
     marginRight: 10,
+    backgroundColor: lightGray,
     ...radiusLess
   },
 
   thumbnailCateg: {
+    backgroundColor: lightGray,
     width: "100%",
     height: 65,
     ...radiusLess

@@ -19,12 +19,12 @@ Carlos ok - Sc - Trazer .maps como arrays
   -- ok - categList Fb + mock
   -- ok - prodList mock + Fb
   -- ok - storeList mock + Fb
-  -- Fazendo... - addProducts mock + Fb
+  -- bug - addProducts mock + Fb
   -- rdContent mock + Fb
   -- Sc04a - Puxar categorias do rdContent e basear ela em numeros
+- Img - ok - Colocar background cinza clarinho
 
-- Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
-- Img - Colocar background cinza clarinho
+- Fazendo... Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
 
 * Sc02a_v - Trazer estilos padrão para msg noItem
 * Sc01 - Ver rdIptState

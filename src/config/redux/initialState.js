@@ -7,5 +7,6 @@ export default {
   rdProdSelected: null,
   rdCategSelected: null,
   rdCategList: null,
-  rdIptsSignUp: null
+  rdIptsSignUp: null,
+  rdTemp: null
 };

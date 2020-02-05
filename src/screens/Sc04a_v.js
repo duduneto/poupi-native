@@ -106,7 +106,7 @@ export default ({ info }) => {
         {/* BUTTONs */}
         {/* ------------------------------ */}
         <View style={stlBODY1b}>
-          <TouchableOpacity style={stlBODY3} onPress={info.btnSave}>
+          <TouchableOpacity style={stlBODY3} onPress={info.saveDataProd}>
             <Text style={stlBODY2c}>{info.scContent.save}</Text>
           </TouchableOpacity>
 

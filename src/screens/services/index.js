@@ -1,5 +1,6 @@
 // import Packages
 import React from "react";
+import { TouchableOpacity } from "react-native";
 
 // import Internals
 import mockDb from "./mockDb.json";
@@ -7,10 +8,14 @@ import {
   useHistory,
   useRd,
   useChangeRd,
-  UseFbListItems
+  UseFbListItems,
+  useFbAddData,
+  UseLoader
 } from "../../useMorfos";
 
-let dbFirestore = true;
+let dbFirestore = false;
+
+// ****************************
 
 let SetCategProdListFb = Info => {
   // set Hooks
@@ -47,14 +52,13 @@ let SetCategProdListFb = Info => {
     />
   );
 };
-
 let SetCategProdListMockDb = Info => {
   // set Hooks
-  // let { rdContent } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
+  let arrCateg = Object.values(mockDb.content.pt.categories);
 
-  let mapItems = Object.values(mockDb.category).map((item, idx) => {
+  let mapItems = arrCateg.map((item, idx) => {
     let goTo = () => {
       changeRd("rdCategSelected", item.label);
       history.push("/products");
@@ -75,7 +79,7 @@ let SetCategProdListMockDb = Info => {
   return condListItems;
 };
 
-// ... .... ... ... ...
+// ****************************
 
 let SetProdListFb = Info => {
   // set Hooks
@@ -119,17 +123,16 @@ let SetProdListFb = Info => {
     />
   );
 };
-
 let SetProdListMockDb = Info => {
   // set Hooks
-  let { rdCategSelected } = useRd();
+  let { rdCategSelected, rdProducts } = useRd();
   let history = useHistory();
   let changeRd = useChangeRd();
 
   let arrProducts = Object.values(mockDb.products);
-  let filteredItems = arrProducts.filter(
-    item => item.category === rdCategSelected
-  );
+  // let filteredItems = arrProducts.filter(
+  let filteredItems =
+    rdProducts && rdProducts.filter(item => item.category === rdCategSelected);
 
   let mapItems = filteredItems.map((item, idx) => {
     let goTo = () => {
@@ -152,7 +155,7 @@ let SetProdListMockDb = Info => {
   return condListItems;
 };
 
-// ... .... ... ... ...
+// ****************************
 
 let SetStoreListFb = Info => {
   // set Hooks
@@ -217,7 +220,7 @@ let SetStoreListMockDb = Info => {
   return condListItems;
 };
 
-// ... .... ... ... ...
+// ****************************
 
 let SetCatAddProdFb = Info => {
   // set Hooks
@@ -244,19 +247,102 @@ let SetCatAddProdFb = Info => {
   );
 };
 let SetCatAddProdMockDb = Info => {
-  let listOptions = Object.values(mockDb.category).map((item, idx) => {
-    let infoReturn = {
-      label: item.label,
-      value: idx
-    };
-    return <Info.CompReturn key={idx} info={infoReturn} />;
-  });
+  let listOptions = Object.values(mockDb.content.pt.categories).map(
+    (item, idx) => {
+      let infoReturn = {
+        label: item.label,
+        value: idx
+      };
+      return <Info.CompReturn key={idx} info={infoReturn} />;
+    }
+  );
   return listOptions;
 };
 
-// ... .... ... ... ...
+// ****************************
+
+let setDataProdFb = info => {
+  // set hooks
+  let callFbAddData = useFbAddData();
+
+  // SetCall
+  let infoAddProd = {
+    collection: "products",
+    reducerName: "rdAddNewProd",
+    dataToAdd: {
+      createdAt: new Date(),
+      ...info.sttValues
+    }
+  };
+
+  let btnSave = () => {
+    callFbAddData(infoAddProd);
+  };
+
+  return <>{btnSave()}</>;
+};
+let setDataProdMockDb = info => {
+  let arrProducts = Object.values(mockDb.products);
+
+  let btnSave = () => {
+    let infoProduct = {
+      ...arrProducts,
+      xxx: {
+        docId: "xxx05",
+        userId: info.rdAuthUser.docId,
+        name: info.sttValues.Name,
+        // category: info.sttValues.Category,
+        category: "Frutas",
+        description: info.sttValues.Desc,
+        image: "https://source.unsplash.com/200x150/?avocado&1"
+      }
+    };
+
+    let arrInfoProduct = Object.values(infoProduct);
+    info.changeRd("rdProducts", arrInfoProduct);
+    info.history.push("/category-products");
+  };
+  return btnSave();
+};
+
+// ****************************
+
+let SetRdContentFb = Info => {
+  let content = mockDb.content.pt;
+  // set Hooks
+  // const callListRd = useFbListRd();
+  // let { rdTemp } = useRd();
+
+  // set Call
+  // let infoTemp = {
+  //   collection: "contentPt",
+  //   rdName: "rdTemp"
+  // };
+
+  // function Call
+  // let listTemp = callListRd(infoTemp);
+
+  return content;
+};
+let SetRdContentMockDb = Info => {
+  let content = mockDb.content.pt;
+  let categories = { categories: mockDb.categories };
+  let mergeObj = Object.assign(content, categories);
+
+  return mergeObj;
+};
+
+// ****************************
+
+// ****************************
+
 // let SetProdListFb = Info => {}
 // let SetProdListMockDb = Info => {}
+
+// ****************************
+
+export let condRdContent = info =>
+  dbFirestore ? SetRdContentFb(info) : SetRdContentMockDb(info);
 
 export let catProdList = info =>
   dbFirestore ? SetCategProdListFb(info) : SetCategProdListMockDb(info);
@@ -269,3 +355,6 @@ export let servStoreList = info =>
 
 export let catListAddProd = info =>
   dbFirestore ? SetCatAddProdFb(info) : SetCatAddProdMockDb(info);
+
+export let setDataProd = info =>
+  dbFirestore ? setDataProdFb(info) : setDataProdMockDb(info);

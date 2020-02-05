@@ -3,7 +3,7 @@ import React from "react";
 
 // import internals
 import { useChangeRd, useRd, UseLoader } from "../../useMorfos";
-import dbRef from "../../useMorfos/dbRef.json";
+import { condRdContent } from "../services";
 
 export default ({ children }) => {
   // set Hooks
@@ -12,7 +12,7 @@ export default ({ children }) => {
 
   React.useEffect(() => {
     // FALTA: Conectar Firestore + condição rdContent
-    changeRd("rdContent", dbRef.content.pt);
+    changeRd("rdContent", condRdContent());
   }, []);
 
   let size = rdContent.length === 0;

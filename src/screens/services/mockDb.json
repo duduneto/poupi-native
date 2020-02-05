@@ -78,7 +78,33 @@
     },
     "en": {}
   },
-
+  "categories": {
+    "opt1": {
+      "label": "Frutas",
+      "value": "frutas",
+      "image": "https://cdn.domtotal.com/img/noticias/2015-01/1253236_357228.jpg"
+    },
+    "opt2": {
+      "label": "Legumes",
+      "value": "legumes",
+      "image": "https://3eaf214443cb92a1.cdn.gocache.net/wp-content/uploads/2019/11/shopping-bag-full-of-fresh-vegetables-and-fruits-picture-id1128687123-760x450.jpg"
+    },
+    "opt3": {
+      "label": "Verduras",
+      "value": "verduras",
+      "image": "http://www.nutrindoideais.com.br/wp/wp-content/uploads/2014/12/folhas-verdes-e-escuras.jpg"
+    },
+    "opt4": {
+      "label": "Oleaginosas",
+      "value": "oleaginosas",
+      "image": "https://www.jasminealimentos.com/wp-content/uploads/2017/04/castanhas1.jpg"
+    },
+    "opt5": {
+      "label": "Cereais",
+      "value": "cereais",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzcqno-4hnipUx1_lfCH3e1Pp8H7v2B7Wel8rHN2rWT8qihzei&s"
+    }
+  },
   "users": {
     "xxx01": {
       "docId": "xxx01",
@@ -177,34 +203,6 @@
       "category": "Verduras",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?lettuce&1"
-    }
-  },
-
-  "category": {
-    "opt1": {
-      "label": "Frutas",
-      "value": "frutas",
-      "image": "https://cdn.domtotal.com/img/noticias/2015-01/1253236_357228.jpg"
-    },
-    "opt2": {
-      "label": "Legumes",
-      "value": "legumes",
-      "image": "https://3eaf214443cb92a1.cdn.gocache.net/wp-content/uploads/2019/11/shopping-bag-full-of-fresh-vegetables-and-fruits-picture-id1128687123-760x450.jpg"
-    },
-    "opt3": {
-      "label": "Verduras",
-      "value": "verduras",
-      "image": "http://www.nutrindoideais.com.br/wp/wp-content/uploads/2014/12/folhas-verdes-e-escuras.jpg"
-    },
-    "opt4": {
-      "label": "Oleaginosas",
-      "value": "oleaginosas",
-      "image": "https://www.jasminealimentos.com/wp-content/uploads/2017/04/castanhas1.jpg"
-    },
-    "opt5": {
-      "label": "Cereais",
-      "value": "cereais",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzcqno-4hnipUx1_lfCH3e1Pp8H7v2B7Wel8rHN2rWT8qihzei&s"
     }
   },
 
