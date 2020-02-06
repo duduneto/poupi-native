@@ -15,7 +15,7 @@ Carlos ok - Sc02a - Renomear Category para Cat
 Carlos ok - Sc02b - Substituir String "Verduras" por rdCatSelected. Criar reducer e alterar valor dele conforme selecionado em Sc02a
 Carlos ok - Sc - Trazer .maps como arrays
 
-- Carlos e Juan Fazendo... - Separação de services
+- Carlos e Juan ok - Separação de services
   -- ok - categList Fb + mock
   -- ok - prodList mock + Fb
   -- ok - storeList mock + Fb
@@ -26,7 +26,7 @@ Carlos ok - Sc - Trazer .maps como arrays
 - ok - Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
 - Img - ok - Colocar background cinza clarinho
 
-- Fazendo... services - Separar o services do index em arquivos
+- ok - Separar o services do index em arquivos
 
 * Sc02a_v - Trazer estilos padrão para msg noItem
 * Sc01 - Ver rdIptState
