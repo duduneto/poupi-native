@@ -88,12 +88,12 @@ export default ({ info }) => {
         <TextInput
           style={stlBODY2}
           placeholder={info.scContent.amount}
-          onChangeText={info.getTxt.iptEmail}
+          onChangeText={info.getTxt.iptAmount}
         />
         <TextInput
           style={stlBODY2}
           placeholder={info.scContent.price}
-          onChangeText={info.getTxt.iptPhone}
+          onChangeText={info.getTxt.iptPrice}
         />
         <TextInput
           style={stlBODY2}

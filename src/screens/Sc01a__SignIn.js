@@ -40,6 +40,7 @@ export default function Sc00() {
     let infoUser = {
       userName: "Maria",
       email: "ladymary@email.com",
+      docId: "123",
       age: 32
     };
 

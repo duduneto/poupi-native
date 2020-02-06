@@ -4,8 +4,8 @@ import { StyleSheet } from "react-native";
 // #region :: COLORs
 // ---------------
 
-export const primaryColor = "#00339e";
-const secondaryColor = "#002288";
+export const primaryColor = "#360239";
+const secondaryColor = "#231229";
 const tertiaryColor = "#ff5300"; //laranja
 const inverseColor = "#fefefe";
 const lightGray = "#f6f6f6";

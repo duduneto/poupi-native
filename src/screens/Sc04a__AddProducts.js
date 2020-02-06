@@ -7,7 +7,13 @@ import React from "react";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd, useChangeRd, useForm } from "../useMorfos";
+import {
+  useHistory,
+  useRd,
+  useChangeRd,
+  useForm,
+  useFbAddData
+} from "../useMorfos";
 import { PickerItem } from "./Sc04a_v";
 import { catListAddProd, setDataProd } from "./services";
 
@@ -23,9 +29,11 @@ export default function Sc00() {
   // set Hooks
   let { rdAuthUser, rdContent, rdProducts } = useRd();
   let { inputChange, sttValues } = useForm();
+  let callFbAddData = useFbAddData();
   let scContent = rdContent.sc04a;
   let history = useHistory();
   let changeRd = useChangeRd();
+  let optDefault = rdContent.sc02a.arrCateg[0].id;
   // ---------------
   // #endregion
   // ***************************************
@@ -39,13 +47,16 @@ export default function Sc00() {
     sttValues
   });
 
-  let condOpt = !sttValues.Category ? 0 : sttValues.Category;
+  let condOpt =
+    !sttValues.category && optDefault ? optDefault : sttValues.category;
+
+  console.log("pp", condOpt);
   let getTxt = {
-    iptName: txt => inputChange("Name", txt),
-    iptEmail: txt => inputChange("Email", txt),
-    iptCateg: value => inputChange("Category", value),
-    iptPhone: txt => inputChange("Phone", txt),
-    iptDesc: txt => inputChange("Desc", txt)
+    iptName: txt => inputChange("name", txt),
+    iptAmount: txt => inputChange("amount", txt),
+    iptCateg: value => inputChange("category", value),
+    iptPrice: txt => inputChange("price", txt),
+    iptDesc: txt => inputChange("desc", txt)
   };
 
   // ---------------
@@ -58,6 +69,7 @@ export default function Sc00() {
 
   // let model = () =>
   let infoPar = {
+    callFbAddData,
     sttValues,
     changeRd,
     history,

@@ -41,7 +41,34 @@
       },
       "sc02a": {
         "aRef": "Sc02a - Category Products",
-        "txt01": "Nome"
+        "txt01": "Nome",
+        "arrCateg": [
+          {
+            "id": "xxx1",
+            "label": "Frutas",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdqJS88YN_5az9lqwLT6xAsTqaURtt1UfjftA5fBseRbSRTeFq&s"
+          },
+          {
+            "id": "xxx2",
+            "label": "Verduras",
+            "image": "https://conteudo.imguol.com.br/c/entretenimento/fa/2019/04/18/legumes-e-verduras-1555620381375_v2_1254x836.jpg"
+          },
+          {
+            "id": "xxx3",
+            "label": "Legumes",
+            "image": "https://www.inglesonline.com.br/wp-content/uploads/2018/08/Legumes-e-verduras-em-ingl%C3%AAs.png"
+          },
+          {
+            "id": "xxx4",
+            "label": "Oleaginosas",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7O3tcGTfmnl48PukDtODlo4B2wYBAJZDoq-uS2tyK5JE9dZK&s"
+          },
+          {
+            "id": "xxx5",
+            "label": "Grãos e Cereais",
+            "image": "https://www.petlove.com.br/dicas/wp-content/uploads/2019/04/cereais.jpg"
+          }
+        ]
       },
       "sc02b": {
         "aRef": "Sc02b - Products",
@@ -77,33 +104,6 @@
       }
     },
     "en": {}
-  },
-  "categories": {
-    "opt1": {
-      "label": "Frutas",
-      "value": "frutas",
-      "image": "https://cdn.domtotal.com/img/noticias/2015-01/1253236_357228.jpg"
-    },
-    "opt2": {
-      "label": "Legumes",
-      "value": "legumes",
-      "image": "https://3eaf214443cb92a1.cdn.gocache.net/wp-content/uploads/2019/11/shopping-bag-full-of-fresh-vegetables-and-fruits-picture-id1128687123-760x450.jpg"
-    },
-    "opt3": {
-      "label": "Verduras",
-      "value": "verduras",
-      "image": "http://www.nutrindoideais.com.br/wp/wp-content/uploads/2014/12/folhas-verdes-e-escuras.jpg"
-    },
-    "opt4": {
-      "label": "Oleaginosas",
-      "value": "oleaginosas",
-      "image": "https://www.jasminealimentos.com/wp-content/uploads/2017/04/castanhas1.jpg"
-    },
-    "opt5": {
-      "label": "Cereais",
-      "value": "cereais",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzcqno-4hnipUx1_lfCH3e1Pp8H7v2B7Wel8rHN2rWT8qihzei&s"
-    }
   },
   "users": {
     "xxx01": {
@@ -161,7 +161,7 @@
       "docId": "xxx01",
       "userId": "xxx01",
       "name": "Laranja",
-      "category": "Frutas",
+      "category": "xxx1",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?orange&1"
     },
@@ -169,14 +169,14 @@
       "docId": "xxx02",
       "userId": "xxx02",
       "name": "Pêra",
-      "category": "Frutas",
+      "category": "xxx1",
       "description": "Dá pra fazer suco..."
     },
     "xxx03": {
       "docId": "xxx03",
       "userId": "xxx03",
       "name": "Abacaxi",
-      "category": "Frutas",
+      "category": "xxx1",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?pineapple&1"
     },
@@ -184,7 +184,7 @@
       "docId": "xxx04",
       "userId": "xxx01",
       "name": "Uva",
-      "category": "Frutas",
+      "category": "xxx1",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?grape&1"
     },
@@ -192,7 +192,7 @@
       "docId": "xxx05",
       "userId": "xxx01",
       "name": "Abobrinha",
-      "category": "Legumes",
+      "category": "xxx3",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?zucchini&1"
     },
@@ -200,7 +200,7 @@
       "docId": "xxx06",
       "userId": "xxx01",
       "name": "Alface",
-      "category": "Verduras",
+      "category": "xxx2",
       "description": "Dá pra fazer suco...",
       "image": "https://source.unsplash.com/200x150/?lettuce&1"
     }
