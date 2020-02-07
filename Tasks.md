@@ -54,3 +54,15 @@ Carlos ok - Sc03c - Estilizar tela Perfil do Produto
 Carlos ok - Sc02a, b - Tirar filtro (a) e adicionar cond de imagem padrão na lista quando não tiver imagem cadastrada (link). Trazer imagem cadastrada no dbRef.json
 Carlos ok - Sc02a, b - Listar produtos de acordo com o dbRef.json
 Carlos ok- Sc03b, c - Adicionar cond de imagem padrão quando não tiver imagem cadastrada (link). Trazer imagem cadastrada, nome do produto e descrição no dbRef.json
+
+### PROJETO CLIENTE
+
+- Entrar conta morfos
+- Fork start-morfos
+- Renomear Projeto
+- Colocar como privado
+- Criar um novo repositório usando codeSandBox
+- Entrar no gitHub e nas configurações do repositório criado, incluir colaborador "carlosvsk"
+- Confirmar participação
+- Pegar link do novo projeto no codesandbox (Trabalhar na conta pessoal)
+- Desenvolver Arquitetura da documentação do cliente
