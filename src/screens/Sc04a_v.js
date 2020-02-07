@@ -23,7 +23,7 @@ let stlBODY2 = [useStl.input, useStl.mgB20];
 let stlBODY2a = [useStl.picker, useStl.mgB20];
 let stlBODY2b = [
   {
-    border: "none",
+    borderWidth: 0,
     marginVertical: 7,
     marginHorizontal: 10,
     fontSize: 14,

@@ -25,10 +25,10 @@ Carlos ok - Sc - Trazer .maps como arrays
 
 - ok - Firestore, Sc02a - Mudar nome da coleção para categories (padrão de coleção no plural)
 - Img - ok - Colocar background cinza clarinho
-
 - ok - Separar o services do index em arquivos
 
-* Sc02a_v - Trazer estilos padrão para msg noItem
+* ok -Sc02a_v - Trazer estilos padrão para msg noItem
+
 * Sc01 - Ver rdIptState
 * Config - Incluir persistência do authUser (mesmo quando recarregar a página) incluir redux-persist
 

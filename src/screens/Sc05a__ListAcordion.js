@@ -4,25 +4,27 @@
 
 // import Packages
 import React from "react";
+import { View, Text } from "react-native";
 
 // import Internals
 import * as AllSc from "./";
-import { useHistory, useRd } from "../../useMorfos";
-import { ItemMenu } from "./Cp02_v";
+import { useStl, useHistory, useRd, useChangeRd } from "../useMorfos";
 
 // ---------------
 // #endregion
 // ***************************************
 
-export default function Sc00(props) {
+export default function Sc00() {
   // ***************************************
   // #region :: HOOKs + VARs
   // ---------------
 
   // set Hooks
   let { rdContent } = useRd();
-  let scContent = rdContent.cp01;
-  let history = useHistory();
+  // let history = useHistory();
+  // let changeRd = useChangeRd();
+
+  let scContent = rdContent.sc00;
 
   // ---------------
   // #endregion
@@ -33,33 +35,23 @@ export default function Sc00(props) {
   // ---------------
 
   // let start = () => {}
+  const screenOptions = {
+    problema: { label: "xxx01", content: "conteudo item 1" },
+    aversao: { label: "xxx02", content: "conteudo 2" }
+  };
 
-  let arrMenu = [
-    { icon: "image", label: scContent.sc03a, goTo: "/profile" },
-    { icon: "image", label: scContent.sc02c, goTo: "/stores" },
-    { icon: "image", label: scContent.sc02a, goTo: "/category-products" },
-    { icon: "image", label: scContent.sc04a, goTo: "/add-products" },
-    { icon: "image", label: scContent.sc05a, goTo: "/list-acordion" }
-  ];
-  console.log("arrMenu", arrMenu);
-  let ItemsList = arrMenu.map((item, idx) => {
-    let goTo = () => {
-      history.push(item.goTo);
-      props.toggleMenu();
-    };
-
-    let condActiveMenu = item.goTo === props.path;
-    let condColor = condActiveMenu ? "#73ef54" : "#fff";
-    let infoReturn = {
-      icon: item.icon,
-      label: item.label,
-      condActiveMenu,
-      condColor,
-      goTo
-    };
-
-    return <ItemMenu key={idx} info={infoReturn} />;
-  });
+  // let listAcc = Object.keys(screenOptions).map((item, id) => (
+  let listAcc = Object.keys(screenOptions).map((item, id) => (
+    <View key={id} label={item}>
+      {/* {console.log("item", item)} */}
+      {Object.values(screenOptions).map((subItem, subId) => (
+        <View>
+          {console.log("item", subItem.content)}
+          <Text key={id + subId}>{subItem.content}</Text>
+        </View>
+      ))}
+    </View>
+  ));
 
   // ---------------
   // #endregion
@@ -71,6 +63,8 @@ export default function Sc00(props) {
 
   // let model = () =>
 
+  // let toSignIn = () => history.push("/sign-in");
+
   // ---------------
   // #endregion
   // ***************************************
@@ -81,11 +75,11 @@ export default function Sc00(props) {
 
   let infoReturn = {
     scContent,
-    ItemsList,
-    toggleMenu: props.toggleMenu
+    listAcc
+    // toSignIn
   };
 
-  return <AllSc.Cp02_v info={infoReturn} />;
+  return <AllSc.Sc05a_v info={infoReturn} />;
 
   // ---------------
   // #endregion

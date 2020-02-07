@@ -85,6 +85,11 @@ export default function Sc00(props) {
       title: scContent.sc04a,
       back: "/category-products",
       longBar: true
+    },
+    "/list-acordion": {
+      title: scContent.sc05a,
+      back: "/",
+      longBar: false
     }
   };
 

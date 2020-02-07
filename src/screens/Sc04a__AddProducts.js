@@ -50,7 +50,6 @@ export default function Sc00() {
   let condOpt =
     !sttValues.category && optDefault ? optDefault : sttValues.category;
 
-  console.log("pp", condOpt);
   let getTxt = {
     iptName: txt => inputChange("name", txt),
     iptAmount: txt => inputChange("amount", txt),
@@ -70,6 +69,7 @@ export default function Sc00() {
   // let model = () =>
   let infoPar = {
     callFbAddData,
+    optDefault,
     sttValues,
     changeRd,
     history,

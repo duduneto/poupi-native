@@ -1,10 +1,20 @@
+// ***************************************
+// #region :: IMPORTs
+// ---------------
+
 // import Packages
 // import React from "react";
 
-// import Internals
-// import * as allSc from "./";
-// import { useHistory, useRd, useChangeRd } from "../../useMorfos";
+// import Internals "../../useMorfos";
 import mockDb from "./mockDb.json";
+
+// ---------------
+// #endregion
+// ***************************************
+
+// ***************************************
+// #region :: FUNCTION
+// ---------------
 
 let SetRdContentFb = info => {
   // set Call
@@ -26,3 +36,7 @@ let SetRdContentMockDb = Info => {
 };
 
 export { SetRdContentFb, SetRdContentMockDb };
+
+// ---------------
+// #endregion
+// ***************************************

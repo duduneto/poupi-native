@@ -6,7 +6,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 // import Internals
-import { useStl } from "../useMorfos";
+import { useStl, UseIcoMoon } from "../useMorfos";
 
 // ---------------
 // #endregion
@@ -30,6 +30,9 @@ let stlBODY2 = [
 ];
 let stlBODY3 = [useStl.thumbnailCateg];
 
+let stlBODY3a = [useStl.flexRow, useStl.flexBetween];
+let stlBODY2c = [useStl.txtSmall, useStl.flex2, useStl.mgL5];
+
 // ---------------
 // #endregion
 // ***************************************
@@ -37,8 +40,12 @@ let stlBODY3 = [useStl.thumbnailCateg];
 // ***************************************
 // #region :: EXPORTs
 // ---------------
-export const noItemComp = <Text>Sem item 2</Text>;
-
+export const noItemComp = (
+  <View style={stlBODY3a}>
+    <UseIcoMoon name="xcircle" size={16} color="#999" />
+    <Text style={stlBODY2c}>Nenhum item encontrado nessa categoria</Text>
+  </View>
+);
 export const ItemCateg = ({ info }) => (
   <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
     <View style={stlBODY1b}>

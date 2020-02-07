@@ -1,10 +1,21 @@
+// ***************************************
+// #region :: IMPORTs
+// ---------------
+
 // import Packages
 import React from "react";
 
 // import Internals
-// import * as allSc from "./";
 import { useHistory, useRd, useChangeRd } from "../../useMorfos";
 import mockDb from "./mockDb.json";
+
+// ---------------
+// #endregion
+// ***************************************
+
+// ***************************************
+// #region :: FUNCTION
+// ---------------
 
 export let SetCategProdListFb = Info => {
   // set Hooks
@@ -59,3 +70,7 @@ export let SetCategProdListMockDb = Info => {
   let condListItems = mapItems.length === 0 ? Info.noItemComp : mapItems;
   return condListItems;
 };
+
+// ---------------
+// #endregion
+// ***************************************

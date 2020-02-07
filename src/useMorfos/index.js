@@ -1,3 +1,4 @@
+export { default as UseAcordion } from "./UseAcordion";
 export { default as UseFbListItems } from "./UseFbListItems";
 export { default as UseIcoMoon } from "./UseIcoMoon";
 export { default as UseLoader } from "./UseLoader";

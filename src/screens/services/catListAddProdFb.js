@@ -1,3 +1,7 @@
+// ***************************************
+// #region :: IMPORTs
+// ---------------
+
 // import Packages
 import React from "react";
 
@@ -5,6 +9,14 @@ import React from "react";
 // import * as allSc from "./";
 import { useHistory, useRd, useChangeRd } from "../../useMorfos";
 import mockDb from "./mockDb.json";
+
+// ---------------
+// #endregion
+// ***************************************
+
+// ***************************************
+// #region :: FUNCTION
+// ---------------
 
 let SetCatAddProdFb = Info => {
   // set Hooks
@@ -34,3 +46,7 @@ let SetCatAddProdMockDb = Info => {
 };
 
 export { SetCatAddProdFb, SetCatAddProdMockDb };
+
+// ---------------
+// #endregion
+// ***************************************

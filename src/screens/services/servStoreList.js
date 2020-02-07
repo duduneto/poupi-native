@@ -1,3 +1,7 @@
+// ***************************************
+// #region :: IMPORTs
+// ---------------
+
 // import Packages
 import React from "react";
 
@@ -10,6 +14,14 @@ import {
   UseFbListItems
 } from "../../useMorfos";
 import mockDb from "./mockDb.json";
+
+// ---------------
+// #endregion
+// ***************************************
+
+// ***************************************
+// #region :: FUNCTION
+// ---------------
 
 export let SetStoreListFb = Info => {
   // set Hooks
@@ -73,3 +85,7 @@ export let SetStoreListMockDb = Info => {
   let condListItems = mapItems.length === 0 ? Info.noItemComp : mapItems;
   return condListItems;
 };
+
+// ---------------
+// #endregion
+// ***************************************

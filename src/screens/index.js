@@ -35,3 +35,6 @@ export { default as Sc03c_v } from "./Sc03c_v";
 
 export { default as Sc04a } from "./Sc04a__AddProducts";
 export { default as Sc04a_v } from "./Sc04a_v";
+
+export { default as Sc05a } from "./Sc05a__ListAcordion";
+export { default as Sc05a_v } from "./Sc05a_v";

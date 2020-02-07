@@ -15,7 +15,8 @@
         "sc03a": "Meu Perfil",
         "sc03b": "Perfil do Produto",
         "sc03c": "Perfil da Loja",
-        "sc04a": "Adicionar Produto"
+        "sc04a": "Adicionar Produto",
+        "sc05a": "Accordion"
       },
       "sc01a": {
         "aRef": "Sc01a - Login",
