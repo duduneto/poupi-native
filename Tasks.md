@@ -57,14 +57,14 @@ Carlos ok- Sc03b, c - Adicionar cond de imagem padrão quando não tiver imagem 
 
 ### PROJETO CLIENTE
 
-- Marcar inicio enviando Whatsapp pro Juan
-- Entrar conta morfos
-- Fork start-morfos
-- Renomear Projeto
-- Colocar como privado
-- Criar um novo repositório usando codeSandBox
-- Entrar no gitHub e nas configurações do repositório criado, incluir colaborador "carlosvsk"
-- Confirmar participação
-- Pegar link do novo projeto no codesandbox (Trabalhar na conta pessoal)
-- Desenvolver Arquitetura da documentação do cliente
+- ok - Marcar inicio enviando Whatsapp pro Juan
+- ok - Entrar conta morfos
+- ok - Fork start-morfos
+- ok - Renomear Projeto
+- ok - Colocar como privado
+- ok - Criar um novo repositório usando codeSandBox
+- ok - Entrar no gitHub e nas configurações do repositório criado, incluir colaborador "carlosvsk"
+- ok - Confirmar participação
+- ok - Pegar link do novo projeto no codesandbox (Trabalhar na conta pessoal)
+- Fazendo... - Desenvolver Arquitetura da documentação do cliente
 - Marcar fim enviando Whatsapp pro Juan
