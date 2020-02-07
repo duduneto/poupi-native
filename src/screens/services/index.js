@@ -1,17 +1,15 @@
-import { SetRdContentFb, SetRdContentMockDb } from "./condRdContent";
-import { SetCategProdListFb, SetCategProdListMockDb } from "./catProdList";
+import condRdContentAll from "./condRdContent";
+import catProdListAll from "./catProdList";
 import { SetProdListFb, SetProdListMockDb } from "./prodList";
 import { SetStoreListFb, SetStoreListMockDb } from "./servStoreList";
 import { SetCatAddProdFb, SetCatAddProdMockDb } from "./catListAddProdFb";
 import setDataProdAll from "./setDataProd";
 
-let dbFb = false;
+let dbFb = true;
 
-export let condRdContent = info =>
-  dbFb ? SetRdContentFb(info) : SetRdContentMockDb(info);
+export let condRdContent = info => condRdContentAll(info, dbFb);
 
-export let catProdList = info =>
-  dbFb ? SetCategProdListFb(info) : SetCategProdListMockDb(info);
+export let catProdList = info => catProdListAll(info, dbFb);
 
 export let prodList = info =>
   dbFb ? SetProdListFb(info) : SetProdListMockDb(info);

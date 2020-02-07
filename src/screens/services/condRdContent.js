@@ -15,27 +15,29 @@ import mockDb from "./mockDb.json";
 // ***************************************
 // #region :: FUNCTION
 // ---------------
+export default (info, dbFb) => {
+  let readContentFb = () => {
+    // set Call
+    let infoTemp = {
+      collection: "content",
+      rdName: "rdContent",
+      docId: "pt"
+    };
 
-let SetRdContentFb = info => {
-  // set Call
-  let infoTemp = {
-    collection: "content",
-    rdName: "rdContent",
-    docId: "pt"
+    // function Call
+    info.callDocRd(infoTemp);
+
+    return info.rdContent;
   };
 
-  // function Call
-  info.callDocRd(infoTemp);
+  let readContentMock = () => {
+    let content = mockDb.content.pt;
 
-  return info.rdContent;
+    return content;
+  };
+
+  return dbFb ? readContentFb() : readContentMock();
 };
-let SetRdContentMockDb = Info => {
-  let content = mockDb.content.pt;
-
-  return content;
-};
-
-export { SetRdContentFb, SetRdContentMockDb };
 
 // ---------------
 // #endregion
