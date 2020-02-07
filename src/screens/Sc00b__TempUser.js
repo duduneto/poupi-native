@@ -33,7 +33,7 @@ export default function Sc00() {
   let callList = Object.values(usersList).map((item, idx) => {
     let goTo = () => {
       changeRd("rdAuthUser", item); // call Hook
-      history.push("/profile"); // redirect
+      history.push("/services"); // redirect
     };
     let infoReturn = {
       name: item.userName,

@@ -13,11 +13,11 @@ export default {
       component: AppAuth,
       childRoutes: [
         { path: "/onboarding", component: Sc.Sc01c },
-        { path: "/category-products", component: Sc.Sc02a },
-        { path: "/products", component: Sc.Sc02b },
+        { path: "/services", component: Sc.Sc02a, isIndex: true },
+        { path: "/providers", component: Sc.Sc02b },
         { path: "/stores", component: Sc.Sc02c },
         { path: "/profile", component: Sc.Sc03a },
-        { path: "/profile-product", component: Sc.Sc03b },
+        { path: "/profile-provider", component: Sc.Sc03b },
         { path: "/profile-store", component: Sc.Sc03c },
         { path: "/add-products", component: Sc.Sc04a },
         { path: "/list-acordion", component: Sc.Sc05a }

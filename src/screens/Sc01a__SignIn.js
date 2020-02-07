@@ -48,7 +48,7 @@ export default function Sc00() {
     changeRd("rdAuthUser", infoUser);
 
     // redirect
-    history.push("/profile");
+    history.push("/services");
   };
 
   // let start = () => {}
