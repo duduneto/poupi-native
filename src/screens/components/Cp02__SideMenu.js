@@ -37,7 +37,7 @@ export default function Sc00(props) {
   let arrMenu = [
     { icon: "image", label: scContent.sc03a, goTo: "/profile" },
     { icon: "image", label: scContent.sc02c, goTo: "/stores" },
-    { icon: "image", label: scContent.sc02a, goTo: "/category-products" },
+    { icon: "image", label: scContent.sc02a, goTo: "/services" },
     { icon: "image", label: scContent.sc04a, goTo: "/add-products" },
     { icon: "image", label: scContent.sc05a, goTo: "/list-acordion" }
   ];

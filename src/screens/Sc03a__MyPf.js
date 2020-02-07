@@ -24,7 +24,6 @@ export default function Sc00() {
   let scContent = rdContent.sc03a;
   let history = useHistory();
   let changeRd = useChangeRd();
-  let redirect = !rdAuthUser && history.push("/sign-in");
 
   let source = rdAuthUser.image;
   let userName = rdAuthUser.userName;
@@ -78,7 +77,7 @@ export default function Sc00() {
     userEmail
   };
 
-  return redirect || <AllSc.Sc03a_v info={infoReturn} />;
+  return <AllSc.Sc03a_v info={infoReturn} />;
 
   // ---------------
   // #endregion

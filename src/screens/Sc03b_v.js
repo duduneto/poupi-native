@@ -13,56 +13,58 @@ import { useStl } from "../useMorfos";
 // #endregion
 // ***************************************
 
-export default ({ info }) => {
+// ***************************************
+// #region :: STYLEs
+// ---------------
+
+let stlBODY1a = [useStl.card, useStl.cardProfile];
+let stlBODY1b = [useStl.flexCenter];
+let stlBODY1c = [useStl.profileImg];
+let stlBODY1d = [useStl.pad20, useStl.flexCenter, useStl.topLine];
+let stlBODY1f = [useStl.pad20];
+let stlBODY2 = [useStl.txtTitleCard];
+let stlBODY2b = [useStl.mgB20, useStl.txtBase];
+let stlBODY2c = [useStl.txtPrimaryInverse];
+let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
+
+// ---------------
+// #endregion
+// ***************************************
+
+export default ({ info }) => (
   // ***************************************
-  // #region :: STYLEs
+  // #region :: RENDER
   // ---------------
 
-  let stlBODY1a = [useStl.cardMaskPf, useStl.flex1, useStl.cardLongBar];
-  let stlBODY1b = [useStl.pad20, useStl.flexCenter];
-  let stlBODY1c = [useStl.imgProfile];
-  let stlBODY1d = [useStl.pad20, useStl.flexCenter, useStl.topLine];
-  let stlBODY2 = [useStl.txtTitleCard];
-  let stlBODY2b = [useStl.txtBase, { marginTop: 20 }];
-  let stlBODY2c = [useStl.txtPrimaryInverse];
-  let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
+  <View style={stlBODY1f}>
+    {/* BODY */}
+    {/* ------------------------------ */}
 
+    {/* CARD */}
+    {/* ------------------------------ */}
+
+    <View style={stlBODY1a}>
+      <View style={stlBODY1b}>
+        <Image source={info.condThumbnail} style={stlBODY1c} />
+        <Text style={stlBODY2}>{info.userName}</Text>
+        <Text style={stlBODY2b}>{info.userEmail}</Text>
+      </View>
+
+      <View style={stlBODY1d}>
+        <TouchableOpacity style={stlBODY3} onPress={info.signOut}>
+          <Text style={stlBODY2c}>{info.scContent.logout}</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+
+    {/* END */}
+    {/* ------------------------------ */}
+  </View>
+
+  /**/
+  /*/
+    /**/
   // ---------------
   // #endregion
   // ***************************************
-
-  return (
-    // ***************************************
-    // #region :: RENDER
-    // ---------------
-
-    // {/* BODY */}
-    // {/* ------------------------------ */}
-
-    <View style={useStl.pad20}>
-      {/* CARD */}
-      {/* ------------------------------ */}
-
-      <View style={stlBODY1a}>
-        <Image source={info.condThumbnail} style={stlBODY1c} />
-        <View style={stlBODY1b}>
-          <Text style={stlBODY2}>{info.produto.name}</Text>
-          <Text style={stlBODY2b}>{info.produto.description}</Text>
-        </View>
-
-        <View style={stlBODY1d}>
-          <TouchableOpacity style={stlBODY3} onPress={info.signOut}>
-            <Text style={stlBODY2c}>{info.scContent.bt01}</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      {/* END */}
-      {/* ------------------------------ */}
-    </View>
-
-    // ---------------
-    // #endregion
-    // ***************************************
-  );
-};
+);

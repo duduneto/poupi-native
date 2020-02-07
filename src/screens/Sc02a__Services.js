@@ -22,8 +22,9 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  let { rdContent } = useRd();
-  // let history = useHistory();
+  let { rdContent, rdAuthUser } = useRd();
+  let redirect = !rdAuthUser && history.push("/sign-in");
+  let history = useHistory();
   // let changeRd = useChangeRd();
 
   // ---------------
@@ -64,7 +65,7 @@ export default function Sc00() {
     // toSignIn
   };
 
-  return <AllSc.Sc02a_v info={infoReturn} />;
+  return redirect || <AllSc.Sc02a_v info={infoReturn} />;
 
   // ---------------
   // #endregion

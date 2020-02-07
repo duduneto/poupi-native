@@ -50,7 +50,7 @@ export default (info, dbFb) => {
         renderProps={({ item, idx }) => {
           let goTo = () => {
             changeRd("rdProdSelected", item);
-            history.push("/profile-product");
+            history.push("/profile-provider");
           };
           let source = item.image;
           let condThumbnail = !source ? info.defaultImg : source;
@@ -81,7 +81,7 @@ export default (info, dbFb) => {
       filteredItems.map((item, idx) => {
         let goTo = () => {
           changeRd("rdProdSelected", item);
-          history.push("/profile-product");
+          history.push("/profile-provider");
         };
         let source = item.image;
         let condThumbnail = !source ? info.defaultImg : source;

@@ -30,7 +30,7 @@ export default (info, dbFb) => {
   let mapItems = condArr.map((item, idx) => {
     let goTo = () => {
       changeRd("rdCategSelected", item.id);
-      history.push("/products");
+      history.push("/providers");
     };
 
     let source = item.image;

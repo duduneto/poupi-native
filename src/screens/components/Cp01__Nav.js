@@ -54,13 +54,13 @@ export default function Sc00(props) {
       back: "/sign-in",
       longBar: true
     },
-    "/category-products": {
+    "/services": {
       title: scContent.sc02a,
       longBar: false
     },
-    "/products": {
+    "/providers": {
       title: scContent.sc02b,
-      back: "/category-products",
+      back: "/services",
       longBar: false
     },
     "/stores": {
@@ -71,9 +71,9 @@ export default function Sc00(props) {
       title: scContent.sc03a,
       longBar: true
     },
-    "/profile-product": {
+    "/profile-provider": {
       title: scContent.sc03b,
-      back: "/products",
+      back: "/providers",
       longBar: true
     },
     "/profile-store": {
