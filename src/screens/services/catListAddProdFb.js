@@ -18,34 +18,36 @@ import mockDb from "./mockDb.json";
 // #region :: FUNCTION
 // ---------------
 
-let SetCatAddProdFb = Info => {
-  // set Hooks
-  let { rdContent } = useRd();
-  let arrCateg = rdContent.sc02a.arrCateg;
+export default (info, dbFb) => {
+  let SetCatAddProdFb = () => {
+    // set Hooks
+    let { rdContent } = useRd();
+    let arrCateg = rdContent.sc02a.arrCateg;
 
-  let listOptions = Object.values(arrCateg).map((item, idx) => {
-    let infoReturn = {
-      label: item.label,
-      value: item.id
-    };
-    return <Info.CompReturn key={idx} info={infoReturn} />;
-  });
-  return listOptions;
+    let listOptions = Object.values(arrCateg).map((item, idx) => {
+      let infoReturn = {
+        label: item.label,
+        value: item.id
+      };
+      return <info.CompReturn key={idx} info={infoReturn} />;
+    });
+    return listOptions;
+  };
+  let SetCatAddProdMockDb = () => {
+    let arrCateg = mockDb.content.pt.sc02a.arrCateg;
+
+    let listOptions = Object.values(arrCateg).map((item, idx) => {
+      let infoReturn = {
+        label: item.label,
+        value: item.id
+      };
+      return <info.CompReturn key={idx} info={infoReturn} />;
+    });
+    return listOptions;
+  };
+
+  return dbFb ? SetCatAddProdFb() : SetCatAddProdMockDb();
 };
-let SetCatAddProdMockDb = Info => {
-  let arrCateg = mockDb.content.pt.sc02a.arrCateg;
-
-  let listOptions = Object.values(arrCateg).map((item, idx) => {
-    let infoReturn = {
-      label: item.label,
-      value: item.id
-    };
-    return <Info.CompReturn key={idx} info={infoReturn} />;
-  });
-  return listOptions;
-};
-
-export { SetCatAddProdFb, SetCatAddProdMockDb };
 
 // ---------------
 // #endregion
