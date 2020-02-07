@@ -57,6 +57,7 @@ Carlos ok- Sc03b, c - Adicionar cond de imagem padrão quando não tiver imagem 
 
 ### PROJETO CLIENTE
 
+- Marcar inicio enviando Whatsapp pro Juan
 - Entrar conta morfos
 - Fork start-morfos
 - Renomear Projeto
@@ -66,3 +67,4 @@ Carlos ok- Sc03b, c - Adicionar cond de imagem padrão quando não tiver imagem 
 - Confirmar participação
 - Pegar link do novo projeto no codesandbox (Trabalhar na conta pessoal)
 - Desenvolver Arquitetura da documentação do cliente
+- Marcar fim enviando Whatsapp pro Juan
