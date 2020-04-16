@@ -2,11 +2,11 @@
 // ------------------------------
 
 // import Packages
-import React from 'react';
-import IcomoonReact from 'icomoon-react';
+import React from "react";
+import IcomoonReact from "icomoon-react";
 
 // import Internal Components
-import icoMoonConfig from '../icomoon/selection.json';
+import icoMoonConfig from "../icomoon/selection.json";
 
 // ------------------------------
 // #endregion

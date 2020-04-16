@@ -1,7 +1,5 @@
-// import packages
 import { AppRegistry } from "react-native";
-// import internals
-import Root from "./src/Root";
-import { name } from "./appInfo.json";
+import App from "./src/App";
+import { name } from "./app.json";
 
-AppRegistry.registerComponent(name, () => Root);
+AppRegistry.registerComponent(name, () => App);
