@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "myapp-tvOS.app"
-               BlueprintName = "myapp-tvOS"
-               ReferencedContainer = "container:myapp.xcodeproj">
+               BuildableName = "start_morfos-tvOS.app"
+               BlueprintName = "start_morfos-tvOS"
+               ReferencedContainer = "container:start_morfos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "myapp-tvOSTests.xctest"
-               BlueprintName = "myapp-tvOSTests"
-               ReferencedContainer = "container:myapp.xcodeproj">
+               BuildableName = "start_morfos-tvOSTests.xctest"
+               BlueprintName = "start_morfos-tvOSTests"
+               ReferencedContainer = "container:start_morfos.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "myapp-tvOS.app"
-            BlueprintName = "myapp-tvOS"
-            ReferencedContainer = "container:myapp.xcodeproj">
+            BuildableName = "start_morfos-tvOS.app"
+            BlueprintName = "start_morfos-tvOS"
+            ReferencedContainer = "container:start_morfos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "myapp-tvOS.app"
-            BlueprintName = "myapp-tvOS"
-            ReferencedContainer = "container:myapp.xcodeproj">
+            BuildableName = "start_morfos-tvOS.app"
+            BlueprintName = "start_morfos-tvOS"
+            ReferencedContainer = "container:start_morfos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

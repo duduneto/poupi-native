@@ -5,12 +5,16 @@
 
     - [bug] - add: new routes
 
-    - [x] - change: new redux files
+    - [bug] - change: new redux files (bug persist no android)
 
     - [x] - change: screens to pattern (Signin, ItemsList, MyProfile, ProfileList)
     
+    - [x] - change: app name (test on android)
+    
     - [...] - add: screens styles
 
+    - [ ] - add: configure firebase
+    
     - [ ] - change: useFb to useCrud calls
 
     - [ ] - change: useChangeRd to dispatch (exclude useChangeRd.js)
