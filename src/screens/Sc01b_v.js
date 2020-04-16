@@ -8,6 +8,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 // import Internals
 import {useStl} from '../useMorfos';
+import Cp01 from './components/Cp01__Nav';
 
 // ---------------
 // #endregion
@@ -17,11 +18,11 @@ import {useStl} from '../useMorfos';
 // #region :: STYLEs
 // ---------------
 
-let stlBODY1 = [useStl.flex1];
-let stlBODY2 = [useStl.txtTitleCard];
-// let stlBODY2b = [useStl.mgB20, useStl.txtBase];
-// let stlBODY2c = [useStl.txtPrimaryInverse];
-// let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
+let stlBG1 = [useStl.flex1];
+
+let stlBODY1a = [useStl.card, useStl.cardLongBar];
+let stlBODY2 = [useStl.mgB20, useStl.txtBase];
+let stlBODY2b = [useStl.mgB20];
 
 // ---------------
 // #endregion
@@ -42,31 +43,21 @@ export default ({info}) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
-
   <>
-    {/* PART 1 */}
-    {/* ------------------------------ */}
-
-    <Text style={stlBODY2}>TERMs</Text>
-
-    {/* PART 2 */}
-    {/* ------------------------------ */}
-
-    <Text style={stlBODY2}>Part 2</Text>
-
-    {/* PART 3 */}
-    {/* ------------------------------ */}
-
-    <Text style={stlBODY2}>Part 3</Text>
-
-    <TouchableOpacity onPress={info.event}>
-      <Text style={stlBODY2}>CLICK HERE!</Text>
-    </TouchableOpacity>
-
-    {/* END */}
-    {/* ------------------------------ */}
+    <Cp01 type="long">
+      <View style={useStl.pad20}>
+        <View style={stlBG1}>
+          <View style={stlBODY1a}>
+            <Text style={stlBODY2}>asdasd</Text>
+            <Text style={stlBODY2}>asdasd</Text>
+            <Text style={stlBODY2}>asdasd</Text>
+            <Text style={stlBODY2}>asdasd</Text>
+            <Text style={stlBODY2}>asdasd</Text>
+          </View>
+        </View>
+      </View>
+    </Cp01>
   </>
-
   // ---------------
   // #endregion
   // ***************************************

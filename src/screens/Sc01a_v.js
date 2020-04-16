@@ -7,7 +7,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 
 // import Internals
-import {useStl} from '../useMorfos';
+import {useStl, UseIcoMoon} from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -17,11 +17,18 @@ import {useStl} from '../useMorfos';
 // #region :: STYLEs
 // ---------------
 
-let stlBODY1 = [useStl.flex1];
-let stlBODY2 = [useStl.txtTitleCard];
-// let stlBODY2b = [useStl.mgB20, useStl.txtBase];
-// let stlBODY2c = [useStl.txtPrimaryInverse];
-// let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
+let stl01 = [useStl.flex1, useStl.bgPrimary];
+let stl01a = [useStl.flexCenter, useStl.flex3];
+let stl01b = [useStl.flexBetween, useStl.flex1, {paddingVertical: 30}];
+let stl01c = [useStl.flexCenter];
+let stl02 = [useStl.btn, useStl.btnLarge, useStl.bgSecondary];
+let stl02a = [useStl.txtPrimaryInverse];
+let stl03 = [useStl.flexCenter, {marginBottom: 50}];
+let stl04 = [{fontSize: 14, color: '#999', marginTop: 20}];
+let stl04b = [
+  useStl.txtBase,
+  {color: '#999', marginBottom: 10, textAlign: 'center'},
+];
 
 // ---------------
 // #endregion
@@ -43,29 +50,37 @@ export default ({info}) => (
   // #region :: RENDER
   // ---------------
 
-  <>
-    {/* PART 1 */}
+  <View style={stl01}>
+    {/* LOGO + SLOGAN */}
     {/* ------------------------------ */}
 
-    <Text style={stlBODY2}>Part 1</Text>
+    <View style={stl01a}>
+      <View style={stl03}>
+        <UseIcoMoon name="worker" size={120} color={'#fff'} />
 
-    {/* PART 2 */}
+        <Text style={stl04}>slogan</Text>
+      </View>
+    </View>
+
+    {/* BTNs */}
     {/* ------------------------------ */}
+    <View style={stl01b}>
+      <View style={stl01c}>
+        <Text style={stl04b}>Entre usando sua conta:</Text>
 
-    <Text style={stlBODY2}>Part 2</Text>
+        <TouchableOpacity style={stl02} onPress={info.enter}>
+          <Text style={stl02a}>Google</Text>
+        </TouchableOpacity>
+      </View>
 
-    {/* PART 3 */}
-    {/* ------------------------------ */}
-
-    <Text style={stlBODY2}>Part 3</Text>
-
-    <TouchableOpacity onPress={info.event}>
-      <Text style={stlBODY2}>CLICK HERE!</Text>
-    </TouchableOpacity>
+      <TouchableOpacity onPress={info.goToTerms}>
+        <Text style={stl04b}>Termos</Text>
+      </TouchableOpacity>
+    </View>
 
     {/* END */}
     {/* ------------------------------ */}
-  </>
+  </View>
 
   // ---------------
   // #endregion

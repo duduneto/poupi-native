@@ -6,21 +6,21 @@
 import React from 'react';
 
 // import Internals
-import Sc01a from './Sc01a_v';
-import {useDispatch} from 'react-redux';
+import Cp01 from './Cp01_v';
+// import {useDispatch} from 'react-redux';
 
 // ---------------
 // #endregion
 // ***************************************
 
-export default function Sc00() {
+export default function Sc00(props) {
   // ***************************************
   // #region :: HOOKs + VARs
   // ---------------
 
   // set Hooks
   // let { rdContent } = useRd();
-  let dispatch = useDispatch();
+  //   let dispatch = useDispatch();
 
   // let scContent = rdContent.sc00;
 
@@ -44,9 +44,11 @@ export default function Sc00() {
 
   // let model = () =>
 
-  // let toSignIn = () => history.push("/sign-in");
-  const enter = () => dispatch({type: 'setRoute', target: 'itemsList'});
-  const goToTerms = () => dispatch({type: 'setRoute', target: 'terms'});
+  //   const event = () => dispatch({type: 'setRoute', target: 'editor'});
+  const event = () => {};
+
+  const longBar = props.type === 'long';
+
   // ---------------
   // #endregion
   // ***************************************
@@ -56,13 +58,14 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    enter,
-    goToTerms,
+    children: props.children,
+    longBar,
+    event,
     // scContent
     // toSignIn
   };
 
-  return <Sc01a info={infoReturn} />;
+  return <Cp01 info={infoReturn} />;
 
   // ---------------
   // #endregion

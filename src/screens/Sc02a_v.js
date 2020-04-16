@@ -4,10 +4,12 @@
 
 // import Packages
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 // import Internals
+import Cp01 from './components/Cp01__Nav';
 import {useStl} from '../useMorfos';
+import defaultImg from '../images/default.jpg';
 
 // ---------------
 // #endregion
@@ -17,11 +19,22 @@ import {useStl} from '../useMorfos';
 // #region :: STYLEs
 // ---------------
 
-let stlBODY1 = [useStl.flex1];
-let stlBODY2 = [useStl.txtTitleCard];
-// let stlBODY2b = [useStl.mgB20, useStl.txtBase];
-// let stlBODY2c = [useStl.txtPrimaryInverse];
-// let stlBODY3 = [useStl.btn, useStl.btnMedium, useStl.btnPrimary];
+let stlBODY1 = [useStl.colView];
+let stlBODY1a = [
+  useStl.cardMask,
+  useStl.mgB20,
+  {minWidth: 120, flex: 1, marginHorizontal: 8},
+];
+let stlBODY1b = [{margin: 8}];
+let stlBODY1c = [useStl.flex1];
+
+let stlBODY2 = [
+  {fontSize: 12, textAlign: 'center', marginTop: 8, marginBottom: 3},
+];
+let stlBODY2c = [useStl.txtSmall, useStl.flex2, useStl.mgL5];
+
+let stlBODY3 = [useStl.thumbnailCateg];
+let stlBODY3a = [useStl.flexRow, useStl.flexBetween];
 
 // ---------------
 // #endregion
@@ -42,31 +55,34 @@ export default ({info}) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
+  <Cp01>
+    <View style={stlBODY1}>
+      {/* LIST */}
+      {/* ------------------------------ */}
 
-  <>
-    {/* PART 1 */}
-    {/* ------------------------------ */}
+      {/* {info.listCateg} */}
 
-    <Text style={stlBODY2}>Part 1</Text>
+      <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
+        <View style={stlBODY1b}>
+          <Image source={defaultImg} style={stlBODY3} />
+          <View style={stlBODY1c}>
+            <Text style={stlBODY2}>Nome</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
+        <View style={stlBODY1b}>
+          <Image source={defaultImg} style={stlBODY3} />
+          <View style={stlBODY1c}>
+            <Text style={stlBODY2}>Nome</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
 
-    {/* PART 2 */}
-    {/* ------------------------------ */}
-
-    <Text style={stlBODY2}>Part 2</Text>
-
-    {/* PART 3 */}
-    {/* ------------------------------ */}
-
-    <Text style={stlBODY2}>Part 3</Text>
-
-    <TouchableOpacity onPress={info.event}>
-      <Text style={stlBODY2}>CLICK HERE!</Text>
-    </TouchableOpacity>
-
-    {/* END */}
-    {/* ------------------------------ */}
-  </>
-
+      {/* END */}
+      {/* ------------------------------ */}
+    </View>
+  </Cp01>
   // ---------------
   // #endregion
   // ***************************************
