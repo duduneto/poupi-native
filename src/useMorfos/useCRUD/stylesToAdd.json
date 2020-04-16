@@ -1,0 +1,283 @@
+{
+  "flex": [
+    {
+      "name": "stl1",
+      "title": "flexRow",
+      "arrProps": [
+        { "id": "1", "prop": "flexDirection", "value": "row" },
+        { "id": "2", "prop": "alignItems", "value": "center" }
+      ]
+    },
+    {
+      "name": "stl2",
+      "title": "flexWrap",
+      "arrProps": [
+        { "id": "1", "prop": "justifyContent", "value": "space-between" },
+        { "id": "2", "prop": "flexDirection", "value": "row" },
+        { "id": "3", "prop": "flexWrap", "value": "wrap" },
+        { "id": "4", "prop": "flex", "value": 1 }
+      ]
+    },
+    {
+      "name": "stl3",
+      "title": "flexCenter",
+      "arrProps": [
+        { "id": "1", "prop": "alignItems", "value": "center" },
+        { "id": "2", "prop": "justifyContent", "value": "center" }
+      ]
+    },
+    {
+      "name": "stl4",
+      "title": "flexBetween",
+      "arrProps": [
+        { "id": "1", "prop": "alignItems", "value": "center" },
+        { "id": "2", "prop": "justifyContent", "value": "space-between" }
+      ]
+    },
+    {
+      "name": "stl5",
+      "title": "flexStart",
+      "arrProps": [
+        { "id": "1", "prop": "alignItems", "value": "center" },
+        { "id": "2", "prop": "flexDirection", "value": "row" },
+        { "id": "3", "prop": "justifyContent", "value": "flex-start" }
+      ]
+    },
+    {
+      "name": "stl6",
+      "title": "flexEnd",
+      "arrProps": [
+        { "id": "1", "prop": "alignItems", "value": "center" },
+        { "id": "2", "prop": "flexDirection", "value": "row" },
+        { "id": "3", "prop": "justifyContent", "value": "flex-end" }
+      ]
+    }
+  ],
+  "utils": [
+    {
+      "name": "stl7",
+      "title": "posRelative",
+      "arrProps": [{ "id": "1", "prop": "position", "value": "relative" }]
+    },
+    {
+      "name": "stl8",
+      "title": "pad10",
+      "arrProps": [{ "id": "1", "prop": "padding", "value": 10 }]
+    },
+    {
+      "name": "stl9",
+      "title": "pad20",
+      "arrProps": [{ "id": "1", "prop": "padding", "value": 20 }]
+    },
+    {
+      "name": "stl10",
+      "title": "padH20",
+      "arrProps": [{ "id": "1", "prop": "paddingHorizontal", "value": 20 }]
+    },
+    {
+      "name": "stl11",
+      "title": "noMg",
+      "arrProps": [{ "id": "1", "prop": "margin", "value": 0 }]
+    },
+    {
+      "name": "stl12",
+      "title": "mgB20",
+      "arrProps": [{ "id": "1", "prop": "marginBottom", "value": 20 }]
+    },
+    {
+      "name": "stl13",
+      "title": "mgL5",
+      "arrProps": [{ "id": "1", "prop": "marginLeft", "value": 5 }]
+    }
+  ],
+  "text": [
+    {
+      "name": "stl14",
+      "title": "txtCenter",
+      "arrProps": [{ "id": "1", "prop": "textAlign", "value": "center" }]
+    },
+    {
+      "name": "stl15",
+      "title": "txtSmall",
+      "arrProps": [
+        { "id": "1", "prop": "fontSize", "value": 12 },
+        { "id": "2", "prop": "color", "value": "#999" }
+      ]
+    },
+    {
+      "name": "stl16",
+      "title": "txtBase",
+      "arrProps": [
+        { "id": "1", "prop": "fontSize", "value": 14 },
+        { "id": "2", "prop": "color", "value": "#999" }
+      ]
+    },
+    {
+      "name": "stl17",
+      "title": "txtSubTitleCard",
+      "arrProps": [
+        { "id": "1", "prop": "fontSize", "value": 14 },
+        { "id": "2", "prop": "color", "value": "#000" }
+      ]
+    },
+    {
+      "name": "stl18",
+      "title": "txtTitleCard",
+      "arrProps": [
+        { "id": "1", "prop": "fontSize", "value": 17 },
+        { "id": "2", "prop": "color", "value": "#000" }
+      ]
+    },
+    {
+      "name": "stl19",
+      "title": "txtTitleProfile",
+      "arrProps": [
+        { "id": "1", "prop": "fontSize", "value": 16 },
+        { "id": "2", "prop": "fontWeight", "value": "bold" },
+        { "id": "3", "prop": "color", "value": "#fefefe" }
+      ]
+    },
+    {
+      "name": "stl20",
+      "title": "txtTitleScreen",
+      "arrProps": [
+        { "id": "1", "prop": "fontSize", "value": 18 },
+        { "id": "2", "prop": "color", "value": "#fefefe" }
+      ]
+    }
+  ],
+  "fx": [
+    " ****** STYLES + FX *********** ",
+    " ****************************** ",
+    {
+      "name": "stl21",
+      "title": "shadowLess",
+      "arrProps": [
+        { "id": "1", "prop": "shadowColor", "value": "#000" },
+        { "id": "2", "prop": "shadowOpacity", "value": 0.3 },
+        { "id": "3", "prop": "shadowRadius", "value": 4 },
+        {
+          "id": "4",
+          "prop": "shadowOffset",
+          "value": { "width": 0, "height": 1 }
+        },
+        { "id": "5", "prop": "elevation", "value": 4 }
+      ]
+    },
+    {
+      "name": "stl22",
+      "title": "shadowMore",
+      "arrProps": [
+        { "id": "1", "prop": "shadowColor", "value": "#000" },
+        { "id": "2", "prop": "shadowOpacity", "value": 0.4 },
+        { "id": "3", "prop": "shadowRadius", "value": 14 },
+        {
+          "id": "4",
+          "prop": "shadowOffset",
+          "value": { "width": 3, "height": 6 }
+        },
+        { "id": "5", "prop": "elevation", "value": 14 }
+      ]
+    },
+    {
+      "name": "stl23",
+      "title": "radiusLess",
+      "arrProps": [{ "id": "1", "prop": "borderRadius", "value": 10 }]
+    },
+    {
+      "name": "stl24",
+      "title": "radiusMore",
+      "arrProps": [{ "id": "1", "prop": "borderRadius", "value": 20 }]
+    },
+    {
+      "name": "stl25",
+      "title": "radiusTotal",
+      "arrProps": [{ "id": "1", "prop": "borderRadius", "value": 100 }]
+    },
+    {
+      "name": "stl26",
+      "title": "topLine",
+      "arrProps": [
+        { "id": "1", "prop": "borderTopColor", "value": "#ebebeb" },
+        { "id": "2", "prop": "borderTopWidth", "value": 1 }
+      ]
+    },
+    {
+      "name": "stl27",
+      "title": "bottomLine",
+      "arrProps": [
+        { "id": "1", "prop": "borderBottomColor", "value": "#ebebeb" },
+        { "id": "2", "prop": "borderBottomWidth", "value": 1 }
+      ]
+    },
+    {
+      "name": "stl28",
+      "title": "dot",
+      "arrProps": [
+        { "id": "1", "prop": "width", "value": 8 },
+        { "id": "2", "prop": "height", "value": 8 },
+        { "id": "3", "prop": "marginRight", "value": 5 },
+        { "id": "4", "prop": "borderRadius", "value": 100 }
+      ]
+    },
+    {
+      "name": "stl29",
+      "title": "active",
+      "arrProps": [
+        { "id": "1", "prop": "color", "value": "#fefefe" },
+        { "id": "2", "prop": "backgroundColor", "value": "#360239" }
+      ]
+    },
+    {
+      "name": "stl30",
+      "title": "noact",
+      "arrProps": [
+        { "id": "1", "prop": "color", "value": "#fff" },
+        { "id": "2", "prop": "backgroundColor", "value": "#fff" }
+      ]
+    },
+    {
+      "name": "stl31",
+      "title": "noactGr",
+      "arrProps": [
+        { "id": "1", "prop": "color", "value": "#ebebeb" },
+        { "id": "2", "prop": "backgroundColor", "value": "#ebebeb" }
+      ]
+    }
+  ],
+  "main": [
+    {
+      "name": "stl32",
+      "title": "flexMaster",
+      "arrProps": [
+        { "id": "1", "prop": "flex", "value": 1 },
+        { "id": "2", "prop": "overflow", "value": "hidden" }
+      ]
+    },
+    {
+      "name": "stl33",
+      "title": "navLeft",
+      "arrProps": [
+        { "id": "1", "prop": "width", "value": "" },
+        { "id": "2", "prop": "height", "value": "" },
+        { "id": "3", "prop": "", "value": "" }
+      ]
+    },
+    {
+      "name": "stl34",
+      "title": "navCenter",
+      "arrProps": [
+        { "id": "1", "prop": "", "value": "" },
+        { "id": "2", "prop": "", "value": "" }
+      ]
+    },
+    {
+      "name": "stl35",
+      "title": "navRight",
+      "arrProps": [
+        { "id": "1", "prop": "", "value": "" },
+        { "id": "2", "prop": "", "value": "" }
+      ]
+    }
+  ]
+}

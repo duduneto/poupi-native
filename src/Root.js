@@ -1,13 +1,16 @@
-// import packages
-import React from "react";
-import { View, Text } from "react-native";
+// import Packages
+import React from 'react';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 
-// import internals
+// // import Internals
+import {store, persistor} from './config/redux/reduxConfig';
+import Routes from './screens/Routes';
 
-export default () => {
-  return (
-    <View>
-      <Text>Ola Mundo!</Text>
-    </View>
-  );
-};
+export default () => (
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <Routes />
+    </PersistGate>
+  </Provider>
+);

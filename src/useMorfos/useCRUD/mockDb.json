@@ -1,0 +1,200 @@
+{
+  "prj": {
+    "elements": [
+      {
+        "id": "1",
+        "type": "sc",
+        "name": "sc1",
+        "title": "Tela 01",
+        "styleId": "6",
+
+        "functionId": [],
+        "childrenId": ["6", "7", "8"]
+      },
+
+      {
+        "id": "2",
+        "type": "sc",
+        "name": "sc2",
+        "title": "Tela 2",
+        "styleId": "7",
+
+        "functionId": [],
+        "childrenId": ["9"]
+      },
+
+      {
+        "id": "3",
+        "type": "view",
+        "name": "bx1",
+        "title": "View 01",
+        "styleId": "4",
+
+        "childrenId": ["6", "8"]
+      },
+
+      {
+        "id": "4",
+        "type": "view",
+        "name": "bx2",
+        "title": "View 02",
+
+        "childrenId": ["3"]
+      },
+
+      {
+        "id": "5",
+        "type": "txt",
+        "name": "txt1",
+        "label": "Hello World!",
+        "styleId": "1"
+      },
+
+      {
+        "id": "6",
+        "type": "btn",
+        "name": "btn1",
+        "styleId": "3",
+
+        "funcId": "1",
+        "functionId": ["1"],
+        "childrenId": ["5"]
+      },
+
+      {
+        "id": "7",
+        "type": "txt",
+        "name": "txt2",
+        "label": "TELA 1",
+        "styleId": "8"
+      },
+
+      {
+        "id": "8",
+        "type": "txt",
+        "name": "txt3",
+        "label": "Line Pos",
+        "styleId": "2"
+      },
+      {
+        "id": "9",
+        "type": "btn",
+        "name": "btn2",
+        "styleId": "9",
+
+        "funcId": "1",
+        "functionId": ["1"],
+        "childrenId": ["10"]
+      },
+      {
+        "id": "10",
+        "type": "txt",
+        "name": "txt4",
+        "label": "TELA 2",
+        "styleId": "5"
+      },
+      {
+        "id": "11",
+        "type": "btn",
+        "name": "btn3",
+        "styleId": "3",
+
+        "funcId": "1",
+        "functionId": ["1"],
+        "childrenId": ["12"]
+      },
+      {
+        "id": "12",
+        "type": "txt",
+        "name": "txt5",
+        "label": "TELA 3",
+        "styleId": "5"
+      }
+    ],
+
+    "styles": [
+      {
+        "id": "1",
+        "name": "stl1",
+        "title": "Vermelho",
+        "props": [{ "id": "1", "prop": "color", "value": "green" }]
+      },
+
+      {
+        "id": "2",
+        "name": "stl2",
+        "title": "Azul",
+        "props": [{ "id": "1", "prop": "color", "value": "blue" }]
+      },
+
+      {
+        "id": "3",
+        "name": "stl3",
+        "title": "Btn ?",
+        "props": [
+          { "id": "1", "prop": "alignItems", "value": "center" },
+          { "id": "2", "prop": "backgroundColor", "value": "lightgray" },
+          { "id": "3", "prop": "padding", "value": 10 }
+        ]
+      },
+
+      {
+        "id": "4",
+        "name": "stl4",
+        "title": "Btn ?",
+        "props": [
+          { "id": "1", "prop": "flex", "value": 1 },
+          { "id": "2", "prop": "backgroundColor", "value": "#fff" },
+          { "id": "3", "prop": "alignItems", "value": "center" },
+          { "id": "4", "prop": "justifyContent", "value": "center" }
+        ]
+      },
+      {
+        "id": "5",
+        "name": "stl5",
+        "title": "Verde",
+        "props": [{ "id": "1", "prop": "color", "value": "green" }]
+      },
+      {
+        "id": "6",
+        "name": "stl6",
+        "title": "Telas",
+        "props": [
+          { "id": "1", "prop": "flex", "value": 1 },
+          { "id": "2", "prop": "backgroundColor", "value": "white" }
+        ]
+      },
+      {
+        "id": "7",
+        "name": "stl7",
+        "title": "Telas",
+        "props": [
+          { "id": "1", "prop": "flex", "value": 1 },
+          { "id": "2", "prop": "backgroundColor", "value": "white" }
+        ]
+      },
+      {
+        "id": "8",
+        "name": "stl8",
+        "title": "Vermelho",
+        "props": [{ "id": "1", "prop": "color", "value": "red" }]
+      },
+
+      {
+        "id": "9",
+        "name": "stl9",
+        "title": "Btn ?",
+        "props": [
+          { "id": "1", "prop": "alignItems", "value": "center" },
+          { "id": "2", "prop": "backgroundColor", "value": "lightgray" },
+          { "id": "3", "prop": "padding", "value": 10 }
+        ]
+      }
+    ],
+
+    "addBtn": [
+      { "id": "1", "label": "Texto", "type": "txt" },
+      { "id": "2", "label": "Botão", "type": "btn" }
+    ]
+  }
+}

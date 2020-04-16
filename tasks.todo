@@ -3,11 +3,17 @@
 
   - Carlos:
 
-    - [ ] - add: new routes
+    - [x] - add: new routes
 
-    - [ ] - change: new redux files
+    - [...] - change: new redux files
 
-    - [ ] - chage: useFb to useCrud calls
+    - [ ] - change: useFb to useCrud calls
+
+    - [ ] - change: useChangeRd to dispatch (exclude useChangeRd.js)
+    
+    - [ ] - change: screens to pattern (Signin, ItemsList, MyProfile, ProfileList)
+    
+    - [ ] - change: useFb to useCrud calls
 
 
   - Juan:

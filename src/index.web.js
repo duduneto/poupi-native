@@ -1,14 +1,14 @@
 // import packages
-import { AppRegistry } from "react-native";
+import {AppRegistry} from 'react-native';
 
 // import internals
-import App from "./App";
-import { name } from "./appInfo.json";
+import Root from './Root';
+import {name} from './appInfo.json';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
 // React Native Web
-AppRegistry.registerComponent(name, () => App);
+AppRegistry.registerComponent(name, () => Root);
 AppRegistry.runApplication(name, {
   rootTag: rootElement,
 });
