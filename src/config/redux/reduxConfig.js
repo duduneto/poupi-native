@@ -1,33 +1,32 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import webStorage from "redux-persist/lib/storage";
-import { persistStore, persistReducer } from "redux-persist";
+import {createStore, applyMiddleware, compose} from 'redux';
+import webStorage from 'redux-persist/lib/storage';
+import {persistStore, persistReducer} from 'redux-persist';
 
 // import Internals
-import reducers from "./rootReducer";
-
+import reducers from './rootReducer';
 
 const persistConfig = {
   storage: webStorage,
-  key: "root",
-  whitelist: ["rdRoute", "rdProject", "rdStyles", "rdElements"],
+  key: 'root',
+  whitelist: ['rdRoute'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const middlewares = [];
 
-if (process.env.NODE_ENV === "development") {
-  const logger = (store) => (next) => (action) => {
-    const { type, rdName, rdPropName } = action;
+if (process.env.NODE_ENV === 'development') {
+  const logger = store => next => action => {
+    const {type, rdName, rdPropName} = action;
     const condRdPropName = rdPropName ? `${rdName}{${rdPropName}}` : rdName;
     const condRdName = condRdPropName ? `${condRdPropName}` : type;
-    const condType = type.replace("_", "&").split("&")[0] === "ASYNC";
-    const condTitle = condType ? type : "SYNC";
+    const condType = type.replace('_', '&').split('&')[0] === 'ASYNC';
+    const condTitle = condType ? type : 'SYNC';
     const Names = `${condTitle} => ${condRdName}`;
 
     const result = next(action);
 
-    const consoleValue = { ACTION: action, STATE: store.getState() };
+    const consoleValue = {ACTION: action, STATE: store.getState()};
     console.info(Names, consoleValue);
 
     return result;
@@ -43,4 +42,4 @@ const store = createStore(
 
 const persistor = persistStore(store);
 
-export { store, persistor };
+export {store, persistor};

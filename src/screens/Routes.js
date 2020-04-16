@@ -8,8 +8,14 @@ import {useSelector} from 'react-redux';
 import {Platform} from 'react-native';
 
 // import Internals
-import Editor from './Sc02_Editor';
-import Home from './Sc01_Home';
+import Sc01a from './Sc01a__SignIn';
+import Sc01b from './Sc01b__Terms';
+import Sc01c from './Sc01c__Onboarding';
+import Sc02a from './Sc02a__ItemsList';
+import Sc03a from './Sc03a__MyPf';
+import Sc03b from './Sc03b__ItemPf';
+import Sc04a from './Sc04a__AddItem';
+
 import Sc404 from './Sc_404';
 import {useRouter, useChangeRd} from '../useMorfos';
 
@@ -19,8 +25,18 @@ import {useRouter, useChangeRd} from '../useMorfos';
 
 let callRoutes = (mainRoute, ClearStorage) => {
   let routes = {
-    home: <Home />,
-    editor: <Editor />,
+    // public
+    signin: <Sc01a />,
+    terms: <Sc01b />,
+    onboarding: <Sc01c />,
+
+    // private
+    itemsList: <Sc02a />,
+    myProfile: <Sc03a />,
+    itemProfile: <Sc03b />,
+    addItem: <Sc04a />,
+
+    // Utils / Feedback
     error: <Sc404 />,
     clear: <ClearStorage />,
   };
@@ -53,7 +69,7 @@ export default function InitRoutes() {
 
   let initGotoUrl = () => {
     let pathName = window.location.pathname.split('/')[1];
-    let gotoUrl = pathName === '' ? 'home' : pathName;
+    let gotoUrl = pathName === '' ? 'signin' : pathName;
     window.history.pushState(null, '', '/' + gotoUrl);
 
     if (mainRoute !== gotoUrl) {
@@ -66,7 +82,7 @@ export default function InitRoutes() {
     let changeRd = useChangeRd();
     // FALTA: ver como sestar o storage no nativo lá no SYNC (add pack nativo)
     changeRd({clearAll: true});
-    callRouter('home');
+    callRouter('signin');
     return <></>;
   };
 
