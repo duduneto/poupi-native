@@ -1,45 +1,33 @@
-import {createStore, applyMiddleware, compose} from 'redux';
-import webStorage from 'redux-persist/lib/storage';
-import {persistStore, persistReducer} from 'redux-persist';
+import {createStore, applyMiddleware} from 'redux';
+import actions from '../../useMorfos/useCRUD/actions';
 
-// import Internals
-import reducers from './rootReducer';
-
-const persistConfig = {
-  storage: webStorage,
-  key: 'root',
-  whitelist: ['rdRoute'],
+const initialState = {
+  rdRoute: {main: 'signin'},
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers);
-
-const middlewares = [];
-
-if (process.env.NODE_ENV === 'development') {
-  const logger = store => next => action => {
-    const {type, rdName, rdPropName} = action;
-    const condRdPropName = rdPropName ? `${rdName}{${rdPropName}}` : rdName;
-    const condRdName = condRdPropName ? `${condRdPropName}` : type;
-    const condType = type.replace('_', '&').split('&')[0] === 'ASYNC';
-    const condTitle = condType ? type : 'SYNC';
-    const Names = `${condTitle} => ${condRdName}`;
-
-    const result = next(action);
-
-    const consoleValue = {ACTION: action, STATE: store.getState()};
-    console.info(Names, consoleValue);
-
-    return result;
+function allReducers(state, action) {
+  const reducers = {
+    ...actions(state, action),
+    clear() {
+      return initialState;
+    },
   };
-  middlewares.push(logger);
+
+  const condCalls = reducers[action.type] === undefined;
+
+  return condCalls ? state : reducers[action.type]();
 }
 
-const store = createStore(
-  persistedReducer,
-  undefined,
-  compose(applyMiddleware(...middlewares)),
-);
+const reducer = (state = initialState, action) => allReducers(state, action);
 
-const persistor = persistStore(store);
+const logger = store => next => action => {
+  next(action);
+  console.log('ACTION =>', action.type, {
+    ACTION: action,
+    STATE: store.getState(),
+  });
+};
 
-export {store, persistor};
+const store = createStore(reducer, applyMiddleware(logger));
+
+export {store};

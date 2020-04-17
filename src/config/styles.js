@@ -1,14 +1,8 @@
-import {StyleSheet, Platform, Dimensions} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {condWidth, condHeight} from './condDimensions';
 
-var {mobWidth, mobHeight} = Dimensions.get('window');
-var webWidth = window.screen.width;
-var webHeight = window.screen.height;
-
-var width = Platform.OS !== 'android' ? webWidth : mobWidth;
-var height = Platform.OS !== 'android' ? webHeight : mobHeight;
-
-// var width = webWidth;
-// var height = webHeight;
+var width = condWidth;
+var height = condHeight;
 
 // ***************************************
 // #region :: COLORs
@@ -105,7 +99,7 @@ const txtTitleScreen = {
 
 const msgError = {
   marginBottom: 20,
-  fontSize: txtBase,
+  fontSize: sizeTxtRef - 6,
   color: tertiaryColor,
   textAlign: 'center',
 };
@@ -438,7 +432,8 @@ const Styles = StyleSheet.create({
     height: 150,
     marginBottom: 20,
     marginTop: -40,
-    borderRadius: '100%',
+    // borderRadius: '100%',
+    borderRadius: 44 / 2,
     borderWidth: 5,
     // borderColor: primaryColor,
     borderColor: 'rgba(00,00,00,.5)',

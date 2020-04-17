@@ -8,6 +8,7 @@ import {useSelector} from 'react-redux';
 import {Platform} from 'react-native';
 
 // import Internals
+import Cp01 from './components/Cp01__Nav';
 import Sc01a from './Sc01a__SignIn';
 import Sc01b from './Sc01b__Terms';
 import Sc01c from './Sc01c__Onboarding';
@@ -22,6 +23,30 @@ import {useRouter, useChangeRd} from '../useMorfos';
 // ---------------
 // #endregion
 // ***************************************
+
+let infoNav = [
+  {id: 'Sc01a', nav: false},
+  {id: 'Sc01b', nav: true, type: 'long', title: 'Termos de uso', icon: 'back'},
+  {id: 'Sc01c', nav: true, type: 'long', title: 'Onboarding', icon: 'none'},
+  {
+    id: 'Sc02a',
+    nav: true,
+    type: 'short',
+    title: 'Lista de Items',
+    icon: 'menu',
+  },
+  {id: 'Sc03a', nav: true, type: 'long', title: 'Meu Perfil', icon: 'back'},
+  {id: 'Sc03b', nav: true, type: 'long', title: 'Perfil do Item', icon: 'back'},
+  {id: 'Sc04a', nav: true, type: 'long', title: 'Add Item', icon: 'back'},
+];
+
+// let routes2 = () => {
+//   const objRoutes = infoNav.map(item => {
+//     return {[item.id]: <Sc00 type={item.type} title={item.title} icon={item.icon} />};
+//   });
+
+//   return {...objRoutes};
+// };
 
 let callRoutes = (mainRoute, ClearStorage) => {
   let routes = {

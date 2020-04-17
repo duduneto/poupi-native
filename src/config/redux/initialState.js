@@ -4,5 +4,5 @@ export default {
 
   // ---------
 
-  rdRoute: {main: 'home'},
+  rdRoute: {main: 'signin'},
 };

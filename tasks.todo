@@ -5,7 +5,7 @@
 
     - [bug] - add: new routes
 
-    - [bug] - change: new redux files (bug persist no android)
+    - [x] - change: new redux files
 
     - [x] - change: screens to pattern (Signin, ItemsList, MyProfile, ProfileList)
     
