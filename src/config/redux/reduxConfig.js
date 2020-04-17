@@ -1,33 +1,44 @@
 import {createStore, applyMiddleware} from 'redux';
-import actions from '../../useMorfos/useCRUD/actions';
+import condStorage from '../condPacks/storage';
+// import storage from '@react-native-community/async-storage';
+import {persistStore, persistReducer} from 'redux-persist';
 
-const initialState = {
-  rdRoute: {main: 'signin'},
+// import Internals
+import reducers from './rootReducer';
+
+const persistConfig = {
+  storage: condStorage,
+  key: 'root',
+  whitelist: ['rdRoute'],
 };
 
-function allReducers(state, action) {
-  const reducers = {
-    ...actions(state, action),
-    clear() {
-      return initialState;
-    },
+const persistedReducer = persistReducer(persistConfig, reducers);
+
+const middlewares = [];
+
+if (process.env.NODE_ENV === 'development') {
+  const logger = store => next => action => {
+    const {type, rdName, rdPropName} = action;
+    const condRdPropName = rdPropName ? `${rdName}{${rdPropName}}` : rdName;
+    const condRdName = condRdPropName ? `${condRdPropName}` : type;
+    const condType = type.replace('_', '&').split('&')[0] === 'ASYNC';
+    const condTitle = condType ? type : 'SYNC';
+    const Names = `${condTitle} => ${condRdName}`;
+
+    const result = next(action);
+
+    const consoleValue = {ACTION: action, STATE: store.getState()};
+    console.info(Names, consoleValue);
+
+    return result;
   };
-
-  const condCalls = reducers[action.type] === undefined;
-
-  return condCalls ? state : reducers[action.type]();
+  middlewares.push(logger);
 }
 
-const reducer = (state = initialState, action) => allReducers(state, action);
+// const store = createStore(reducers, applyMiddleware(...middlewares));
+const store = createStore(persistedReducer, applyMiddleware(...middlewares));
 
-const logger = store => next => action => {
-  next(action);
-  console.log('ACTION =>', action.type, {
-    ACTION: action,
-    STATE: store.getState(),
-  });
-};
+const persistor = persistStore(store);
 
-const store = createStore(reducer, applyMiddleware(logger));
-
-export {store};
+export {store, persistor};
+// export {store};

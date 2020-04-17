@@ -17,6 +17,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.9.0",
     "firebase": "7.13.0",
     "icomoon-react": "^2.0.16",
     "react": "16.11.0",
@@ -24,12 +25,11 @@
     "react-native": "0.62.2",
     "react-native-vector-icons": "6.6.0",
     "react-native-web": "0.12.2",
-    "react-scripts": "3.0.1",
     "react-redux": "7.1.1",
+    "react-scripts": "3.0.1",
     "redux": "4.0.4",
     "redux-logger": "3.0.6",
-    "redux-persist": "6.0.0",
-    "redux-persist-transform-filter": "0.0.20"
+    "redux-persist": "6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

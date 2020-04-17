@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {condWidth, condHeight} from './condDimensions';
+import {condWidth, condHeight} from './condPacks/dimensions';
 
 var width = condWidth;
 var height = condHeight;
