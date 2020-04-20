@@ -6,8 +6,8 @@
 import React from 'react';
 
 // import Internals
+import {useRouter} from '../useMorfos';
 import Sc02a from './Sc02a_v';
-// import {useDispatch} from 'react-redux';
 
 // ---------------
 // #endregion
@@ -19,10 +19,7 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  // let { rdContent } = useRd();
-  //   let dispatch = useDispatch();
-
-  // let scContent = rdContent.sc00;
+  let callRouter = useRouter();
 
   // ---------------
   // #endregion
@@ -42,10 +39,7 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  // let model = () =>
-
-  //   const event = () => dispatch({type: 'setRoute', target: 'editor'});
-  const event = () => {};
+  const goTo = () => callRouter('itemProfile');
 
   // ---------------
   // #endregion
@@ -56,7 +50,7 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    event,
+    goTo,
     // scContent
     // toSignIn
   };

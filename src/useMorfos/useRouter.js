@@ -1,22 +1,21 @@
 // import Packages
 // import React from "react";
-import { Platform } from "react-native";
+import {Platform} from 'react-native';
+import {useDispatch} from 'react-redux';
 
 // import Internals
-import { useChangeRd } from ".";
 
 export default () => {
   // set Hooks
-  const changeRd = useChangeRd();
+  const dispatch = useDispatch();
 
-  const Router = (goto) => {
-    // console.log("useRouter", goto);
+  const Router = goto => {
+    if (Platform.OS === 'web') {
+      window.history.pushState(null, '', `/${goto}`);
+    }
 
-    if (Platform.OS === "web") window.history.pushState(null, "", `/${goto}`);
-
-    changeRd({
-      rdName: "rdRoute",
-      rdPropName: "main",
+    dispatch({
+      type: 'setRoute',
       value: goto,
     });
   };

@@ -3,18 +3,10 @@ export default (state, action) => {
   const {rdProject} = state;
 
   return {
-    // setFirstScRoute() {
-    //   const {rdElements} = state;
-    //   const appObj = Object.values(rdElements).find(res => res.type === 'app');
-    //   const firstScId = appObj.arrChildren[0];
-
-    //   return {...state, rdRoute: {...rdRoute, editorView: firstScId}};
-    // },
-
     setRoute() {
-      const target = action.target;
+      const {value} = action;
 
-      return {...state, rdRoute: {...rdRoute, main: target}};
+      return {...state, rdRoute: value};
     },
 
     setScActive() {

@@ -7,7 +7,7 @@ import React from 'react';
 
 // import Internals
 import Sc01a from './Sc01a_v';
-import {useDispatch} from 'react-redux';
+import {useRouter} from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -19,10 +19,7 @@ export default function Sc00() {
   // ---------------
 
   // set Hooks
-  // let { rdContent } = useRd();
-  let dispatch = useDispatch();
-
-  // let scContent = rdContent.sc00;
+  let callRouter = useRouter();
 
   // ---------------
   // #endregion
@@ -44,9 +41,8 @@ export default function Sc00() {
 
   // let model = () =>
 
-  // let toSignIn = () => history.push("/sign-in");
-  const enter = () => dispatch({type: 'setRoute', target: 'itemsList'});
-  const goToTerms = () => dispatch({type: 'setRoute', target: 'terms'});
+  const enter = () => callRouter('itemsList');
+  const goToTerms = () => callRouter('terms');
   // ---------------
   // #endregion
   // ***************************************

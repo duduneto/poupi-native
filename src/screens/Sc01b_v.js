@@ -43,21 +43,21 @@ export default ({info}) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
+
   <>
-    <Cp01 type="long">
-      <View style={useStl.pad20}>
-        <View style={stlBG1}>
-          <View style={stlBODY1a}>
-            <Text style={stlBODY2}>asdasd</Text>
-            <Text style={stlBODY2}>asdasd</Text>
-            <Text style={stlBODY2}>asdasd</Text>
-            <Text style={stlBODY2}>asdasd</Text>
-            <Text style={stlBODY2}>asdasd</Text>
-          </View>
+    <View style={useStl.pad20}>
+      <View style={stlBG1}>
+        <View style={stlBODY1a}>
+          <Text style={stlBODY2}>asdasd</Text>
+          <Text style={stlBODY2}>asdasd</Text>
+          <Text style={stlBODY2}>asdasd</Text>
+          <Text style={stlBODY2}>asdasd</Text>
+          <Text style={stlBODY2}>asdasd</Text>
         </View>
       </View>
-    </Cp01>
+    </View>
   </>
+
   // ---------------
   // #endregion
   // ***************************************

@@ -1,8 +1,10 @@
 export default {
-  // rdAddBtn: {},
-  asyncMsgs: {},
+  rdAuthUser: {typeAccount: 'adm'},
+  rdItems: null,
+  rdUsers: null,
 
   // ---------
 
-  rdRoute: {main: 'signin'},
+  asyncMsgs: {},
+  rdRoute: 'signin',
 };

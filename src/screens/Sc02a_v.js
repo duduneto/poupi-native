@@ -7,7 +7,6 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 // import Internals
-import Cp01 from './components/Cp01__Nav';
 import {useStl} from '../useMorfos';
 import defaultImg from '../images/default.jpg';
 
@@ -55,34 +54,32 @@ export default ({info}) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
-  <Cp01>
-    <View style={stlBODY1}>
-      {/* LIST */}
-      {/* ------------------------------ */}
+  <View style={stlBODY1}>
+    {/* LIST */}
+    {/* ------------------------------ */}
 
-      {/* {info.listCateg} */}
+    {/* {info.listCateg} */}
 
-      <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
-        <View style={stlBODY1b}>
-          <Image source={defaultImg} style={stlBODY3} />
-          <View style={stlBODY1c}>
-            <Text style={stlBODY2}>Nome</Text>
-          </View>
+    <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
+      <View style={stlBODY1b}>
+        <Image source={defaultImg} style={stlBODY3} />
+        <View style={stlBODY1c}>
+          <Text style={stlBODY2}>Nome</Text>
         </View>
-      </TouchableOpacity>
-      <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
-        <View style={stlBODY1b}>
-          <Image source={defaultImg} style={stlBODY3} />
-          <View style={stlBODY1c}>
-            <Text style={stlBODY2}>Nome</Text>
-          </View>
+      </View>
+    </TouchableOpacity>
+    <TouchableOpacity style={stlBODY1a} onPress={info.goTo}>
+      <View style={stlBODY1b}>
+        <Image source={defaultImg} style={stlBODY3} />
+        <View style={stlBODY1c}>
+          <Text style={stlBODY2}>Nome</Text>
         </View>
-      </TouchableOpacity>
+      </View>
+    </TouchableOpacity>
 
-      {/* END */}
-      {/* ------------------------------ */}
-    </View>
-  </Cp01>
+    {/* END */}
+    {/* ------------------------------ */}
+  </View>
   // ---------------
   // #endregion
   // ***************************************

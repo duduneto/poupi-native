@@ -53,35 +53,33 @@ export default ({info}) => (
   // #region :: RENDER
   // ---------------
 
-  <Cp01 type="long">
-    <View style={stlBODY1f}>
-      <View style={stlBODY1a}>
-        <View style={stlBODY1b}>
-          <Image source={defaultImg} style={stlBODY1c} />
-          <Text style={stlBODY2}>userName</Text>
-          <Text style={stlBODY2b}>userEmail</Text>
-        </View>
-
-        <View style={stlBODY1d}>
-          <TouchableOpacity style={stlBODY3} onPress={info.signOut}>
-            <Text style={stlBODY2c}>exclude</Text>
-          </TouchableOpacity>
-        </View>
+  <View style={stlBODY1f}>
+    <View style={stlBODY1a}>
+      <View style={stlBODY1b}>
+        <Image source={defaultImg} style={stlBODY1c} />
+        <Text style={stlBODY2}>userName</Text>
+        <Text style={stlBODY2b}>userEmail</Text>
       </View>
 
-      <View style={stlBODY1e}>
-        <UseIcoMoon name="worker" size={70} color="#800070" />
-        <Text style={stlBODY2d}>invite</Text>
-        <View style={stlBODY1d}>
-          <TouchableOpacity style={stlBODY3a}>
-            <Text style={stlBODY2c} onPress={info.signUp}>
-              register
-            </Text>
-          </TouchableOpacity>
-        </View>
+      <View style={stlBODY1d}>
+        <TouchableOpacity style={stlBODY3} onPress={info.signOut}>
+          <Text style={stlBODY2c}>exclude</Text>
+        </TouchableOpacity>
       </View>
     </View>
-  </Cp01>
+
+    <View style={stlBODY1e}>
+      <UseIcoMoon name="worker" size={70} color="#800070" />
+      <Text style={stlBODY2d}>invite</Text>
+      <View style={stlBODY1d}>
+        <TouchableOpacity style={stlBODY3a}>
+          <Text style={stlBODY2c} onPress={info.signUp}>
+            register
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  </View>
 
   // ---------------
   // #endregion

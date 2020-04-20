@@ -4,10 +4,11 @@
 
 // import Packages
 import React from 'react';
+import {useDispatch} from 'react-redux';
 
 // import Internals
-import Cp01 from './Cp01_v';
-import {useSelector} from 'react-redux';
+import Cp02, {ItemMenu} from './Cp02_v';
+
 import {useRouter} from '../../useMorfos';
 
 // ---------------
@@ -20,9 +21,9 @@ export default function Sc00(props) {
   // ---------------
 
   // set Hooks
-  let [sttMenu, setMenu] = React.useState(false);
-  let rdAuthUser = useSelector(state => state.rdAuthUser);
+  // let rdAuthUser = useSelector(state => state.rdAuthUser);
   let callRouter = useRouter();
+  let dispatch = useDispatch();
 
   // ---------------
   // #endregion
@@ -42,18 +43,41 @@ export default function Sc00(props) {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  let toggleMenu = () => setMenu(!sttMenu);
-  let condMenu = sttMenu;
+  let arrMenu = [
+    {icon: 'image', label: 'Meu Perfil', goTo: 'myProfile'},
+    {icon: 'tool', label: 'Lista de Items', goTo: 'itemsList'},
+    {icon: 'power', label: 'Sair', goTo: 'logout'},
+  ];
 
-  let condGoTo = () => (!props.back ? toggleMenu() : callRouter(props.back));
+  let setSignOut = () => {
+    // call Hook
+    // dispatch('rdAuthUser', null);
+    callRouter('signin');
+  };
 
-  const longBar = props.type === 'long';
-  const title = props.title;
-  const icon = props.icon;
+  let ItemsList = arrMenu.map((item, idx) => {
+    let logout = item.goTo === 'logout';
+    let goTo = () => {
+      if (logout) {
+        setSignOut();
+      } else {
+        callRouter(item.goTo);
+        props.toggleMenu();
+      }
+    };
 
-  let condFab = rdAuthUser && rdAuthUser.typeAccount === 'adm' && props.fab;
+    let condActiveMenu = item.goTo === props.path;
+    let condColor = condActiveMenu ? '#73ef54' : '#fff';
+    let infoReturn = {
+      icon: item.icon,
+      label: item.label,
+      condActiveMenu,
+      condColor,
+      goTo,
+    };
 
-  let goTo = () => callRouter(props.fab);
+    return <ItemMenu key={idx} info={infoReturn} />;
+  });
 
   // ---------------
   // #endregion
@@ -64,18 +88,11 @@ export default function Sc00(props) {
   // ---------------
 
   let infoReturn = {
-    toggleMenu,
-    condGoTo,
-    condFab,
-    children: props.children,
-    condMenu,
-    longBar,
-    title,
-    icon,
-    goTo,
+    toggleMenu: props.toggleMenu,
+    ItemsList,
   };
 
-  return <Cp01 info={infoReturn} />;
+  return <Cp02 info={infoReturn} />;
 
   // ---------------
   // #endregion

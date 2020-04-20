@@ -24,46 +24,98 @@ import {useRouter, useChangeRd} from '../useMorfos';
 // #endregion
 // ***************************************
 
-let infoNav = [
-  {id: 'Sc01a', nav: false},
-  {id: 'Sc01b', nav: true, type: 'long', title: 'Termos de uso', icon: 'back'},
-  {id: 'Sc01c', nav: true, type: 'long', title: 'Onboarding', icon: 'none'},
-  {
-    id: 'Sc02a',
-    nav: true,
-    type: 'short',
-    title: 'Lista de Items',
-    icon: 'menu',
-  },
-  {id: 'Sc03a', nav: true, type: 'long', title: 'Meu Perfil', icon: 'back'},
-  {id: 'Sc03b', nav: true, type: 'long', title: 'Perfil do Item', icon: 'back'},
-  {id: 'Sc04a', nav: true, type: 'long', title: 'Add Item', icon: 'back'},
-];
-
-// let routes2 = () => {
-//   const objRoutes = infoNav.map(item => {
-//     return {[item.id]: <Sc00 type={item.type} title={item.title} icon={item.icon} />};
-//   });
-
-//   return {...objRoutes};
-// };
-
 let callRoutes = (mainRoute, ClearStorage) => {
-  let routes = {
+  const configRoutes = [
+    {name: 'signin', render: <Sc01a />, nav: false},
     // public
-    signin: <Sc01a />,
-    terms: <Sc01b />,
-    onboarding: <Sc01c />,
+    {
+      name: 'terms',
+      render: <Sc01b />,
+      nav: true,
+      title: 'Termos de Uso',
+      type: 'long',
+      icon: 'left',
+      back: 'signin',
+    },
+    {
+      name: 'onboarding',
+      render: <Sc01c />,
+      nav: true,
+      title: 'Bem Vindo',
+      type: 'long',
+    },
 
     // private
-    itemsList: <Sc02a />,
-    myProfile: <Sc03a />,
-    itemProfile: <Sc03b />,
-    addItem: <Sc04a />,
+    {
+      name: 'itemsList',
+      render: <Sc02a />,
+      nav: true,
+      fab: 'addItem',
+      title: 'Lista de Items',
+      type: 'short',
+      icon: 'menu',
+    },
+    {
+      name: 'myProfile',
+      render: <Sc03a />,
+      nav: true,
+      title: 'Meu Perfil',
+      type: 'long',
+      icon: 'menu',
+    },
+    {
+      name: 'itemProfile',
+      render: <Sc03b />,
+      nav: true,
+      title: 'Perfil do Item',
+      type: 'long',
+      icon: 'left',
+      back: 'itemsList',
+    },
+    {
+      name: 'addItem',
+      render: <Sc04a />,
+      nav: true,
+      title: 'Adicionar Item',
+      type: 'long',
+      icon: 'left',
+      back: 'itemsList',
+    },
 
-    // Utils / Feedback
-    error: <Sc404 />,
-    clear: <ClearStorage />,
+    // // Utils / Feedback
+    {name: 'error', render: <Sc404 />, nav: false},
+    {
+      name: 'clear',
+      render: <ClearStorage />,
+      nav: true,
+      type: 'long',
+      icon: 'back',
+    },
+  ];
+
+  const objRt = configRoutes.find(item => item.name === mainRoute);
+  let compMount = () => {
+    const nav = {
+      [objRt.name]: (
+        <Cp01
+          type={objRt.type}
+          icon={objRt.icon}
+          title={objRt.title}
+          back={objRt.back}
+          fab={objRt.fab}>
+          {objRt.render}
+        </Cp01>
+      ),
+    };
+    const noNav = {
+      [objRt.name]: objRt.render,
+    };
+
+    return objRt.nav ? nav : noNav;
+  };
+
+  let routes = {
+    ...compMount(),
   };
 
   let condError = routes[mainRoute] === undefined;
@@ -80,7 +132,7 @@ export default function InitRoutes() {
 
   // set Hooks
   let callRouter = useRouter();
-  let mainRoute = useSelector(state => state.rdRoute.main);
+  let mainRoute = useSelector(state => state.rdRoute);
   let condWeb = Platform.OS === 'web';
   React.useEffect(() => condWeb && initGotoUrl(), [condWeb, initGotoUrl]);
 
@@ -103,9 +155,9 @@ export default function InitRoutes() {
   };
 
   let ClearStorage = () => {
-    let callRouter = useRouter();
+    // let callRouter = useRouter();
     let changeRd = useChangeRd();
-    // FALTA: ver como sestar o storage no nativo lá no SYNC (add pack nativo)
+    // FALTA: ver como testar o storage no nativo lá no SYNC (add pack nativo)
     changeRd({clearAll: true});
     callRouter('signin');
     return <></>;

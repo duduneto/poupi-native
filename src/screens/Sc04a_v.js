@@ -75,18 +75,17 @@ export default ({info}) => (
   // #region :: RENDER
   // ---------------
 
-  <Cp01 type="long">
-    <View style={useStl.pad20}>
-      {/* BODY */}
-      {/* ------------------------------ */}
+  <View style={useStl.pad20}>
+    {/* BODY */}
+    {/* ------------------------------ */}
 
-      <View style={stlBODY1a}>
-        {/* FIELDs */}
-        {/* ------------------------------ */}
-        {/* {info.arrIpts.map((item, idx) => ( */}
-        {/* <React.Fragment key={idx}> */}
-        <React.Fragment>
-          {/* {item.imgPicker && (
+    <View style={stlBODY1a}>
+      {/* FIELDs */}
+      {/* ------------------------------ */}
+      {/* {info.arrIpts.map((item, idx) => ( */}
+      {/* <React.Fragment key={idx}> */}
+      <React.Fragment>
+        {/* {item.imgPicker && (
               <View style={stlBODY1d}>
                 <info.UseImgPicker
                   onChange={item.setOnChange}
@@ -95,39 +94,38 @@ export default ({info}) => (
                 />
               </View>
             )} */}
-          {/* {!item.imgPicker && ( */}
-          <TextInput
-            style={stlBODY2}
-            placeholder={'item.pHolder'}
-            // onChangeText={item.setOnChange}
-            // multiline={item.multi}
-            // numberOfLines={item.lines}
-          />
-          {/* )} */}
-        </React.Fragment>
-        {/* ))} */}
+        {/* {!item.imgPicker && ( */}
+        <TextInput
+          style={stlBODY2}
+          placeholder={'item.pHolder'}
+          // onChangeText={item.setOnChange}
+          // multiline={item.multi}
+          // numberOfLines={item.lines}
+        />
+        {/* )} */}
+      </React.Fragment>
+      {/* ))} */}
 
-        {/* BUTTONs */}
-        {/* ------------------------------ */}
-        {/* Require Msg */}
-
-        <Text style={stlBODY4}>reqMsg</Text>
-
-        <View style={stlBODY1b}>
-          <TouchableOpacity style={stlBODY3} onPress={info.saveDataProd}>
-            <Text style={stlBODY2c}>save</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={stlBODY3a} onPress={info.cancel}>
-            <Text>cancel</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      {/* END */}
+      {/* BUTTONs */}
       {/* ------------------------------ */}
+      {/* Require Msg */}
+
+      <Text style={stlBODY4}>reqMsg</Text>
+
+      <View style={stlBODY1b}>
+        <TouchableOpacity style={stlBODY3} onPress={info.saveDataProd}>
+          <Text style={stlBODY2c}>save</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={stlBODY3a} onPress={info.cancel}>
+          <Text>cancel</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  </Cp01>
+
+    {/* END */}
+    {/* ------------------------------ */}
+  </View>
 
   // ---------------
   // #endregion

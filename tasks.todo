@@ -15,9 +15,9 @@
     
     - [x] - add: icomoon (android + web)
 
-    - [...] - change: navbar to all screens (structure, Title Screen, Icon back or menu)
+    - [x] - change: navbar to all screens (structure, Title Screen, Icon back or menu)
 
-    - [ ] - add: configure firebase
+    - [...] - add: configure firebase
     
     - [ ] - change: useFb to useCrud calls
 

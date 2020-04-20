@@ -433,7 +433,7 @@ const Styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: -40,
     // borderRadius: '100%',
-    borderRadius: 44 / 2,
+    borderRadius: 100,
     borderWidth: 5,
     // borderColor: primaryColor,
     borderColor: 'rgba(00,00,00,.5)',
@@ -524,6 +524,9 @@ const Styles = StyleSheet.create({
     ...radiusTotal,
     ...shadowMore,
   },
+
+  txtFab: {fontSize: 26, color: '#fff'},
+  // txtFab: {fontSize: 26, color: '#fff', height: 3, lineHeight: 0}, //web
 
   // BTN SIZES
   btnXSmall: {
