@@ -4,12 +4,12 @@
 
 // import Packages
 import React from 'react';
-import {useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // import Internals
-import Cp02, {ItemMenu} from './Cp02_v';
+import Cp02, { ItemMenu } from './Cp02_v';
 
-import {useRouter} from '../../useMorfos';
+import { useRouter } from '../../useMorfos';
 
 // ---------------
 // #endregion
@@ -22,6 +22,10 @@ export default function Sc00(props) {
 
   // set Hooks
   // let rdAuthUser = useSelector(state => state.rdAuthUser);
+  let rdContent = useSelector(state => state.rdContent);
+  let rdPermissionAdm = useSelector(state => state.rdPermissionAdm);
+
+  let scContent = rdContent[1].cp01;
   let callRouter = useRouter();
   let dispatch = useDispatch();
 
@@ -44,18 +48,43 @@ export default function Sc00(props) {
   // ---------------
 
   let arrMenu = [
-    {icon: 'image', label: 'Meu Perfil', goTo: 'myProfile'},
-    {icon: 'tool', label: 'Lista de Items', goTo: 'itemsList'},
-    {icon: 'power', label: 'Sair', goTo: 'logout'},
+    { icon: 'user', label: scContent.myPf, goTo: 'myPf' },
+    {
+      icon: 'calendar',
+      label: scContent.myScheduledClasses,
+      goTo: 'myScheduledClasses',
+    },
+    {
+      icon: 'zap',
+      label: scContent.modalitiesFilter,
+      goTo: 'modalitiesFilter',
+    },
+    { icon: 'power', label: scContent.logout, goTo: 'logout' },
   ];
+  let arrMenuAdm = [
+    { icon: 'user', label: scContent.myPf, goTo: 'myPf' },
+    {
+      icon: 'calendar',
+      label: scContent.myScheduledClasses,
+      goTo: 'myScheduledClasses',
+    },
+    {
+      icon: 'zap',
+      label: scContent.modalitiesFilter,
+      goTo: 'modalitiesFilter',
+    },
+    { icon: 'unlock', label: scContent.permissions, goTo: 'permissions' },
+    { icon: 'power', label: scContent.logout, goTo: 'logout' },
+  ];
+
+  const condArr = rdPermissionAdm ? arrMenuAdm : arrMenu;
 
   let setSignOut = () => {
     // call Hook
-    // dispatch('rdAuthUser', null);
-    callRouter('signin');
+    dispatch({ type: 'signOut' });
   };
 
-  let ItemsList = arrMenu.map((item, idx) => {
+  let ItemsList = condArr.map((item, idx) => {
     let logout = item.goTo === 'logout';
     let goTo = () => {
       if (logout) {
@@ -89,6 +118,7 @@ export default function Sc00(props) {
 
   let infoReturn = {
     toggleMenu: props.toggleMenu,
+    scContent,
     ItemsList,
   };
 

@@ -4,10 +4,10 @@
 
 // import Packages
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 // import Internals
-import {useStl} from '../useMorfos';
+import { useStl } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -38,7 +38,7 @@ let stlBODY2 = [useStl.txtTitleCard];
 // #endregion
 // ***************************************
 
-export default ({info}) => (
+export default ({ info }) => (
   // ***************************************
   // #region :: RENDER
   // ---------------

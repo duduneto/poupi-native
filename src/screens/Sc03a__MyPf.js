@@ -4,25 +4,35 @@
 
 // import Packages
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 // import Internals
 import Sc03a from './Sc03a_v';
-// import {useDispatch} from 'react-redux';
+import defaultImg from '../images/default.jpg';
+import { useRouter, useCRUD } from '../useMorfos';
 
 // ---------------
 // #endregion
 // ***************************************
 
-export default function Sc00() {
+export default function Redirect() {
+  let rdAuthUser = useSelector(state => state.rdAuthUser);
+  let callRedirect = useRouter('redirect');
+  let condRender = rdAuthUser === null;
+
+  return condRender ? callRedirect('modalitiesFilter') : Fn03a();
+}
+
+function Fn03a() {
   // ***************************************
   // #region :: HOOKs + VARs
   // ---------------
 
   // set Hooks
-  // let { rdContent } = useRd();
-  //   let dispatch = useDispatch();
-
-  // let scContent = rdContent.sc00;
+  const { callUpdate, callDelete } = useCRUD();
+  let scContent = useSelector(state => state.rdContent[1].sc03a);
+  let rdAuthUser = useSelector(state => state.rdAuthUser);
+  // let dispatch = useDispatch();
 
   // ---------------
   // #endregion
@@ -32,7 +42,9 @@ export default function Sc00() {
   // #region :: FUNCTIONs
   // ---------------
 
-  // let start = () => {}
+  let { userName, email, image, docId } = rdAuthUser;
+  let source = image;
+  let condThumbnail = !source ? defaultImg : source;
 
   // ---------------
   // #endregion
@@ -42,10 +54,12 @@ export default function Sc00() {
   // #region :: BUTTONs + OTHERs
   // ---------------
 
-  // let model = () =>
-
-  //   const event = () => dispatch({type: 'setRoute', target: 'editor'});
-  const event = () => {};
+  // const signOut = () => callUpdate('signOut');
+  const excludeUser = () =>
+    callDelete('deleteUser', {
+      collection: 'users',
+      editId: docId,
+    });
 
   // ---------------
   // #endregion
@@ -56,8 +70,11 @@ export default function Sc00() {
   // ---------------
 
   let infoReturn = {
-    event,
-    // scContent
+    userName,
+    email,
+    condThumbnail,
+    scContent,
+    excludeUser,
     // toSignIn
   };
 

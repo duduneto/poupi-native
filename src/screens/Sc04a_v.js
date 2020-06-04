@@ -4,12 +4,10 @@
 
 // import Packages
 import React from 'react';
-import {View, Text, TouchableOpacity, TextInput} from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
 
 // import Internals
-import Cp01 from './components/Cp01__Nav';
-import {useStl, UseIcoMoon} from '../useMorfos';
-import defaultImg from '../images/default.jpg';
+import { useStl, UseIcoMoon } from '../useMorfos';
 
 // ---------------
 // #endregion
@@ -19,28 +17,39 @@ import defaultImg from '../images/default.jpg';
 // #region :: STYLEs
 // ---------------
 
-let stlBODY1a = [useStl.card, useStl.cardLongBar];
-let stlBODY1b = [useStl.flexCenter];
-let stlBODY1d = [
+const stlBODY1a = [useStl.card, useStl.cardLongBar];
+const stlBODY1b = [useStl.flexCenter];
+const stlBODY1d = [
   useStl.mgB20,
+  useStl.flexCenter,
   {
     borderWidth: 2,
     borderColor: '#eee',
     minHeight: 100,
     borderRadius: 16,
+    overflow: 'hidden',
+    padding: 10,
   },
 ];
-let stlBODY2 = [useStl.input, useStl.mgB20];
-let stlBODY2c = [useStl.txtPrimaryInverse];
-let stlBODY3 = [
+const stlBODY2 = [useStl.input, useStl.mgB20];
+const stlBODY2c = [useStl.txtPrimaryInverse];
+const stlBODY3 = [
   useStl.btn,
   useStl.btnLarge,
   useStl.btnPrimary,
-  {marginBottom: 10},
+  { marginBottom: 10 },
 ];
-let stlBODY3a = [useStl.btn, useStl.btnLarge];
-let stlBODY3b = [useStl.btn, useStl.btnXSmall, {width: 100, margin: 10}];
-let stlBODY3c = [
+const stlBODY3a = [useStl.btn, useStl.btnLarge];
+const stlBODY3b = [
+  useStl.btn,
+  useStl.btnXSmall,
+  {
+    width: 100,
+    margin: 20,
+    marginBottom: 9,
+  },
+];
+const stlBODY3c = [
   {
     fontSize: 11,
     color: '#999',
@@ -49,11 +58,23 @@ let stlBODY3c = [
     zIndex: 2,
   },
 ];
-let stlUpload = {
-  bt: stlBODY3b,
-  txt: stlBODY3c,
+const stlBODY3d = [{ margin: 15 }];
+const stlBODY3e = {
+  opacity: 0,
+  position: 'absolute',
+  zIndex: 10,
+  width: 100,
+  height: 20,
 };
-let stlBODY4 = [useStl.msgError];
+const stlBODY4 = [useStl.msgError];
+const stlOPTIONS = [useStl.flexRow, useStl.flexBetween, useStl.mgB20];
+const stlEDITLABEL = [{ fontSize: 18, color: '#666' }];
+const stlPOPUP = [
+  useStl.dialogueBox,
+  { position: 'absolute', top: 44, right: 20, borderRadius: 8, zIndex: 100 },
+];
+const stlTHUMBNAIL = { width: '100%', height: 130, borderRadius: 10 };
+const stlTXT01 = [{ fontSize: 12, color: '#666' }];
 
 // ---------------
 // #endregion
@@ -70,7 +91,7 @@ let stlBODY4 = [useStl.msgError];
 // #endregion
 // ***************************************
 
-export default ({info}) => (
+export default ({ info }) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
@@ -80,45 +101,67 @@ export default ({info}) => (
     {/* ------------------------------ */}
 
     <View style={stlBODY1a}>
+      {info.rdEditFields && (
+        <View style={stlOPTIONS}>
+          <Text style={stlEDITLABEL}>{info.editLabel}</Text>
+
+          <TouchableOpacity onPress={info.btnOptions}>
+            <UseIcoMoon name="options" size={22} color="#444" />
+          </TouchableOpacity>
+        </View>
+      )}
+
+      {info.sttToggle && (
+        <View style={stlPOPUP}>
+          <TouchableOpacity style={stlBODY3d} onPress={info.btnExclude}>
+            <Text>{info.scContent.exclude}</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
       {/* FIELDs */}
       {/* ------------------------------ */}
-      {/* {info.arrIpts.map((item, idx) => ( */}
-      {/* <React.Fragment key={idx}> */}
-      <React.Fragment>
-        {/* {item.imgPicker && (
-              <View style={stlBODY1d}>
-                <info.UseImgPicker
+      {info.arrIpts.map((item, idx) => (
+        <React.Fragment key={idx}>
+          {item.imagePicker && (
+            <View style={stlBODY1d}>
+              <Image source={item.preview} style={stlTHUMBNAIL} />
+              <TouchableOpacity style={stlBODY3b}>
+                <Text style={stlBODY3c}>Carregar Imagem</Text>
+                <input
+                  style={stlBODY3e}
+                  type="file"
                   onChange={item.setOnChange}
-                  changeRd={info.changeRd}
-                  stl={stlUpload}
                 />
-              </View>
-            )} */}
-        {/* {!item.imgPicker && ( */}
-        <TextInput
-          style={stlBODY2}
-          placeholder={'item.pHolder'}
-          // onChangeText={item.setOnChange}
-          // multiline={item.multi}
-          // numberOfLines={item.lines}
-        />
-        {/* )} */}
-      </React.Fragment>
-      {/* ))} */}
+              </TouchableOpacity>
+            </View>
+          )}
+          {item.txt && (
+            <>
+              <Text style={stlTXT01}>{item.pHolder}</Text>
+              <TextInput
+                style={stlBODY2}
+                // placeholder={item.pHolder}
+                onChangeText={item.setOnChange}
+                multiline={item.multi}
+                numberOfLines={item.lines}
+              />
+            </>
+          )}
+        </React.Fragment>
+      ))}
 
       {/* BUTTONs */}
       {/* ------------------------------ */}
       {/* Require Msg */}
-
-      <Text style={stlBODY4}>reqMsg</Text>
-
+      {info.sttCondMsg && <Text style={stlBODY4}>{info.scContent.reqMsg}</Text>}
       <View style={stlBODY1b}>
-        <TouchableOpacity style={stlBODY3} onPress={info.saveDataProd}>
-          <Text style={stlBODY2c}>save</Text>
+        <TouchableOpacity style={stlBODY3} onPress={info.btnSave}>
+          <Text style={stlBODY2c}>{info.scContent.save}</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={stlBODY3a} onPress={info.cancel}>
-          <Text>cancel</Text>
+        <TouchableOpacity style={stlBODY3a} onPress={info.btnCancel}>
+          <Text>{info.scContent.cancel}</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -1,55 +1,68 @@
 export default (state, action) => {
-  const {rdRoute} = state;
-  const {rdProject} = state;
+  const { rdPermissionList, rdTeachers, rdSchedulePf } = state;
 
   return {
+    clearAll() {
+      return action.initialState;
+    },
+    login() {
+      return { ...state, rdAuthUser: action.item };
+    },
+    signIn() {
+      return {
+        ...state,
+        rdAuthUser: action.toAction,
+        rdRoute: 'modalitiesFilter',
+      };
+    },
+    signOut() {
+      return {
+        ...state,
+        rdAuthUser: null,
+        rdRouter: 'signin',
+        rdContent: null,
+        rdPermissionAdm: null,
+        rdModalities: null,
+      };
+    },
+    editMode() {
+      return { ...state, rdEditMode: action.value };
+    },
     setRoute() {
-      const {value} = action;
+      const { value } = action;
 
-      return {...state, rdRoute: value};
+      return { ...state, rdRoute: value };
     },
+    updatePermissions() {
+      const { value } = action;
 
-    setScActive() {
-      return {...state, rdRoute: 'newArr'};
-    },
-
-    updateTitlePrj() {
-      const {itemId, value} = action;
-
-      const itemSelected = rdProject.selected;
+      const lastIdx = rdPermissionList.length - 1;
+      const idSelected = rdPermissionList[lastIdx].id;
+      const idToNum = Number(idSelected) + 1;
+      const idToTxt = String(idToNum);
 
       return {
         ...state,
-        rdProject: {
-          ...rdProject,
-          selected: {...itemSelected, name: value},
-        },
+        rdPermissionList: [...rdPermissionList, { email: value, id: idToTxt }],
       };
     },
-
-    updateTitleLabel() {
-      const {itemId, value, condType, styleId} = action;
-      const condRdTxt = styleId ? 'rdStyles' : 'rdElements';
-      const rdSelected = state[condRdTxt];
-      const itemSelected = rdSelected[itemId];
-
+    selectToEdit() {
+      return { ...state, rdEditFields: action.item };
+    },
+    selectCateg() {
+      return { ...state, rdSelectedCateg: action.id };
+    },
+    selectTeacher() {
+      return { ...state, rdSelectedTeacher: action.obj };
+    },
+    subscribeUser() {
       return {
         ...state,
-        [condRdTxt]: {
-          ...rdSelected,
-          [itemId]: {...itemSelected, [condType]: value},
-        },
+        rdSchedulePf: { ...rdSchedulePf, students: action.value.students },
       };
     },
-
-    updatePrjSelected() {
-      return {
-        ...state,
-        rdProject: {
-          ...rdProject,
-          selected: action.value,
-        },
-      };
+    rdSchedulePf() {
+      return { ...state, rdSchedulePf: action.value };
     },
   };
 };

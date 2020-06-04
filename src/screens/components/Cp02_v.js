@@ -4,10 +4,10 @@
 
 // import Packages
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 // import Internals
-import {useStl, UseIcoMoon} from '../../useMorfos';
+import { useStl, UseIcoMoon } from '../../useMorfos';
 
 // ---------------
 // #endregion
@@ -36,12 +36,15 @@ let stlBG1 = [
   },
 ];
 
-let stlBODY1 = [useStl.bgSecondary, {width: 280, height: '100%', padding: 20}];
-let stlBODY1a = [{flexDirection: 'row', marginBottom: 25}];
-let stlBODY2 = [useStl.txtTitleCard, {color: '#fff', marginLeft: 10}];
+let stlBODY1 = [
+  useStl.bgSecondary,
+  { width: 280, height: '100%', padding: 20 },
+];
+let stlBODY1a = [{ flexDirection: 'row', marginBottom: 25 }];
+let stlBODY2 = [useStl.txtTitleCard, { color: '#fff', marginLeft: 10 }];
 let stlBODY2b = [
   useStl.txtBase,
-  {margin: 15, color: '#fff', flexDirection: 'row'},
+  { margin: 15, color: '#fff', flexDirection: 'row' },
 ];
 
 // ---------------
@@ -53,10 +56,10 @@ let stlBODY2b = [
 // ---------------
 
 // list Item
-export const ItemMenu = ({info}) => (
+export const ItemMenu = ({ info }) => (
   <TouchableOpacity onPress={info.goTo} style={stlBODY2b}>
     <UseIcoMoon name={info.icon} size={22} color={info.condColor} />
-    <Text style={[stlBODY2, {color: info.condColor}]}>{info.label}</Text>
+    <Text style={[stlBODY2, { color: info.condColor }]}>{info.label}</Text>
   </TouchableOpacity>
 );
 
@@ -64,7 +67,7 @@ export const ItemMenu = ({info}) => (
 // #endregion
 // ***************************************
 
-export default ({info}) => (
+export default ({ info }) => (
   // ***************************************
   // #region :: RENDER
   // ---------------
@@ -81,7 +84,7 @@ export default ({info}) => (
 
       <TouchableOpacity style={stlBODY1a} onPress={info.toggleMenu}>
         <UseIcoMoon name="left" size={22} color={'#fff'} />
-        <Text style={stlBODY2}>Voltar</Text>
+        <Text style={stlBODY2}>{info.scContent.back}</Text>
       </TouchableOpacity>
 
       {info.ItemsList}

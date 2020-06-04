@@ -1,17 +1,17 @@
 // import Packages
 import React from 'react';
-import {Provider} from 'react-redux';
-// import {PersistGate} from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // // import Internals
-// import {store, persistor} from './config/redux/reduxConfig';
-import {store} from './config/redux/reduxConfig';
-import Routes from './screens/Routes';
+import { store, persistor } from './config/redux/reduxConfig';
+
+import AllApp from './screens/AllApp';
 
 export default () => (
   <Provider store={store}>
-    {/* <PersistGate loading={null} persistor={persistor}> */}
-    <Routes />
-    {/* </PersistGate> */}
+    <PersistGate loading={null} persistor={persistor}>
+      <AllApp />
+    </PersistGate>
   </Provider>
 );

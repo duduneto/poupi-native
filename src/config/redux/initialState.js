@@ -1,7 +1,21 @@
 export default {
-  rdAuthUser: {typeAccount: 'adm'},
-  rdItems: null,
+  rdAuthUser: null,
+  rdContent: null,
+
+  // ---------
+
+  rdEditFields: null,
+  rdSelectedCateg: null,
+  rdSelectedTeacher: null,
+
+  // ---------
+
+  rdPermissionAdm: null,
+  rdModalities: null,
+  rdTeachers: null,
   rdUsers: null,
+  rdSchedulePf: null,
+  rdMySubscribedClasses: null,
 
   // ---------
 

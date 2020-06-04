@@ -7,8 +7,8 @@ import React from 'react';
 
 // import Internals
 import Cp01 from './Cp01_v';
-import {useSelector} from 'react-redux';
-import {useRouter} from '../../useMorfos';
+import { useSelector, useDispatch } from 'react-redux';
+import { useRouter } from '../../useMorfos';
 
 // ---------------
 // #endregion
@@ -21,8 +21,9 @@ export default function Sc00(props) {
 
   // set Hooks
   let [sttMenu, setMenu] = React.useState(false);
-  let rdAuthUser = useSelector(state => state.rdAuthUser);
+  let rdPermissionAdm = useSelector(state => state.rdPermissionAdm);
   let callRouter = useRouter();
+  let dispatch = useDispatch();
 
   // ---------------
   // #endregion
@@ -31,8 +32,6 @@ export default function Sc00(props) {
   // ***************************************
   // #region :: FUNCTIONs
   // ---------------
-
-  // let start = () => {}
 
   // ---------------
   // #endregion
@@ -45,13 +44,18 @@ export default function Sc00(props) {
   let toggleMenu = () => setMenu(!sttMenu);
   let condMenu = sttMenu;
 
-  let condGoTo = () => (!props.back ? toggleMenu() : callRouter(props.back));
+  const goBack = () => {
+    dispatch({ type: 'clearAction', rdName: 'rdEditFields' });
+    callRouter(props.back);
+  };
+
+  let condGoTo = () => (!props.back ? toggleMenu() : goBack());
 
   const longBar = props.type === 'long';
   const title = props.title;
   const icon = props.icon;
 
-  let condFab = rdAuthUser && rdAuthUser.typeAccount === 'adm' && props.fab;
+  let condFab = rdPermissionAdm && props.fab;
 
   let goTo = () => callRouter(props.fab);
 

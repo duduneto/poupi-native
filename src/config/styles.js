@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {condWidth, condHeight} from './condPacks/dimensions';
+import { StyleSheet } from 'react-native';
+import { condWidth, condHeight } from './condPacks/dimensions';
 
 var width = condWidth;
 var height = condHeight;
@@ -8,8 +8,8 @@ var height = condHeight;
 // #region :: COLORs
 // ---------------
 
-export const primaryColor = '#360239';
-const secondaryColor = '#231229';
+export const primaryColor = '#333';
+const secondaryColor = '#000';
 const tertiaryColor = '#dc0349'; //alert color and msg error
 const inverseColor = '#fefefe';
 const lightGray = '#f6f6f6';
@@ -20,17 +20,17 @@ const darkGray = '#333';
 const black = '#000';
 
 // Fill Colors ----
-const bgPrimary = {backgroundColor: primaryColor};
-const bgSecondary = {backgroundColor: secondaryColor};
-const bgTertiary = {backgroundColor: tertiaryColor};
-const bgRed = {backgroundColor: 'red'};
+const bgPrimary = { backgroundColor: primaryColor };
+const bgSecondary = { backgroundColor: secondaryColor };
+const bgTertiary = { backgroundColor: tertiaryColor };
+const bgRed = { backgroundColor: 'red' };
 
 // Text Colors ----
-const txtPrimaryInverse = {color: inverseColor};
-const txtPrimary = {color: primaryColor};
-const txtColorBase = {color: mediumGray};
-const txtColorTitle = {color: black};
-const txtColorSubTitle = {color: black};
+const txtPrimaryInverse = { color: inverseColor };
+const txtPrimary = { color: primaryColor };
+const txtColorBase = { color: mediumGray };
+const txtColorTitle = { color: black };
+const txtColorSubTitle = { color: black };
 
 // ---------------
 //  #endregion
@@ -42,9 +42,9 @@ const txtColorSubTitle = {color: black};
 
 const sizeTxtRef = 20;
 const sizeBtnRef = 200;
-const heightBarRef = 50;
-const heightShortBar = {height: heightBarRef};
-const heightLongBar = {height: heightBarRef * 2};
+const heightBarRef = 60;
+const heightShortBar = { height: heightBarRef };
+const heightLongBar = { height: heightBarRef * 2 };
 const fullWidth = width;
 const fullHeight = height;
 
@@ -56,13 +56,13 @@ const fullHeight = height;
 // #region :: UTILs
 // ---------------
 
-const posRelative = {position: 'relative'};
-const pad10 = {padding: 10};
-const pad20 = {padding: 20};
-const padH20 = {paddingHorizontal: 20};
-const noMg = {margin: 0};
-const mgB20 = {marginBottom: 20};
-const mgL5 = {marginLeft: 5};
+const posRelative = { position: 'relative' };
+const pad10 = { padding: 10 };
+const pad20 = { padding: 20 };
+const padH20 = { paddingHorizontal: 20 };
+const noMg = { margin: 0 };
+const mgB20 = { marginBottom: 20 };
+const mgL5 = { marginLeft: 5 };
 
 // ---------------
 //  #endregion
@@ -72,9 +72,9 @@ const mgL5 = {marginLeft: 5};
 // #region :: TEXT + FONTS
 // ---------------
 
-const txtCenter = {textAlign: 'center'};
-const txtSmall = {fontSize: sizeTxtRef - 8, ...txtColorBase};
-const txtBase = {fontSize: sizeTxtRef - 6, ...txtColorBase};
+const txtCenter = { textAlign: 'center' };
+const txtSmall = { fontSize: sizeTxtRef - 8, ...txtColorBase };
+const txtBase = { fontSize: sizeTxtRef - 6, ...txtColorBase };
 
 const txtSubTitleCard = {
   fontSize: sizeTxtRef - 6,
@@ -112,11 +112,11 @@ const msgError = {
 // #region :: FLEXBOX
 // ---------------
 
-const flexWrap = {flexWrap: 'wrap'};
-const flex1 = {flex: 1};
-const flex2 = {flex: 2};
-const flex3 = {flex: 3};
-const flex4 = {flex: 4};
+const flexWrap = { flexWrap: 'wrap' };
+const flex1 = { flex: 1 };
+const flex2 = { flex: 2 };
+const flex3 = { flex: 3 };
+const flex4 = { flex: 4 };
 
 const flexRow = {
   flexDirection: 'row',
@@ -153,12 +153,24 @@ const flexEnd = {
 // #region :: STYLES + FX
 // ---------------
 
+const shadowBar = {
+  shadowColor: '#000',
+  shadowOffset: {
+    width: 1,
+    height: 4,
+  },
+  shadowOpacity: 0.28,
+  shadowRadius: 4,
+
+  elevation: 5,
+};
+
 const shadowLess = {
   // web shadow
   shadowColor: black,
   shadowOpacity: 0.3,
   shadowRadius: 4,
-  shadowOffset: {width: 0, height: 1},
+  shadowOffset: { width: 0, height: 1 },
   // android shadow
   elevation: 4,
 };
@@ -168,7 +180,7 @@ const shadowMore = {
   shadowColor: black,
   shadowOpacity: 0.4,
   shadowRadius: 14,
-  shadowOffset: {width: 3, height: 6},
+  shadowOffset: { width: 3, height: 6 },
   // android shadow
   elevation: 14,
 };
@@ -281,6 +293,7 @@ const Styles = StyleSheet.create({
   bgPrimary,
   bgSecondary,
   bgTertiary,
+  shadowBar,
 
   // ---------------
   //  #endregion
@@ -324,9 +337,11 @@ const Styles = StyleSheet.create({
   navbarView: {
     zIndex: 5,
     width: '100%',
-    // ...heightShortBar,
+    // ...bgPrimary,
+    ...heightShortBar,
     ...flexRow,
     ...flexBetween,
+    // ...shadowBar,
   },
 
   shortBar: {
@@ -337,8 +352,9 @@ const Styles = StyleSheet.create({
   },
 
   longBar: {
-    ...bgPrimary,
+    // ...bgPrimary,
     ...heightLongBar,
+    ...shadowBar,
   },
 
   searchBar: {
@@ -525,7 +541,7 @@ const Styles = StyleSheet.create({
     ...shadowMore,
   },
 
-  txtFab: {fontSize: 26, color: '#fff'},
+  txtFab: { fontSize: 26, color: '#fff' },
   // txtFab: {fontSize: 26, color: '#fff', height: 3, lineHeight: 0}, //web
 
   // BTN SIZES
@@ -555,7 +571,7 @@ const Styles = StyleSheet.create({
     height: sizeBtnRef / 4,
   },
 
-  txtBtnSmall: {fontSize: sizeTxtRef - 9},
+  txtBtnSmall: { fontSize: sizeTxtRef - 9 },
 
   // ---------------
   //  #endregion
@@ -651,6 +667,24 @@ const Styles = StyleSheet.create({
     right: -5,
     width: 20,
     top: 5,
+  },
+
+  // ---------------
+  //  #endregion
+  // ***************************************
+
+  // ***************************************
+  // #region :: SCREEN BREAK POINTS
+  // ---------------
+  widthBreak: {
+    width: width < 650 ? '50%' : '80%',
+  },
+  colBreak: {
+    flexDirection: width < 650 ? 'column' : 'row',
+  },
+  padBreak: {
+    paddingHorizontal: width < 650 ? 0 : 14,
+    paddingBottom: width < 650 ? 40 : 0,
   },
 
   // ---------------

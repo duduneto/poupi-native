@@ -1,35 +1,33 @@
 export default (state, action) => ({
-  createNewProject() {
-    const { rdRoute } = state;
-    const { rdProject } = state;
-    const { toAction } = action;
-
+  setPermission() {
+    return { ...state, rdPermissionAdm: action.value };
+  },
+  addModalities() {
     return {
       ...state,
-      rdRoute: { ...rdRoute, main: "editor" },
-      rdProject: { ...rdProject, selected: toAction },
+      rdRoute: 'modalitiesFilter',
     };
   },
-
-  addDynItem() {
-    const { rdName } = action;
-    const rdSelected = state[rdName];
-
-    const propToChange = action.value.docId;
-    rdSelected[propToChange] = action.value;
-    return { ...state, [rdName]: rdSelected };
+  addTeacher() {
+    return {
+      ...state,
+      rdSelectedCateg: action.toAction,
+      rdRoute: 'teachersList',
+    };
   },
-
-  addParentItem() {
-    const { parentId, value, arrName } = action.toAction;
-    const condRdTxt = arrName === "arrProps" ? "rdStyles" : "rdElements";
-    const rdSelected = state[condRdTxt];
-    const itemSelected = rdSelected[parentId];
-    const newChld = itemSelected[arrName].push(value);
+  addScheduledClass() {
+    return {
+      ...state,
+      rdRoute: 'teacherPf',
+    };
+  },
+  addPermissions() {
+    const { actionValue } = action.toAction;
 
     return {
       ...state,
-      [condRdTxt]: { ...rdSelected, [parentId]: { ...itemSelected, newChld } },
+      rdRoute: 'modalitiesFilter',
+      rdPermissionList: actionValue,
     };
   },
 });

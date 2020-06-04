@@ -3,11 +3,11 @@
 // ---------------
 
 // import Packages
-import React from "react";
-import { ActivityIndicator } from "react-native";
+import React from 'react';
+import { ActivityIndicator } from 'react-native';
 
 // import Internals
-import { primaryColor } from "../config/styles";
+import { primaryColor } from '../config/styles';
 
 // ---------------
 // #endregion
@@ -21,9 +21,9 @@ export default function UseLoader(props) {
   return (
     <ActivityIndicator
       // style={props.style}
-      // {...props}
       // size={props.size}
-      color={primaryColor}
+      {...props}
+      color={props.color || primaryColor}
     />
   );
 }

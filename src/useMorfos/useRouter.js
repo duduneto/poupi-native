@@ -1,11 +1,11 @@
 // import Packages
-// import React from "react";
-import {Platform} from 'react-native';
-import {useDispatch} from 'react-redux';
+import React from 'react';
+import { Platform } from 'react-native';
+import { useDispatch } from 'react-redux';
 
 // import Internals
 
-export default () => {
+export default info => {
   // set Hooks
   const dispatch = useDispatch();
 
@@ -20,7 +20,14 @@ export default () => {
     });
   };
 
-  return Router;
+  const Redirect = path => {
+    Router(path);
+    return <></>;
+  };
+
+  const condReturn = info === 'redirect' ? Redirect : Router;
+
+  return condReturn;
 };
 
 // ***************************************
@@ -34,6 +41,14 @@ export default () => {
 
   // function Call
   // callRouter("home");
+
+  - - or - -
+
+  // set Hooks
+  const callRedirect = useRouter('redirect');
+
+  // function Call
+  // let condReturn = rdAuthUser ? children : callRedirect("signin");
 
 */
 

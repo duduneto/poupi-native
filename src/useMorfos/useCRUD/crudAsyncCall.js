@@ -1,11 +1,11 @@
 export default ({ asyncFn, actionSuccess, toAction, dispatch }) => {
-  dispatch({ type: "ASYNC_START", asyncName: actionSuccess });
+  dispatch({ type: 'ASYNC_START', asyncName: actionSuccess });
 
-  const condActionName = actionSuccess ? actionSuccess : "???";
+  const condActionName = actionSuccess ? actionSuccess : '???';
 
   asyncFn()
-    .then((res) => {
-      dispatch({ type: "ASYNC_SUCCESS", asyncName: condActionName });
+    .then(res => {
+      dispatch({ type: 'ASYNC_SUCCESS', asyncName: condActionName });
       actionSuccess &&
         dispatch({
           type: actionSuccess,
@@ -13,11 +13,11 @@ export default ({ asyncFn, actionSuccess, toAction, dispatch }) => {
           toAction,
         });
     })
-    .catch((err) =>
+    .catch(err =>
       dispatch({
-        type: "ASYNC_ERROR",
+        type: 'ASYNC_ERROR',
         value: err.message,
         asyncName: condActionName,
-      })
+      }),
     );
 };

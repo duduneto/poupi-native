@@ -1,96 +1,41 @@
 export default (type, infoObj, infoPar) => {
-  const {
-    firebase,
-    firestore,
-    dispatch,
-    // changeRd,
-    docPrjId,
-    itemObj,
-    asyncCall
-  } = infoPar;
-
-  const deleteItem = () => {
-    // ------ set Db
-    const condArrType = type === "el" ? "arrChildren" : "arrStyles";
-    const condArrId = type === "el" ? itemObj.elId : itemObj.styleId;
-
-    // ------ set Firebase tools
-    const asyncFn = async () => {
-      const infoUpdate = {
-        [condArrType]: firebase.firestore.FieldValue.arrayRemove(condArrId)
-      };
-
-      return firestore
-        .collection("projects")
-        .doc(docPrjId)
-        .collection("elements")
-        .doc(itemObj.parentId)
-        .update(infoUpdate);
-    };
-
-    const objIds = {
-      itemId: condArrId,
-      parentId: itemObj.parentId,
-      condArrType
-    };
-
-    // ------ call ASYNC
-    // (delete items in DB!)
-    asyncCall({
-      asyncFn,
-      actionSuccess: "deleteItem",
-      toAction: objIds,
-      dispatch
-    });
-  };
+  const { firebase, firestore, dispatch, asyncCall } = infoPar;
 
   const newRemoveItem = {
-    prj: () => {
-      const asyncFn = async () =>
-        firestore
-          .collection("projects")
-          .doc(docPrjId)
-          .delete();
+    deleteModality: () => {
+      let { collection, editId } = infoObj;
 
-      // ------ call ASYNC
-      asyncCall({
-        asyncFn,
-        actionSuccess: "CLEAR_ALL",
-        dispatch
-      });
+      const refDb = firestore.collection(collection).doc(editId);
+
+      // ------ Set Db
+      const asyncFn = async () => refDb.delete();
+
+      // ------ call ASYNC Db
+      const callAsync = () =>
+        asyncCall({
+          asyncFn,
+          dispatch,
+        });
+      callAsync();
     },
-    el: () => deleteItem(),
-    stl: () => deleteItem(),
-    stlProp() {
-      // ------ Set Firebase Tools
-      const styleId = itemObj.stlObj.docId;
-      const asyncFn = async () => {
-        const infoUpdate = {
-          arrProps: firebase.firestore.FieldValue.arrayRemove(itemObj.item)
-        };
+    deleteUser: () => {
+      let { collection, editId } = infoObj;
 
-        return firestore
-          .collection("projects")
-          .doc(docPrjId)
-          .collection("styles")
-          .doc(styleId)
-          .update(infoUpdate);
-      };
+      console.log('delete user => ', collection, editId);
+      const refDb = firestore.collection(collection).doc(editId);
 
-      // ------ Set ASYNC
-      const objIds = {
-        styleId,
-        objToDel: itemObj.item
-      };
+      // ------ Set Db
+      const asyncFn = async () => refDb.delete();
 
-      // ------ call ASYNC
-      asyncCall({
-        asyncFn,
-        actionSuccess: "delPropStl",
-        toAction: objIds,
-        dispatch
-      });
-    }
+      // ------ call ASYNC Db
+      const callAsync = () =>
+        asyncCall({
+          asyncFn,
+          actionSuccess: 'signOut',
+          dispatch,
+        });
+      callAsync();
+    },
   };
 
   newRemoveItem[type]();

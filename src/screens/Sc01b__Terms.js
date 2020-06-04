@@ -4,25 +4,23 @@
 
 // import Packages
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // import Internals
-import Sc01b from './Sc01b_v';
-import {useDispatch} from 'react-redux';
+import Sc01b, { TxtComp } from './Sc01b_v';
 
 // ---------------
 // #endregion
 // ***************************************
 
-export default function Sc00() {
+export default function Fn01b() {
   // ***************************************
   // #region :: HOOKs + VARs
   // ---------------
 
   // set Hooks
-  // let { rdContent } = useRd();
+  let scContent = useSelector(state => state.rdContent[1].sc01c);
   let dispatch = useDispatch();
-
-  // let scContent = rdContent.sc00;
 
   // ---------------
   // #endregion
@@ -32,7 +30,16 @@ export default function Sc00() {
   // #region :: FUNCTIONs
   // ---------------
 
-  // let start = () => {}
+  const listTxt =
+    scContent &&
+    scContent.parArr.map((item, idx) => {
+      const infoReturn = {
+        txt: item,
+      };
+      console.log('item', item);
+
+      return <TxtComp key={idx} info={infoReturn} />;
+    });
 
   // ---------------
   // #endregion
@@ -44,7 +51,7 @@ export default function Sc00() {
 
   // let model = () =>
 
-  const event = () => dispatch({type: 'setRoute', target: 'signin'});
+  const event = () => dispatch({ type: 'setRoute', target: 'signin' });
 
   // ---------------
   // #endregion
@@ -56,8 +63,8 @@ export default function Sc00() {
 
   let infoReturn = {
     event,
-    // scContent
-    // toSignIn
+    scContent,
+    listTxt,
   };
 
   return <Sc01b info={infoReturn} />;

@@ -23,7 +23,7 @@ const reducers = [allActions];
 function reducer(state = initialState, action) {
   const newState = state;
 
-  console.log("newState", newState);
+  console.log('newState', newState);
 
   return reducers.reduce((acc, curr) => curr(acc, action), newState);
 }

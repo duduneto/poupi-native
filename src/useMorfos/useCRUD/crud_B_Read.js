@@ -2,48 +2,14 @@ export default (type, infoObj, infoPar) => {
   const {
     firestore,
     // firebase,
+    asyncCall,
     dispatch,
-    itemObj,
-    asyncCall
   } = infoPar;
 
   const newRead = {
-    prjData: () => {
+    readContent: () => {
       const asyncFn = async () => {
-        const dbRef = firestore.collection("projects");
-
-        const objAll = {};
-
-        const getData = async type => {
-          const callDb = await dbRef
-            .doc(infoObj)
-            .collection(type)
-            .get();
-
-          const obj = {};
-          callDb.forEach(doc => (obj[doc.id] = doc.data()));
-
-          return (objAll[type] = { ...obj });
-        };
-
-        const getAll = arr => arr.map(getData);
-        await Promise.all(getAll(["elements", "styles"]));
-
-        return objAll;
-      };
-
-      // ------ call ASYNC
-      asyncCall({
-        asyncFn,
-        actionSuccess: "readPrjData",
-        // toAction: xxx,
-        dispatch
-      });
-    },
-
-    prjList: () => {
-      const asyncFn = async () => {
-        const arrFbData = await firestore.collection("projects").get();
+        const arrFbData = await firestore.collection('content').get();
 
         const arrList = [];
         arrFbData.forEach(doc => arrList.push(doc.data()));
@@ -53,11 +19,158 @@ export default (type, infoObj, infoPar) => {
       // ------ call ASYNC
       asyncCall({
         asyncFn,
-        actionSuccess: "readPrjList",
+        actionSuccess: 'setRdContent',
         // toAction: xxx,
-        dispatch
+        dispatch,
       });
-    }
+    },
+    usersList: () => {
+      const asyncFn = async () => {
+        const arrFbData = await firestore
+          .collection('users')
+          .where('typeAccount', '==', 'client')
+          .get();
+
+        const arrList = [];
+        arrFbData.forEach(doc => arrList.push(doc.data()));
+
+        return arrList;
+      };
+
+      // ------ call ASYNC
+      asyncCall({
+        asyncFn,
+        actionSuccess: 'setUsersList',
+        dispatch,
+      });
+    },
+    modalitiesList: () => {
+      const asyncFn = async () => {
+        const arrFbData = await firestore
+          .collection('categories')
+          .orderBy('createdAt', 'desc')
+          .get();
+
+        const arrList = [];
+        arrFbData.forEach(doc => arrList.push(doc.data()));
+
+        return arrList;
+      };
+
+      // ------ call ASYNC
+      asyncCall({
+        asyncFn,
+        actionSuccess: 'setModList',
+        // toAction: xxx,
+        dispatch,
+      });
+    },
+    permissionsList: () => {
+      const asyncFn = async () => {
+        const arrFbData = await firestore.collection('permissions').get();
+
+        const arrList = [];
+        arrFbData.forEach(doc => arrList.push(doc.data()));
+
+        return arrList;
+      };
+
+      // ------ call ASYNC
+      asyncCall({
+        asyncFn,
+        actionSuccess: 'setPermList',
+        dispatch,
+      });
+    },
+    teachersList: () => {
+      const asyncFn = async () => {
+        const arrFbData = await firestore
+          .collection('users')
+          .where('arrCateg', 'array-contains', infoObj)
+          .get();
+
+        const arrList = [];
+        arrFbData.forEach(doc => arrList.push(doc.data()));
+
+        return arrList;
+      };
+
+      // ------ call ASYNC
+      asyncCall({
+        asyncFn,
+        actionSuccess: 'setTeachersList',
+        // toAction: xxx,
+        dispatch,
+      });
+    },
+    scheduledClassesList: () => {
+      const asyncFn = async () => {
+        const arrFbData = await firestore
+          .collection('schedules')
+          .where('teacherId', '==', infoObj)
+          .get();
+
+        const arrList = [];
+        arrFbData.forEach(doc => arrList.push(doc.data()));
+
+        return arrList;
+      };
+
+      // ------ call ASYNC
+      asyncCall({
+        asyncFn,
+        actionSuccess: 'setSchedulesClassesList',
+        // toAction: xxx,
+        dispatch,
+      });
+    },
+    scheduledClassStudentsList: () => {
+      const asyncFn = async () => {
+        const promises = infoObj.map(async (userId, idx) => {
+          const studentData = await firestore
+            .collection('users')
+            .where('docId', '==', userId)
+            .get();
+          return studentData;
+        });
+
+        const arrFbData = await Promise.all(promises);
+        console.log(arrFbData);
+        const arrList = [];
+        arrFbData.forEach(document => arrList.push(document.docs[0].data()));
+
+        return arrList;
+      };
+
+      // ------ call ASYNC
+      asyncCall({
+        asyncFn,
+        actionSuccess: 'setScheduledClasStudentsList',
+        // toAction: xxx,
+        dispatch,
+      });
+    },
+    mySubscribedClasses: () => {
+      const asyncFn = async () => {
+        const arrFbData = await firestore
+          .collection('schedules')
+          .where('students', 'array-contains', infoObj)
+          .get();
+
+        const arrList = [];
+        arrFbData.forEach(doc => arrList.push(doc.data()));
+
+        return arrList;
+      };
+
+      // ------ call ASYNC
+      asyncCall({
+        asyncFn,
+        actionSuccess: 'setUserSubscribedClasses',
+        // toAction: xxx,
+        dispatch,
+      });
+    },
   };
 
   newRead[type]();

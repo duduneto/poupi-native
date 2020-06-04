@@ -3,27 +3,81 @@
 
   - Carlos:
 
-    - [bug] - add: new routes
+   - [x] - add: image upload modality
+   - [x] - add: styles upload comp
 
-    - [x] - change: new redux files
 
-    - [x] - change: screens to pattern (Signin, ItemsList, MyProfile, ProfileList)
-    
-    - [x] - change: app name (test on android)
-    
-    - [x] - add: screens styles
-    
-    - [x] - add: icomoon (android + web)
 
-    - [x] - change: navbar to all screens (structure, Title Screen, Icon back or menu)
+*****************
 
-    - [...] - add: configure firebase
-    
-    - [ ] - change: useFb to useCrud calls
+*****************
+Se o Leandro Liberar
+>> ENTREGA 2:
 
-    - [ ] - change: useChangeRd to dispatch (exclude useChangeRd.js)
+  - Carlos:
+    - [ ] - change: new start-morfos (pegar todo o código aqui e passar pro start-morfos)
+
+    - [ ] - add: my schedules system
+    - [ ] - add: form teacher
+    - [ ] - add: upload img teacher profile
+    - [ ] - add: edit form teacher
+
+    - [ ] - add: upload img modality profile (? Ver com Juan)
+    - [ ] - add: title html (public.html)
+    - [ ] - add: favicon gym-one
+
+*****************
+Se o Leandro Não Liberar
+>> START MORFOS 1:
     
-    - [ ] - remove: actions not used
+    - [x] - add: branch dev
+
+    - [x] - add: new stl
+      - [x] -  navbar shadow + height
+      - [x] -  all screens max width + shadow (menos signin, mais largo do que estava)
+      - [x] -  navbar + longbar image gradient
+      - [x] -  items modality img bg
+      - [x] -  signin
+      (ajustes do cliente: Logo e txt maiores, novos estilos de fonte, adicionado um subtitulo)
+
+    - [x] - change: name of Sc00 functions (Colocar prefixo da tela ex.: Sc01d)
+
+    - [ ] - add: to every asyncCall
+      - [ ] - loader
+      - [ ] - error msg
+    (Testar usando o chrome dev tools que tira internet)
+
+    - [x] - change: cp01 ref title
+      (usar dentro do cp01 no banco de dados a chave dos campos do menu com os paths e não com o código da tela ex. Sc01a. Mudar também no router e routes)
+
+    - [ ] - remove: code start morfos
+      (deixar apenas itens da entrega 1 e atualizar o start-morfos)  
+    
+    - [ ] - fix: url clear
+
+    - [ ] - clean code
+
+    - [ ] - update start-morfos
+      ( X ) - revisar com Juan
+      - [ ] - add: create category
+      - [ ] - add: adm permissions
+      - [ ] - add: router
+      - [ ] - add: xxx 
+      - [ ] - change: stl props
+      
+    - [ ] - add: title html start morfos
+    
+    - [ ] - add: favicon start-morfos
+
+    ************
+
+    - [ ] - use forms
+    
+    - [ ] - use lists
+    
+    - [ ] - use profiles
+    
+    - [ ] - xxx: xxx
         
 
 
@@ -31,16 +85,88 @@
 
     - [ ] - xxx
 
-
-
 *****************
-
-*****************
->> PRIO 2:
+>> ENTREGA 1:
 
   - Carlos:
 
-  - [ ] - xxx
+    - [x] - add: permissions
+    (A - Alimentar tempuser + logar rdAuthUser + deslogar)
+    (X - Terminar Cadastro)
+    (X - Criar Regra no Private Ex. Redirecionar quando não tiver logado)
+    (X - Trazer dados Meu Perfil do AuthUser)
 
+
+    - [x] - add: redirect forms when not permission
+
+    - [x] - add: onboarding
+    
+    - [x] - add: home styles
+    
+    - [x] - add: style 404 screen
+
+    - [x] - add: btn fab (ajustar o alinhamento do +)
+
+    - [x] - add: order list modalities by most recent
+
+    - [x] - add: edit form modality + exclude modality
+
+    - [x] - add: redirect teacherList using new useRouter
+    
+    - [x] - add: persistence rdContent + loader adjustment
+      - [x] - add: condLoader
+    
+    - [x] - add: favicon
+    
+    - [x] - add: more teachers + categ + txt home (textos passados pelo cliente)
+    
+    - [x] - change: not show teacher in tempUser
+
+    - [x] - change: scContent in NoItemComp (modalities + teachers list)
+
+    - [x] - add: background signin opacity + primary color
+    (colocar gradiente como na doc)
+    
+    - [x] - change: teachers list (igual a doc)
+
+    - [x] - add: firebase init hosting + web build
+    
+    - [x] - add: new fields in permissions and exclude + all scContent 
+    (colocar btn adicionar campos, ja trazer eles preenchidos com o que já tiver no banco e editar, e excluir os campos)
+    ( X ) - revisar textos e sempre buscar do content no banco
+
+    ------
+
+        - [ ] - Start Morfos tasks
+    - [x] - add: copy files + initial commit
+    (video: ok)
+
+    - [x] - add: firebase
+    (video: ok)
+
+    - [x] - add: structure screens (name following doc)
+    (video: ok)
+
+    - [x] - add: get rdContent in firebase
+    
+    - [x] - add: form modalities useCRUD + reqFields
+    
+    - [x] - add: show modalities list useCRUD
+    
+    - [x] - change: arrIpts correct vars + clean code
+    
+    - [x] - add: cond goTo modalities to teachersList
+    
+    - [x] - add: list using rdTeachers
+
+    - [x] - add: cond goTo teacherPf using rdSelectedTeacher
+
+    - [x] - add: videos (forms, lists, profiles)
+    
+    - [x] - add: form teacher + refact form modalities
+    
+    - [x] - add: cond when reload teacherProfile
+
+    - [x] - add: forms + require fields
 
 *****************
