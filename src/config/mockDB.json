@@ -1,0 +1,333 @@
+{
+  "content": {
+    "pt": {
+      "cp01": {
+        "aRef": "Cp01 - Navbar",
+        "txt01": "Usuario",
+        "txt02": "Perfil",
+        "txt03": "Contador",
+        "back": "Voltar",
+        "logout": "Sair",
+        "sc00b": "Temp Users",
+        "sc01b": "Termos de Uso",
+        "sc01c": "Bem Vindo!",
+        "sc02a": "Categorias de Serviços",
+        "sc02b": "Subcategorias de Serviços",
+        "sc02c": "Prestadores",
+        "sc02d": "Serviços Prestados",
+        "sc02e": "Serviços Recebidos",
+        "sc03a": "Meu Perfil",
+        "sc03b": "Perfil do Prestador",
+        "sc04a": "Cadastrar Prestador",
+        "sc04b": "Cadastrar Categoria",
+        "sc04c": "Cadastrar Subcategoria"
+      },
+      "sc01a": {
+        "aRef": "Sc01a - Login",
+        "slogan": "TEXTO DO SLOGAN",
+        "using": "Entre usando a conta do",
+        "google": "Google",
+        "terms": "Termos de Uso"
+      },
+      "sc01b": {
+        "aRef": "Sc01b - Termos",
+        "titleBar": "Termos",
+        "titleTerms": "Termos de uso e PolÃ­tica de ServiÃ§os",
+        "parArr": [
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        ]
+      },
+      "sc01c": {
+        "aRef": "Sc01c - Onboarding",
+        "titleBar": "Onboarding",
+        "titleTerms": "Onboarding",
+        "next": "Próximo",
+        "parArr": [
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        ]
+      },
+      "sc02a": {
+        "aRef": "Sc02a - Services",
+        "txt01": "Nome",
+        "arrCateg": [
+          {
+            "id": "xxx1",
+            "label": "Hidráulica",
+            "image": "https://s3-sa-east-1.amazonaws.com/triider-blog-files/wp-content/uploads/2018/03/30141052/hidraulica-residencial-tipos-de-manutencao.jpg",
+            "arrSubCateg": [
+              {
+                "id": "sub1",
+                "label": "Hidráulica 01",
+                "image": "https://s3-sa-east-1.amazonaws.com/triider-blog-files/wp-content/uploads/2018/03/30141052/hidraulica-residencial-tipos-de-manutencao.jpg"
+              },
+              {
+                "id": "sub2",
+                "label": "Hidráulica 02",
+                "image": "https://s3-sa-east-1.amazonaws.com/triider-blog-files/wp-content/uploads/2018/03/30141052/hidraulica-residencial-tipos-de-manutencao.jpg"
+              }
+            ]
+          },
+          {
+            "id": "xxx2",
+            "label": "Elétrica",
+            "image": "https://www.hertzinstalacoeseletricas.com.br/images/instalacoes+eletricas+comercial+sp.jpg",
+            "arrSubCateg": [
+              {
+                "id": "sub3",
+                "label": "Elétrica 01",
+                "image": "https://www.hertzinstalacoeseletricas.com.br/images/instalacoes+eletricas+comercial+sp.jpg"
+              },
+              {
+                "id": "sub13",
+                "label": "Elétrica 02",
+                "image": "https://www.hertzinstalacoeseletricas.com.br/images/instalacoes+eletricas+comercial+sp.jpg"
+              }
+            ]
+          },
+          {
+            "id": "xxx3",
+            "label": "Limpeza",
+            "image": "https://img.itdg.com.br/tdg/images/blog/uploads/2019/05/Truques-de-limpeza-para-a-cozinha.jpg",
+            "arrSubCateg": [
+              {
+                "id": "sub4",
+                "label": "Limpeza 01",
+                "image": "https://img.itdg.com.br/tdg/images/blog/uploads/2019/05/Truques-de-limpeza-para-a-cozinha.jpg"
+              },
+              {
+                "id": "sub5",
+                "label": "Limpeza 02",
+                "image": "https://img.itdg.com.br/tdg/images/blog/uploads/2019/05/Truques-de-limpeza-para-a-cozinha.jpg"
+              },
+              {
+                "id": "sub6",
+                "label": "Limpeza 03",
+                "image": "https://img.itdg.com.br/tdg/images/blog/uploads/2019/05/Truques-de-limpeza-para-a-cozinha.jpg"
+              },
+              {
+                "id": "sub18",
+                "label": "Limpeza 04",
+                "image": "https://img.itdg.com.br/tdg/images/blog/uploads/2019/05/Truques-de-limpeza-para-a-cozinha.jpg"
+              }
+            ]
+          },
+          {
+            "id": "xxx4",
+            "label": "Manutenção",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUum4Y5VHI139WRXBiqGUbe7kQDovKAncSae0CzDLHRF7350c0_Q&s",
+            "arrSubCateg": [
+              {
+                "id": "sub10",
+                "label": "Manutenção 01",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUum4Y5VHI139WRXBiqGUbe7kQDovKAncSae0CzDLHRF7350c0_Q&s"
+              },
+              {
+                "id": "sub20",
+                "label": "Manutenção 02",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUum4Y5VHI139WRXBiqGUbe7kQDovKAncSae0CzDLHRF7350c0_Q&s"
+              }
+            ]
+          }
+        ]
+      },
+      "sc02b": {
+        "aRef": "Sc02b - Products",
+        "txt01": "Contador",
+        "txt02": "Aumentar",
+        "txt03": "Diminuir",
+        "txt04": "Mudar Nome"
+      },
+      "sc02c": {
+        "aRef": "Sc02a - Stores",
+        "txt01": "Nome"
+      },
+      "sc03a": {
+        "aRef": "Sc02b - Meu Perfil",
+        "exclude": "Excluir Conta",
+        "invite": "Lorem ipsum dolor sit amet, consectetur adipiscinaelit, sed do eiusmod tempor",
+        "register": "Cadastrar Prestador"
+      },
+      "sc03b": {
+        "aRef": "Sc03c - Perfil do Prestador",
+        "bt01": "Contratar"
+      },
+      "sc03c": {
+        "aRef": "Sc03c - Perfil Loja",
+        "bt01": "Action"
+      },
+      "sc04a": {
+        "aRef": "Sc04a - Add Prestador",
+        "name": "Nome",
+        "city": "Cidade",
+        "service": "Serviço",
+        "desc": "Descrição",
+        "reqMsg": "Preencha todos os campos!",
+        "save": "Salvar",
+        "cancel": "Cancelar"
+      },
+      "sc04b": {
+        "aRef": "Sc04a - Add Serviço",
+        "category": "Categoria",
+        "service": "Subcategoria de Serviço",
+        "desc": "Descrição",
+        "reqMsg": "Preencha todos os campos",
+        "save": "Salvar",
+        "cancel": "Cancelar"
+      },
+      "sc04c": {
+        "aRef": "Sc04a - Add Subcategoria",
+        "category": "Subcategoria",
+        "service": "Subcategoria",
+        "desc": "Descrição",
+        "reqMsg": "Preencha todos os campos",
+        "save": "Salvar",
+        "cancel": "Cancelar"
+      }
+    },
+    "en": {}
+  },
+  "users": {
+    "xxx01": {
+      "docId": "xxx01",
+      "userName": "Carlos",
+      "email": "carlos@mnmn.com",
+      "image": "https://source.unsplash.com/200x150/?portrait&boy&1",
+      "typeAccount": "provider",
+      "infos": { "jumpOnboarding": true }
+    },
+    "xxx02": {
+      "docId": "xxx02",
+      "userName": "Leandro",
+      "email": "leandro@mnmn.com",
+      "image": "https://source.unsplash.com/200x150/?portrait&boy&2",
+      "typeAccount": "provider"
+    },
+    "xxx03": {
+      "docId": "xxx03",
+      "userName": "Juan",
+      "email": "juan@mnmn.com",
+      "image": "https://source.unsplash.com/200x150/?portrait&boy&3",
+      "typeAccount": "adm",
+      "infos": { "jumpOnboarding": true }
+    }
+  },
+  "workers": {
+    "xxx01": {
+      "docId": "xxx01",
+      "userId": "xxx01",
+      "name": "João da Silva",
+      "category": "xxx1",
+      "subcategory": "sub1",
+      "description": "Tenho 20 anos de experiência no meu trabalho.Sou certificado pela adbs international",
+      "image": "https://source.unsplash.com/200x150/?man&1"
+    },
+    "xxx02": {
+      "docId": "xxx02",
+      "userId": "xxx02",
+      "name": "Renato O. Siqueira",
+      "category": "xxx1",
+      "subcategory": "sub2",
+      "city": "Guarulhos, SP",
+      "description": "Tenho 40 anos de experiência no meu trabalho.",
+      "image": "https://source.unsplash.com/200x150/?man&1"
+    },
+    "xxx03": {
+      "docId": "xxx03",
+      "userId": "xxx03",
+      "name": "Pedro Barbosa S.",
+      "category": "xxx2",
+      "subcategory": "sub1",
+      "city": "São Paulo, SP",
+      "description": "Há 15 anos no mercado...",
+      "image": "https://source.unsplash.com/200x150/?man&1"
+    },
+    "xxx04": {
+      "docId": "xxx04",
+      "userId": "xxx04",
+      "name": "Julia C. Souza",
+      "category": "xxx3",
+      "subcategory": "sub5",
+      "city": "São Paulo, SP",
+      "description": "Há 15 anos no mercado...",
+      "image": "https://source.unsplash.com/200x150/?woman&1"
+    },
+    "xxx05": {
+      "docId": "xxx05",
+      "userId": "xxx05",
+      "name": "Ana Flavia",
+      "category": "xxx3",
+      "subcategory": "sub6",
+      "city": "São Paulo, SP",
+      "description": "Há 15 anos no mercado...",
+      "image": "https://source.unsplash.com/200x150/?girl&1"
+    },
+    "xxx06": {
+      "docId": "xxx06",
+      "userId": "xxx06",
+      "name": "Julia O.",
+      "category": "xxx2",
+      "subcategory": "sub3",
+      "city": "São Paulo, SP",
+      "description": "Há 15 anos no mercado...",
+      "image": "https://source.unsplash.com/200x150/?woman&1"
+    }
+  },
+  "services": {
+    "xxx01": {
+      "docId": "xxx01",
+      "userId": "xxx01",
+      "productId": "xxx01",
+      "message": "OlÃ¡ meu amigo 01."
+    },
+    "xxx02": {
+      "docId": "xxx02",
+      "userId": "xxx02",
+      "productId": "xxx02",
+      "message": "OlÃ¡ meu amigo 02."
+    },
+    "xxx03": {
+      "docId": "xxx03",
+      "userId": "xxx03",
+      "productId": "xxx03",
+      "message": "OlÃ¡ meu amigo 03."
+    },
+    "xxx04": {
+      "docId": "xxx04",
+      "userId": "xxx01",
+      "productId": "xxx04",
+      "message": "OlÃ¡ meu amigo 04."
+    },
+    "xxx05": {
+      "docId": "xxx05",
+      "userId": "xxx02",
+      "productId": "xxx01",
+      "message": "OlÃ¡ meu amigo 05."
+    },
+    "xxx06": {
+      "docId": "xxx06",
+      "userId": "xxx03",
+      "productId": "xxx02",
+      "message": "OlÃ¡ meu amigo 06."
+    },
+    "xxx07": {
+      "docId": "xxx07",
+      "userId": "xxx03",
+      "productId": "xxx03",
+      "message": "OlÃ¡ meu amigo 07."
+    }
+  }
+}
