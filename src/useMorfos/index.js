@@ -1,5 +1,6 @@
 export { default as useCRUD } from './useCRUD';
 
+export { default as UseOptions } from './UseOptions';
 export { default as UseLoader } from './UseLoader';
 export { default as UseIcoMoon } from './UseIcoMoon';
 
