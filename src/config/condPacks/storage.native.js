@@ -1,3 +1,3 @@
-import storage from '@react-native-community/async-storage';
+// import storage from '@react-native-community/async-storage';
 
-export default storage;
+// export default storage;
