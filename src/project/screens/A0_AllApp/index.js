@@ -3,32 +3,15 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // ----------- import Internals
+import allScs from '../../screens';
 import Router from './Router';
 import groups from './routeGroups';
-import { utils } from '/src/useMorfos';
-
-// ----------- set Files
-const filesPath = [
-  './screens/A1_Signin',
-  './screens/A2_Terms',
-  // './screens/B1_ProdLIST',
-  // './screens/C1_ProdPF',
-];
-
-export const prjReducers = (state, action, arr = filesPath) => {
-  let newObj = {};
-  arr.map(
-    item =>
-      (newObj = {
-        ...newObj,
-        ...require(`${item}/CRUD`).default(state, action),
-      }),
-  );
-  return newObj;
-};
+const X_404 = require('./X_404');
+import { utils } from '../../../useMorfos';
+const { toArray } = utils;
 
 // ----------- set All screens
-const screens = (arr = filesPath) => arr.map(item => require(`${item}`));
+const screens = (arr = []) => arr.map(item => require(`${item}`));
 
 // ----------- set All App Screen
 export default () => {
@@ -36,7 +19,7 @@ export default () => {
     RenderComp,
     infoSc,
     infoSc: { favicon = 'http://www.google.com/favicon.ico' },
-  } = useSelectSc(screens());
+  } = useSelectSc(screens(toArray(allScs)));
 
   changeFavicon(favicon);
   document.title = infoSc.title;
@@ -66,8 +49,8 @@ function useSelectSc(arr) {
   const selectedSc = arrScs.find(
     item => item.infoSc && item.infoSc.path === selectedRoute,
   );
-  const Sc404 = require('./Sc_404');
-  const condComp = !selectedSc ? Sc404 : selectedSc;
+
+  const condComp = !selectedSc ? X_404 : selectedSc;
   // const infoGroup = condComp.infoSc && condComp.infoSc.groupSc;
   // const condGroup = infoGroup && renderGroup(condComp);
   const RenderComp = condComp.default;
