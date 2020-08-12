@@ -2,7 +2,7 @@
 import { AppRegistry } from 'react-native';
 
 // ----------- import Internals
-import Root from './Root2';
+import Root from './Root';
 import appInfo from './appInfo';
 const { name } = appInfo;
 

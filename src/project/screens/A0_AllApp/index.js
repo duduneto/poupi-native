@@ -7,7 +7,7 @@ import allScs from '../../screens';
 import Router from '../../Router';
 import groups from '../../routeGroups';
 import { utils } from '../../../useMorfos';
-const { toArray } = utils;
+const { toArr } = utils;
 const X_404 = require('../../X_404');
 
 // ----------- set All screens
@@ -19,7 +19,7 @@ export default () => {
     RenderComp,
     infoSc,
     infoSc: { favicon = 'http://www.google.com/favicon.ico' },
-  } = useSelectSc(screens(toArray(allScs)));
+  } = useSelectSc(screens(toArr(allScs)));
 
   changeFavicon(favicon);
   document.title = infoSc.title;
