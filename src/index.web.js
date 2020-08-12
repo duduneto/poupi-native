@@ -1,13 +1,13 @@
-// import packages
+// ----------- import Packs
 import { AppRegistry } from 'react-native';
 
-// import internals
+// ----------- import Internals
 import Root from './Root';
 import { name } from './appInfo';
 
 const rootElement = document.getElementById('root');
 
-// React Native Web
+// ----------- set React Native Web
 AppRegistry.registerComponent(name, () => Root);
 AppRegistry.runApplication(name, {
   rootTag: rootElement,
