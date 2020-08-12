@@ -1,33 +1,19 @@
-// ***************************************
-// #region :: IMPORTs
-// ---------------
-
-// import Packages
+// ----------- import Packs
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
 
-// import Internals
+// ----------- import Internals
 import { primaryColor } from '../config/styles';
 
-// ---------------
-// #endregion
-// ***************************************
-
-// ***************************************
-// #region :: FUNCTION
-// ---------------
-
-export default function UseLoader(props) {
+// ----------- set Default Component
+export default props => {
+  const condSize = props.size ?? 15;
   return (
     <ActivityIndicator
       // style={props.style}
-      // size={props.size}
+      size={condSize}
       {...props}
       color={props.color || primaryColor}
     />
   );
-}
-
-// ---------------
-// #endregion
-// ***************************************
+};
