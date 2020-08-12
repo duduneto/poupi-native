@@ -1,44 +1,40 @@
 {
-  "name": "start-morfos",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": [],
+  "name": "start-morfos2",
+  "version": "0.1.0",
   "private": true,
-  "main": "./src/index.web.js",
-  "scripts": {
-    "web:start": "react-scripts start",
-    "web:build": "react-scripts build",
-    "web:test": "react-scripts test --env=jsdom",
-    "web:eject": "react-scripts eject",
-    "android": "react-native run-android",
-    "androidClean": "cd android && gradlew clean && yarn android",
-    "androidRunClean": "yarn androidClean && yarn android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint .",
-    "format": "eslint --fix --ext .js src/"
-  },
   "dependencies": {
-    "firebase": "7.13.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "firebase": "^7.17.2",
     "icomoon-react": "^2.0.16",
-    "react": "16.11.0",
-    "react-dom": "16.8.6",
-    "react-native-web": "0.12.2",
-    "react-redux": "7.1.1",
-    "react-scripts": "3.0.1",
-    "redux": "4.0.4",
-    "redux-persist": "6.0.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-native-web": "^0.13.7",
+    "react-redux": "^7.2.1",
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/runtime": "^7.6.2",
-    "eslint": "5.16.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

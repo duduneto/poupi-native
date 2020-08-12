@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
 // ----------- import Internals
-import { useStl } from '/src/useMorfos';
+import { useStl } from '../../../useMorfos';
 import { Counter1, Btn1 } from '../../comps';
 
 // #region :: STYLEs *********

@@ -12,9 +12,9 @@ import {
 } from 'react-native';
 
 // ----------- import Internals
-import bgNav from '/src/images/bg_nav.png';
-import bgNav2 from '/src/images/bg_nav2.png';
-import { useStl, UseIcoMoon, useRouter } from '/src/useMorfos';
+import bgNav from '../../../images/bg_nav.png';
+import bgNav2 from '../../../images/bg_nav2.png';
+import { useStl, UseIcoMoon, useRouter } from '../../../../useMorfos';
 
 // #endregion *********
 

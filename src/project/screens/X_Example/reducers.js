@@ -5,7 +5,10 @@ import {
   // storage
 } from '../../../config/firebase/fbConfig';
 import { utils } from '../../../useMorfos';
-const { mergeDeep, setPath } = utils;
+const {
+  mergeDeep,
+  // setPath
+} = utils;
 
 // ---------- set Reducers
 export default (state, action) => {

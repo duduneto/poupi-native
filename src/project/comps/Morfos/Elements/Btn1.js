@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 // ----------- import Internals
-import { useStl } from '/src/useMorfos';
+import { useStl } from '../../../../useMorfos';
 
 export default ({ onPress, children }) => {
   const stlView = [useStl.flexCenter];

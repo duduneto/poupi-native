@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import allScs from '../../screens';
-import Router from './Router';
-import groups from './routeGroups';
-const X_404 = require('./X_404');
+import Router from '../../Router';
+import groups from '../../routeGroups';
 import { utils } from '../../../useMorfos';
 const { toArray } = utils;
+const X_404 = require('../../X_404');
 
 // ----------- set All screens
 const screens = (arr = []) => arr.map(item => require(`${item}`));

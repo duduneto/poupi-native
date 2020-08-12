@@ -6,7 +6,7 @@ import React from 'react';
 // ---------- import Internals
 import ViewDF from './Views';
 // import { ExampleRedux as ViewDF } from '/src/screens/comps';
-import { useRouter, UseInitData } from '/src/useMorfos';
+import { useRouter, UseInitData } from '../../../../useMorfos';
 
 // ---------- set infoSc
 export const infoSc = {

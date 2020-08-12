@@ -2,7 +2,7 @@
 import React from 'react';
 import * as RN from 'react-native';
 // import Internals
-import { UseIcoMoon } from './';
+import { UseIcoMoon } from '.';
 
 export default ({ label, mapValues, color, key, style }) => {
   const [sttSelected, setSelected] = React.useState(false);

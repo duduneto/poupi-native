@@ -1,4 +1,4 @@
-export default {
+const utils = {
   consoleRender: (name, info) =>
     false && console.log(`RENDER => ${name}`, info || '-'),
 
@@ -38,27 +38,6 @@ export default {
     return finalCheck;
   },
 
-  mergeDeep: (...objects) => {
-    const isObject = obj => obj && typeof obj === 'object';
-
-    return objects.reduce((prev, obj) => {
-      Object.keys(obj).forEach(key => {
-        const pVal = prev[key];
-        const oVal = obj[key];
-
-        if (Array.isArray(pVal) && Array.isArray(oVal)) {
-          prev[key] = pVal.concat(...oVal);
-        } else if (isObject(pVal) && isObject(oVal)) {
-          prev[key] = utils.mergeDeep(pVal, oVal);
-        } else {
-          prev[key] = oVal;
-        }
-      });
-
-      return prev;
-    }, {});
-  },
-
   currencyMask: (info, returnAsNumber) => {
     if (returnAsNumber) {
       return Number(String(info).replace(/\D/g, '')) / 100;
@@ -73,3 +52,28 @@ export default {
     }
   },
 };
+
+utils.mergeDeep = mergeDeep;
+
+function mergeDeep(...objects) {
+  const isObject = obj => obj && typeof obj === 'object';
+
+  return objects.reduce((prev, obj) => {
+    Object.keys(obj).forEach(key => {
+      const pVal = prev[key];
+      const oVal = obj[key];
+
+      if (Array.isArray(pVal) && Array.isArray(oVal)) {
+        prev[key] = pVal.concat(...oVal);
+      } else if (isObject(pVal) && isObject(oVal)) {
+        prev[key] = utils.mergeDeep(pVal, oVal);
+      } else {
+        prev[key] = oVal;
+      }
+    });
+
+    return prev;
+  }, {});
+}
+
+export default utils;

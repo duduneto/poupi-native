@@ -5,7 +5,7 @@
 // import Packages
 // import React from 'react';
 import { useDispatch } from 'react-redux';
-import initialState from '../../config/redux/initialState';
+import initialState from '../../project/initialState';
 
 // import internals
 import { firebase, firestore, storage } from '../../config/firebase/fbConfig';

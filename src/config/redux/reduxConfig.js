@@ -8,6 +8,7 @@ import reducers from './rootReducer';
 
 const persistConfig = {
   storage: condStorage,
+  key: 'root',
   whitelist: ['rdPersists'],
 };
 

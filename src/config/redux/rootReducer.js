@@ -1,31 +1,32 @@
-// ---------- import Internals
+// import Internals
 import initialState from '../../project/initialState';
-import crudReducers from '../../useMorfos/useCRUD/actions';
-import prjReducers from '../../project/screens';
-import { toArray } from '../../useMorfos/utils';
+import actions from '../../useMorfos/useCRUD/actions';
+// import prjReducers from '../../project/prjReducers';
 
-export default (state = initialState, action) => {
-  let loopObj = {};
-  const refSc = '../../project/screens/';
+function allReducers(state, action) {
+  // let loopObj = {};
+  // const refSc = '../../project/screens/';
 
-  for (const item in prjReducers) {
-    loopObj = {
-      ...loopObj,
-      ...require(`${refSc}${item}/reducers`).default(state, action),
-    };
-  }
+  // for (const key in prjReducers) {
+  //   const item = prjReducers[key];
+  //   loopObj = {
+  //     ...loopObj,
+  //     ...require(`${refSc}${item}/reducers.js`).default(state, action),
+  //   };
+  // }
 
-  const allReducers = {
-    ...crudReducers(state, action),
-    ...loopObj(state, action),
+  const allSyncActions = {
+    ...actions(state, action),
+    // ...prjReducers(state, action),
 
     CLEAR_ALL() {
       return initialState;
     },
   };
 
-  const condCalls = allReducers[action.type] === undefined;
-  const condReturn = condCalls ? state : allReducers[action.type]();
+  const condCalls = allSyncActions[action.type] === undefined;
 
-  return condReturn(state, action);
-};
+  return condCalls ? state : allSyncActions[action.type]();
+}
+
+export default (state = initialState, action) => allReducers(state, action);

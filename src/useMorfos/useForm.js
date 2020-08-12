@@ -7,7 +7,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 // import Internals
-import { useCRUD } from './';
+import { useCRUD } from '.';
 
 // ---------------
 // #endregion

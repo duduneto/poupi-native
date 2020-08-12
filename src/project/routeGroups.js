@@ -4,7 +4,10 @@ import { useSelector } from 'react-redux';
 
 // ----------- import Internals
 import { NavUp } from './comps';
-import { useRouter, useSelectors } from '../useMorfos';
+import {
+  useRouter,
+  // useSelectors
+} from '../useMorfos';
 
 // ----------- Components
 
@@ -25,16 +28,12 @@ const Private = ({ children }) => {
 const Adm = ({ children, permissionRef }) => {
   const CallAdm = () => {
     const callRedirect = useRouter('red');
-    const { useCondPermission } = useSelectors();
-    const condPermission = useCondPermission(permissionRef);
-    const condReturn = condPermission ? children : callRedirect('signin');
-    return condReturn;
+    // const { useCondPermission } = useSelectors();
+    // const condPermission = useCondPermission(permissionRef);
+    // const condReturn = condPermission ? children : callRedirect('signin');
+    // return condReturn;
   };
-  return (
-    <Private>
-      <CallAdm />
-    </Private>
-  );
+  return <Private>{/* <CallAdm /> */}</Private>;
 };
 
 const Priv1 = ({ children }) => <Adm permissionRef={1} children={children} />;
