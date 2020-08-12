@@ -1,7 +1,7 @@
 // import Packages
 import firebase from './packs.web';
 
-import { fbWebConfig } from '../../appInfo.json';
+import { fbWebConfig } from '../../appInfo';
 
 // const envConfig = process.env.NODE_ENV === 'production' ? prodConfig : devConfig;
 
