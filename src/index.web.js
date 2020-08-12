@@ -3,7 +3,7 @@ import { AppRegistry } from 'react-native';
 
 // import internals
 import Root from './Root';
-import { name } from './appInfo.json';
+import { name } from './appInfo';
 
 const rootElement = document.getElementById('root');
 
