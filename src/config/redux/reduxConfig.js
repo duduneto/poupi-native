@@ -8,13 +8,36 @@ import reducers from './rootReducer';
 
 const persistConfig = {
   storage: condStorage,
-  key: 'root',
-  whitelist: ['rdRoute', 'rdAuthUser', 'rdContent', 'rdPermissionAdm'],
+  whitelist: ['rdPersists'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
-const middlewares = [];
+const asyncDispatchMiddleware = store => next => action => {
+  let syncActivityFinished = false;
+  let actionQueue = [];
+
+  function flushQueue() {
+    actionQueue.forEach(a => store.dispatch(a)); // flush queue
+    actionQueue = [];
+  }
+
+  function asyncDispatch(asyncAction) {
+    actionQueue = actionQueue.concat([asyncAction]);
+
+    if (syncActivityFinished) {
+      flushQueue();
+    }
+  }
+
+  const actionWithAsyncDispatch = Object.assign({}, action, { asyncDispatch });
+
+  next(actionWithAsyncDispatch);
+  syncActivityFinished = true;
+  flushQueue();
+};
+
+const middlewares = [asyncDispatchMiddleware];
 
 if (process.env.NODE_ENV === 'development') {
   const logger = store => next => action => {
