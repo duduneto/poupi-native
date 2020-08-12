@@ -5,13 +5,12 @@ export default {
   displayName: name,
 
   fbWebConfig: {
-    apiKey: 'AIzaSyBcuLXbVZi5-HdxMVu5j1yjZMxSpyg-1eI',
-    authDomain: 'modelo-18336.firebaseapp.com',
-    databaseURL: 'https://modelo-18336.firebaseio.com',
-    projectId: 'modelo-18336',
-    storageBucket: 'modelo-18336.appspot.com',
-    messagingSenderId: '174778550354',
-    appId: '1:174778550354:web:226c34d2f8ee5a4998b78b',
-    persistence: true,
+    apiKey: 'AIzaSyBtdWWPi8a4zRAEkIr6qEvQKOU3Hkfp-NY',
+    authDomain: 'start-morfos.firebaseapp.com',
+    databaseURL: 'https://start-morfos.firebaseio.com',
+    projectId: 'start-morfos',
+    storageBucket: 'start-morfos.appspot.com',
+    messagingSenderId: '147367265071',
+    appId: '1:147367265071:web:4aa0fe7bdfa0093e',
   },
 };
