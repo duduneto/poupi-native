@@ -15,7 +15,7 @@ export default (state, action) => {
       const scContent = {
         title: 'Signin',
         subTitle: 'Oi Mundo!',
-        description: 'Lorem Ipsum!',
+        description: 'Lorem Ipsum!!',
         txtBtn: 'Ir para os TERMOS',
       };
 
