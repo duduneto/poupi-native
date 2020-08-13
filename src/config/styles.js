@@ -23,6 +23,7 @@ const black = '#000';
 const bgPrimary = { backgroundColor: primaryColor };
 const bgSecondary = { backgroundColor: secondaryColor };
 const bgTertiary = { backgroundColor: tertiaryColor };
+const bgSc = { backgroundColor: lightGray };
 const bgRed = { backgroundColor: 'red' };
 
 // Text Colors ----
@@ -41,7 +42,7 @@ const txtColorSubTitle = { color: black };
 // ---------------
 
 const sizeTxtRef = 20;
-const sizeBtnRef = 200;
+const sizeBtnRef = 50;
 const heightBarRef = 60;
 const heightShortBar = { height: heightBarRef };
 const heightLongBar = { height: heightBarRef * 2 };
@@ -92,9 +93,13 @@ const txtTitleProfile = {
   ...txtPrimaryInverse,
 };
 
-const txtTitleScreen = {
+const txtTitleNav = {
   ...txtPrimaryInverse,
   fontSize: sizeTxtRef - 2,
+};
+
+const txtTitleScreen = {
+  fontSize: sizeTxtRef + 2,
 };
 
 const msgError = {
@@ -120,6 +125,10 @@ const flex4 = { flex: 4 };
 
 const flexRow = {
   flexDirection: 'row',
+  alignItems: 'center',
+};
+
+const flexTopCenter = {
   alignItems: 'center',
 };
 
@@ -265,6 +274,7 @@ const Styles = StyleSheet.create({
   msgError,
   txtCenter,
   txtPrimary,
+  txtTitleNav,
   txtTitleCard,
   txtTitleScreen,
   txtTitleProfile,
@@ -278,6 +288,7 @@ const Styles = StyleSheet.create({
   flexRow,
   flexWrap,
   flexStart,
+  flexTopCenter,
   flexCenter,
   flexBetween,
   flexEnd,
@@ -290,6 +301,7 @@ const Styles = StyleSheet.create({
   shadowLess,
   shadowMore,
 
+  bgSc,
   bgPrimary,
   bgSecondary,
   bgTertiary,
@@ -546,23 +558,27 @@ const Styles = StyleSheet.create({
 
   // BTN SIZES
   btnXSmall: {
-    minWidth: sizeBtnRef / 4,
+    width: sizeBtnRef / 4,
     height: sizeBtnRef / 9,
   },
 
   btnSmall: {
-    minWidth: sizeBtnRef / 3,
-    height: sizeBtnRef / 7,
+    paddingHorizontal: sizeBtnRef / 3,
+    paddingVertical: sizeBtnRef / 7,
   },
 
   btnMedium: {
-    minWidth: sizeBtnRef / 2,
-    height: sizeBtnRef / 6,
-    paddingHorizontal: sizeBtnRef / 12,
+    paddingHorizontal: sizeBtnRef / 2,
+    paddingVertical: sizeBtnRef / 6,
+    // paddingHorizontal: sizeBtnRef / 12,
+  },
+  btnTxtMedium: {
+    fontSize: sizeTxtRef - 2,
+    // paddingHorizontal: sizeBtnRef / 12,
   },
 
   btnLarge: {
-    minWidth: sizeBtnRef / 1.4,
+    width: sizeBtnRef / 1.4,
     height: sizeBtnRef / 4.4,
   },
 
