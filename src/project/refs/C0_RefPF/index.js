@@ -1,6 +1,6 @@
 // ----------- import Packs
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import ViewDF from './Views';
@@ -25,11 +25,12 @@ export default () => {
 
   // ----------- set Return
   const condReturn = condData ? <DataTrue /> : <UseLoader />;
+  return condReturn;
 };
 
-function DataTrue() {
+export function DataTrue() {
   // ----------- set Hooks
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const userData = useSelector(selCondData);
   const callRouter = useRouter();
   const [sttCount, setCount] = React.useState(0);

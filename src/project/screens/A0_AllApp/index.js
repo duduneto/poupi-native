@@ -11,7 +11,7 @@ const { toArr } = utils;
 const X_404 = require('../../X_404');
 
 // ----------- set All screens
-const screens = (arr = []) => arr.map(item => require(`${item}`));
+const screens = (arr = []) => arr.map(item => require(`../${item}`));
 
 // ----------- set All App Screen
 export default () => {

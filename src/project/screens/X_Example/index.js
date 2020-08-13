@@ -1,45 +1,69 @@
-// ---------- import Packs
+// ----------- import Packs
 import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { utils } from '/src/useMorfos';
+import { useSelector, useDispatch } from 'react-redux';
 
-// ---------- import Internals
+// ----------- import Internals
 import ViewDF from './Views';
-// import { ExampleRedux as ViewDF } from '/src/screens/comps';
-import { useRouter, UseInitData } from '/src/useMorfos';
+import { useRouter, utils, UseLoader } from '../../../useMorfos';
 
-// ---------- set infoSc
+// ----------- set Utils
+const { setPath } = utils;
+
+// ----------- set Info Screen
 export const infoSc = {
-  // ----------
   path: 'signin',
   groupSc: 'priv1',
-  scCode: 'A1',
+
+  scCode: 'X',
 };
 
+// ----------- set Default Component
 export default () => {
-  // ---------- set Vars
-  const { scCode } = infoSc;
+  // ----------- set Selectors
+  const selCondData = stt => setPath(stt, 'C0.userData.condData');
 
-  // ---------- set Hooks
-  const callRouter = useRouter();
+  // ----------- set Hooks
+  // const condData = useSelector(selCondData);
+  const condData = true;
 
-  // ---------- set Router
-  const btnGoto = () => callRouter('terms');
+  // ----------- set Return
+  const condReturn = condData ? <DataTrue /> : <UseLoader />;
+  return condReturn;
+};
 
-  // ---------- set Init
-  const InitSc = ({ children }) => {
-    const infoInit = {
-      setSel: `rdScs.${scCode}`,
-      setAction: `initData${scCode}`,
-    };
-    return <UseInitData info={infoInit} children={children} />;
+export function DataTrue() {
+  // ----------- set Selectors
+  // const content = useSelector(state => state.rdScs[infoSc.scCode].content);
+  const content = {
+    title: 'Signin',
+    subTitle: 'Oi Mundo!',
+    description: 'Lorem Ipsum!',
+    txtBtn: 'Ir para os TERMOS',
   };
 
-  // ---------- set Return
-  const infoReturn = { scCode, btnGoto };
-  return (
-    <InitSc>
-      <ViewDF info={infoReturn} />
-    </InitSc>
-  );
-};
+  // ----------- set Hooks
+  const dispatch = useDispatch();
+  const callRouter = useRouter();
+  const [sttCount, setCount] = React.useState(0);
+
+  // ----------- set Btns
+  const btnIncrement = () => setCount(sttCount + 1);
+  const btnDecrement = () => sttCount >= 0 && setCount(sttCount - 1);
+
+  // ----------- set Router
+  const btnGoto = () => callRouter('terms');
+
+  // ----------- set Return
+  const infoReturn = {
+    // --- infoSc
+    content,
+    // --- counter
+    sttCount,
+    btnIncrement,
+    btnDecrement,
+    // --- btns
+    btnGoto,
+    // userId,
+  };
+  return <ViewDF info={infoReturn} />;
+}

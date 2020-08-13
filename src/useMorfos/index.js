@@ -3,6 +3,7 @@ export { default as useCRUD } from './useCRUD';
 export { default as UseOptions } from './UseOptions';
 export { default as UseLoader } from './UseLoader';
 export { default as UseIcoMoon } from './UseIcoMoon';
+export { default as UseInitData } from './UseInitData';
 
 export { default as useForm } from './useForm';
 export { default as useRouter } from './useRouter';

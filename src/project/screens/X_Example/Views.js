@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
 // ----------- import Internals
-import { useStl } from '/src/useMorfos';
+import { useStl } from '../../../useMorfos';
 import { Counter1, Btn1 } from '../../comps';
 
 // #region :: STYLEs *********
@@ -22,22 +22,20 @@ const stlDescTxt = [useStl.txtBase, useStl.txtCenter];
 // #endregion *********
 
 export default ({ info }) => {
-  const content = useSelector(state => state.rdScs[info.scCode].content);
-
   return (
     <View style={stlBodyView}>
       {/* ----------- PARTs */}
-      <Text style={stlTitleTxt}>{content.title}</Text>
+      <Text style={stlTitleTxt}>{info.content.title}</Text>
 
-      <Text style={stlSubTitleTxt}>{content.subTitle}</Text>
+      <Text style={stlSubTitleTxt}>{info.content.subTitle}</Text>
 
       <View style={stlDescView}>
-        <Text style={stlDescTxt}>{content.description}</Text>
+        <Text style={stlDescTxt}>{info.content.description}</Text>
       </View>
 
       {/* ----------- Elements */}
       <Counter1 />
-      <Btn1 onPress={info.btnGoto}>{content.txtBtn}</Btn1>
+      <Btn1 onPress={info.btnGoto}>{info.content.txtBtn}</Btn1>
     </View>
   );
 };
