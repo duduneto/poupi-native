@@ -11,7 +11,7 @@ const { setPath } = utils;
 
 // ----------- set Info Screen
 export const infoSc = {
-  path: 'xxx',
+  path: 'signin',
   groupSc: 'priv1',
 
   scCode: 'X0',
