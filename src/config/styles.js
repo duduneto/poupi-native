@@ -41,6 +41,7 @@ const txtColorSubTitle = { color: black };
 // #region :: REFs
 // ---------------
 
+const isDesktop = width > 650;
 const sizeTxtRef = 20;
 const sizeBtnRef = 50;
 const heightBarRef = 60;
@@ -268,6 +269,7 @@ const Styles = StyleSheet.create({
   posRelative,
   fullWidth,
   fullHeight,
+  isDesktop,
 
   txtBase,
   txtSmall,

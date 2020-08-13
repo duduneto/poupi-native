@@ -7,15 +7,15 @@ import ViewDF from './Views';
 import { useRouter, utils, UseLoader } from '../../../useMorfos';
 
 // ----------- import Images
-// import logo from '../images/logo.png';
-// import sport from '../images/sport.png';
-// import detail from '../images/detail.png';
-// import curves from '../images/curves.png';
-// import img1 from '../images/img1.png';
-// import img2 from '../images/img2.png';
-// import img3 from '../images/img3.png';
+import logo from '../../images/logo.png';
+import sport from '../../images/sport.png';
+import detail from '../../images/detail.png';
+import curves from '../../images/curves.png';
+import img1 from '../../images/img1.png';
+import img2 from '../../images/img2.png';
+import img3 from '../../images/img3.png';
 import background from '../../images/bg.jpg';
-// import btnBg from '../images/gradient_btn.png';
+import btnBg from '../../images/gradient_btn.png';
 
 // ----------- set Utils
 const { setPath } = utils;
@@ -25,7 +25,7 @@ export const infoSc = {
   path: 'signin',
   groupSc: 'priv1',
 
-  scCode: 'X0',
+  scCode: 'A1',
 };
 
 // ----------- set Default Component
@@ -66,14 +66,14 @@ export function DataTrue() {
     content,
     // --- imgs
     background,
-    // detail,
-    // curves,
-    // sport,
-    // btnBg,
-    // logo,
-    // img1,
-    // img2,
-    // img3,
+    curves,
+    detail,
+    sport,
+    btnBg,
+    logo,
+    img1,
+    img2,
+    img3,
     // --- btns
     btnGoto,
     // userId,

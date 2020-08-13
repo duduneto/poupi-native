@@ -11,19 +11,33 @@ const { mergeDeep, setPath } = utils;
 export default (state, action) => {
   return {
     // ---------- set Init Content Data
-    X0_InitContentData: () => {
+    A1_InitContentData: () => {
       const scContent = {
-        title: 'Signin',
+        title: 'GYM ONE',
         subTitle: 'Oi Mundo!',
+        slogan: 'Suas aulas a qualquer hora e em qualquer lugar',
         description: 'Lorem Ipsum!!',
-        txtBtn: 'Ir para os TERMOS',
+        enterUsing: 'Faça parte do nosso time',
+        txtDisplay1: 'O Futuro do',
+        txtDisplay2: 'Treinamento',
+        txtDisplay3: 'Pessoal',
+        txtTeam: 'Faça parte de nossa equipe',
+        txtBtn1: 'ENTRE AGORA',
+        txtBtn2: 'ENCONTRE UM PLANO',
+        txtBtn3: 'Ir para os TERMOS',
+        feature1:
+          'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+        feature2:
+          'Contrary to popular belief, Lorem Ipsum is not simply random text.',
+        feature3:
+          'It has survived not only five centuries, but also the leap into electronic typesetting.',
       };
 
       const condData = true;
 
       return {
         ...state,
-        X0: { ...state.X0, scContent, condData },
+        A1: { ...state.A1, scContent, condData },
       };
     },
 
