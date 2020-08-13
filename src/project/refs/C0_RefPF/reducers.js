@@ -10,6 +10,16 @@ const { mergeDeep, setPath } = utils;
 // ---------- set Reducers
 export default (state, action) => {
   return {
+    // ---------- set Init Content Data
+    X0_InitContentData: () => {
+      const scContent = { a: '1' };
+
+      return {
+        ...state,
+        X0: { ...state.X0, scContent },
+      };
+    },
+
     // ---------- set Init Name Data
     X0_InitNameList: () => {
       const expName = { a: '1' };

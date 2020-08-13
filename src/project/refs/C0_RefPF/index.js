@@ -18,10 +18,15 @@ export const infoSc = {
 // ----------- set Default Component
 export default () => {
   // ----------- set Selectors
-  const selCondData = stt => setPath(stt, 'C0.userData.condData');
+  const selCondData = stt => setPath(stt, 'X0.userData.condData');
+  const condData = useSelector(selCondData);
+
+  // ----------- set Effects
+  const fxInitData = () => dispatch({ type: 'X0_InitContentData' });
 
   // ----------- set Hooks
-  const condData = useSelector(selCondData);
+  const dispatch = useDispatch();
+  React.useEffect(fxInitData, []);
 
   // ----------- set Return
   const condReturn = condData ? <DataTrue /> : <UseLoader />;
