@@ -1,7 +1,7 @@
 // import Internals
 import initialState from '../../project/initialState';
 import actions from '../../useMorfos/useCRUD/actions';
-// import prjReducers from '../../project/prjReducers';
+import prjReducers from '../../project/prjReducers';
 
 function allReducers(state, action) {
   // let loopObj = {};
@@ -15,9 +15,11 @@ function allReducers(state, action) {
   //   };
   // }
 
+  console.log('>>>', prjReducers());
+
   const allSyncActions = {
     ...actions(state, action),
-    // ...prjReducers(state, action),
+    ...prjReducers(state, action),
 
     CLEAR_ALL() {
       return initialState;

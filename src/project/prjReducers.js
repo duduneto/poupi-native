@@ -1,8 +1,9 @@
 const filesPath = [
   './screens/A0_AllApp',
-  './screens/A0b_TempUser',
+  './screens/A0b_TempUsers',
   './screens/A1_Signin',
   './screens/A2_Terms',
+  './screens/X_Example',
 ];
 
 export default (state, action, arr = filesPath) => {

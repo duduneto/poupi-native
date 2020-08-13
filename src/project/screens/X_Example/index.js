@@ -20,11 +20,15 @@ export const infoSc = {
 // ----------- set Default Component
 export default () => {
   // ----------- set Selectors
-  const selCondData = stt => setPath(stt, 'C0.userData.condData');
+  const selCondData = stt => setPath(stt, 'X.condData');
+  const condData = useSelector(selCondData);
+
+  // ----------- set Effects
+  const fxInitData = () => dispatch({ type: 'X_InitData' });
 
   // ----------- set Hooks
-  // const condData = useSelector(selCondData);
-  const condData = true;
+  const dispatch = useDispatch();
+  React.useEffect(fxInitData, []);
 
   // ----------- set Return
   const condReturn = condData ? <DataTrue /> : <UseLoader />;
@@ -33,13 +37,13 @@ export default () => {
 
 export function DataTrue() {
   // ----------- set Selectors
-  // const content = useSelector(state => state.rdScs[infoSc.scCode].content);
-  const content = {
-    title: 'Signin',
-    subTitle: 'Oi Mundo!',
-    description: 'Lorem Ipsum!',
-    txtBtn: 'Ir para os TERMOS',
-  };
+  const content = useSelector(stt => setPath(stt, 'X.scContent'));
+  // const content = {
+  //   title: 'Signin',
+  //   subTitle: 'Oi Mundo!',
+  //   description: 'Lorem Ipsum!',
+  //   txtBtn: 'Ir para os TERMOS',
+  // };
 
   // ----------- set Hooks
   const dispatch = useDispatch();
