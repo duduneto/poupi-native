@@ -1,25 +1,32 @@
 // import Internals
 import initialState from '../../project/initialState';
 import actions from '../../useMorfos/useCRUD/actions';
-import prjReducers from '../../project/prjReducers';
+import screens from '../../project/screens';
+import { utils } from '../../useMorfos';
+
+const { toArr } = utils;
 
 function allReducers(state, action) {
-  // let loopObj = {};
-  // const refSc = '../../project/screens/';
+  const loopReducer = (state, action) => {
+    let loopObj = {};
+    const refScs = '../../project/screens';
 
-  // for (const key in prjReducers) {
-  //   const item = prjReducers[key];
-  //   loopObj = {
-  //     ...loopObj,
-  //     ...require(`${refSc}${item}/reducers.js`).default(state, action),
-  //   };
-  // }
-
-  console.log('>>>', prjReducers());
+    for (const key in screens) {
+      const item = screens[key];
+      loopObj = {
+        ...loopObj,
+        ...require(`../../project/screens/${item}/reducers`).default(
+          state,
+          action,
+        ),
+      };
+    }
+    return loopObj;
+  };
 
   const allSyncActions = {
     ...actions(state, action),
-    ...prjReducers(state, action),
+    ...loopReducer(state, action),
 
     CLEAR_ALL() {
       return initialState;
