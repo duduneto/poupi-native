@@ -11,20 +11,21 @@ const { setPath } = utils;
 
 // ----------- set Info Screen
 export const infoSc = {
-  path: 'signin',
+  path: 'XXX',
   groupSc: 'priv1',
 
-  scCode: 'X',
+  scCode: 'X0',
 };
 
 // ----------- set Default Component
 export default () => {
   // ----------- set Selectors
-  const selCondData = stt => setPath(stt, 'X.condData');
+  const selCondData = stt => setPath(stt, `${infoSc.scCode}.condData`);
   const condData = useSelector(selCondData);
 
   // ----------- set Effects
-  const fxInitData = () => dispatch({ type: 'X_InitData' });
+  const fxInitData = () =>
+    dispatch({ type: `${infoSc.scCode}_InitContentData` });
 
   // ----------- set Hooks
   const dispatch = useDispatch();
@@ -37,16 +38,13 @@ export default () => {
 
 export function DataTrue() {
   // ----------- set Selectors
-  const content = useSelector(stt => setPath(stt, 'X.scContent'));
+  const content = useSelector(stt =>
+    setPath(stt, `${infoSc.scCode}.scContent`),
+  );
 
   // ----------- set Hooks
   const dispatch = useDispatch();
   const callRouter = useRouter();
-  const [sttCount, setCount] = React.useState(0);
-
-  // ----------- set Btns
-  const btnIncrement = () => setCount(sttCount + 1);
-  const btnDecrement = () => sttCount >= 0 && setCount(sttCount - 1);
 
   // ----------- set Router
   const btnGoto = () => callRouter('terms');
@@ -55,10 +53,6 @@ export function DataTrue() {
   const infoReturn = {
     // --- infoSc
     content,
-    // --- counter
-    sttCount,
-    btnIncrement,
-    btnDecrement,
     // --- btns
     btnGoto,
     // userId,

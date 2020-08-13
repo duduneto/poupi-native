@@ -12,21 +12,28 @@ export default (state, action) => {
   return {
     // ---------- set Init Content Data
     X0_InitContentData: () => {
+      const scContent = {
+        title: 'Signin',
+        subTitle: 'Oi Mundo!',
+        description: 'Lorem Ipsum!',
+        txtBtn: 'Ir para os TERMOS',
+      };
+
+      const condData = true;
+
+      return {
+        ...state,
+        X0: { ...state.X0, scContent, condData },
+      };
+    },
+
+    // ---------- set Init Name Data
+    X0_InitNameData: () => {
       const scContent = { a: '1' };
 
       return {
         ...state,
         X0: { ...state.X0, scContent },
-      };
-    },
-
-    // ---------- set Init Name Data
-    X0_InitNameList: () => {
-      const expName = { a: '1' };
-
-      return {
-        ...state,
-        rdName: { ...state.rdName, expName },
       };
     },
 
