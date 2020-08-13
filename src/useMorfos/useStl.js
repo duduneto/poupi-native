@@ -1,26 +1,32 @@
 import useStl from '../config/styles';
-import utils from './utils';
 
-const useStl = {
-  pad: (top, right, botton, left) => {
-    if ((right === undefined, botton === undefined, left === undefined)) {
+export default {
+  pad: (arg1, arg2, arg3, arg4) => {
+    console.log('arg2', arg2);
+    if (arg2 === undefined && arg3 === undefined && arg4 === undefined) {
       return {
-        paddingTop: top,
-        paddingRight: top,
-        paddingLeft: top,
-        paddingBottom: top,
+        paddingTop: arg1,
+        paddingRight: arg1,
+        paddingBottom: arg1,
+        paddingLeft: arg1,
+      };
+    }
+
+    if (arg3 === undefined && arg4 === undefined) {
+      return {
+        paddingTop: arg1,
+        paddingRight: arg2,
+        paddingBottom: arg1,
+        paddingLeft: arg2,
       };
     }
 
     return {
-      paddingTop: top,
-      paddingRight: right,
-      paddingLeft: bottom,
-      paddingBottom: left,
+      paddingTop: arg1,
+      paddingRight: arg2,
+      paddingBottom: arg3,
+      paddingLeft: arg4,
     };
   },
-
-  undefined: useStl,
+  ...useStl,
 };
-
-export default utils;
