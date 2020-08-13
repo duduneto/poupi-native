@@ -1,18 +1,15 @@
-const filesPath = [
-  './screens/A0_AllApp',
-  './screens/A0b_TempUsers',
-  './screens/A1_Signin',
-  './screens/A2_Terms',
-  './screens/X_Example',
-];
+import filesPath from './screens';
+import { utils } from '../useMorfos';
 
-export default (state, action, arr = filesPath) => {
+const { toArr } = utils;
+
+export default (state, action, arr = toArr(filesPath)) => {
   let newObj = {};
   arr.map(
     item =>
       (newObj = {
         ...newObj,
-        ...require(`${item}/reducers`).default(state, action),
+        ...require(`./screens/${item}/reducers`).default(state, action),
       }),
   );
   return newObj;

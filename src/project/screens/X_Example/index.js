@@ -38,12 +38,6 @@ export default () => {
 export function DataTrue() {
   // ----------- set Selectors
   const content = useSelector(stt => setPath(stt, 'X.scContent'));
-  // const content = {
-  //   title: 'Signin',
-  //   subTitle: 'Oi Mundo!',
-  //   description: 'Lorem Ipsum!',
-  //   txtBtn: 'Ir para os TERMOS',
-  // };
 
   // ----------- set Hooks
   const dispatch = useDispatch();
