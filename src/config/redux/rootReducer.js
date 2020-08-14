@@ -3,6 +3,7 @@ import initialState from '../../project/initialState';
 import actions from '../../useMorfos/useCRUD/actions';
 import screens from '../../project/screens';
 import { utils } from '../../useMorfos';
+import configReducers from './configReducers';
 
 const { toArr } = utils;
 
@@ -26,6 +27,7 @@ function allReducers(state, action) {
 
   const allSyncActions = {
     ...actions(state, action),
+    ...configReducers(state, action),
     ...loopReducer(state, action),
 
     CLEAR_ALL() {

@@ -1,3 +1,6 @@
+// ----------- import Packs
 import { Dimensions } from 'react-native';
 
-export const { condWidth, condHeight } = Dimensions.get('window');
+// ----------- set Dimensions
+export const condWidth = () => Dimensions.get('window').condWidth;
+export const condHeight = () => Dimensions.get('window').condHeight;
