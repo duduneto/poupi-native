@@ -6,6 +6,7 @@ export { default as UseIcoMoon } from './UseIcoMoon';
 export { default as UseInitData } from './UseInitData';
 
 export { default as useForm } from './useForm';
+export { default as useResize } from './useResize';
 export { default as useResponsive } from './useResponsive';
 export { default as useRouter } from './useRouter';
 export { default as useStl } from './useStl';
