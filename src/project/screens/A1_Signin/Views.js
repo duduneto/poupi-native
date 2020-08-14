@@ -15,15 +15,12 @@ import { useStl, useResize } from '../../../useMorfos';
 const stlBodyView = [];
 const stlBanner = {
   desk: {
-    // ...useStl.flexCenter,
-
     height: 500,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
   mob: {
-    // ...useStl.flexStart,
     height: 500,
     display: 'flex',
     alignItems: 'center',
@@ -35,8 +32,6 @@ const stlTitleTxt = [useStl.txtTitleScreen, { color: '#fff' }];
 // --------- BANNER CONTAINER
 const stlImgSport = {
   desk: {
-    // width: 448,
-    // height: 400,
     resizeMode: 'contain',
     width: '45%',
     height: '80%',
@@ -50,7 +45,6 @@ const stlImgSport = {
 
     position: 'absolute',
     bottom: -70,
-    // bottom: 0,
   },
 };
 const stlImgDetail = [
