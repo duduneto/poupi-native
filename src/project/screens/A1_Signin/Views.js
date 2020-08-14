@@ -7,70 +7,102 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import { useSelector } from 'react-redux';
 
 // ----------- import Internals
-import { useStl, utils } from '../../../useMorfos';
-const { setPath } = utils;
+import { useStl, useResize } from '../../../useMorfos';
 
 // #region :: STYLEs *********
 const stlBodyView = [];
-const stlBanner = [useStl.flexCenter, { height: 500 }];
+const stlBanner = {
+  desk: {
+    // ...useStl.flexCenter,
+
+    height: 500,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  mob: {
+    // ...useStl.flexStart,
+    height: 500,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+};
 const stlTitleTxt = [useStl.txtTitleScreen, { color: '#fff' }];
 
-// --------- DEVICES ADJUSTMENTs
-const stlSlogan = [{ color: '#fff' }];
-const condDesk = useStl.isDesktop;
-const stlWebFrame = [
-  useStl.colBreak,
-  condDesk
-    ? {
-        width: '80%',
-        marginBottom: 80,
-      }
-    : {
-        width: '50%',
-        marginBottom: 40,
-      },
-];
-
 // --------- BANNER CONTAINER
-const stlImgDetail = [
-  condDesk
-    ? { width: 160, height: 195, position: 'absolute', left: -20, bottom: -40 }
-    : { display: 'none' },
-];
-const stlImgSport = [
-  condDesk
-    ? { width: 448, height: 400, position: 'absolute', right: 200, bottom: -40 }
-    : {
-        width: 288,
-        height: 240,
-        position: 'absolute',
-        right: 20,
-        bottom: -100,
-      },
-];
-const stlImgCurves = [
-  {
-    width: 700,
-    height: 550,
+const stlImgSport = {
+  desk: {
+    // width: 448,
+    // height: 400,
+    resizeMode: 'contain',
+    width: '45%',
+    height: '80%',
     position: 'absolute',
-    right: 0,
-    top: -10,
+    right: '8%',
+    bottom: -80,
+  },
+  mob: {
+    width: 268,
+    height: 240,
+
+    position: 'absolute',
+    bottom: -70,
+    // bottom: 0,
+  },
+};
+const stlImgDetail = [
+  {
+    width: 160,
+    height: 195,
+    resizeMode: 'contain',
+    position: 'absolute',
+    left: '-4%',
+    bottom: '-10%',
   },
 ];
+
 const stlImgLogo = [{ width: 120, height: 60, marginLeft: 0 }];
-const stlContentBann = [{ width: '80%', marginBottom: 50 }];
+const stlContentBann = {
+  desk: {
+    width: '80%',
+  },
+  mob: {},
+};
 
 // --------- FEATURES
 const stlFeatContainer = [
   useStl.flexCenter,
   { marginTop: 160, marginBottom: 80 },
 ];
+const stlWebFrame = {
+  desk: {
+    width: '80%',
+    marginBottom: 80,
+    flexDirection: 'row',
+  },
+  mob: {
+    width: '60%',
+    marginBottom: 40,
+    flexDirection: 'column',
+  },
+};
 const stlTermsBox = [{ marginBottom: 30 }];
 const stlImg = [{ width: 60, height: 60 }];
-const stlColumn = [useStl.flex1, useStl.padBreak];
+const stlColumn = {
+  desk: {
+    flex: 1,
+    paddingHorizontal: 14,
+    paddingBottom: 0,
+  },
+  mob: {
+    flex: 1,
+    paddingHorizontal: 0,
+    paddingBottom: 40,
+  },
+};
 
 // --------- BUTTONS
 const stlBtCallAct1 = [
@@ -105,6 +137,7 @@ const stlBtImg = [
 ];
 
 // --------- TEXTs
+const stlSlogan = [{ color: '#fff' }];
 const stlBtTxtWhite = [useStl.txtPrimaryInverse, { zIndex: 10 }];
 const stlTxtEnter = [
   useStl.txtBase,
@@ -122,15 +155,22 @@ const stlTxtTeam = {
   fontSize: 10,
   marginTop: 5,
 };
-const stlTxtBase = [
-  {
-    color: '#555',
+const txtBase = {
+  color: '#555',
+  textAlign: 'left',
+  marginBottom: 20,
+  width: '100%',
+};
+const stlTxtBase = {
+  desk: {
+    ...txtBase,
     fontSize: 16,
-    textAlign: 'left',
-    marginBottom: 20,
-    width: '100%',
   },
-];
+  mob: {
+    ...txtBase,
+    fontSize: 12,
+  },
+};
 const stlTxtBolder = [{ textAlign: 'left', width: '100%', fontWeight: 'bold' }];
 const stlTxtDisplay1 = [
   stlTxtBolder,
@@ -148,23 +188,21 @@ const stlTxtDisplay3 = [
 // #endregion *********
 
 export default ({ info }) => {
-  // ----------- set Selectors
-  const condDesk = useSelector(stt => setPath(stt, 'rdCondDesk'));
+  // ----------- set Conds
+  const condDesk = useResize();
+  const condSource = condDesk ? info.bg_desk : info.bg;
 
   // ----------- set Return
   return (
     <View style={stlBodyView}>
       {/* ----------- Banner */}
-      <ImageBackground source={info.background} style={stlBanner}>
-        {!condDesk && (
+      <ImageBackground source={condSource} style={useResize(stlBanner)}>
+        {condDesk && (
           <>
-            <Image source={info.curves} style={stlImgCurves} />
             <Image source={info.detail} style={stlImgDetail} />
           </>
         )}
-        <Image source={info.sport} style={stlImgSport} />
-
-        <View style={stlContentBann}>
+        <View style={useResize(stlContentBann)}>
           <Image source={info.logo} style={stlImgLogo} />
           <Text style={stlTitleTxt}>{info.content.title}</Text>
           <Text style={stlSlogan}>{info.content.slogan}</Text>
@@ -174,27 +212,28 @@ export default ({ info }) => {
             <Image source={info.btnBg} style={stlBtImg} />
           </TouchableOpacity>
         </View>
+        <Image source={info.sport} style={useResize(stlImgSport)} />
       </ImageBackground>
 
       {/* ----------- App Features */}
       <View style={stlFeatContainer}>
-        <View style={stlWebFrame}>
-          <View style={stlColumn}>
+        <View style={useResize(stlWebFrame)}>
+          <View style={useResize(stlColumn)}>
             <Text style={stlTxtDisplay1}>{info.content.txtDisplay1}</Text>
             <Text style={stlTxtDisplay2}>{info.content.txtDisplay2}</Text>
             <Text style={stlTxtDisplay3}>{info.content.txtDisplay3}</Text>
           </View>
-          <View style={stlColumn}>
+          <View style={useResize(stlColumn)}>
             <Image source={info.img1} style={stlImg} />
-            <Text style={stlTxtBase}>{info.content.feature1}</Text>
+            <Text style={useResize(stlTxtBase)}>{info.content.feat1}</Text>
           </View>
-          <View style={stlColumn}>
+          <View style={useResize(stlColumn)}>
             <Image source={info.img2} style={stlImg} />
-            <Text style={stlTxtBase}>{info.content.feature2}</Text>
+            <Text style={useResize(stlTxtBase)}>{info.content.feat2}</Text>
           </View>
-          <View style={stlColumn}>
+          <View style={useResize(stlColumn)}>
             <Image source={info.img3} style={stlImg} />
-            <Text style={stlTxtBase}>{info.content.feature3}</Text>
+            <Text style={useResize(stlTxtBase)}>{info.content.feat3}</Text>
           </View>
         </View>
         <View>

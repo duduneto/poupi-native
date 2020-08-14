@@ -25,11 +25,11 @@ export default (state, action) => {
         txtBtn1: 'ENTRE AGORA',
         txtBtn2: 'ENCONTRE UM PLANO',
         txtBtn3: 'Ir para os TERMOS',
-        feature1:
+        feat1:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-        feature2:
+        feat2:
           'Contrary to popular belief, Lorem Ipsum is not simply random text.',
-        feature3:
+        feat3:
           'It has survived not only five centuries, but also the leap into electronic typesetting.',
       };
 
