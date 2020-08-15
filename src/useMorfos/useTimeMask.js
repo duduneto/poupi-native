@@ -17,6 +17,7 @@ export default function useTimeStamp() {
       let arrFormat = format.split(format.includes(':') ? ':' : '-');
       arrFormat.map(_format => {
         dateFormat.push(dateOpts[_format]);
+        return '';
       });
       dateLayout1 = dateFormat.join(format.includes(':') ? ':' : '/');
       return dateLayout1;

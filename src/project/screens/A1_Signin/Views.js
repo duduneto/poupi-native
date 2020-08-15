@@ -115,7 +115,7 @@ const stlBtCallAct2 = [
     alignItems: 'center',
     overflow: 'hidden',
     width: 270,
-    backgroundColor: '#FF3743',
+    // backgroundColor: '#FF3743',
   },
 ];
 const stlBtTerms = [{ color: '#193E76', marginTop: 20 }];

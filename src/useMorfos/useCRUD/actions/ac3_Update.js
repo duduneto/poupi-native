@@ -1,5 +1,9 @@
 export default (state, action) => {
-  const { rdPermissionList, rdTeachers, rdSchedulePf } = state;
+  const {
+    rdPermissionList,
+    // rdTeachers,
+    rdSchedulePf,
+  } = state;
 
   return {
     clearAll() {

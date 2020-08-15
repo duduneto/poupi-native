@@ -1,5 +1,10 @@
 export default (type, infoObj, infoPar) => {
-  const { firebase, firestore, dispatch, asyncCall } = infoPar;
+  const {
+    // firebase,
+    firestore,
+    dispatch,
+    asyncCall,
+  } = infoPar;
 
   const newRemoveItem = {
     deleteModality: () => {

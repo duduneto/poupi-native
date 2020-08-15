@@ -16,7 +16,7 @@ const lightGray = '#f6f6f6';
 const lineGray = '#ebebeb';
 const dotGray = '#ccc';
 const mediumGray = '#999';
-const darkGray = '#333';
+// const darkGray = '#333';
 const black = '#000';
 
 // Fill Colors ----
@@ -24,7 +24,7 @@ const bgPrimary = { backgroundColor: primaryColor };
 const bgSecondary = { backgroundColor: secondaryColor };
 const bgTertiary = { backgroundColor: tertiaryColor };
 const bgSc = { backgroundColor: lightGray };
-const bgRed = { backgroundColor: 'red' };
+// const bgRed = { backgroundColor: 'red' };
 
 // Text Colors ----
 const txtPrimaryInverse = { color: inverseColor };

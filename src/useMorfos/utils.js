@@ -1,8 +1,5 @@
 // export const consoleRender = (name, info) =>
 //     false && console.log(`RENDER => ${name}`, info || '-')
-// export const findItem = (item, arr) => arr.find(res => res.docId === item)
-// export const findIndexId= (item, arr) => arr.findIndex(res => res.docId === item)
-// export const filterFn= (arr, type) => arr.filter(res => res.type === type)
 export const timeFunc = func => setTimeout(func, 900);
 
 export const toArr = obj => {
@@ -41,7 +38,7 @@ export const currencyMask = (info, returnAsNumber) => {
     const stringWithMask = (onlyNumbers / 100)
       .toFixed(2)
       .replace('.', ',')
-      .replace(/\d(?=(\d{3})+\,)/g, '$&.');
+      .replace(/\d(?=(\d{3})+,)/g, '$&.');
     return stringWithMask;
   }
 };

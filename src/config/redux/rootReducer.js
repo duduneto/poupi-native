@@ -2,13 +2,14 @@
 import initialState from '../../project/initialState';
 import actions from '../../useMorfos/useCRUD/actions';
 import screens from '../../project/screens';
-import { toArr } from '../../useMorfos/utils';
+import // toArr
+'../../useMorfos/utils';
 import configReducers from './configReducers';
 
 function allReducers(state, action) {
   const loopReducer = (state, action) => {
     let loopObj = {};
-    const refScs = '../../project/screens';
+    // const refScs = '../../project/screens';
 
     for (const key in screens) {
       const item = screens[key];
