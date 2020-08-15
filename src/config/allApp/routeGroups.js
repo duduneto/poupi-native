@@ -3,11 +3,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 // ----------- import Internals
-import { NavUp } from './comps';
+import { NavUp } from '../../project/comps';
 import {
   useRouter,
   // useSelectors
-} from '../useMorfos';
+} from '../../useMorfos';
 
 // ----------- Components
 
