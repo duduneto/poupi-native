@@ -11,6 +11,18 @@ import {
 // ----------- import Internals
 import { useStl, useResize } from '../../../useMorfos';
 
+// ----------- import Images
+import logo from '../../images/logo.png';
+import sport from '../../images/sport.png';
+import detail from '../../images/detail.png';
+// import curves from '../../images/curves.png';
+import img1 from '../../images/img1.png';
+import img2 from '../../images/img2.png';
+import img3 from '../../images/img3.png';
+import bg from '../../images/bg.jpg';
+import bg_desk from '../../images/bg_desk.jpg';
+import btnBg from '../../images/gradient_btn.png';
+
 // #region :: STYLEs *********
 const stlBodyView = [];
 const stlBanner = {
@@ -184,7 +196,7 @@ const stlTxtDisplay3 = [
 export default ({ info }) => {
   // ----------- set Conds
   const condDesk = useResize();
-  const condSource = condDesk ? info.bg_desk : info.bg;
+  const condSource = condDesk ? bg_desk : bg;
 
   // ----------- set Return
   return (
@@ -193,20 +205,20 @@ export default ({ info }) => {
       <ImageBackground source={condSource} style={useResize(stlBanner)}>
         {condDesk && (
           <>
-            <Image source={info.detail} style={stlImgDetail} />
+            <Image source={detail} style={stlImgDetail} />
           </>
         )}
         <View style={useResize(stlContentBann)}>
-          <Image source={info.logo} style={stlImgLogo} />
+          <Image source={logo} style={stlImgLogo} />
           <Text style={stlTitleTxt}>{info.content.title}</Text>
           <Text style={stlSlogan}>{info.content.slogan}</Text>
           <Text style={stlTxtEnter}>{info.content.enterUsing}</Text>
           <TouchableOpacity style={stlBtCallAct1} onPress={info.enter}>
             <Text style={stlBtTxtWhite}>{info.content.txtBtn1}</Text>
-            <Image source={info.btnBg} style={stlBtImg} />
+            <Image source={btnBg} style={stlBtImg} />
           </TouchableOpacity>
         </View>
-        <Image source={info.sport} style={useResize(stlImgSport)} />
+        <Image source={sport} style={useResize(stlImgSport)} />
       </ImageBackground>
 
       {/* ----------- App Features */}
@@ -218,15 +230,15 @@ export default ({ info }) => {
             <Text style={stlTxtDisplay3}>{info.content.txtDisplay3}</Text>
           </View>
           <View style={useResize(stlColumn)}>
-            <Image source={info.img1} style={stlImg} />
+            <Image source={img1} style={stlImg} />
             <Text style={useResize(stlTxtBase)}>{info.content.feat1}</Text>
           </View>
           <View style={useResize(stlColumn)}>
-            <Image source={info.img2} style={stlImg} />
+            <Image source={img2} style={stlImg} />
             <Text style={useResize(stlTxtBase)}>{info.content.feat2}</Text>
           </View>
           <View style={useResize(stlColumn)}>
-            <Image source={info.img3} style={stlImg} />
+            <Image source={img3} style={stlImg} />
             <Text style={useResize(stlTxtBase)}>{info.content.feat3}</Text>
           </View>
         </View>
