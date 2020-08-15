@@ -11,4 +11,3 @@ export { default as useRouter } from './useRouter';
 export { default as useStl } from './useStl';
 export { default as useToggle } from './useToggle';
 export { default as useTimeMask } from './useTimeMask';
-export { default as utils } from './utils';

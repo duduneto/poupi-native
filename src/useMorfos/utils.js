@@ -1,61 +1,52 @@
-const utils = {
-  consoleRender: (name, info) =>
-    false && console.log(`RENDER => ${name}`, info || '-'),
+// export const consoleRender = (name, info) =>
+//     false && console.log(`RENDER => ${name}`, info || '-')
+// export const findItem = (item, arr) => arr.find(res => res.docId === item)
+// export const findIndexId= (item, arr) => arr.findIndex(res => res.docId === item)
+// export const filterFn= (arr, type) => arr.filter(res => res.type === type)
+export const timeFunc = func => setTimeout(func, 900);
 
-  findItem: (item, arr) => arr.find(res => res.docId === item),
-
-  findIndexId: (item, arr) => arr.findIndex(res => res.docId === item),
-
-  filterFn: (arr, type) => arr.filter(res => res.type === type),
-
-  timeFunc: func => setTimeout(func, 900),
-
-  toArr(obj) {
-    var newArr = [];
-    for (var item in obj) newArr.push(obj[item]);
-    return newArr;
-  },
-
-  setPath: (obj, path = '') =>
-    path.split('.').reduce((p, c) => p && p[c], obj && obj),
-
-  hasData(data) {
-    const checkArr = [];
-
-    const loop = info => {
-      const isObj = typeof info === 'object';
-      if (isObj) {
-        for (var item in info) loop(info[item]);
-        return;
-      }
-      checkArr.push(info && true);
-    };
-
-    loop(data);
-
-    const findTrue = checkArr.find(item => item);
-    const finalCheck = findTrue ? true : false;
-    return finalCheck;
-  },
-
-  currencyMask: (info, returnAsNumber) => {
-    if (returnAsNumber) {
-      return Number(String(info).replace(/\D/g, '')) / 100;
-    } else {
-      const _info = String(info);
-      const onlyNumbers = Number(_info.replace(/\D/g, ''));
-      const stringWithMask = (onlyNumbers / 100)
-        .toFixed(2)
-        .replace('.', ',')
-        .replace(/\d(?=(\d{3})+\,)/g, '$&.');
-      return stringWithMask;
-    }
-  },
+export const toArr = obj => {
+  var newArr = [];
+  for (var item in obj) newArr.push(obj[item]);
+  return newArr;
 };
 
-utils.mergeDeep = mergeDeep;
+export const setPath = (obj, path = '') =>
+  path.split('.').reduce((p, c) => p && p[c], obj && obj);
+export const hasData = data => {
+  const checkArr = [];
 
-function mergeDeep(...objects) {
+  const loop = info => {
+    const isObj = typeof info === 'object';
+    if (isObj) {
+      for (var item in info) loop(info[item]);
+      return;
+    }
+    checkArr.push(info && true);
+  };
+
+  loop(data);
+
+  const findTrue = checkArr.find(item => item);
+  const finalCheck = findTrue ? true : false;
+  return finalCheck;
+};
+
+export const currencyMask = (info, returnAsNumber) => {
+  if (returnAsNumber) {
+    return Number(String(info).replace(/\D/g, '')) / 100;
+  } else {
+    const _info = String(info);
+    const onlyNumbers = Number(_info.replace(/\D/g, ''));
+    const stringWithMask = (onlyNumbers / 100)
+      .toFixed(2)
+      .replace('.', ',')
+      .replace(/\d(?=(\d{3})+\,)/g, '$&.');
+    return stringWithMask;
+  }
+};
+
+export const mergeDeep = (...objects) => {
   const isObject = obj => obj && typeof obj === 'object';
 
   return objects.reduce((prev, obj) => {
@@ -66,7 +57,7 @@ function mergeDeep(...objects) {
       if (Array.isArray(pVal) && Array.isArray(oVal)) {
         prev[key] = pVal.concat(...oVal);
       } else if (isObject(pVal) && isObject(oVal)) {
-        prev[key] = utils.mergeDeep(pVal, oVal);
+        prev[key] = mergeDeep(pVal, oVal);
       } else {
         prev[key] = oVal;
       }
@@ -74,6 +65,4 @@ function mergeDeep(...objects) {
 
     return prev;
   }, {});
-}
-
-export default utils;
+};

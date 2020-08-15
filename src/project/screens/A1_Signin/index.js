@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // ----------- import Internals
 import ViewDF from './Views';
 import { useRouter, utils, UseLoader } from '../../../useMorfos';
+import { setPath } from '../../../useMorfos/utils';
 
 // ----------- import Images
 import logo from '../../images/logo.png';
@@ -17,9 +18,6 @@ import img3 from '../../images/img3.png';
 import bg from '../../images/bg.jpg';
 import bg_desk from '../../images/bg_desk.jpg';
 import btnBg from '../../images/gradient_btn.png';
-
-// ----------- set Utils
-const { setPath } = utils;
 
 // ----------- set Info Screen
 export const infoSc = {

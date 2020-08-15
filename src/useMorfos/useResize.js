@@ -1,7 +1,6 @@
 // ----------- import Packs
 import { useSelector } from 'react-redux';
-import utils from './utils';
-const { setPath } = utils;
+import { setPath } from './utils';
 
 export default stl => {
   // ----------- set Selectors

@@ -2,10 +2,8 @@
 import initialState from '../../project/initialState';
 import actions from '../../useMorfos/useCRUD/actions';
 import screens from '../../project/screens';
-import { utils } from '../../useMorfos';
+import { toArr } from '../../useMorfos/utils';
 import configReducers from './configReducers';
-
-const { toArr } = utils;
 
 function allReducers(state, action) {
   const loopReducer = (state, action) => {
