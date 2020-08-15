@@ -5,8 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 // ----------- import Internals
 import { store, persistor } from './config/redux';
-// import Router from './config/allApp';
-import Router from './config/router';
+import Router from './config/allApp';
 
 // ----------- set Default Component
 export default () => (
