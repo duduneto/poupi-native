@@ -1,19 +1,19 @@
 export default (state, action) => {
-  const { rdPermissionList } = state;
+  const { sttPermissionList } = state;
 
   return {
     clearAction() {
-      const rdName = action.rdName;
+      const sttName = action.sttName;
 
-      return { ...state, [rdName]: null };
+      return { ...state, [sttName]: null };
     },
     delMailPermission() {
       const { idx } = action;
-      rdPermissionList.splice(idx, 1);
+      sttPermissionList.splice(idx, 1);
 
       return {
         ...state,
-        rdPermissionList: [...rdPermissionList],
+        sttPermissionList: [...sttPermissionList],
       };
     },
   };

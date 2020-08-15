@@ -11,7 +11,7 @@ import reducers from '.';
 const persistConfig = {
   storage: condStorage,
   key: 'root',
-  whitelist: ['rdPersists'],
+  whitelist: ['sttPersist'],
 };
 
 export default persistReducer(persistConfig, reducers);

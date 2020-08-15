@@ -22,7 +22,7 @@ const stlDescTxt = [useStl.txtBase, useStl.txtCenter];
 // #endregion *********
 
 export default ({ info }) => {
-  const content = useSelector(state => state.rdScs[info.scCode].content);
+  const content = useSelector(state => state.sttScs[info.scCode].content);
 
   return (
     <View style={stlBodyView}>

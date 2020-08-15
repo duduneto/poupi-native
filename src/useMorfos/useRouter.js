@@ -48,7 +48,7 @@ export default info => {
   const callRedirect = useRouter('redirect');
 
   // function Call
-  // let condReturn = rdAuthUser ? children : callRedirect("signin");
+  // let condReturn = sttAuthUser ? children : callRedirect("signin");
 
 */
 

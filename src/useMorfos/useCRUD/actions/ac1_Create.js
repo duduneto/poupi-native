@@ -1,24 +1,24 @@
 export default (state, action) => ({
   setPermission() {
-    return { ...state, rdPermissionAdm: action.value };
+    return { ...state, sttPermissionAdm: action.value };
   },
   addModalities() {
     return {
       ...state,
-      rdRoute: 'modalitiesFilter',
+      sttRoute: 'modalitiesFilter',
     };
   },
   addTeacher() {
     return {
       ...state,
-      rdSelectedCateg: action.toAction,
-      rdRoute: 'teachersList',
+      sttSelectedCateg: action.toAction,
+      sttRoute: 'teachersList',
     };
   },
   addScheduledClass() {
     return {
       ...state,
-      rdRoute: 'teacherPf',
+      sttRoute: 'teacherPf',
     };
   },
   addPermissions() {
@@ -26,8 +26,8 @@ export default (state, action) => ({
 
     return {
       ...state,
-      rdRoute: 'modalitiesFilter',
-      rdPermissionList: actionValue,
+      sttRoute: 'modalitiesFilter',
+      sttPermissionList: actionValue,
     };
   },
 });

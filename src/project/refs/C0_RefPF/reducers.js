@@ -107,7 +107,7 @@ export default (state, action) => {
       return {
         ...state,
         ...mergeDeep(state.X0, { msgs: { [action.pendingName]: false } }),
-        rdName: [...action.value],
+        sttName: [...action.value],
       };
     },
 
@@ -115,7 +115,7 @@ export default (state, action) => {
     X0_ChangeName: () => {
       return {
         ...state,
-        rdName: { ...action.value },
+        sttName: { ...action.value },
       };
     },
   };
@@ -159,7 +159,7 @@ export default (state, action) => {
 /*
   const asyncFn = async () => {
     // ---------- set Async Call
-    const type = state.rdForm.announced.type;
+    const type = state.sttForm.announced.type;
   
     const urlBase = `https://fipeapi.appspot.com/api/1/${type}/marcas.json`;
   

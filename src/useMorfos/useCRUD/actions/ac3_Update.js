@@ -1,8 +1,8 @@
 export default (state, action) => {
   const {
-    rdPermissionList,
-    // rdTeachers,
-    rdSchedulePf,
+    sttPermissionList,
+    // sttTeachers,
+    sttSchedulePf,
   } = state;
 
   return {
@@ -10,63 +10,66 @@ export default (state, action) => {
       return action.initialState;
     },
     login() {
-      return { ...state, rdAuthUser: action.item };
+      return { ...state, sttAuthUser: action.item };
     },
     signIn() {
       return {
         ...state,
-        rdAuthUser: action.toAction,
-        rdRoute: 'modalitiesFilter',
+        sttAuthUser: action.toAction,
+        sttRoute: 'modalitiesFilter',
       };
     },
     signOut() {
       return {
         ...state,
-        rdAuthUser: null,
-        rdRouter: 'signin',
-        rdContent: null,
-        rdPermissionAdm: null,
-        rdModalities: null,
+        sttAuthUser: null,
+        sttRouter: 'signin',
+        sttContent: null,
+        sttPermissionAdm: null,
+        sttModalities: null,
       };
     },
     editMode() {
-      return { ...state, rdEditMode: action.value };
+      return { ...state, sttEditMode: action.value };
     },
     setRoute() {
       const { value } = action;
 
-      return { ...state, rdRoute: value };
+      return { ...state, sttRoute: value };
     },
     updatePermissions() {
       const { value } = action;
 
-      const lastIdx = rdPermissionList.length - 1;
-      const idSelected = rdPermissionList[lastIdx].id;
+      const lastIdx = sttPermissionList.length - 1;
+      const idSelected = sttPermissionList[lastIdx].id;
       const idToNum = Number(idSelected) + 1;
       const idToTxt = String(idToNum);
 
       return {
         ...state,
-        rdPermissionList: [...rdPermissionList, { email: value, id: idToTxt }],
+        sttPermissionList: [
+          ...sttPermissionList,
+          { email: value, id: idToTxt },
+        ],
       };
     },
     selectToEdit() {
-      return { ...state, rdEditFields: action.item };
+      return { ...state, sttEditFields: action.item };
     },
     selectCateg() {
-      return { ...state, rdSelectedCateg: action.id };
+      return { ...state, sttSelectedCateg: action.id };
     },
     selectTeacher() {
-      return { ...state, rdSelectedTeacher: action.obj };
+      return { ...state, sttSelectedTeacher: action.obj };
     },
     subscribeUser() {
       return {
         ...state,
-        rdSchedulePf: { ...rdSchedulePf, students: action.value.students },
+        sttSchedulePf: { ...sttSchedulePf, students: action.value.students },
       };
     },
-    rdSchedulePf() {
-      return { ...state, rdSchedulePf: action.value };
+    sttSchedulePf() {
+      return { ...state, sttSchedulePf: action.value };
     },
   };
 };

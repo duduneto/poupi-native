@@ -1,6 +1,6 @@
 export default store => next => action => {
-  const { type, rdName, rdPropName, asyncName } = action;
-  const condRdPropName = rdPropName ? `${rdName}{${rdPropName}}` : rdName;
+  const { type, sttName, sttPropName, asyncName } = action;
+  const condRdPropName = sttPropName ? `${sttName}{${sttPropName}}` : sttName;
   const condType = type.replace('_', '&').split('&')[0] === 'ASYNC';
   const condActionName = condType ? asyncName : type;
   const condRdName = condRdPropName ? `${condRdPropName}` : condActionName;

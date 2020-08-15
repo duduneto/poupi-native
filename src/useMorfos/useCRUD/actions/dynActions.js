@@ -1,37 +1,37 @@
 export default (state, action) => {
-  const { rdName } = action;
-  const rdSelected = state[rdName];
-  const { rdPropName } = action;
-  const propValue = [rdSelected][rdPropName];
+  const { sttName } = action;
+  const sttSelected = state[sttName];
+  const { sttPropName } = action;
+  const propValue = [sttSelected][sttPropName];
 
   return {
     CHANGE_REDUCER() {
-      return { ...state, [rdName]: action.value };
+      return { ...state, [sttName]: action.value };
     },
 
     CHANGE_RD_ARR() {
-      rdSelected.push(action.rdArrValue);
-      return { ...state, [rdName]: [...rdSelected] };
+      sttSelected.push(action.sttArrValue);
+      return { ...state, [sttName]: [...sttSelected] };
     },
 
     CHANGE_RD_IDX() {
-      rdSelected[action.rdIdx] = action.value;
-      return { ...state, [rdName]: [...rdSelected] };
+      sttSelected[action.sttIdx] = action.value;
+      return { ...state, [sttName]: [...sttSelected] };
     },
 
     CHANGE_RD_PROP() {
       return {
         ...state,
-        [rdName]: { ...rdSelected, [rdPropName]: action.value },
+        [sttName]: { ...sttSelected, [sttPropName]: action.value },
       };
     },
 
     CHANGE_STL_PROP() {
       return {
         ...state,
-        [rdName]: {
-          ...rdSelected,
-          [rdPropName]: {
+        [sttName]: {
+          ...sttSelected,
+          [sttPropName]: {
             ...propValue,
             props: action.value,
           },

@@ -29,7 +29,7 @@ export default () => {
   // ---------- set Init
   const InitSc = ({ children }) => {
     const infoInit = {
-      setSel: `rdScs.${scCode}`,
+      setSel: `sttScs.${scCode}`,
       setAction: `initData${scCode}`,
     };
     return <UseInitData info={infoInit} children={children} />;

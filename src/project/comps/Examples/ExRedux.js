@@ -74,14 +74,14 @@ const mockDb = {
 };
 
 const initialState = {
-  rdCounts: {},
+  sttCounts: {},
 
-  rdCategs: {
+  sttCategs: {
     objCategInfo: {},
     objItemsByCateg: {},
   },
-  rdCurrCateg: null,
-  rdTempData: {},
+  sttCurrCateg: null,
+  sttTempData: {},
 };
 
 const reducers = (state = initialState, action) => {
@@ -92,7 +92,7 @@ const reducers = (state = initialState, action) => {
     setCurrCateg() {
       return {
         ...state,
-        rdCurrCateg: action.value,
+        sttCurrCateg: action.value,
       };
     },
 
@@ -122,33 +122,33 @@ const reducers = (state = initialState, action) => {
 
       return {
         ...state,
-        rdCurrCateg: mockDb.categories.xxx1.docId,
-        rdCategs: { ...state.rdCategs, objCategInfo, objItemsByCateg },
+        sttCurrCateg: mockDb.categories.xxx1.docId,
+        sttCategs: { ...state.sttCategs, objCategInfo, objItemsByCateg },
       };
     },
 
     Decrement() {
-      const currItem = state.rdCounts[value];
+      const currItem = state.sttCounts[value];
       const condValue = currItem ?? 0;
       const newCount = condValue - 1;
       const condMin = newCount >= 0 ? newCount : 0;
       return {
         ...state,
-        rdCounts: {
-          ...state.rdCounts,
+        sttCounts: {
+          ...state.sttCounts,
           [value]: condMin,
         },
       };
     },
 
     Increment() {
-      const currItem = state.rdCounts[value];
+      const currItem = state.sttCounts[value];
       const condValue = currItem ?? 0;
       const newCount = condValue + 1;
       return {
         ...state,
-        rdCounts: {
-          ...state.rdCounts,
+        sttCounts: {
+          ...state.sttCounts,
           [value]: newCount,
         },
       };
@@ -175,7 +175,7 @@ function DataComp() {
   console.log('RENDER => DataComp');
 
   return (
-    <UseInitData action={'initData'} statePath="rdCategs.objCategInfo">
+    <UseInitData action={'initData'} statePath="sttCategs.objCategInfo">
       <div>
         <h1>Supermercado</h1>
         <h2>
@@ -216,14 +216,14 @@ function UseInitData({ children, statePath, action }) {
 function Cart() {
   console.log('RENDER => Cart');
   const cartSum = useSelector(state =>
-    utils.toArr(state.rdCounts).reduce((p, c) => p + c, 0),
+    utils.toArr(state.sttCounts).reduce((p, c) => p + c, 0),
   );
   return <div>{`Carrinho ${cartSum}`}</div>;
 }
 
 const CategBtnList = ({ children }) => {
   console.log('RENDER => CategBtnList');
-  const currList = useSelector(state => state.rdCategs.objCategInfo);
+  const currList = useSelector(state => state.sttCategs.objCategInfo);
 
   const CompChildren = children.type;
   const mapChildren = utils
@@ -236,8 +236,8 @@ const CategBtnList = ({ children }) => {
 function CategBtn({ itemId }) {
   console.log('RENDER => CategBtn');
   const dispatch = useDispatch();
-  const nameItem = useSelector(state => state.rdCategs.objCategInfo);
-  // const nameItem = useSelector(state => state.rdCategs.objCategInfo[itemId].name);
+  const nameItem = useSelector(state => state.sttCategs.objCategInfo);
+  // const nameItem = useSelector(state => state.sttCategs.objCategInfo[itemId].name);
   const btnSetCateg = () => dispatch({ type: 'setCurrCateg', value: itemId });
 
   return <button onClick={btnSetCateg}>Categ: {nameItem[itemId].name}</button>;
@@ -246,8 +246,8 @@ function CategBtn({ itemId }) {
 function ProdList({ children }) {
   console.log('RENDER => ProdList');
   const currList = useSelector(state => {
-    const currCateg = state.rdCurrCateg;
-    const condReturn = state.rdCategs.objItemsByCateg[currCateg];
+    const currCateg = state.sttCurrCateg;
+    const condReturn = state.sttCategs.objItemsByCateg[currCateg];
     return condReturn;
   });
 
@@ -281,8 +281,8 @@ function ItemProd({ itemId }) {
 function ProdName({ itemId }) {
   console.log('RENDER => ProdName');
   const nameItem = useSelector(state => {
-    const currCateg = state.rdCurrCateg;
-    const condReturn = state.rdCategs.objItemsByCateg[currCateg][itemId].name;
+    const currCateg = state.sttCurrCateg;
+    const condReturn = state.sttCategs.objItemsByCateg[currCateg][itemId].name;
     return condReturn;
   });
 
@@ -291,22 +291,22 @@ function ProdName({ itemId }) {
 
 function CategCount() {
   console.log('RENDER => CategCount');
-  const rdCounts = useSelector(state => {
-    const counts = state.rdCounts;
-    const currCateg = state.rdCurrCateg;
-    const categItems = state.rdCategs.objItemsByCateg[currCateg];
+  const sttCounts = useSelector(state => {
+    const counts = state.sttCounts;
+    const currCateg = state.sttCurrCateg;
+    const categItems = state.sttCategs.objItemsByCateg[currCateg];
     const arrNumbs = Object.keys(categItems)
       .map(item => counts[item])
       .filter(item => item);
     const arrSum = arrNumbs.reduce((p, c) => p + c, 0);
     return arrSum;
   });
-  return <div>Total da CATEGORIA: {rdCounts}</div>;
+  return <div>Total da CATEGORIA: {sttCounts}</div>;
 }
 
 function ProdCount({ itemId }) {
   console.log('RENDER => ProdCount');
-  const countItem = useSelector(state => state.rdCounts[itemId]);
+  const countItem = useSelector(state => state.sttCounts[itemId]);
   const condCountItem = countItem ?? 0;
   return <div>{condCountItem}</div>;
 }

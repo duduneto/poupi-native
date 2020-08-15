@@ -2,59 +2,59 @@ export default (state, action) => ({
   setRdContent() {
     return {
       ...state,
-      rdContent: { ...action.value },
+      sttContent: { ...action.value },
     };
   },
   setUsersList() {
     return {
       ...state,
-      rdUsers: [...action.value],
+      sttUsers: [...action.value],
     };
   },
   setModList() {
     return {
       ...state,
-      rdModalities: [...action.value],
+      sttModalities: [...action.value],
     };
   },
   setPermList() {
-    const { rdAuthUser } = state;
+    const { sttAuthUser } = state;
     const arrEmails = action.value[0].arrEmails;
 
     const condAccess =
       arrEmails &&
       arrEmails.some(item => {
-        return rdAuthUser && item.email === rdAuthUser.userEmail;
+        return sttAuthUser && item.email === sttAuthUser.userEmail;
       });
 
     return {
       ...state,
-      rdPermissionAdm: condAccess,
-      rdPermissionList: arrEmails,
+      sttPermissionAdm: condAccess,
+      sttPermissionList: arrEmails,
     };
   },
   setTeachersList() {
     return {
       ...state,
-      rdTeachers: [...action.value],
+      sttTeachers: [...action.value],
     };
   },
   setSchedulesClassesList() {
     return {
       ...state,
-      rdScheduledClasses: [...action.value],
+      sttScheduledClasses: [...action.value],
     };
   },
   setScheduledClasStudentsList() {
     return {
       ...state,
-      rdScheduledClassStudentList: [...action.value],
+      sttScheduledClassStudentList: [...action.value],
     };
   },
   setUserSubscribedClasses() {
     return {
       ...state,
-      rdMySubscribedClasses: [...action.value],
+      sttMySubscribedClasses: [...action.value],
     };
   },
 });

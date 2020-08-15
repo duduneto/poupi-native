@@ -52,7 +52,7 @@ export default () => {
   // ------ Hooks + Vars
   const callRouter = useRouter();
   const scContent = useSelector(state => {
-    // const teste = state.rdContent[1].sc404;
+    // const teste = state.sttContent[1].sc404;
     return {
       title: 'PÃ¡gina nÃ£o encontrada',
       errorMsg: 'Mensagem Erro',

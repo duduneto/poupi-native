@@ -82,7 +82,7 @@ const stlSCROLLVIEW = [stlBODY1, { backgroundColor: '#f0f0f0' }];
 export default props => {
   // ----------- set Hooks
   let [sttMenu, setMenu] = React.useState(false);
-  let rdPermissionAdm = useSelector(state => state.rdPermissionAdm);
+  let sttPermissionAdm = useSelector(state => state.sttPermissionAdm);
   let callRouter = useRouter();
   let dispatch = useDispatch();
 
@@ -91,7 +91,7 @@ export default props => {
   let condMenu = sttMenu;
 
   const goBack = () => {
-    dispatch({ type: 'clearAction', rdName: 'rdEditFields' });
+    dispatch({ type: 'clearAction', sttName: 'sttEditFields' });
     callRouter(props.back);
   };
 
@@ -101,7 +101,7 @@ export default props => {
   const title = props.title;
   const icon = props.icon;
 
-  let condFab = rdPermissionAdm && props.fab;
+  let condFab = sttPermissionAdm && props.fab;
 
   let goTo = () => callRouter(props.fab);
 
