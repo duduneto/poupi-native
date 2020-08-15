@@ -9,7 +9,7 @@ import { setPath } from '../../../useMorfos/utils';
 
 // ----------- set Info Screen
 export const infoSc = {
-  path: 'xxx',
+  path: 'example',
   groupSc: 'priv1',
 
   scCode: 'X0',
