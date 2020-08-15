@@ -6,13 +6,13 @@ import React from 'react';
 // import CurrSC from '../../project/screens/A2_Terms';
 import CurrSC from '../../project/screens/A1_Signin';
 import useListenResize from './useListenResize';
-// import useInitRoutes from './useInitRoutes';
+import useInitRoutes from './useInitRoutes';
 
 // ----------- set All App Screen
 export default () => {
   // ----------- set Hooks
   useListenResize();
-  // useInitRoutes();
+  useInitRoutes();
 
   // ----------- set Return
   return <CurrSC />;

@@ -1,10 +1,10 @@
+// ---------- set Initial State
 export default {
-  // ----- Routes
-  rdRoute: { path: 'signin', infoSc: {} },
+  // ---------- set Route
+  sttRoute: { path: 'signin' },
 
-  // ----- Persistence
-  rdPersists: {
+  // ---------- set Persistence
+  sttPersists: {
     userId: null,
   },
-  // ----------
 };
