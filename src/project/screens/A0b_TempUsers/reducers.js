@@ -12,13 +12,30 @@ import {
 // ---------- set Reducers
 export default (state, action) => {
   return {
-    // ---------- set Init Name Data
-    X0_InitNameList: () => {
-      const expName = { a: '1' };
+    // ---------- set Init Content Data
+    X0_InitContentData: () => {
+      const scContent = {
+        title: 'Signin',
+        subTitle: 'Oi Mundo!',
+        description: 'Lorem Ipsum!',
+        txtBtn: 'Ir para os TERMOS',
+      };
+
+      const condData = true;
 
       return {
         ...state,
-        rdName: { ...state.rdName, expName },
+        X0: { ...state.X0, scContent, condData },
+      };
+    },
+
+    // ---------- set Init Name Data
+    X0_InitNameData: () => {
+      const scContent = { a: '1' };
+
+      return {
+        ...state,
+        X0: { ...state.X0, scContent },
       };
     },
 
@@ -114,47 +131,47 @@ export default (state, action) => {
 // ***** X0_AddName_START *****
 
 /*
-    
-    // ---------- set Async Function
-    const asyncFn = async () => {
-      // ---------- set Data to Add
-      const data = {
-        userName: 'Pedro Silva',
-        image: 'https://source.unsplash.com/200x150/?portrait&boy&1',
-        infos: {
-          jumpOnboarding: true,
-        },
-        typeAccount: 'client',
-      };
-    
-      // ---------- set Async Call
-      const refDb = firestore.collection('users').doc();
-      data.docId = refDb.id;
-      data.createdAt = firebase.firestore.Timestamp.now();
-      const dataSuccess = await refDb.set();
-    
-      // ---------- dispatch SUCCESS
-      return action.asyncDispatch(...);
+  
+  // ---------- set Async Function
+  const asyncFn = async () => {
+    // ---------- set Data to Add
+    const data = {
+      userName: 'Pedro Silva',
+      image: 'https://source.unsplash.com/200x150/?portrait&boy&1',
+      infos: {
+        jumpOnboarding: true,
+      },
+      typeAccount: 'client',
     };
-    */
+  
+    // ---------- set Async Call
+    const refDb = firestore.collection('users').doc();
+    data.docId = refDb.id;
+    data.createdAt = firebase.firestore.Timestamp.now();
+    const dataSuccess = await refDb.set();
+  
+    // ---------- dispatch SUCCESS
+    return action.asyncDispatch(...);
+  };
+  */
 
 // ---------- set FETCH Name
 // ***** X0_FetchName_START *****
 
 /*
-    const asyncFn = async () => {
-      // ---------- set Async Call
-      const type = state.rdForm.announced.type;
-    
-      const urlBase = `https://fipeapi.appspot.com/api/1/${type}/marcas.json`;
-    
-      const fetchUrl = await fetch(urlBase, { method: 'get' });
-      const dataSuccess = await fetchUrl.json();
-    
-      // ---------- dispatch SUCCESS
-      return action.asyncDispatch(...);
-    }
-    */
+  const asyncFn = async () => {
+    // ---------- set Async Call
+    const type = state.rdForm.announced.type;
+  
+    const urlBase = `https://fipeapi.appspot.com/api/1/${type}/marcas.json`;
+  
+    const fetchUrl = await fetch(urlBase, { method: 'get' });
+    const dataSuccess = await fetchUrl.json();
+  
+    // ---------- dispatch SUCCESS
+    return action.asyncDispatch(...);
+  }
+  */
 
 // ---------------
 // #endregion
