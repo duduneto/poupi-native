@@ -3,8 +3,8 @@
 import { persistReducer } from 'redux-persist';
 
 // ----------- import Internals
-import condStorage from '../condPacks/storage';
-import reducers from './rootReducer';
+import condStorage from '../../condPacks/storage';
+import reducers from '.';
 
 // ----------- set Config
 
