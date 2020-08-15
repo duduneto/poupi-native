@@ -9,7 +9,7 @@ export default () => {
   // ----------- set Effects
   const fxCondDesk = () => {
     const setResize = () =>
-      dispatch({ type: 'base_CondDesktop', value: condWidth() });
+      dispatch({ type: 'base_CondDesktopSize', value: condWidth() });
 
     window.addEventListener('resize', setResize);
     return () => window.removeEventListener('resize', setResize);
