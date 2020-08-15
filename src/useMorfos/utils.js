@@ -1,6 +1,6 @@
 // export const consoleRender = (name, info) =>
 //     false && console.log(`RENDER => ${name}`, info || '-')
-export const timeFunc = func => setTimeout(func, 900);
+export const timeFunc = (func, ms = 900) => setTimeout(func, ms);
 
 export const toArr = obj => {
   var newArr = [];
