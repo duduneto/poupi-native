@@ -1,7 +1,7 @@
 // import Internals
 import initialState from '../../../project/initialState';
 import actions from '../../../useMorfos/useCRUD/actions';
-import baseReducers from './baseReducers';
+import baseReducers from '../../allApp/reducers';
 import loopScs from './loopScs';
 
 function allReducers(state, action) {
