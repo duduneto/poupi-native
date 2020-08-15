@@ -5,12 +5,14 @@ import React from 'react';
 // ---------- import Internals
 // import CurrSC from '../../project/screens/A2_Terms';
 import CurrSC from '../../project/screens/A1_Signin';
-import useResponsive from './useResponsive';
+import useListenResize from './useListenResize';
+// import useInitRoutes from './useInitRoutes';
 
 // ----------- set All App Screen
 export default () => {
   // ----------- set Hooks
-  useResponsive();
+  useListenResize();
+  // useInitRoutes();
 
   // ----------- set Return
   return <CurrSC />;

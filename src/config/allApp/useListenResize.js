@@ -7,15 +7,16 @@ import { condWidth } from '../condPacks/dimensions';
 
 export default () => {
   // ----------- set Effects
-  const fxCondDesk = () => {
-    const setResize = () =>
-      dispatch({ type: 'base_CondDesktopSize', value: condWidth() });
+  const callResize = () =>
+    dispatch({ type: 'base_ListenResize', value: condWidth() });
 
-    window.addEventListener('resize', setResize);
-    return () => window.removeEventListener('resize', setResize);
+  const fxResize = () => {
+    window.addEventListener('resize', callResize);
+    return () => window.removeEventListener('resize', callResize);
   };
 
   // ----------- set Hooks
   const dispatch = useDispatch();
-  React.useEffect(fxCondDesk, []);
+  React.useEffect(fxResize, []);
+  React.useEffect(callResize, []);
 };
