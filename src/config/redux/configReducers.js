@@ -8,7 +8,7 @@ export default (state, action) => {
     // ---------- set Desktop Size
     base_CondDesktop: () => {
       const pointBreak = 620;
-      const condDesk = pointBreak >= action.value;
+      const condDesk = action.value >= pointBreak;
 
       return {
         ...state,

@@ -41,7 +41,6 @@ const txtColorSubTitle = { color: black };
 // #region :: REFs
 // ---------------
 
-const isDesktop = width > 650;
 const sizeTxtRef = 20;
 const sizeBtnRef = 50;
 const heightBarRef = 60;
@@ -269,7 +268,6 @@ const Styles = StyleSheet.create({
   posRelative,
   fullWidth,
   fullHeight,
-  isDesktop,
 
   txtBase,
   txtSmall,
@@ -685,24 +683,6 @@ const Styles = StyleSheet.create({
     right: -5,
     width: 20,
     top: 5,
-  },
-
-  // ---------------
-  //  #endregion
-  // ***************************************
-
-  // ***************************************
-  // #region :: SCREEN BREAK POINTS
-  // ---------------
-  widthBreak: {
-    width: width < 650 ? '50%' : '80%',
-  },
-  colBreak: {
-    flexDirection: width < 650 ? 'column' : 'row',
-  },
-  padBreak: {
-    paddingHorizontal: width < 650 ? 0 : 14,
-    paddingBottom: width < 650 ? 40 : 0,
   },
 
   // ---------------

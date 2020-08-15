@@ -14,7 +14,8 @@ import curves from '../../images/curves.png';
 import img1 from '../../images/img1.png';
 import img2 from '../../images/img2.png';
 import img3 from '../../images/img3.png';
-import background from '../../images/bg.jpg';
+import bg from '../../images/bg.jpg';
+import bg_desk from '../../images/bg_desk.jpg';
 import btnBg from '../../images/gradient_btn.png';
 
 // ----------- set Utils
@@ -65,7 +66,8 @@ export function DataTrue() {
     // --- infoSc
     content,
     // --- imgs
-    background,
+    bg,
+    bg_desk,
     curves,
     detail,
     sport,
