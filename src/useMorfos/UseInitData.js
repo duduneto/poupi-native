@@ -4,17 +4,25 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // ---------- import Internals
 import { UseLoader } from '../useMorfos';
-import { setPath, hasData } from '../useMorfos/utils';
+import { setPath } from '../useMorfos/utils';
 
 export default ({ children, info }) => {
-  const { setSel, setAction } = info;
-  const dispatch = useDispatch();
-  const initData = () => {
-    dispatch({ type: setAction });
-  };
-  React.useEffect(initData, []);
-  const data = useSelector(state => setPath(state, setSel));
-  const condReturn = hasData(data);
+  // ----------- set Info
+  const { selSttCond, reducerName } = info;
 
-  return condReturn ? children : UseLoader({ size: 25 });
+  // ----------- set Selectors
+  const selInitData = stt => setPath(stt, selSttCond);
+  const initData = useSelector(selInitData);
+
+  // ----------- set Effects
+  const fxInitData = () => dispatch({ type: reducerName });
+
+  // ----------- set Hooks
+  const dispatch = useDispatch();
+  React.useEffect(fxInitData, []);
+
+  // ----------- set Return
+  const condReturn = initData;
+
+  return condReturn ? children : UseLoader();
 };
