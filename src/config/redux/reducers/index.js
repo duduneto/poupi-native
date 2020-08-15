@@ -1,13 +1,11 @@
 // import Internals
 import initialState from '../../../project/initialState';
-import actions from '../../../useMorfos/useCRUD/actions';
 import base from './baseReducers';
 import allApp from '../../allApp/reducers';
 import loopScs from './loopScs';
 
-function allReducers(state, action) {
-  const allSyncActions = {
-    ...actions(state, action),
+export default (state = initialState, action) => {
+  const allReducers = {
     ...base(state, action),
     ...allApp(state, action),
     ...loopScs(state, action),
@@ -17,9 +15,7 @@ function allReducers(state, action) {
     },
   };
 
-  const condCalls = allSyncActions[action.type] === undefined;
+  const condCalls = allReducers[action.type] === undefined;
 
-  return condCalls ? state : allSyncActions[action.type]();
-}
-
-export default (state = initialState, action) => allReducers(state, action);
+  return condCalls ? state : allReducers[action.type]();
+};
