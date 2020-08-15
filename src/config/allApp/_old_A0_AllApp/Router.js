@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Platform } from 'react-native';
 
 // ----------- import Internals
-import { useRouter } from '../useMorfos';
+import { useRouter } from '../../../useMorfos';
 
 export default ({ info }) => {
   useChangeHistory();

@@ -3,12 +3,11 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // ----------- import Internals
-import allScs from '../../screens';
+import allScs from '../../../project/screens';
 import Router from '..';
-import groups from '../../routeGroups';
-import { utils } from '../../../useMorfos';
-const { toArr } = utils;
-const X_404 = require('../../X_404');
+import groups from '../routeGroups';
+import { toArr } from '../../../useMorfos/utils';
+const X_404 = require('../../../project/X_404');
 
 // ----------- set All screens
 const screens = (arr = []) => arr.map(item => require(`../${item}`));
@@ -45,7 +44,7 @@ const changeFavicon = src => {
 function useSelectSc(arr) {
   const dispatch = useDispatch();
   const selectedRoute = useSelector(state => state.rdRoute.path);
-  const arrScs = utils.toArr(arr);
+  const arrScs = toArr(arr);
   const selectedSc = arrScs.find(
     item => item.infoSc && item.infoSc.path === selectedRoute,
   );
