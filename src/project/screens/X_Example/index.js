@@ -4,10 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import ViewDF from './Views';
-import { useRouter, utils, UseLoader } from '../../../useMorfos';
-
-// ----------- set Utils
-const { setPath } = utils;
+import { useRouter, UseLoader } from '../../../useMorfos';
+import { setPath } from '../../../useMorfos/utils';
 
 // ----------- set Info Screen
 export const infoSc = {

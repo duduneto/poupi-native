@@ -3,7 +3,7 @@ import React from 'react';
 // import { useDispatch } from 'react-redux';
 
 // ---------- import Internals
-// import CurrSC from '../../project/screens/X_Example';
+// import CurrSC from '../../project/screens/A2_Terms';
 import CurrSC from '../../project/screens/A1_Signin';
 import useResponsive from './useResponsive';
 
