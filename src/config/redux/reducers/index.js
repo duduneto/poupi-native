@@ -1,13 +1,15 @@
 // import Internals
 import initialState from '../../../project/initialState';
 import actions from '../../../useMorfos/useCRUD/actions';
-import baseReducers from '../../allApp/reducers';
+import base from './baseReducers';
+import allApp from '../../allApp/reducers';
 import loopScs from './loopScs';
 
 function allReducers(state, action) {
   const allSyncActions = {
     ...actions(state, action),
-    ...baseReducers(state, action),
+    ...base(state, action),
+    ...allApp(state, action),
     ...loopScs(state, action),
 
     CLEAR_ALL() {
