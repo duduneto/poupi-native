@@ -4,20 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import ViewDF from './Views';
-import { useRouter, UseLoader } from '../../../useMorfos';
+import { useRouter, UseInitData } from '../../../useMorfos';
 import { setPath } from '../../../useMorfos/utils';
-
-// ----------- import Images
-import logo from '../../images/logo.png';
-import sport from '../../images/sport.png';
-import detail from '../../images/detail.png';
-import curves from '../../images/curves.png';
-import img1 from '../../images/img1.png';
-import img2 from '../../images/img2.png';
-import img3 from '../../images/img3.png';
-import bg from '../../images/bg.jpg';
-import bg_desk from '../../images/bg_desk.jpg';
-import btnBg from '../../images/gradient_btn.png';
 
 // ----------- set Info Screen
 export const infoSc = {
@@ -30,53 +18,34 @@ export const infoSc = {
 // ----------- set Default Component
 export default () => {
   // ----------- set Selectors
-  const selCondData = stt => setPath(stt, `${infoSc.scCode}.condData`);
-  const condData = useSelector(selCondData);
-
-  // ----------- set Effects
-  const fxInitData = () =>
-    dispatch({ type: `${infoSc.scCode}_InitContentData` });
+  const selContent = stt => setPath(stt, `${infoSc.scCode}.scContent`);
+  const content = useSelector(selContent);
 
   // ----------- set Hooks
-  const dispatch = useDispatch();
-  React.useEffect(fxInitData, []);
-
-  // ----------- set Return
-  const condReturn = condData ? <DataTrue /> : <UseLoader />;
-  return condReturn;
-};
-
-export function DataTrue() {
-  // ----------- set Selectors
-  const content = useSelector(stt =>
-    setPath(stt, `${infoSc.scCode}.scContent`),
-  );
-
-  // ----------- set Hooks
-  // const dispatch = useDispatch();
   const callRouter = useRouter();
 
-  // ----------- set Router
+  // ----------- set Routes
   const btnGoto = () => callRouter('terms');
 
-  // ----------- set Return
-  const infoReturn = {
+  // ----------- set Init Signin Data
+  const initSignin = {
+    selSttCond: `${infoSc.scCode}.condData`,
+    reducerName: `${infoSc.scCode}_InitContentData`,
+  };
+
+  // ----------- set Info View
+  const infoView = {
     // --- infoSc
     content,
-    // --- imgs
-    bg,
-    bg_desk,
-    curves,
-    detail,
-    sport,
-    btnBg,
-    logo,
-    img1,
-    img2,
-    img3,
     // --- btns
     btnGoto,
     // userId,
   };
-  return <ViewDF info={infoReturn} />;
-}
+
+  // ----------- set Return
+  return (
+    <UseInitData info={initSignin}>
+      <ViewDF info={infoView} />
+    </UseInitData>
+  );
+};
