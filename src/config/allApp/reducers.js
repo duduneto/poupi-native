@@ -15,7 +15,7 @@ export default (state, action) => {
     // ---------- set Init Routes
     base_InitRoutes: () => {
       // ----------- set Routes Data
-      const allScs = action.value;
+      const allScs = require(`../../project/screens`).default;
 
       // ----------- iterate Screen
       let routesInfo = {};
@@ -23,7 +23,8 @@ export default (state, action) => {
         const item = allScs[key];
         const moduleInfo = require(`../../project/screens/${item}`).infoSc;
         const routeKey = moduleInfo.path;
-        routesInfo[routeKey] = moduleInfo;
+        const folderPath = item;
+        routesInfo[routeKey] = { folderPath, ...moduleInfo };
       }
 
       // ----------- set State
