@@ -1,3 +1,4 @@
+export { default as useData } from './useData';
 export { default as UseOptions } from './UseOptions';
 export { default as UseLoader } from './UseLoader';
 export { default as UseIcoMoon } from './UseIcoMoon';
