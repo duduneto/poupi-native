@@ -5,35 +5,46 @@ export default (state, action) => {
   const sttSelected = state[sttName];
   const { sttPropName } = action;
   const propValue = [sttSelected][sttPropName];
-  
+
   // ---------- set Async Messages Reducers Desconstructions
   const asyncPending = `${action.asyncName}Pending`;
   const asyncError = `${action.asyncName}Error`;
-  
+
   // ---------- set Return
   return {
+    // ---------- set Dynamic Reducers
+    setRoute() {
+      return {
+        ...state,
+        sttRoute: {
+          ...state.sttRoute,
+          path: action.value,
+        },
+      };
+    },
+
     // ---------- set Dynamic Reducers
     CHANGE_REDUCER() {
       return { ...state, [sttName]: action.value };
     },
-    
+
     CHANGE_RD_ARR() {
       sttSelected.push(action.sttArrValue);
       return { ...state, [sttName]: [...sttSelected] };
     },
-    
+
     CHANGE_RD_IDX() {
       sttSelected[action.sttIdx] = action.value;
       return { ...state, [sttName]: [...sttSelected] };
     },
-    
+
     CHANGE_RD_PROP() {
       return {
         ...state,
         [sttName]: { ...sttSelected, [sttPropName]: action.value },
       };
     },
-    
+
     CHANGE_STL_PROP() {
       return {
         ...state,
@@ -46,7 +57,7 @@ export default (state, action) => {
         },
       };
     },
-    
+
     // ---------- set Async Messages Reducers
     ASYNC_START() {
       return {
