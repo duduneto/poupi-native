@@ -10,7 +10,7 @@ import { setPath } from '../../../useMorfos/utils';
 // ----------- set Info Screen
 export const infoSc = {
   path: 'terms',
-  groupSc: 'priv1',
+  groupSc: 'pub2',
 
   scCode: 'A2',
 };
@@ -22,7 +22,7 @@ export default () => {
   const content = useSelector(selContent);
 
   // ----------- set Hooks
-  const callRouter = useRouter();
+  const { callRouter } = useRouter();
 
   // ----------- set Routes
   const btnGoto = () => callRouter('signin');

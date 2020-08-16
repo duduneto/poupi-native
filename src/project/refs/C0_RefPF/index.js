@@ -44,7 +44,7 @@ export function DataTrue() {
 
   // ----------- set Hooks
   const dispatch = useDispatch();
-  const callRouter = useRouter();
+  const { callRouter } = useRouter();
 
   // ----------- set Router
   const btnGoto = () => callRouter('terms');

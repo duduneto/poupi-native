@@ -21,7 +21,7 @@ export default () => {
   const { scCode } = infoSc;
 
   // ---------- set Hooks
-  const callRouter = useRouter();
+  const { callRouter } = useRouter();
 
   // ---------- set Router
   const btnGoto = () => callRouter('terms');

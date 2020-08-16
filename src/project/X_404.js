@@ -50,7 +50,7 @@ const stlCARD = [
 
 export default () => {
   // ------ Hooks + Vars
-  const callRouter = useRouter();
+  const { callRouter } = useRouter();
   const scContent = useSelector(state => {
     // const teste = state.sttContent[1].sc404;
     return {

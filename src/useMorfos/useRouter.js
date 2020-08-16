@@ -1,26 +1,27 @@
-// import Packages
+// ----------- import Packs
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-export default info => {
-  // set Hooks
+export default () => {
+  // ----------- set Hooks
   const dispatch = useDispatch();
 
-  const Router = goto => {
+  // ----------- set callRouter
+  const callRouter = path => {
     dispatch({
       type: 'setRoute',
-      value: goto,
+      value: path,
     });
   };
 
-  const Redirect = path => {
-    Router(path);
+  // ----------- set callRedirect
+  const callRedirect = path => {
+    callRouter(path);
     return <></>;
   };
 
-  const condReturn = info === 'redirect' ? Redirect : Router;
-
-  return condReturn;
+  // ----------- set Return
+  return { callRedirect, callRouter };
 };
 
 // ***************************************
@@ -29,19 +30,19 @@ export default info => {
 
 /*
 
-  // set Hooks
-  const callRouter = useRouter();
-
-  // function Call
-  // callRouter("home");
-
+  // ----------- set Hooks
+  const {callRouter} = useRouter();
+  
+  // ----------- set Routes
+  const btnGoto = () => callRouter("home");
+  
   - - or - -
-
-  // set Hooks
-  const callRedirect = useRouter('redirect');
-
-  // function Call
-  // let condReturn = sttAuthUser ? children : callRedirect("signin");
+  
+  // ----------- set Hooks
+  const {callRedirect} = useRouter();
+  
+  // ----------- set Return
+  // const condReturn = sttAuthUser ? children : callRedirect("signin");
 
 */
 
