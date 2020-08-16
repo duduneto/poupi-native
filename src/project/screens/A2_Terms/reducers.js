@@ -13,19 +13,19 @@ import {
 export default (state, action) => {
   return {
     // ---------- set Init Content Data
-    X0_InitContentData: () => {
+    A2_InitContentData: () => {
       const scContent = {
-        title: 'Signin',
+        title: 'Termos',
         subTitle: 'Oi Mundo!',
         description: 'Lorem Ipsum!',
-        txtBtn: 'Ir para os TERMOS',
+        txtBtn: 'Ir para o Signin',
       };
 
       const condData = true;
 
       return {
         ...state,
-        X0: { ...state.X0, scContent, condData },
+        A2: { ...state.A2, scContent, condData },
       };
     },
 

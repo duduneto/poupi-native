@@ -25,7 +25,7 @@ export default () => {
   const callRouter = useRouter();
 
   // ----------- set Routes
-  const btnGoto = () => callRouter('terms');
+  const btnGoToTerms = () => callRouter('terms');
 
   // ----------- set Init Signin Data
   const initSignin = {
@@ -38,7 +38,7 @@ export default () => {
     // --- infoSc
     content,
     // --- btns
-    btnGoto,
+    btnGoToTerms,
     // userId,
   };
 

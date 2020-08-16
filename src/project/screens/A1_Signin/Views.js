@@ -203,17 +203,13 @@ export default ({ info }) => {
     <View style={stlBodyView}>
       {/* ----------- Banner */}
       <ImageBackground source={condSource} style={useResize(stlBanner)}>
-        {condDesk && (
-          <>
-            <Image source={detail} style={stlImgDetail} />
-          </>
-        )}
+        {condDesk && <Image source={detail} style={stlImgDetail} />}
         <View style={useResize(stlContentBann)}>
           <Image source={logo} style={stlImgLogo} />
           <Text style={stlTitleTxt}>{info.content.title}</Text>
           <Text style={stlSlogan}>{info.content.slogan}</Text>
           <Text style={stlTxtEnter}>{info.content.enterUsing}</Text>
-          <TouchableOpacity style={stlBtCallAct1} onPress={info.enter}>
+          <TouchableOpacity style={stlBtCallAct1} onPress={info.btnGoToTerms}>
             <Text style={stlBtTxtWhite}>{info.content.txtBtn1}</Text>
             <Image source={btnBg} style={stlBtImg} />
           </TouchableOpacity>
@@ -243,14 +239,15 @@ export default ({ info }) => {
           </View>
         </View>
         <View>
-          <TouchableOpacity style={stlBtCallAct2} onPress={info.enter}>
+          <TouchableOpacity style={stlBtCallAct2} onPress={info.btnGoToTerms}>
             <Text style={stlBtTxtWhite}>{info.content.txtBtn3}</Text>
           </TouchableOpacity>
           <Text style={stlTxtTeam}>{info.content.txtTeam}</Text>
         </View>
         <View style={stlTermsBox}>
-          <TouchableOpacity onPress={info.goToTerms} style={stlBtTerms}>
+          <TouchableOpacity onPress={info.btn} style={stlBtTerms}>
             <Text>{info.content.terms}</Text>
+            <Text>VAZIO</Text>
           </TouchableOpacity>
         </View>
       </View>
