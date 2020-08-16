@@ -1,11 +1,10 @@
 // ----------- import Packs
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import ViewDF from './Views';
-import { useRouter, UseInitData } from '../../../useMorfos';
-import { setPath } from '../../../useMorfos/utils';
+import { useRouter, UseInitData, useData } from '../../../useMorfos';
 
 // ----------- set Info Screen
 export const infoSc = {
@@ -17,9 +16,8 @@ export const infoSc = {
 
 // ----------- set Default Component
 export default () => {
-  // ----------- set Selectors
-  const selContent = stt => setPath(stt, `${infoSc.scCode}.scContent`);
-  const content = useSelector(selContent);
+  // ----------- set Data
+  const content = useData(`${infoSc.scCode}.scContent`);
 
   // ----------- set Hooks
   const { callRouter } = useRouter();
@@ -33,7 +31,7 @@ export default () => {
     reducerName: `${infoSc.scCode}_InitContentData`,
   };
 
-  // ----------- set Info View
+  // ----------- set Return
   const infoView = {
     // --- infoSc
     content,
@@ -42,7 +40,6 @@ export default () => {
     // userId,
   };
 
-  // ----------- set Return
   return (
     <UseInitData info={initSignin}>
       <ViewDF info={infoView} />

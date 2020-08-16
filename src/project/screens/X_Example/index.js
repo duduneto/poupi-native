@@ -1,59 +1,48 @@
 // ----------- import Packs
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import ViewDF from './Views';
-import { useRouter, UseLoader } from '../../../useMorfos';
-import { setPath } from '../../../useMorfos/utils';
+import { useRouter, UseInitData, useData } from '../../../useMorfos';
 
 // ----------- set Info Screen
 export const infoSc = {
   path: 'example',
-  groupSc: 'priv1',
+  groupSc: 'pub2',
 
-  scCode: 'X0',
+  scCode: 'X',
 };
 
 // ----------- set Default Component
 export default () => {
-  // ----------- set Selectors
-  const selCondData = stt => setPath(stt, `${infoSc.scCode}.condData`);
-  const condData = useSelector(selCondData);
-
-  // ----------- set Effects
-  const fxInitData = () =>
-    dispatch({ type: `${infoSc.scCode}_InitContentData` });
+  // ----------- set Data
+  const content = useData(`${infoSc.scCode}.scContent`);
 
   // ----------- set Hooks
-  const dispatch = useDispatch();
-  React.useEffect(fxInitData, []);
-
-  // ----------- set Return
-  const condReturn = condData ? <DataTrue /> : <UseLoader />;
-  return condReturn;
-};
-
-export function DataTrue() {
-  // ----------- set Selectors
-  const content = useSelector(stt =>
-    setPath(stt, `${infoSc.scCode}.scContent`),
-  );
-
-  // ----------- set Hooks
-  const dispatch = useDispatch();
   const { callRouter } = useRouter();
 
-  // ----------- set Router
-  const btnGoto = () => callRouter('terms');
+  // ----------- set Routes
+  const btnGoto = () => callRouter('signin');
+
+  // ----------- set Init Signin Data
+  const initSignin = {
+    selSttCond: `${infoSc.scCode}.condData`,
+    reducerName: `${infoSc.scCode}_InitContentData`,
+  };
 
   // ----------- set Return
-  const infoReturn = {
+  const infoView = {
     // --- infoSc
     content,
     // --- btns
     btnGoto,
     // userId,
   };
-  return <ViewDF info={infoReturn} />;
-}
+
+  return (
+    <UseInitData info={initSignin}>
+      <ViewDF info={infoView} />
+    </UseInitData>
+  );
+};
