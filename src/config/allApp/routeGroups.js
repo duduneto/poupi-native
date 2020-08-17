@@ -1,26 +1,22 @@
 // ----------- import Packs
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 // ----------- import Internals
 import { NavUp } from '../../project/comps';
-import {
-  useRouter,
-  // useSelectors
-} from '../../useMorfos';
+import { useRouter, useData } from '../../useMorfos';
 
 // ----------- Components
 
 const Public = ({ children }) => {
   const { callRedirect } = useRouter();
-  const authUser = useSelector(state => state.rdAuthUser);
+  const authUser = useData(`sttPersist.userId`);
   const condReturn = authUser ? callRedirect('profile') : children;
   return condReturn;
 };
 
 const Private = ({ children }) => {
   const { callRedirect } = useRouter();
-  const authUser = useSelector(state => state.rdAuthUser);
+  const authUser = useData(`sttPersist.userId`);
   const condReturn = authUser ? children : callRedirect('signin');
   return condReturn;
 };
@@ -28,12 +24,12 @@ const Private = ({ children }) => {
 const Adm = ({ children, permissionRef }) => {
   const CallAdm = () => {
     const { callRedirect } = useRouter();
-    // const { useCondPermission } = useSelectors();
-    // const condPermission = useCondPermission(permissionRef);
-    // const condReturn = condPermission ? children : callRedirect('signin');
-    // return condReturn;
+    const userPermission = useData(`sttAuthUser.permissionNum`);
+    const condPermission = userPermission === permissionRef;
+    const condReturn = condPermission ? children : callRedirect('signin');
+    return condReturn;
   };
-  return <Private>{/* <CallAdm /> */}</Private>;
+  return <Private children={<CallAdm />} />;
 };
 
 const Priv1 = ({ children }) => <Adm permissionRef={1} children={children} />;
