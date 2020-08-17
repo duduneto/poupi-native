@@ -1,7 +1,6 @@
 // ----------- import Packs
 import React from 'react';
 import { View, Text } from 'react-native';
-import { useSelector } from 'react-redux';
 
 // ----------- import Internals
 import { useStl } from '../../../useMorfos';

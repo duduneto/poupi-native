@@ -1,13 +1,9 @@
 // ----------- import Packs
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 // ---------- import Internals
-// import CurrSC from '../../project/screens/A2_Terms';
-import CurrSC from '../../project/screens/A1_Signin';
 import useListenResize from './useListenResize';
-import { UseInitData } from '../../useMorfos';
-import { setPath } from '../../useMorfos/utils';
+import { UseInitData, useData } from '../../useMorfos';
 
 // ----------- set All App Screen
 export default () => {
@@ -27,16 +23,15 @@ export default () => {
 
 function SelectedRoute() {
   // ----------- set Selectors
-  const selRouteData = stt => setPath(stt, `sttRoute`);
-  const routeData = useSelector(selRouteData);
+  const routeData = useData(`sttRoute`);
 
   // ----------- set Hooks
   useListenResize();
 
-  // ----------- set Current Route
+  // ----------- set Current Screen
   const { routesInfo, path } = routeData;
   const currModule = routesInfo[path].folderPath;
-  const CompRoute = require(`../../project/screens/${currModule}`).default;
+  const CompScreen = require(`../../project/screens/${currModule}`).default;
 
   // ----------- set Current Group
   const objComps = require(`./routeGroups`).default;
@@ -44,7 +39,7 @@ function SelectedRoute() {
   const arrCurrGroup = objComps[currInfo];
 
   // ----------- set Group Components
-  const newArr = [...arrCurrGroup, CompRoute];
+  const newArr = [...arrCurrGroup, CompScreen];
   let groupComp;
   const renderAll = item => {
     const renderComp = ({ Comp, children }) => <Comp>{children}</Comp>;

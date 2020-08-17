@@ -35,7 +35,6 @@ export default () => {
     content,
     // --- btns
     btnGoToTerms,
-    // userId,
   };
 
   return (

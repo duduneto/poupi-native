@@ -110,10 +110,10 @@ const reducers = (state = initialState, action) => {
         const newObj = {};
         utils.toArr(categData).flatMap(item =>
           utils.toArr(item.items).map(sub => {
-            newObj[item.docId] = {
+            return (newObj[item.docId] = {
               ...newObj[item.docId],
               [sub.id]: { ...sub },
-            };
+            });
           }),
         );
         return newObj;
