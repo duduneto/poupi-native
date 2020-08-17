@@ -33,11 +33,29 @@ function SelectedRoute() {
   // ----------- set Hooks
   useListenResize();
 
-  // ----------- set Route Component
+  // ----------- set Current Route
   const { routesInfo, path } = routeData;
   const currModule = routesInfo[path].folderPath;
   const CompRoute = require(`../../project/screens/${currModule}`).default;
 
+  // ----------- set Current Group
+  const objComps = require(`./routeGroups`).default;
+  const currInfo = routesInfo[path].groupSc;
+  const arrCurrGroup = objComps[currInfo];
+
+  // ----------- set Group Components
+  const newArr = [...arrCurrGroup, CompRoute];
+  let groupComp;
+  const renderAll = item => {
+    const renderComp = ({ Comp, children }) => <Comp>{children}</Comp>;
+
+    groupComp = renderComp({
+      Comp: item,
+      children: groupComp,
+    });
+  };
+  newArr.reverse().map(renderAll);
+
   // ----------- set Return
-  return <CompRoute />;
+  return groupComp;
 }

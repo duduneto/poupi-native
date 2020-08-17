@@ -121,7 +121,7 @@ export default props => {
   return <ViewDF info={infoReturn} />;
 };
 
-const ViewDF = info => {
+const ViewDF = ({ info }) => {
   const condShadow = info.longBar ? null : useStl.shadowBar;
 
   return (
