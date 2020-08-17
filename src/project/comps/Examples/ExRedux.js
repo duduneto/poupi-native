@@ -85,7 +85,7 @@ const initialState = {
 };
 
 const reducers = (state = initialState, action) => {
-  console.log('RENDER => reducers');
+  // console.log('RENDER => reducers');
   const { value } = action;
 
   const actions = {
