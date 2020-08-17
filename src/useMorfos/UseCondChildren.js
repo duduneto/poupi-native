@@ -5,7 +5,10 @@
 import { useData } from '.';
 
 // ----------- set Default Component
-export default ({ children }) => {
-  const showValidation = useData('D1.msgs.showValidation');
-  return showValidation ? children : null;
+export default (dataSel = '') => {
+  const COMP = ({ children }) => {
+    const showValidation = useData(dataSel);
+    return showValidation ? children : null;
+  };
+  return COMP;
 };
