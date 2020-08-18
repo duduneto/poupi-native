@@ -1,65 +1,135 @@
 // export const consoleRender = (name, info) =>
 //     false && console.log(`RENDER => ${name}`, info || '-')
-export const timeFunc = (func, ms = 900) => setTimeout(func, ms);
 
-export const toArr = obj => {
-  var newArr = [];
-  for (var item in obj) newArr.push(obj[item]);
-  return newArr;
-};
+const utils = {
+  timeFunc: (func, ms = 900) => setTimeout(func, ms),
 
-export const setPath = (obj, path = '') =>
-  path.split('.').reduce((p, c) => p && p[c], obj && obj);
-export const hasData = data => {
-  const checkArr = [];
+  toArr(obj) {
+    var newArr = [];
+    for (var item in obj) newArr.push(obj[item]);
+    return newArr;
+  },
 
-  const loop = info => {
-    const isObj = typeof info === 'object';
-    if (isObj) {
-      for (var item in info) loop(info[item]);
-      return;
-    }
-    checkArr.push(info && true);
-  };
+  setPath(obj, path = '') {
+    path.split('.').reduce((p, c) => p && p[c], obj && obj);
+  },
 
-  loop(data);
+  mergeDeep(...objects) {
+    const isObject = obj => obj && typeof obj === 'object';
 
-  const findTrue = checkArr.find(item => item);
-  const finalCheck = findTrue ? true : false;
-  return finalCheck;
-};
+    return objects.reduce((prev, obj) => {
+      Object.keys(obj).forEach(key => {
+        const pVal = prev[key];
+        const oVal = obj[key];
 
-export const currencyMask = (info, returnAsNumber) => {
-  if (returnAsNumber) {
-    return Number(String(info).replace(/\D/g, '')) / 100;
-  } else {
-    const _info = String(info);
-    const onlyNumbers = Number(_info.replace(/\D/g, ''));
-    const stringWithMask = (onlyNumbers / 100)
-      .toFixed(2)
-      .replace('.', ',')
-      .replace(/\d(?=(\d{3})+,)/g, '$&.');
-    return stringWithMask;
-  }
-};
+        if (Array.isArray(pVal) && Array.isArray(oVal)) {
+          prev[key] = pVal.concat(...oVal);
+        } else if (isObject(pVal) && isObject(oVal)) {
+          prev[key] = mergeDeep(pVal, oVal);
+        } else {
+          prev[key] = oVal;
+        }
+      });
 
-export const mergeDeep = (...objects) => {
-  const isObject = obj => obj && typeof obj === 'object';
+      return prev;
+    }, {});
+  },
 
-  return objects.reduce((prev, obj) => {
-    Object.keys(obj).forEach(key => {
-      const pVal = prev[key];
-      const oVal = obj[key];
+  hasData(data) {
+    const checkArr = [];
 
-      if (Array.isArray(pVal) && Array.isArray(oVal)) {
-        prev[key] = pVal.concat(...oVal);
-      } else if (isObject(pVal) && isObject(oVal)) {
-        prev[key] = mergeDeep(pVal, oVal);
-      } else {
-        prev[key] = oVal;
+    const loop = info => {
+      const isObj = typeof info === 'object';
+      if (isObj) {
+        for (var item in info) loop(info[item]);
+        return;
       }
-    });
+      checkArr.push(info && true);
+    };
 
-    return prev;
-  }, {});
+    loop(data);
+
+    const findTrue = checkArr.find(item => item);
+    const finalCheck = findTrue ? true : false;
+    return finalCheck;
+  },
+
+  currencyMask(info, returnAsNumber) {
+    if (returnAsNumber) {
+      return Number(String(info).replace(/\D/g, '')) / 100;
+    } else {
+      const _info = String(info);
+      const onlyNumbers = Number(_info.replace(/\D/g, ''));
+      const stringWithMask = (onlyNumbers / 100)
+        .toFixed(2)
+        .replace('.', ',')
+        .replace(/\d(?=(\d{3})+,)/g, '$&.');
+      return stringWithMask;
+    }
+  },
+
+  // ---------- set Object Iteration
+
+  findKey: (obj, val) => {
+    let found;
+    for (const key in obj) {
+      const item = obj[key];
+      if (val === item) {
+        found = key;
+      }
+    }
+    return found;
+  },
+
+  findVal: (obj, val) => {
+    let found;
+    for (const key in obj) {
+      const item = obj[key];
+      if (val === item) {
+        found = item;
+      }
+    }
+    return found;
+  },
+
+  filterObj: (obj, field, type, cond) => {
+    let found;
+    for (const key in obj) {
+      const item = obj[key];
+      const currField = item && item[field];
+
+      const toSel = {
+        contains() {
+          if (Array.isArray([currField])) {
+            const findFn = itemArr => itemArr === cond;
+            const condFind = currField.find(findFn);
+            if (condFind) {
+              found = { ...found, [key]: item };
+            }
+          }
+        },
+        '==='() {
+          const condFind = currField === cond;
+          if (condFind) {
+            found = { ...found, [key]: item };
+          }
+        },
+      };
+
+      currField && toSel[type]();
+    }
+    return found;
+  },
 };
+
+export const {
+  timeFunc,
+  toArr,
+  setPath,
+  mergeDeep,
+  hasData,
+  currencyMask,
+  findKey,
+  findVal,
+  filterObj,
+} = utils;
