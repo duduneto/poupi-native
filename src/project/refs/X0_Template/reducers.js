@@ -3,7 +3,7 @@
 // import { mergeDeep, setPath } from '../../../useMorfos/utils';
 
 // ---------- set Reducers
-export default (state /* , action */) => ({
+export default (state, action) => ({
   // ---------- set Init Content Data
   X0_InitContentData: () => {
     const scContent = {
