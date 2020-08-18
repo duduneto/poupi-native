@@ -26,7 +26,7 @@ export default () => {
   const btnGoto = () => callRouter('signin');
 
   // ----------- set Init Signin Data
-  const initSignin = {
+  const initComponent = {
     selSttCond: `${infoSc.scCode}.condData`,
     reducerName: `${infoSc.scCode}_InitContentData`,
   };
@@ -41,7 +41,7 @@ export default () => {
   };
 
   return (
-    <UseInitData info={initSignin}>
+    <UseInitData info={initComponent}>
       <ViewDF info={infoView} />
     </UseInitData>
   );
