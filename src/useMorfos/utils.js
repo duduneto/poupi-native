@@ -1,7 +1,8 @@
-// export const consoleRender = (name, info) =>
-//     false && console.log(`RENDER => ${name}`, info || '-')
-
 const utils = {
+  logRender: (name, info = '-') =>
+    process.env.NODE_ENV === 'development' &&
+    console.log(`RENDER => ${name}`, info),
+
   timeFunc: (func, ms = 900) => setTimeout(func, ms),
 
   toArr(obj) {
@@ -123,6 +124,7 @@ const utils = {
 };
 
 export const {
+  logRender,
   timeFunc,
   toArr,
   setPath,
