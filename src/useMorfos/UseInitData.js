@@ -8,14 +8,14 @@ import { setPath } from '../useMorfos/utils';
 
 export default ({ children, info }) => {
   // ----------- set Info
-  const { selSttCond, reducerName } = info;
+  const { selSttCond, reducerName, actionValue } = info;
 
   // ----------- set Selectors
   const selInitData = stt => setPath(stt, selSttCond);
   const initData = useSelector(selInitData);
 
   // ----------- set Effects
-  const fxInitData = () => dispatch({ type: reducerName });
+  const fxInitData = () => dispatch({ type: reducerName, value: actionValue });
 
   // ----------- set Hooks
   const dispatch = useDispatch();
