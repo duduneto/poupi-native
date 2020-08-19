@@ -13,9 +13,17 @@ const utils = {
 
   timeFunc: (func, ms = 900) => setTimeout(func, ms),
 
-  toArr(obj) {
+  toArr(obj, setFields) {
     var newArr = [];
-    for (var item in obj) newArr.push(obj[item]);
+    for (const item in obj) {
+      if (setFields) {
+        for (const fieldName of setFields) {
+          newArr.push({ [fieldName]: obj[item][fieldName] });
+        }
+      } else {
+        newArr.push(obj[item]);
+      }
+    }
     return newArr;
   },
 
