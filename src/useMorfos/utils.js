@@ -3,6 +3,14 @@ const utils = {
     process.env.NODE_ENV === 'development' &&
     console.log(`RENDER => ${name}`, info),
 
+  ezLog: (obj, val) => {
+    const name = Object.keys(obj)[0];
+    return (
+      process.env.NODE_ENV === 'development' &&
+      console.log(`----- EZLOG: ${name} => `, val ?? obj[name])
+    );
+  },
+
   timeFunc: (func, ms = 900) => setTimeout(func, ms),
 
   toArr(obj) {
