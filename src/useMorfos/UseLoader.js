@@ -11,7 +11,7 @@ import { timeFunc } from './utils';
 const stlCenter = [useStl.flexCenter, useStl.flex1];
 
 // ----------- set Default Component
-export default props => timeFunc(<TimeEnd {...props} />);
+export default (props = {}) => <>{timeFunc(<TimeEnd {...props} />)} </>;
 
 // ----------- set Default Loader
 const TimeEnd = props => {
