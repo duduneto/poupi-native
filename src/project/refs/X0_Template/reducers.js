@@ -3,8 +3,8 @@
 // import { mergeDeep, setPath } from '../../../useMorfos/utils';
 
 // ---------- set Reducers
-export default (state, action) => ({
-  // ---------- set Init Content Data
+const reducers = (state, action) => ({
+  // ---------- set Init Data _Name_
   X0_InitContentData: () => {
     const scContent = {
       title: 'Signin',
@@ -21,3 +21,6 @@ export default (state, action) => ({
     };
   },
 });
+
+// ---------- set Exports
+export default reducers;

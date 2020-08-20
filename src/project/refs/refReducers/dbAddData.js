@@ -3,8 +3,8 @@ import { firestore } from '../../../config/firebase/fbConfig';
 import { mergeDeep } from '../../../useMorfos/utils';
 
 // ---------- set Reducers
-export default (state, action) => ({
-  // ---------- set ADD Name
+const reducers = (state, action) => ({
+  // ---------- set ADD _Name_
   X0_ADD_Name_START: () => {
     // ---------- set REFs
     const refs = { refName: '_Name_', refCode: 'X0' };
@@ -94,3 +94,6 @@ export default (state, action) => ({
     return { ...state };
   },
 });
+
+// ---------- set Exports
+export default reducers;

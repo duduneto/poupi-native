@@ -2,9 +2,9 @@
 // import { firestore } from '../../../config/firebase/fbConfig';
 
 // ---------- set Reducers
-export default (state, action) => {
+const reducers = (state, action) => {
   return {
-    // ---------- set CHANGE Name
+    // ---------- set CHANGE _Name_
     X0_ChangeName: () => {
       return {
         ...state,
@@ -13,3 +13,6 @@ export default (state, action) => {
     },
   };
 };
+
+// ---------- set Exports
+export default reducers;
