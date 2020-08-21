@@ -1,30 +1,21 @@
 // ---------- import Internals
-import { firestore, firebase } from '../../../config/firebase/fbConfig';
+import { firestore } from '../../../config/firebase/fbConfig';
 import { mergeDeep } from '../../../useMorfos/utils';
 
 // ---------- set Reducers
 const reducers = (state, action) => ({
-  // ---------- set ADD _Name_
-  X0_ADD_Name_START: () => {
+  // ---------- set GET X0 _Name_
+  X0_GET_Name_START: () => {
     const refCode = 'X0';
 
     // ---------- set Async Function
     const asyncFn = async () => {
-      // ---------- set Data to Add
-      const dataToAdd = {
-        userName: 'Pedro Silva',
-        image: 'https://source.unsplash.com/200x150/?portrait&boy&1',
-        infos: {
-          jumpOnboarding: true,
-        },
-        typeAccount: 'client',
-      };
-
       // ---------- set Async Call
-      const refDb = firestore.collection('users').doc();
-      dataToAdd.docId = refDb.id;
-      dataToAdd.createdAt = Date.now();
-      const dataSuccess = await refDb.set();
+      const dataDb = await firestore.collection('coll').get();
+
+      // ---------- set Data to Show
+      const dataSuccess = [];
+      dataDb.forEach(doc => dataSuccess.push(doc.data()));
 
       // ------ return SUCCESS
       return action.asyncDispatch({
