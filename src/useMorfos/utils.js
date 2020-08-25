@@ -1,15 +1,33 @@
 const utils = {
-  logRender: (name, info = '-') =>
-    process.env.NODE_ENV === 'development' &&
-    console.log(`RENDER => ${name}`, info),
-
-  ezLog: (obj, val) => {
-    const name = Object.keys(obj)[0];
-    return (
-      process.env.NODE_ENV === 'development' &&
-      console.log(`----- EZLOG: ${name} => `, val ?? obj[name])
-    );
+  logRender: (name, info = '-') => {
+    if (process.env.NODE_ENV === 'development') {
+      return console.log(`RENDER => ${name}`, info);
+    }
   },
+
+  ezLog: (...info) => {
+    const condLog = process.env.NODE_ENV === 'development';
+
+    const condType = typeof info[0] === 'object';
+    const condMany = condType && utils.toArr(info[0]).length === 1;
+    const condArr = Array.isArray(info[0]);
+    const condLog1 =
+      !condMany && ((condType && condArr) || condMany || info[0] !== null);
+    const log1 = () => console.log('>>>>> EZLOG: => ', ...info);
+    const log2 = () => {
+      const name = Object.keys(info[0])[0];
+
+      console.log(`>>>>> EZLOG: ${name} => `, info[0][name]);
+    };
+    const condReturn = condLog1 ? log1() : log2();
+    return condLog && condReturn;
+  },
+
+  findItem: (item, arr) => arr.find(res => res.docId === item),
+
+  findIndexId: (item, arr) => arr.findIndex(res => res.docId === item),
+
+  filterFn: (arr, type) => arr.filter(res => res.type === type),
 
   timeFunc: (func, ms = 900) => setTimeout(func, ms),
 
@@ -42,7 +60,7 @@ const utils = {
         if (Array.isArray(pVal) && Array.isArray(oVal)) {
           prev[key] = pVal.concat(...oVal);
         } else if (isObject(pVal) && isObject(oVal)) {
-          prev[key] = mergeDeep(pVal, oVal);
+          prev[key] = utils.mergeDeep(pVal, oVal);
         } else {
           prev[key] = oVal;
         }
@@ -131,15 +149,126 @@ const utils = {
             found = { ...found, [key]: item };
           }
         },
+        '!=='() {
+          const condFind = currField !== cond;
+          if (condFind) {
+            found = { ...found, [key]: item };
+          }
+        },
       };
+      const condSel = toSel[type] === undefined;
+      const LEIA = 'Verifique alguma que possa ser usada no lugar';
+      if (condSel) {
+        throw new Error(`Tipo de condição '${type}' não foi definida`, LEIA);
+      }
 
       currField && toSel[type]();
     }
     return found;
   },
+
+  asyncRefs: (action, asyncFn) => {
+    // ---------- set Reference Code
+    const refCode = action.type.split('_')[0];
+
+    // ---------- set Async Reference
+    const ref = {
+      // ---------- set Names
+      startName: action.type + '_START',
+      pendingName: action.type + '_PENDING',
+      errorName: action.type + '_ERROR',
+      mockName: action.type + '_MOCK',
+      successCondData: action.type + '_CONDDATA',
+      successMsgName: action.type + '_SUCCESS_MSG',
+      successName: action.type + '_SUCCESS',
+
+      // ---------- set START Message
+      startMsg: () => {
+        return action.asyncDispatch({
+          type: 'base_ASYNC_MSGS',
+          loggerName: ref.startName,
+          code: refCode,
+          msgs: { [ref.pendingName]: true, [ref.errorName]: null },
+        });
+      },
+
+      // ---------- set ERROR Message
+      errorMsg: err => {
+        return action.asyncDispatch({
+          type: 'base_ASYNC_MSGS',
+          loggerName: ref.errorName,
+          value: err,
+          code: refCode,
+          msgs: { [ref.pendingName]: false, [ref.errorName]: err.message },
+        });
+      },
+
+      // ---------- set SUCCESS Message
+      successMsg: res => {
+        return action.asyncDispatch({
+          type: 'base_ASYNC_MSGS',
+          loggerName: ref.successMsgName,
+          value: res,
+          code: refCode,
+          msgs: {
+            [ref.pendingName]: false,
+            [ref.errorName]: false,
+            [ref.successCondData]: true,
+          },
+        });
+      },
+
+      // ---------- set Async Call
+      callAsync: () => {
+        // ---------- call START Msg
+        ref.startMsg();
+
+        const condArr = Array.isArray(asyncFn);
+        const condCall = () => (condArr ? Promise.all(asyncFn) : asyncFn());
+
+        // ---------- call Async Function
+        return (
+          condCall()
+            // ---------- call ERROR Msg
+            .catch(err => ref.errorMsg(err))
+            // ---------- call SUCCESS Msg
+            .then(res => {
+              ref.successMsg(res);
+              action.asyncDispatch({
+                type: ref.successName,
+                value: res,
+              });
+            })
+        );
+      },
+
+      // ---------- set Mock Call
+      callMock: () => {
+        // ---------- set Mock Data
+        const mockData = {
+          item1: {
+            id: 1,
+            prop: 'mock1',
+          },
+          item2: {
+            id: 2,
+            prop: 'mock1',
+          },
+        };
+
+        return action.asyncDispatch({
+          type: ref.mockName,
+          value: mockData,
+        });
+      },
+    };
+
+    return ref;
+  },
 };
 
 export const {
+  ezLog,
   logRender,
   timeFunc,
   toArr,
@@ -150,4 +279,7 @@ export const {
   findKey,
   findVal,
   filterObj,
+  asyncRefs,
 } = utils;
+
+export default utils;

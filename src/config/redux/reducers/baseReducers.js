@@ -12,47 +12,12 @@ export default (state, action) => {
   // ---------- set Return
   return {
     // ---------- set Dynamic Reducers
-    setRoute() {
+    base_setRoute() {
       return {
         ...state,
         sttRoute: {
           ...state.sttRoute,
           path: action.value,
-        },
-      };
-    },
-
-    // ---------- set Dynamic Reducers
-    CHANGE_REDUCER() {
-      return { ...state, [sttName]: action.value };
-    },
-
-    CHANGE_RD_ARR() {
-      sttSelected.push(action.sttArrValue);
-      return { ...state, [sttName]: [...sttSelected] };
-    },
-
-    CHANGE_RD_IDX() {
-      sttSelected[action.sttIdx] = action.value;
-      return { ...state, [sttName]: [...sttSelected] };
-    },
-
-    CHANGE_RD_PROP() {
-      return {
-        ...state,
-        [sttName]: { ...sttSelected, [sttPropName]: action.value },
-      };
-    },
-
-    CHANGE_STL_PROP() {
-      return {
-        ...state,
-        [sttName]: {
-          ...sttSelected,
-          [sttPropName]: {
-            ...propValue,
-            props: action.value,
-          },
         },
       };
     },
@@ -95,6 +60,28 @@ export default (state, action) => {
           msgs: { [pendingName]: false, [errorName]: true },
         }),
       };
+    },
+
+    base_ASYNC_MSGS() {
+      return {
+        ...state,
+        [action.code]: {
+          ...state[action.code],
+          msgs: { ...action.msgs },
+        },
+      };
+    },
+
+    base_CLEAR_STT() {
+      const split = action.value.split('.');
+      let newState = {};
+      split.reverse().map((item, idx) => {
+        idx === 0
+          ? (newState[item] = false)
+          : (newState = { [item]: { ...newState } });
+      });
+
+      return { ...mergeDeep(state, newState) };
     },
   };
 };

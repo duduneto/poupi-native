@@ -3,7 +3,8 @@
 
 // ---------- set Reducers
 const reducers = (state, action) => {
-  return {
+  // ---------- set Reducers Groups
+  const changes = {
     // ---------- set CHANGE X0 _Name_
     X0_ChangeName: () => {
       return {
@@ -11,6 +12,11 @@ const reducers = (state, action) => {
         sttName: { ...action.value },
       };
     },
+  };
+
+  // ---------- set Reducers Return
+  return {
+    ...changes,
   };
 };
 

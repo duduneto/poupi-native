@@ -9,7 +9,7 @@ export default () => {
   // ----------- set callRouter
   const callRouter = path => {
     dispatch({
-      type: 'setRoute',
+      type: 'base_setRoute',
       value: path,
     });
   };

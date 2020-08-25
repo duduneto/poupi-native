@@ -1,4 +1,5 @@
-export { default as UseCondChildren } from './UseCondChildren';
+export { default as UseCondLoader } from './UseCondLoader';
+export { default as UseValidation } from './UseValidation';
 export { default as UseIcoMoon } from './UseIcoMoon';
 export { default as UseInitData } from './UseInitData';
 export { default as UseList } from './UseList';
