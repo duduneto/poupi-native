@@ -28,7 +28,7 @@ const utils = {
   },
 
   setPath(obj, path = '') {
-    path.split('.').reduce((p, c) => p && p[c], obj && obj);
+    return path.split('.').reduce((p, c) => p && p[c], obj && obj);
   },
 
   mergeDeep(...objects) {
