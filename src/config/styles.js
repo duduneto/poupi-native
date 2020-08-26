@@ -384,6 +384,16 @@ const Styles = StyleSheet.create({
     marginLeft: 10,
   },
 
+  brandBox: {
+    flex: 3,
+    ...flexCenter,
+  },
+
+  logoBar: {
+    width: 160,
+    height: 30,
+  },
+
   // ---------------
   //  #endregion
   // ***************************************
@@ -463,6 +473,12 @@ const Styles = StyleSheet.create({
   // ***************************************
   // #region :: IMAGES
   // ---------------
+
+  logo: {
+    width: 280,
+    height: 50,
+    marginBottom: 10,
+  },
 
   imgFull: {
     width: '100%',
@@ -699,30 +715,6 @@ const Styles = StyleSheet.create({
     right: -5,
     width: 20,
     top: 5,
-  },
-
-  // ---------------
-  //  #endregion
-  // ***************************************
-
-  // ***************************************
-  // #region :: ??? REVISAR
-  // ---------------
-
-  logo: {
-    width: 280,
-    height: 50,
-    marginBottom: 10,
-  },
-
-  brandBox: {
-    flex: 3,
-    ...flexCenter,
-  },
-
-  logoBar: {
-    width: 160,
-    height: 30,
   },
 
   // ---------------
