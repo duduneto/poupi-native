@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 // ---------- import Internals
 import { condWidth } from '../condPacks/dimensions';
 
+// ----------- set Default
 export default () => {
   // ----------- set Effects
   const callResize = () =>
