@@ -14,6 +14,10 @@ export default () => {
 
   // ----------- set Ref History
   const ref = {
+    /**
+     * Call when change route state
+     * @type {() => *}
+     */
     fxPush: () => {
       if (!condNoPush) {
         ref.push(`/${currRoute}`);
