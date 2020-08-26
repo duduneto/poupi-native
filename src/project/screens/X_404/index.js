@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 // import internals
-import { useStl, UseIcoMoon, useRouter } from '../useMorfos';
+import { useStl, UseIcoMoon, useRouter } from '../../../useMorfos';
 
 // ----------- set infoSc
 export const infoSc = {
   path: '404',
-  groupSc: 'public',
+  groupSc: 'pub1',
 
   //
   title: 'Página nãoo Encontrada',

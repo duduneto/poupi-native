@@ -6,4 +6,5 @@ export default {
   X: 'X_Example',
   // B0: 'B0_NameLIST',
   // C0: 'C0_NamePF',
+  404: 'X_404',
 };

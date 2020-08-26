@@ -8,7 +8,14 @@ export default () => {
   const { routesInfo, path } = routeData;
 
   // ----------- set Current Screen
-  const currModule = routesInfo[path].folderPath;
+  const currPath = routesInfo[path];
+  const condPath = currPath ?? routesInfo['404'];
+  // if (cond404) {
+  //   const Comp404 = require('../../project/screens/X_404').default;
+  //   return Comp404;
+  // }
+
+  const currModule = condPath.folderPath;
   const CurrScreen = require(`../../project/screens/${currModule}`).default;
 
   // ----------- set Return

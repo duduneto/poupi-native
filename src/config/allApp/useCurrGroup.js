@@ -9,7 +9,9 @@ export default () => {
 
   // ----------- set Current Group
   const objComps = require('./routeGroups').default;
-  const currInfo = routesInfo[path].groupSc;
+  const currPath = routesInfo[path];
+  const condPath = currPath ?? routesInfo['404'];
+  const currInfo = condPath.groupSc;
   const arrCurrGroup = objComps[currInfo];
 
   // ----------- set Return
