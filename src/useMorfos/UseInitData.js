@@ -1,28 +1,24 @@
 // ---------- import Packs
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 // ---------- import Internals
 import { UseLoader } from '../useMorfos';
-import { setPath } from '../useMorfos/utils';
 
-export default ({ children, info }) => {
-  // ----------- set Info
-  const { selSttCond, reducerName, actionValue } = info;
-
-  // ----------- set Selectors
-  const selInitData = stt => setPath(stt, selSttCond);
-  const initData = useSelector(selInitData);
+export default ({ children, reducer }) => {
+  // ----------- set Hooks
+  const [sttCondShow, setCondInit] = React.useState(false);
 
   // ----------- set Effects
-  const fxInitData = () => dispatch({ type: reducerName, value: actionValue });
+  const fxInitData = () => {
+    dispatch({ type: reducer });
+    setCondInit(true);
+  };
 
   // ----------- set Hooks
   const dispatch = useDispatch();
   React.useEffect(fxInitData, []);
 
   // ----------- set Return
-  const condReturn = initData;
-
-  return condReturn ? children : UseLoader();
+  return sttCondShow ? children : UseLoader();
 };

@@ -26,20 +26,11 @@ export default () => {
   // ---------- set Router
   const btnGoto = () => callRouter('terms');
 
-  // ---------- set Init
-  const InitSc = ({ children }) => {
-    const infoInit = {
-      setSel: `sttScs.${scCode}`,
-      setAction: `initData${scCode}`,
-    };
-    return <UseInitData info={infoInit} children={children} />;
-  };
-
   // ---------- set Return
   const infoReturn = { scCode, btnGoto };
   return (
-    <InitSc>
+    <UseInitData reducer={'initDataA1'}>
       <ViewDF info={infoReturn} />
-    </InitSc>
+    </UseInitData>
   );
 };

@@ -9,7 +9,7 @@ import { useRouter, UseInitData, useData } from '../../../useMorfos';
 // ----------- set Info Screen
 export const infoSc = {
   path: 'example',
-  groupSc: 'pub2',
+  groupSc: 'pub1',
 
   scCode: 'X',
 };
@@ -17,7 +17,7 @@ export const infoSc = {
 // ----------- set Default Component
 export default () => {
   // ----------- set Data
-  const content = useData(`${infoSc.scCode}.scContent`);
+  const content = useData('X.scContent');
 
   // ----------- set Hooks
   const { callRouter } = useRouter();
@@ -25,22 +25,11 @@ export default () => {
   // ----------- set Routes
   const btnGoto = () => callRouter('signin');
 
-  // ----------- set Init Signin Data
-  const initSignin = {
-    selSttCond: `${infoSc.scCode}.condData`,
-    reducerName: `${infoSc.scCode}_InitContentData`,
-  };
-
   // ----------- set Return
-  const infoView = {
-    // --- infoSc
-    content,
-    // --- btns
-    btnGoto,
-  };
+  const infoView = { content, btnGoto };
 
   return (
-    <UseInitData info={initSignin}>
+    <UseInitData reducer={'X_InitContentData'}>
       <ViewDF info={infoView} />
     </UseInitData>
   );

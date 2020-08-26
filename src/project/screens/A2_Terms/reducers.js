@@ -9,14 +9,14 @@ export default (state, action) => {
         title: 'Terms',
         subTitle: 'Oi Mundo!',
         description: 'Lorem Ipsum!',
-        txtBtn: 'Ir para o Signin',
+        txtBtn: 'Ir para Example',
       };
 
       const condData = true;
 
       return {
         ...state,
-        X: { ...state.X, scContent, condData },
+        A2: { ...state.A2, scContent, condData },
       };
     },
   };

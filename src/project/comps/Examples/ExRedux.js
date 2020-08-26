@@ -175,7 +175,7 @@ function DataComp() {
   console.log('RENDER => DataComp');
 
   return (
-    <UseInitData action={'initData'} statePath="sttCategs.objCategInfo">
+    <ThisInitData action={'initData'} statePath="sttCategs.objCategInfo">
       <div>
         <h1>Supermercado</h1>
         <h2>
@@ -196,12 +196,12 @@ function DataComp() {
           <CategCount />
         </div>
       </div>
-    </UseInitData>
+    </ThisInitData>
   );
 }
 
-function UseInitData({ children, statePath, action }) {
-  console.log('RENDER => UseInitData');
+function ThisInitData({ children, statePath, action }) {
+  console.log('RENDER => ThisInitData');
   const dispatch = useDispatch();
   const initData = () => {
     dispatch({ type: action });

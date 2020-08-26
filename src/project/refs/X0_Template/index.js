@@ -17,7 +17,7 @@ export const infoSc = {
 // ----------- set Default Component
 export default () => {
   // ----------- set Data
-  const content = useData(`${infoSc.scCode}.scContent`);
+  const content = useData('X0.scContent');
 
   // ----------- set Hooks
   const { callRouter } = useRouter();
@@ -25,23 +25,11 @@ export default () => {
   // ----------- set Routes
   const btnGoto = () => callRouter('signin');
 
-  // ----------- set Init Signin Data
-  const initComponent = {
-    selSttCond: `${infoSc.scCode}.condData`,
-    reducerName: `${infoSc.scCode}_InitContentData`,
-  };
-
   // ----------- set Return
-  const infoView = {
-    // --- infoSc
-    content,
-    // --- btns
-    btnGoto,
-    // userId,
-  };
+  const infoView = { content, btnGoto };
 
   return (
-    <UseInitData info={initComponent}>
+    <UseInitData reducer={'X0_InitContentData'}>
       <ViewDF info={infoView} />
     </UseInitData>
   );

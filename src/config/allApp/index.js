@@ -7,15 +7,9 @@ import { UseInitData, useData } from '../../useMorfos';
 
 // ----------- set All App Screen
 export default () => {
-  // ----------- set Init Routes
-  const initRoutes = {
-    selSttCond: `sttRoute.routesInfo`,
-    reducerName: `base_InitRoutes`,
-  };
-
   // ----------- set Return
   return (
-    <UseInitData info={initRoutes}>
+    <UseInitData reducer={'base_InitRoutes'}>
       <SelectedRoute />
     </UseInitData>
   );
