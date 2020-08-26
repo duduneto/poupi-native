@@ -11,9 +11,10 @@ export default () => {
     const pathName = window.location.pathname.split('/')[1];
     const changeHistory = () => callRouter(pathName);
 
-    const callListener = () =>
-      window.addEventListener('popstate', changeHistory);
     callListener();
+    function callListener() {
+      return window.addEventListener('popstate', changeHistory);
+    }
     return () => {
       callListener();
     };

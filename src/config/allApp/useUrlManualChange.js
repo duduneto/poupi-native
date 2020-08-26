@@ -16,14 +16,10 @@ export default () => {
 
   // ----------- set Effects
   const fxInitRoute = () => {
-    condManual && callRouter(condPathName) && setManualUrl(false);
+    condManual && callRouter(condPathName);
   };
 
   // ----------- set Hooks
   const { callRouter } = useRouter();
   React.useEffect(fxInitRoute, []);
-  const [sttManualUrl, setManualUrl] = React.useState(condManual);
-
-  // ----------- set Return
-  return sttManualUrl;
 };

@@ -9,7 +9,7 @@ import useCurrSc from './useCurrSc';
 import useCurrGroup from './useCurrGroup';
 import useGroupSc from './useGroupSc';
 import useListenUrlHistory from './useListenUrlHistory';
-import useUrlManual from './useUrlManual';
+import useUrlManualChange from './useUrlManualChange';
 
 // ----------- set All App Screen
 export default () => (
@@ -37,10 +37,8 @@ function WebRoute({ Comp }) {
 
   // ----------- set Change Url
   useListenUrlHistory();
-  const condUrlChangedManual = useUrlManual();
-  if (!condUrlChangedManual) {
-    window.history.pushState(null, '', '/' + currRoute);
-  }
+  useUrlManualChange();
+  window.history.pushState(null, '', '/' + currRoute);
 
   // ----------- set Return
   return Comp;
