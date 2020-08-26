@@ -25,10 +25,10 @@ export default ({ info }) => {
   return (
     <View style={stlBodyView}>
       {/* ----------- PARTs */}
-      <ItemList />
+      <ItemList content={info.content} />
 
       {/* ----------- Elements */}
-      {/* <Btn1 onPress={info.btnGoto}>{info.content.txtBtn}</Btn1> */}
+      {/* ... */}
     </View>
   );
 };

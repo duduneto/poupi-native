@@ -11,6 +11,12 @@ const reducers = (state, action) => ({
       subTitle: 'Oi Mundo!',
       description: 'Lorem Ipsum!',
       txtBtn: 'Ir para os TERMOS',
+      // --- ItemList
+      mktName: 'Carrefour',
+      act1: 'Ver Produtos',
+      act2: 'Ver Vendas',
+      txtDetails:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     };
 
     const condData = true;

@@ -177,8 +177,8 @@ const shadowBar = {
 const shadowLess = {
   // web shadow
   shadowColor: black,
-  shadowOpacity: 0.3,
-  shadowRadius: 4,
+  shadowOpacity: 0.1,
+  shadowRadius: 8,
   shadowOffset: { width: 0, height: 1 },
   // android shadow
   elevation: 4,
@@ -433,6 +433,15 @@ const Styles = StyleSheet.create({
     padding: 10,
   },
 
+  cardItemList: {
+    backgroundColor: 'white',
+    marginBottom: 20,
+    ...radiusLess,
+    ...shadowLess,
+    padding: 10,
+    width: 900,
+  },
+
   dialogueBox: {
     backgroundColor: 'white',
     marginBottom: 20,
@@ -455,6 +464,11 @@ const Styles = StyleSheet.create({
   // #region :: IMAGES
   // ---------------
 
+  imgFull: {
+    width: '100%',
+    height: '100%',
+  },
+
   profileImg: {
     width: 150,
     height: 150,
@@ -468,11 +482,13 @@ const Styles = StyleSheet.create({
   },
 
   thumbnail: {
-    width: 100,
-    height: 65,
+    width: 65,
+    height: 45,
+    overflow: 'hidden',
     marginRight: 10,
     backgroundColor: lightGray,
-    ...radiusLess,
+    borderRadius: 8,
+    ...shadowLess,
   },
 
   thumbnailCateg: {
