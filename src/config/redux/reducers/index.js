@@ -2,6 +2,7 @@
 import initialState from '../../../project/initialState';
 import base from './baseReducers';
 import allApp from '../../allApp/reducers';
+import compsReducers from '../../../project/comps/reducers';
 import loopScs from './loopScs';
 
 export default (state = initialState, action) => {
@@ -9,6 +10,7 @@ export default (state = initialState, action) => {
     ...base(state, action),
     ...allApp(state, action),
     ...loopScs(state, action),
+    ...compsReducers(state, action),
 
     CLEAR_ALL() {
       return initialState;

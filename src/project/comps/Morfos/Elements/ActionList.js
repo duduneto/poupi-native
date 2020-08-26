@@ -12,7 +12,7 @@ const stlTxt = [];
 
 // #endregion *********
 
-export default ({ label, children }) => {
+export default ({ label }) => {
   return (
     <TouchableOpacity style={stlBtn}>
       <Text style={stlTxt}>{label}</Text>

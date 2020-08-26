@@ -21,6 +21,7 @@ export default ({ info }) => {
   return (
     <View style={stlBodyView}>
       {/* ----------- PARTs */}
+
       <ItemList content={info.content} />
 
       {/* ----------- Elements */}
