@@ -128,7 +128,7 @@ const ViewDF = ({ info }) => {
   return (
     <>
       {/* MENU */}
-      <SideLeft path={'mktList'} content={info.content} />
+      <SideLeft content={info.content} />
 
       <View style={stlNAV1}>
         <ImageBackground

@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 // ----------- import Internals
-import { useStl, UseIcoMoon, useRouter } from '../../../../useMorfos';
+import { useStl, UseIcoMoon, useRouter, useData } from '../../../../useMorfos';
 
 // #region :: STYLEs *********
 
@@ -13,7 +13,10 @@ const stlLabel = [{ paddingLeft: 6 }];
 
 // #endregion *********
 
-export default ({ children, path }) => {
+export default ({ children }) => {
+  // ---------- set Data
+  const path = useData('sttRoute.path');
+
   // ---------- set Hooks
   const { callRouter } = useRouter();
 
