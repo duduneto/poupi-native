@@ -35,7 +35,7 @@ export default ({ label, mapValues, color, key, style }) => {
 
 /*
     // import Internals
-    import { UseLoader } from '../useMorfos';
+    import { UseOptions } from '../useMorfos';
 
     ------
 

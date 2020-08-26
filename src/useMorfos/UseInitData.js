@@ -2,9 +2,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-// ---------- import Internals
-import { UseLoader } from '../useMorfos';
-
 export default ({ children, reducer }) => {
   // ----------- set Hooks
   const [sttCondShow, setCondInit] = React.useState(false);
@@ -20,5 +17,5 @@ export default ({ children, reducer }) => {
   React.useEffect(fxInitData, []);
 
   // ----------- set Return
-  return sttCondShow ? children : UseLoader();
+  return sttCondShow && children;
 };

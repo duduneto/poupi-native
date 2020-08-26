@@ -3,7 +3,6 @@ export { default as UseValidation } from './UseValidation';
 export { default as UseIcoMoon } from './UseIcoMoon';
 export { default as UseInitData } from './UseInitData';
 export { default as UseList } from './UseList';
-export { default as UseLoader } from './UseLoader';
 export { default as UseOptions } from './UseOptions';
 
 export { default as useData } from './useData';
