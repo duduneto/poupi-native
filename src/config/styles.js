@@ -245,6 +245,15 @@ const noactGr = {
   backgroundColor: dotGray,
 };
 
+const sideMenu = {
+  width: 260,
+  height: '100%',
+  backgroundColor: 'white',
+  position: 'absolute',
+  zIndex: 2,
+  top: 0,
+};
+
 // ---------------
 //  #endregion
 // ***************************************
@@ -343,7 +352,7 @@ const Styles = StyleSheet.create({
   // ***************************************
 
   // ***************************************
-  // #region :: NAVs
+  // #region :: NAVs / SIDEBARs
   // ---------------
 
   navbarView: {
@@ -392,6 +401,15 @@ const Styles = StyleSheet.create({
   logoBar: {
     width: 160,
     height: 30,
+  },
+
+  leftBar: {
+    ...sideMenu,
+    left: 0,
+  },
+  rightBar: {
+    ...sideMenu,
+    right: 0,
   },
 
   // ---------------

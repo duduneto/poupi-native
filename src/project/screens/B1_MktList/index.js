@@ -9,7 +9,7 @@ import { useRouter, UseInitData, useData } from '../../../useMorfos';
 // ----------- set Info Screen
 export const infoSc = {
   path: 'mktList',
-  groupSc: 'pub1',
+  groupSc: 'pub2',
 
   scCode: 'B1',
 };
