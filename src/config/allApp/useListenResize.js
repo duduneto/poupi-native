@@ -10,6 +10,8 @@ export default () => {
   const callResize = () =>
     dispatch({ type: 'base_ListenResize', value: condWidth() });
 
+  const fxInitSize = () => callResize();
+
   const fxResize = () => {
     window.addEventListener('resize', callResize);
     return () => window.removeEventListener('resize', callResize);
@@ -17,6 +19,6 @@ export default () => {
 
   // ----------- set Hooks
   const dispatch = useDispatch();
+  React.useEffect(fxInitSize, []);
   React.useEffect(fxResize, []);
-  React.useEffect(callResize, []);
 };
