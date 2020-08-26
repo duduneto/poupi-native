@@ -3,7 +3,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 
 // ---------- import Internals
-import { UseInitData, useData } from '../../useMorfos';
+import { UseInitData } from '../../useMorfos';
 import useListenResize from './useListenResize';
 import useCurrSc from './useCurrSc';
 import useCurrGroup from './useCurrGroup';
