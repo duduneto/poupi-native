@@ -3,12 +3,12 @@ import React from 'react';
 import { Platform } from 'react-native';
 
 // ---------- import Internals
-import { UseInitData, useData } from '../../useMorfos';
+import { UseInitData } from '../../useMorfos';
 import useListenResize from './useListenResize';
 import useCurrSc from './useCurrSc';
 import useCurrGroup from './useCurrGroup';
 import useGroupSc from './useGroupSc';
-import useListenUrlHistory from './useListenUrlHistory';
+import useUrlHistory from './useUrlHistory';
 import useUrlManualChange from './useUrlManualChange';
 
 // ----------- set All App Screen
@@ -32,13 +32,9 @@ function SelectRoute() {
 }
 
 function WebRoute({ Comp }) {
-  // ----------- set Data
-  const currRoute = useData('sttRoute.path');
-
   // ----------- set Change Url
-  useListenUrlHistory();
   useUrlManualChange();
-  window.history.pushState(null, '', '/' + currRoute);
+  useUrlHistory();
 
   // ----------- set Return
   return Comp;

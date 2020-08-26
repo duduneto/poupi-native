@@ -1,17 +1,6 @@
 // ---------- set Reducers
 export default (state, action) => {
-  return {
-    // ---------- set Desktop Size
-    base_ListenResize: () => {
-      const pointBreak = 620;
-      const condDesk = action.value >= pointBreak;
-
-      return {
-        ...state,
-        sttCondDeskSize: condDesk,
-      };
-    },
-
+  const inits = {
     // ---------- set Init Routes
     base_InitRoutes: () => {
       // ----------- set Routes Data
@@ -36,5 +25,46 @@ export default (state, action) => {
         },
       };
     },
+  };
+
+  const listeners = {
+    // ---------- set Desktop Size
+    base_ListenResize: () => {
+      const pointBreak = 620;
+      const condDesk = action.value >= pointBreak;
+
+      return {
+        ...state,
+        sttCondDeskSize: condDesk,
+      };
+    },
+
+    // ---------- set Push Listener
+    base_condPushTrue: () => {
+      return {
+        ...state,
+        sttRoute: {
+          ...state.sttRoute,
+          condNoPush: false,
+        },
+      };
+    },
+
+    // ---------- set History
+    base_History: () => {
+      return {
+        ...state,
+        sttRoute: {
+          ...state.sttRoute,
+          path: action.value,
+          condNoPush: true,
+        },
+      };
+    },
+  };
+
+  return {
+    ...inits,
+    ...listeners,
   };
 };
