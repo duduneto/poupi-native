@@ -3,6 +3,7 @@ export default {
   A0b: 'A0b_TempUsers',
   A1: 'A1_Signin',
   A2: 'A2_Terms',
+  B1: 'B1_MktList',
   X: 'X_Example',
   // B0: 'B0_NameLIST',
   // C0: 'C0_NamePF',

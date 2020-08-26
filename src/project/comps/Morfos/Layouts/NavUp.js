@@ -15,6 +15,7 @@ import {
 import bgNav from '../../../images/bg_nav.png';
 import bgNav2 from '../../../images/bg_nav2.png';
 import { useStl, UseIcoMoon, useRouter } from '../../../../useMorfos';
+import { SideLeft, SideRight } from '../..';
 
 // #endregion *********
 
@@ -126,6 +127,9 @@ const ViewDF = ({ info }) => {
 
   return (
     <>
+      {/* MENU */}
+      <SideLeft content={info.content} />
+
       <View style={stlNAV1}>
         <ImageBackground
           source={bgNav}
@@ -166,7 +170,7 @@ const ViewDF = ({ info }) => {
         <></>
       )}
 
-      {/* MENU */}
+      <SideRight content={info.content} />
       {/* /}
       {info.condMenu && (
         <View style={stlBODY4b}>
