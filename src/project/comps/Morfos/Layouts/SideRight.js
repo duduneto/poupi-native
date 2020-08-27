@@ -13,9 +13,10 @@ const stlSideMenu = [useStl.rightBar];
 
 export default ({ info }) => {
   // ----------- set Cond Show Menu
-  const path = useData('sttRoute.path');
-  const objComps = useData('sttRoute.showRight');
-  const showRight = objComps[path];
+  // const path = useData('sttRoute.path');
+  // const objComps = useData('sttRoute.showRight');
+  // const showRight = objComps[path];
+  const showRight = false;
 
   const condShow = showRight === true;
 

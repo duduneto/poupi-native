@@ -108,9 +108,10 @@ export default props => {
   let goTo = () => callRouter(props.fab);
 
   // ----------- set Cond Show Menu
-  const path = useData('sttRoute.path');
-  const objComps = useData('sttRoute.showRight');
-  const showRight = objComps[path];
+  // const path = useData('sttRoute.path');
+  // const objComps = useData('sttRoute.showRight');
+  // const showRight = objComps[path];
+  const showRight = true;
 
   const condBigSc = showRight === true;
 
