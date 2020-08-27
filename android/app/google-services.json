@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "147367265071",
+    "firebase_url": "https://start-morfos.firebaseio.com",
+    "project_id": "start-morfos",
+    "storage_bucket": "start-morfos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147367265071:android:2e4001dd5f9aa4e0",
+        "android_client_info": {
+          "package_name": "com.morfos.startmorfos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147367265071-r0qifgg9on3s4c7g2kqt4dh1km0o09cf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.morfos.startmorfos",
+            "certificate_hash": "e1b228fdc1889911bec0cfcbce0574794de53a0c"
+          }
+        },
+        {
+          "client_id": "147367265071-hl8v2l5o1ksiouabp07cu2oodsesaiqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVVyx37nd-FDrvUzs5veSncjJOgvjEzj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147367265071-hl8v2l5o1ksiouabp07cu2oodsesaiqo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "147367265071-dnorjvbvi9o8ogk85dmtm5dlc6rocik2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.morfos.startmorfos"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

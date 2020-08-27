@@ -1,4 +1,4 @@
-package com.startmorfos;
+package com.morfos.startmorfos;
 
 import com.facebook.react.ReactActivity;
 

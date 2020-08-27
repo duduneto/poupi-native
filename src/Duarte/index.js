@@ -1,12 +1,23 @@
 // import packages
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-// import { firestore } from '../config/firebase/fbConfig';
+import { firestore } from '../config/firebase/fbConfig';
 
 export default () => {
-  // const usersCollection = async () => await firestore.collection('Users');
+  const fxFirestore = () => {
+    firestore
+      .collection('users')
+      .get()
+      .then(res => {
+        const arrList = [];
+        res.forEach(doc => arrList.push(doc.data()));
 
-  // console.log('usersCollection', usersCollection);
+        console.warn('arrList', arrList);
+      })
+      .catch(err => console.warn('usersCollection', err.message));
+  };
+  React.useEffect(fxFirestore, []);
+
   return (
     <View>
       <Text>Android Funcionando com Firestore</Text>

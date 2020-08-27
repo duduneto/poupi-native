@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.startmorfos">
+  package="com.morfos.startmorfos">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

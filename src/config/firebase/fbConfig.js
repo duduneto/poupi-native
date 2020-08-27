@@ -1,5 +1,5 @@
 // import Packages
-import firebase from './packs.web';
+import firebase from './packs';
 
 import appInfo from '../../appInfo';
 const { fbWebConfig } = appInfo;
@@ -9,6 +9,6 @@ export const fbConfig =
   !firebase.apps.length && firebase.initializeApp(fbWebConfig);
 
 export { firebase };
-export const firebaseAuth = firebase.auth();
 export const firestore = firebase.firestore();
-export const storage = firebase.storage();
+// export const firebaseAuth = firebase.auth();
+// export const storage = firebase.storage();
