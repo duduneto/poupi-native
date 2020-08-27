@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.gym-one">
+  package="com.startmorfos">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
