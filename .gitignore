@@ -5,6 +5,14 @@
 /.pnp
 .pnp.js
 
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
 # testing
 /coverage
 
