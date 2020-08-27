@@ -19,6 +19,8 @@
     "format": "eslint --fix --ext .js src/"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^8.4.0",
+    "@react-native-firebase/firestore": "^7.6.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -26,6 +28,7 @@
     "icomoon-react": "^2.0.16",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-native": "^0.63.2",
     "react-native-web": "^0.13.7",
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
@@ -46,5 +49,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/runtime": "^7.11.2",
+    "metro-react-native-babel-preset": "^0.63.0"
   }
 }
