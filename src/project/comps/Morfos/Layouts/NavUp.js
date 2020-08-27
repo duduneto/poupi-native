@@ -14,8 +14,9 @@ import {
 // ----------- import Internals
 import bgNav from '../../../images/bg_nav.png';
 import bgNav2 from '../../../images/bg_nav2.png';
-import { useStl, UseIcoMoon, useRouter } from '../../../../useMorfos';
+import { useStl, UseIcoMoon, useRouter, useData } from '../../../../useMorfos';
 import { SideLeft, SideRight } from '../..';
+import { ezLog } from '../../../../useMorfos/utils';
 
 // #endregion *********
 
@@ -106,12 +107,24 @@ export default props => {
 
   let goTo = () => callRouter(props.fab);
 
+  // ----------- set Cond Show Menu
+  const path = useData('sttRoute.path');
+  const objComps = useData('sttRoute.showRight');
+  const showRight = objComps[path];
+
+  const condBigSc = showRight === true;
+
+  // const condChildren = condBigSc ? props.children : compSelected;
+  const condChildren = condBigSc ? <LastSc /> : props.children;
+  ezLog('condChildren', condChildren);
+
   // ----------- set Return
   let infoReturn = {
+    children: props.children,
+    condChildren,
     toggleMenu,
     condGoTo,
     condFab,
-    children: props.children,
     condMenu,
     longBar,
     title,
@@ -119,23 +132,22 @@ export default props => {
     goTo,
   };
 
-  return <ViewDF info={infoReturn} />;
+  return (
+    <>
+      <SideLeft content={infoReturn.content} />
+      <ViewDF info={infoReturn} />
+      <SideRight info={infoReturn} />
+    </>
+  );
 };
 
 const ViewDF = ({ info }) => {
-  const condShadow = info.longBar ? null : useStl.shadowBar;
-
   return (
     <>
       {/* MENU */}
-      <SideLeft content={info.content} />
 
       <View style={stlNAV1}>
-        <ImageBackground
-          source={bgNav}
-          style={[stlNavView, condShadow]}
-          imageStyle={stlBGSM}
-        >
+        <ImageBackground source={bgNav} style={stlNavView} imageStyle={stlBGSM}>
           <View style={[stlNAV1a]}>
             <TouchableOpacity style={stlNAV1b} onPress={info.condGoTo}>
               <UseIcoMoon name={info.icon} size={20} color={'#fff'} />
@@ -150,16 +162,7 @@ const ViewDF = ({ info }) => {
       </View>
 
       <ScrollView style={!info.longBar && stlSCROLLVIEW}>
-        {info.longBar && (
-          <View style={stlBODY1e}>
-            <ImageBackground
-              source={bgNav2}
-              style={[stlBGNAV2]}
-              imageStyle={stlBGLG}
-            />
-          </View>
-        )}
-        {info.children}
+        {info.condChildren}
       </ScrollView>
 
       {info.condFab && info.condFab ? (
@@ -170,7 +173,6 @@ const ViewDF = ({ info }) => {
         <></>
       )}
 
-      <SideRight content={info.content} />
       {/* /}
       {info.condMenu && (
         <View style={stlBODY4b}>
@@ -179,5 +181,13 @@ const ViewDF = ({ info }) => {
       )}
       {/* */}
     </>
+  );
+};
+
+const LastSc = () => {
+  return (
+    <View>
+      <Text>sdsd</Text>
+    </View>
   );
 };

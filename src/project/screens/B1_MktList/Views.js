@@ -1,9 +1,9 @@
 // ----------- import Packs
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 
 // ----------- import Internals
-import { useStl } from '../../../useMorfos';
+import { useStl, useRouter } from '../../../useMorfos';
 import { ItemList } from '../../comps';
 
 // #region :: STYLEs *********
@@ -18,10 +18,18 @@ const stlBodyView = [
 // #endregion *********
 
 export default ({ info }) => {
+  const { callRouter } = useRouter();
+  const goTo = () => {
+    callRouter('addMkt');
+  };
+
   return (
     <View style={stlBodyView}>
       {/* ----------- PARTs */}
 
+      <TouchableOpacity onPress={goTo}>
+        <Text>ADD MERCADO</Text>
+      </TouchableOpacity>
       <ItemList content={info.content} />
 
       {/* ----------- Elements */}
