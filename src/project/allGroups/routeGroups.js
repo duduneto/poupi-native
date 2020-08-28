@@ -9,14 +9,14 @@ import { useRouter, useData } from '../../useMorfos';
 
 const Public = ({ children }) => {
   const { callRedirect } = useRouter();
-  const authUser = useData(`sttPersist.userId`);
+  const authUser = useData(`basePersist.userId`);
   const condReturn = authUser ? callRedirect('profile') : children;
   return condReturn;
 };
 
 const Private = ({ children }) => {
   const { callRedirect } = useRouter();
-  const authUser = useData(`sttPersist.userId`);
+  const authUser = useData(`basePersist.userId`);
   const condReturn = authUser ? children : callRedirect('signin');
   return condReturn;
 };

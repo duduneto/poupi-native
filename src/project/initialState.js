@@ -4,7 +4,7 @@ export default {
   sttRoute: { path: 'signin' },
 
   // ---------- set Persistence
-  sttPersist: {
+  basePersist: {
     userId: null,
   },
 };

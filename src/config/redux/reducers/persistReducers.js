@@ -17,7 +17,7 @@ const pathTransform = createTransform(
 const persistConfig = {
   storage: condStorage,
   key: 'root',
-  whitelist: ['sttPersist', 'sttRoute'],
+  whitelist: ['basePersist', 'sttRoute'],
   transforms: [pathTransform],
 };
 
