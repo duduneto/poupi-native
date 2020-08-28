@@ -54,7 +54,7 @@ export default () => {
   const scContent = useSelector(state => {
     // const teste = state.sttContent[1].sc404;
     return {
-      title: 'PÃ¡gina nÃ£o encontrada',
+      title: 'Página não encontrada',
       errorMsg: 'Mensagem Erro',
       btn: 'VOLTAR',
     };

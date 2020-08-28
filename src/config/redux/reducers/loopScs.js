@@ -1,17 +1,13 @@
-import screens from '../../../project/screens/';
+import { reducers } from '../../../project/screens/';
 
 export default (state, action) => {
   let loopObj = {};
-  // const refScs = '../../project/screens';
 
-  for (const key in screens) {
-    const item = screens[key];
+  for (const key in reducers) {
+    const item = reducers[key];
     loopObj = {
       ...loopObj,
-      ...require(`../../../project/screens/${item}/reducers`).default(
-        state,
-        action,
-      ),
+      ...item.default(state, action),
     };
   }
   return loopObj;

@@ -1,19 +1,18 @@
+import allScs from '../../project/screens';
+
 // ---------- set Reducers
 export default (state, action) => {
   const inits = {
     // ---------- set Init Routes
     base_InitRoutes: () => {
-      // ----------- set Routes Data
-      const allScs = require(`../../project/screens`).default;
-
       // ----------- iterate Screen
       let routesInfo = {};
       for (const key in allScs) {
         const item = allScs[key];
-        const moduleInfo = require(`../../project/screens/${item}`).infoSc;
+        const moduleInfo = item.infoSc;
         const routeKey = moduleInfo.path;
-        const folderPath = item;
-        routesInfo[routeKey] = { folderPath, ...moduleInfo };
+        const scKey = key;
+        routesInfo[routeKey] = { scKey, ...moduleInfo };
       }
 
       // ----------- set State
