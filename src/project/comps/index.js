@@ -12,6 +12,7 @@ export { default as ActionList } from './Morfos/Elements/ActionList';
 // ---------- set Layouts
 export { default as NavControl } from './Morfos/Layouts/NavControl';
 export { default as NavUp } from './Morfos/Layouts/NavUp';
+export { default as Banner } from './Morfos/Layouts/Banner';
 export { default as ItemList } from './Morfos/Layouts/ItemList';
 export { default as Card } from './Morfos/Layouts/Card';
 export { default as Thumbnail } from './Morfos/Layouts/Thumbnail';

@@ -4,16 +4,11 @@ import { View, TouchableOpacity, Text } from 'react-native';
 
 // ----------- import Internals
 import { useStl, useRouter } from '../../../useMorfos';
-import { ItemList } from '../../comps';
+import { ItemList, Banner } from '../../comps';
 
 // #region :: STYLEs *********
 
-const stlBodyView = [
-  useStl.flex1,
-  useStl.pad20,
-  useStl.bgSc,
-  useStl.flexTopCenter,
-];
+const stlBodyView = [useStl.flex1, useStl.flexTopCenter];
 
 // #endregion *********
 
@@ -27,9 +22,7 @@ export default ({ info }) => {
     <View style={stlBodyView}>
       {/* ----------- PARTs */}
 
-      <TouchableOpacity onPress={goTo}>
-        <Text>ADD MERCADO</Text>
-      </TouchableOpacity>
+      <Banner content={info.content} />
       <ItemList content={info.content} />
 
       {/* ----------- Elements */}
