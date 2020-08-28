@@ -3,6 +3,8 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { firestore } from '../config/firebase/fbConfig';
 
+import Register from './Register';
+
 export default () => {
   const fxFirestore = () => {
     firestore
@@ -12,15 +14,13 @@ export default () => {
         const arrList = [];
         res.forEach(doc => arrList.push(doc.data()));
 
-        console.warn('arrList', arrList);
+        console.log('arrList', arrList);
       })
       .catch(err => console.warn('usersCollection', err.message));
   };
   React.useEffect(fxFirestore, []);
 
   return (
-    <View>
-      <Text>Android Funcionando com Firestore</Text>
-    </View>
+    <Register />
   );
 };
