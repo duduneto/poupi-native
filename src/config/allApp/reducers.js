@@ -27,6 +27,16 @@ export default (state, action) => {
   };
 
   const listeners = {
+    // ---------- set Current Screen Info
+    base_CurrScInfo: () => {
+      return {
+        ...state,
+        sttRoute: {
+          ...state.sttRoute,
+          currScInfo: action.value,
+        },
+      };
+    },
     // ---------- set Desktop Size
     base_ListenResize: () => {
       const pointBreak = 620;
