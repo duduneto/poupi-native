@@ -34,7 +34,10 @@ export default (state, action) => {
 
       return {
         ...state,
-        sttCondDeskSize: condDesk,
+        sttRoute: {
+          ...state.sttRoute,
+          condDeskSize: condDesk,
+        },
       };
     },
 
