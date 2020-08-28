@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import { useData } from '../../useMorfos';
-import { ezLog } from '../../useMorfos/utils';
 
 export default () => {
   // ----------- set Data
@@ -25,7 +24,6 @@ export default () => {
       const condReload = currRoute !== ref.cleanPath();
       const condPush = !condNoPush && condReload;
       if (condPush) {
-        ezLog('push');
         ref.push(`/${currRoute}`);
       } else {
         dispatch({ type: 'base_condPushTrue' });
