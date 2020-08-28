@@ -56,7 +56,7 @@ export default () => {
     return {
       title: 'Página não encontrada',
       errorMsg: 'Mensagem Erro',
-      btn: 'VOLTAR',
+      btn: 'IR PRA HOME',
     };
   });
   const goTo = () => callRouter('signin');
