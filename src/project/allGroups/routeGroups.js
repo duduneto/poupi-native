@@ -2,7 +2,7 @@
 import React from 'react';
 
 // ----------- import Internals
-import { NavUp } from '../../project/comps';
+import { NavControl } from '../comps';
 import { useRouter, useData } from '../../useMorfos';
 
 // ----------- Components
@@ -39,12 +39,12 @@ const Priv3 = ({ children }) => <Adm permissionRef={3} children={children} />;
 // ----------- set Return
 export default {
   pub1: [Public],
-  pub2: [Public, NavUp],
-  privNav: [Private, NavUp],
-  admNav: [Adm, NavUp],
-  priv1: [Public, NavUp],
-  priv1b: [Priv1, NavUp],
-  priv2: [Priv2, NavUp],
-  priv3: [Priv3, NavUp],
+  pub2: [Public, NavControl],
+  privNav: [Private, NavControl],
+  admNav: [Adm, NavControl],
+  priv1: [Public, NavControl],
+  priv1b: [Priv1, NavControl],
+  priv2: [Priv2, NavControl],
+  priv3: [Priv3, NavControl],
   reg3: [Priv3],
 };

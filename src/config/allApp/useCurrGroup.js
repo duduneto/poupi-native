@@ -1,5 +1,6 @@
 // ---------- import Internals
 import { useData } from '../../useMorfos';
+import routeGroups from '../../project/allGroups/routeGroups';
 
 // ----------- set Default
 export default () => {
@@ -8,11 +9,10 @@ export default () => {
   const { routesInfo, path } = routeData;
 
   // ----------- set Current Group
-  const objComps = require('./routeGroups').default;
   const currPath = routesInfo[path];
   const condPath = currPath ?? routesInfo['404'];
   const currInfo = condPath.groupSc;
-  const arrCurrGroup = objComps[currInfo];
+  const arrCurrGroup = routeGroups[currInfo];
 
   // ----------- set Return
   return arrCurrGroup;
