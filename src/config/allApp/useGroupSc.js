@@ -7,7 +7,7 @@ import React from 'react';
 // ----------- set Default
 export default (arrGroups, CompScreen) => {
   // ----------- set Data
-  // const routeData = useData('sttRoute');
+  // const routeData = useData('baseRoute');
   // const { routesInfo, path } = routeData;
 
   // ----------- set Group + Screen

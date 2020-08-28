@@ -1,7 +1,7 @@
 // ---------- set Initial State
 export default {
   // ---------- set Route
-  sttRoute: { path: 'signin' },
+  baseRoute: { path: 'signin' },
 
   // ---------- set Persistence
   basePersist: {

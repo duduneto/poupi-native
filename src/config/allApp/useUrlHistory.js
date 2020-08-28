@@ -9,8 +9,8 @@ import { useData } from '../../useMorfos';
 export default () => {
   // ----------- set Data
   const dispatch = useDispatch();
-  const currRoute = useData('sttRoute.path');
-  const condNoPush = useData('sttRoute.condNoPush');
+  const currRoute = useData('baseRoute.path');
+  const condNoPush = useData('baseRoute.condNoPush');
 
   // ----------- set Ref History
   const ref = {

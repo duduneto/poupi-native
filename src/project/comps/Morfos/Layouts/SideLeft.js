@@ -15,7 +15,7 @@ const stlLabel = [{ paddingLeft: 6 }];
 
 export default ({ children }) => {
   // ---------- set Data
-  const path = useData('sttRoute.path');
+  const path = useData('baseRoute.path');
 
   // ---------- set Hooks
   const { callRouter } = useRouter();

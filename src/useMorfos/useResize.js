@@ -4,7 +4,7 @@ import { setPath } from './utils';
 
 export default stl => {
   // ----------- set Selectors
-  const condDesk = useSelector(stt => setPath(stt, 'sttRoute.condDeskSize'));
+  const condDesk = useSelector(stt => setPath(stt, 'baseRoute.condDeskSize'));
 
   // ----------- set Return
   const condStl = condDesk ? setPath(stl, 'desk') : setPath(stl, 'mob');

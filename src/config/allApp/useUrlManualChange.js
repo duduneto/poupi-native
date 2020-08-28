@@ -7,7 +7,7 @@ import { useRouter, useData } from '../../useMorfos';
 // ----------- set Default
 export default () => {
   // ----------- set Data
-  const selectedRoute = useData('sttRoute.path');
+  const selectedRoute = useData('baseRoute.path');
 
   // ----------- set Conds
   const condPathName = window.location.pathname.split('/')[1];

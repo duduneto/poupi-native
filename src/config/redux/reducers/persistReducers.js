@@ -11,13 +11,13 @@ import reducers from '.';
 const pathTransform = createTransform(
   whiteItem => whiteItem,
   whiteItem => ({ path: whiteItem.path }),
-  { whitelist: ['sttRoute'] },
+  { whitelist: ['baseRoute'] },
 );
 
 const persistConfig = {
   storage: condStorage,
   key: 'root',
-  whitelist: ['basePersist', 'sttRoute'],
+  whitelist: ['basePersist', 'baseRoute'],
   transforms: [pathTransform],
 };
 

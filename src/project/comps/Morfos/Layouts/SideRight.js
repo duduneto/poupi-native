@@ -13,8 +13,8 @@ const stlSideMenu = [useStl.rightBar];
 
 export default ({ children }) => {
   // ----------- set Cond Show Menu
-  // const path = useData('sttRoute.path');
-  // const objComps = useData('sttRoute.showRight');
+  // const path = useData('baseRoute.path');
+  // const objComps = useData('baseRoute.showRight');
   // const showRight = objComps[path];
   const showRight = true;
 

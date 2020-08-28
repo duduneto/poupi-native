@@ -18,8 +18,8 @@ export default (state, action) => {
       // ----------- set State
       return {
         ...state,
-        sttRoute: {
-          ...state.sttRoute,
+        baseRoute: {
+          ...state.baseRoute,
           routesInfo,
         },
       };
@@ -31,8 +31,8 @@ export default (state, action) => {
     base_CurrScInfo: () => {
       return {
         ...state,
-        sttRoute: {
-          ...state.sttRoute,
+        baseRoute: {
+          ...state.baseRoute,
           currScInfo: action.value,
         },
       };
@@ -44,8 +44,8 @@ export default (state, action) => {
 
       return {
         ...state,
-        sttRoute: {
-          ...state.sttRoute,
+        baseRoute: {
+          ...state.baseRoute,
           condDeskSize: condDesk,
         },
       };
@@ -55,8 +55,8 @@ export default (state, action) => {
     base_condPushTrue: () => {
       return {
         ...state,
-        sttRoute: {
-          ...state.sttRoute,
+        baseRoute: {
+          ...state.baseRoute,
           condNoPush: false,
         },
       };
@@ -66,8 +66,8 @@ export default (state, action) => {
     base_History: () => {
       return {
         ...state,
-        sttRoute: {
-          ...state.sttRoute,
+        baseRoute: {
+          ...state.baseRoute,
           path: action.value,
           condNoPush: true,
         },

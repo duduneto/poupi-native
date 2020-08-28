@@ -15,8 +15,8 @@ export default (state, action) => {
     base_setRoute() {
       return {
         ...state,
-        sttRoute: {
-          ...state.sttRoute,
+        baseRoute: {
+          ...state.baseRoute,
           path: action.value,
         },
       };

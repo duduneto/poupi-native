@@ -39,7 +39,7 @@ function changeUrl(path) {
 }
 
 function useManualUrl() {
-  const selectedRoute = useSelector(state => state.sttRoute.path);
+  const selectedRoute = useSelector(state => state.baseRoute.path);
   const callRouter = useRouter();
   const condWeb = Platform.OS === 'web';
   const condPathName = condWeb && window.location.pathname.split('/')[1];

@@ -9,7 +9,7 @@ import screens from '../../project/screens';
 // ----------- set Default
 export default () => {
   // ----------- set Data
-  const routeData = useData('sttRoute');
+  const routeData = useData('baseRoute');
   const { routesInfo, path } = routeData;
 
   // ----------- set Current Screen Condition
