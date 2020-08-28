@@ -8,7 +8,7 @@ import { SideLeft, NavUp, SideRight } from '../..';
 
 export default ({ children }) => {
   // ----------- set Data
-  const 
+  // const
 
   // ----------- set Hooks
   const [sttMenu, setMenu] = React.useState(false);
