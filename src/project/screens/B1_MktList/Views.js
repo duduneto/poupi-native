@@ -4,7 +4,7 @@ import { View, TouchableOpacity, Text } from 'react-native';
 
 // ----------- import Internals
 import { useStl, useRouter } from '../../../useMorfos';
-import { ItemList, Banner } from '../../comps';
+import { ItemList, Banner, List } from '../../comps';
 
 // #region :: STYLEs *********
 
@@ -23,7 +23,7 @@ export default ({ info }) => {
       {/* ----------- PARTs */}
 
       <Banner content={info.content} />
-      <ItemList content={info.content} />
+      <List content={info.content} />
 
       {/* ----------- Elements */}
       {/* ... */}

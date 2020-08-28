@@ -254,6 +254,10 @@ const sideMenu = {
   top: 0,
 };
 
+const listWidth = {
+  width: 900,
+};
+
 // ---------------
 //  #endregion
 // ***************************************
@@ -277,6 +281,7 @@ const Styles = StyleSheet.create({
   posRelative,
   fullWidth,
   fullHeight,
+  listWidth,
 
   txtBase,
   txtSmall,
@@ -467,7 +472,7 @@ const Styles = StyleSheet.create({
     ...radiusLess,
     ...shadowLess,
     padding: 10,
-    width: 900,
+    ...listWidth,
   },
 
   dialogueBox: {
