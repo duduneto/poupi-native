@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 // ----------- import Internals
 import { useData } from '../../useMorfos';
+import { ezLog } from '../../useMorfos/utils';
 
 export default () => {
   // ----------- set Data
@@ -14,12 +15,17 @@ export default () => {
 
   // ----------- set Ref History
   const ref = {
+    cleanPath: () => ref.currLocation().pathname.split('/')[1],
+
     /**
      * Call when change route state
      * @type {() => *}
      */
     fxPush: () => {
-      if (!condNoPush) {
+      const condReload = currRoute !== ref.cleanPath();
+      const condPush = !condNoPush && condReload;
+      if (condPush) {
+        ezLog('push');
         ref.push(`/${currRoute}`);
       } else {
         dispatch({ type: 'base_condPushTrue' });
@@ -30,6 +36,13 @@ export default () => {
      * Link de onde foi retirado a ideia do código abaixo:
      * https://gist.github.com/lenkan/357b006dd31a8c78f659430467369ea7
      */
+
+    currLocation() {
+      return {
+        pathname: window.location.pathname,
+        search: window.location.search,
+      };
+    },
 
     /**
      * @type {Array<() => void>}
@@ -46,8 +59,7 @@ export default () => {
 
     fxHistory: () => {
       const callRouter = () => {
-        const cleanPath = ref.currLocation().pathname.split('/')[1];
-        dispatch({ type: 'base_History', value: cleanPath });
+        dispatch({ type: 'base_History', value: ref.cleanPath() });
         ref.handleChange();
       };
       window.addEventListener('popstate', callRouter);
@@ -61,13 +73,6 @@ export default () => {
 
     notify() {
       ref.listeners.forEach(listener => listener());
-    },
-
-    currLocation() {
-      return {
-        pathname: window.location.pathname,
-        search: window.location.search,
-      };
     },
 
     // ----------- set Change Urls

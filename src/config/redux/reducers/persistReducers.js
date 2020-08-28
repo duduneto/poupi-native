@@ -1,6 +1,6 @@
 // ----------- import Packs
 // import storage from '@react-native-community/async-storage';
-import { persistReducer } from 'redux-persist';
+import { persistReducer, createTransform } from 'redux-persist';
 
 // ----------- import Internals
 import condStorage from '../../condPacks/storage';
@@ -8,10 +8,17 @@ import reducers from '.';
 
 // ----------- set Config
 
+const pathTransform = createTransform(
+  whiteItem => whiteItem,
+  whiteItem => ({ path: whiteItem.path }),
+  { whitelist: ['sttRoute'] },
+);
+
 const persistConfig = {
   storage: condStorage,
   key: 'root',
-  whitelist: ['sttPersist'],
+  whitelist: ['sttPersist', 'sttRoute'],
+  transforms: [pathTransform],
 };
 
 export default persistReducer(persistConfig, reducers);
