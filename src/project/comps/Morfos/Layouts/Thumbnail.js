@@ -4,7 +4,6 @@ import { View, Image } from 'react-native';
 
 // ----------- import Internals
 import { useStl } from '../../../../useMorfos';
-import src from '../../../images/carrefour.jpg';
 // import { Card } from '../../';
 
 // #region :: STYLEs *********
@@ -14,10 +13,10 @@ const stlImg = [useStl.imgFull];
 
 // #endregion *********
 
-export default () => {
+export default info => {
   return (
     <View style={stlImgContainer}>
-      <Image source={src} style={stlImg} />
+      <Image source={{ uri: info.src }} style={stlImg} />
     </View>
   );
 };
