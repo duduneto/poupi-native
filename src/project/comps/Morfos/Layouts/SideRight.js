@@ -11,14 +11,14 @@ const stlSideMenu = [useStl.rightBar];
 
 // #endregion *********
 
-export default ({ info }) => {
+export default ({ children }) => {
   // ----------- set Cond Show Menu
   // const path = useData('sttRoute.path');
   // const objComps = useData('sttRoute.showRight');
   // const showRight = objComps[path];
-  const showRight = false;
+  const showRight = true;
 
   const condShow = showRight === true;
 
-  return condShow && <View style={stlSideMenu}>{info.children}</View>;
+  return condShow && <View style={stlSideMenu}>{children}</View>;
 };

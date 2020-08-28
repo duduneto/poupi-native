@@ -10,6 +10,7 @@ import { useRouter, UseInitData, useData } from '../../../useMorfos';
 export const infoSc = {
   path: 'mktList',
   groupSc: 'pub2',
+  condBigSc: true,
 
   scCode: 'B1',
 };

@@ -10,6 +10,7 @@ export { default as Btn1 } from './Morfos/Elements/Btn1';
 export { default as ActionList } from './Morfos/Elements/ActionList';
 
 // ---------- set Layouts
+export { default as NavControl } from './Morfos/Layouts/NavControl';
 export { default as NavUp } from './Morfos/Layouts/NavUp';
 export { default as ItemList } from './Morfos/Layouts/ItemList';
 export { default as Card } from './Morfos/Layouts/Card';
